@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ThinkPHP示例：CURD操作</title>
+<load href='__PUBLIC__/Css/common.css' />
+<load href="__PUBLIC__/Js/Base.js" />
+<load href="__PUBLIC__/Js/prototype.js" />
+<load href="__PUBLIC__/Js/mootools.js" />
+<load href="__PUBLIC__/Js/Ajax/ThinkAjax.js" />
+</head>
+<body>
+<div class="main">
+    <h2>图片上传</h2>
+    <form id="form1" method='post' action="__URL__/insert" enctype="multipart/form-data">
+        <div id="result" class="none result" style="font-family:微软雅黑,Tahoma;letter-spacing:2px"></div>
+        <dt>标题</dt>
+        <dd>
+            <input type="text" name="title" style="height:23px" class="huge bLeft" />
+        </dd>
+        <dt>简介</dt>
+        <dd>
+            <input type="text" name="intro" style="height:23px" class="huge bLeft" id="intro">
+        </dd>
+        <dt>内容</dt>
+        <dd>
+            <textarea name="content" cols="50" class="huge bLeft" id="content" style="height:23px"></textarea>
+        </dd>
+        <TABLE id='tbl' style="clear:both">
+        </TABLE>
+        <INPUT TYPE="button" value="增 加" onClick="addRow();" class="button small">
+        <input name="提交" type="submit" class="button" value="保 存">
+        <input type="reset" class="button" value="清 空">
+    </form>
+</div>
+</body>
+</html>
+<!--       <table width="100%" cellpadding=2 cellspacing=2>
+  <tr>
+	<td colspan="2"></td>
+ </tr>
+ <tr>
+	<td class="tRight" width="18%"></td>
+	<td width="82%" class="tLeft" > </td>
+ </tr>
+ <tr>
+	<td class="tRight" ></td>
+	<td class="tLeft" ></td>
+ </tr>
+ <tr>
+	<td class="tRight" ></td>
+	<td class="tLeft" ></td>
+ </tr>
+ <tr>
+	<td class="tRight" >其它：</td>
+	<td class="tLeft" ><input type="text" name="type" style="height:23px" class="huge bLeft" id="type"></td>
+ </tr>
+ <tr>
+	<td class="tRight" width="18%">上传图片：</td>
+	<td class="tLeft" ><input name="image[]" id="image[]" type="file" class="file huge" /></td>
+ </tr>
+  <tr>
+	<td class="tRight" width="18%">上传图片：</td>
+	<td class="tLeft" ><input name="image[]" id="image[]" type="file" class="file huge" /></td>
+ </tr>
+  
+ <tr>
+	<td><input type="hidden" name="ajax" value="1">onClick="add()" </td>
+	<td></td>
+ </tr>
+ </table>
+ -->
+<script language="JavaScript">
+ <!--
+	function add(){
+		ThinkAjax.sendForm('form1','__URL__/insert',complete,'result');
+	}
+	function complete(data,status){
+		if (status==1)
+		{
+		 window.setTimeout(function (){window.location.href='__URL__',20000});
+		}
+	}
+	
+	function deleteRow(){
+		if(tbl.rows.length>0){
+			tbl.deleteRow(rindex); //删除当前行
+			rowsnum--;    
+		}else{
+			return;
+		}
+		rindex="";
+	}
+	
+	function addRow(){   
+		curFileNum++;
+		rowsnum++;
+		var row=tbl.insertRow(-1);
+		//var td = arow.insertCell();
+		var cell = document.createElement("td");
+		cell.innerHTML='<div class="fLeft hMargin"><IMG SRC="__PUBLIC__/Images/del.gif"  style="cursor:hand" onclick="getObject(this);deleteRow();" WIDTH="20" HEIGHT="20" BORDER="0" ALT="删除" align="absmiddle"></div> <div class="impBtn  fLeft" ><INPUT TYPE="file" id="file'+curFileNum+'" name="file'+ curFileNum +'" class="file  huge"> <textarea  id="text'+curFileNum+'" name="text'+ curFileNum +'" ></textarea></div><div class="fLeft hMargin"></div>';
+		cell.align="center"
+		row.appendChild(cell); 
+		//addFileForm.num.value=rowsnum;
+	}
+	
+	function getObject(obj){ 
+		 while(obj.tagName.toLowerCase()!="tr"){
+			obj=obj.parentNode;
+		  }
+		  rindex=obj.rowIndex;
+	}
+ //-->
+ </script>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var curFileNum = 0;
+var rowsnum=0;  //记录行数
+var rindex="";       //列索引
+var tbl	=	document.getElementById('tbl');
+addRow();
+//-->
+</SCRIPT>

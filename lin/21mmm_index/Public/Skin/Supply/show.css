@@ -1,0 +1,37 @@
+.sleft{ width:688px; margin-left:5px; float:left; border:1px solid #FCF; overflow:hidden; }
+.stitle{ height:30px; line-height:30px; font-size:14px; font-weight:bold; padding-left:20px; background-color:#FCF; margin-bottom:5px;}
+.ttext{ color:#F39; width:100px; display:inline-block;}
+.tmore{ margin-left:420px; display:inline-block; text-align:right; }
+.item{ margin-bottom:10px;}
+.limg{ float:left; width:98px;; margin-right:10px; border:1px solid #ccc;}
+.limg img{ width:98px; height:98px;}
+.rtext{ float:left; width:578px;}
+.bold{ font-weight:bold;}
+.ititle{ font-size:14px; color:#C39; font-weight:bold; height:30px; line-height:30px;}
+.idesc{ color:#999; line-height:20px; }
+.iinfo{ height:30px; line-height:30px;}
+
+
+.position{ margin:5px 5px 5px 10px; border-bottom:1px solid #FC0; font-size:14px; }
+.position a{ font-size:14px; color:#F00}
+
+.show{ padding:10px;}
+.row{ height:30px; line-height:30px; font-size:14px; border-bottom:1px dashed #ccc;}
+.content2{ font-size:14px; line-height:25px; width:680px; }
+.boxt{ width:238px; height:30px; line-height:30px; font-size:14px; border:1px solid #FEC7F6; background-color:#FCF; letter-spacing:1px;}
+.boxtl{ font-weight:bold; float:left; display:inline; margin-left:15px;}
+.boxtr{ float:right; display:inline; margin-right:15px;}
+.boxc{ width:233px; border:1px solid #FEC7F6; margin-bottom:10px; padding:5px; height:20px; line-height:20px;}
+.boxc span a, .boxc span a:hover{ color:#F99;}
+.boxc a, .boxc a:hover{ color:#33F;}
+#contact{ padding: 3px 10px; }
+#contact .row{ border-bottom:solid 1px #F3F; padding-left:15px;}
+
+/*¡Ù—‘£¨∆¿¬€*/
+.comment{ padding:10px;  margin-top:15px; font-size:14px;}
+#question{ font-size:12px;  border:0; height:100px; width:500px;}
+.rong textarea{ width:500px; line-height:25px; font-size:14px; height:130px;}
+.rong{ margin-top:10px;}
+.tiwei{ width:500px; border-bottom:2px solid #f00; padding-left:15px; font-size:14px; font-weight:bold; }
+.chang{ margin-top:15px; border-bottom:1px solid #CcC;}
+.lan{ color:#f00;}

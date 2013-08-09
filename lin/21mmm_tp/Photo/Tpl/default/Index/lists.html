@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$category}_{&SITETITLE}</title>
+<link href="__PUBLIC__/Css/tuba.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/Css/page.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div id="allnet">
+		<include file="Public:head" />
+        		
+		<div class="content">
+			<div class="listdh">您现在的位置：<a href="{&ROOTURL}" target="_blank">{&SITETITLE}</a> > <a href="__URL__" target="_blank">{&MODELTITLE}</a> > <a href="__URL__/lists/cid/{$cid}" target="_blank">{$category}</a> </div>
+			<div class="list_l">
+            	<div class="pagelink">
+                {$page}
+                </div>				
+				<!--<h1>{$category}</h1>-->
+                
+				<ul class="listpic">
+                <volist name="list" id="vo">
+					<li><a href="__URL__/show/id/{$vo.id}" target="_blank"><img src="{$vo.thumb}" alt="{$vo.title}"/></a><p><a href="__URL__/show/id/{$vo.id}" target="_blank" title="{$vo.title}">{$vo.title}</a></p></li>
+				</volist>
+				</ul>
+				<div class="pagelink">
+                {$page}
+                </div>			
+				
+			</div>
+			
+			<include file="right" />
+			<include file="Public:foot" />
+		</div>
+	</div>	
+</body>
+</html>

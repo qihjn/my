@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>企业会员管理</title>
+<link href="__PUBLIC__/Skin/Job/list.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+.STYLE1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+-->
+</style>
+</head>
+<body>
+<div class="allnet">
+	{include:top.html}
+	{include:menu.html}
+	<div class="middle">
+		<div class="jbzz">
+			<div class="jbzz_left"><img src="/get_face.php?un={$username}&ut={$u_type}" style="width:110px; height:100px;" /></div>
+			<div class="jbzz_right">
+				<p>用户名：<span style="color:#cc0000;">{$title}</span></p>
+				<p>用户等级：{$rk}</p>
+				<P>账户：<span style="color:#cc0000;">{$golden}</span></P>
+				<p>积分：<span style="color:#cc0000;">{$point}</span> --<a href="http://public.21mmm.com/links/index/zptj.gif" target="_blank" class="STYLE1" _fcksavedurl="http://public.21mmm.com/links/index/zptj.gif"><U>招聘人才流程-图解</U></a> </p>
+				<p><a href="/unit/face.php"><img src="__PUBLIC__/Skin/Job/ws_2.jpg" alt="上传LOGO" /></a><a href="http://user.21mmm.com/unit/info.php" target="_parent"><img src="__PUBLIC__/Skin/Job/ws_1.jpg" alt="完善企业资料" border="0" /></a> <a href="/unit/face.php"></a> <a href="http://user.21mmm.com/unit/job_pub.php" target="_parent"><img src="__PUBLIC__/Skin/Job/ws_3.jpg" alt="管理你的域名" border="0" /></a> <a href="http://www.21mmm.com/help/most/38.html" target="_blank"><img src="__PUBLIC__/Skin/Job/ws_4.jpg" alt="充值中心" border="0" /></a></p>
+			</div>
+		</div>
+		<div class="xxg">
+			<h1><span class="tit" style="font-size:13px;">人才招聘版提示-<a href="http://www.21mmm.com/help/unit/56.html" target="_blank"></a></span></h1>
+			<div class="ffr">
+			  <p><a href="http://www.21mmm.com/help/unit/72.html" target="_blank"><span style="color:#f00;">我们推崇自助式招聘，想招就招，招满就停，不浪费~，查看</span>&gt;&gt;&gt;</a></p>
+				<p>免费会员，你可以发布<span style="color:#cc0000;">2</span>个招聘职位：-> <a href="http://user.21mmm.com/unit/info.php" target="_self">填写公司基本资料</a> -&gt; <a href="/unit/job_pub.php">发布招聘职位</a> </p>
+				{if {$resume}}
+				<p>目前收到简历{$resume}份，<a href="/unit/resume.recevice.php" style="color:#0166CC">->查看</a></p>
+				{/if}
+				{if !{$resume}}
+				<p>目前收到求职者简历0份，<a href="/unit/job_pub.php" style="color:#0166CC">->我要发布招聘职位</a></p>
+				{/if}
+		  </div>
+		</div>
+		<div class="xxg">
+			<h1><span class="tit" style="font-size:13px;">部分符合人才 - 更多人才请转入各地区主页<span style="color:#f00;">|<a href="http://job.21mmm.com/shanghai" target="_blank">上海</a>|<a href="http://job.21mmm.com/beijing" target="_blank">北京</a>|<a href="http://job.21mmm.com/guangdong" target="_blank">广东</a>|<a href="http://job.21mmm.com/zhejiang" target="_blank">浙江</a>|<a href="http://job.21mmm.com/jiangsu" target="_blank">江苏</a>|<a href="http://job.21mmm.com/shanghai" target="_blank">更多</a></span> </span></h1>
+			<div class="ffr">
+				{if {$jobs}}
+				<table width="100%">
+                	<tr><th>姓名</th><th>性别</th><th>求职区域</th><th>求职行业</th><th>工作性质</th></tr>
+					{for var=$list index=$key}
+					<tr><td height='20'><a href='{WEB_UNIT}resume/{$list[$key]['pid']}/show.html' style='color:#FF0066' target='_blank'>{$list[$key]['realname']}</a></td>  <td>{$list[$key]['gender']}</td>  <td>{$list[$key]['local']}</td> <td>{$list[$key]['job_request']}</td> <td>{$list[$key]['em_type']}</td></tr>
+					{/for}
+				</table>
+				{/if}
+			</div>
+		</div>
+		<div class="xxg">
+			<h1>&nbsp;</h1>
+			<div class="ffr">
+			  <h2 style="background-image:url(__PUBLIC__/Skin/Job/m_1.jpg);">
+			    <!-- (0条，请<a href="#">立即了解并参加展会</a>)-->
+			  </h2>
+		  </div>
+		</div>
+		<div class="ppo" style="margin-left:0;">
+			<h1><span class="tit" style="font-size:13px;">最新招聘VIP企业</span></h1>
+			<ul class="xiaohu">{for var=$company index=$key}
+				<li><a href='{URL_UNIT}company/show_{$company[$key][uid]}.html' target='_blank'>{$company[$key]['title']}</a> <span style='font-style:italic; font-size:12px; font-weight:bold;'>HOT</span></li>{/for}
+			</ul>
+		</div>
+		<div class='ppo'>
+			<h1>&nbsp;</h1>
+			<ul class='xiaohu'>{for var=$comp index=$key}
+				<li><a href='{URL_UNIT}company/show_{$comp[$key][uid]}.html' target='_blank'>{$comp[$key]['title']}</a> <span style='font-style:italic; font-size:12px; font-weight:bold;'>HOT</span></li>{/for}
+			</ul>
+		</div>
+		<div class="clear"></div>
+		<div class="xxg">
+			<h1><span class="tit" style="font-size:13px;">中华美容网介绍</span></h1>
+			<div class="ffr">
+				<p style="margin-bottom:5px;">&nbsp;&nbsp;&nbsp;&nbsp;中华美容网（www.21mmm.com）是目前国内专业性强的美容行业门户网站，是提供企业信息交互和商业交易（B2B,B2C）的综合性平台。
+								网站信息覆盖全行业产业链上所有环节，为行业提供人才培训。营销等资讯平台，致力与细化服务，是美容行业最好的第一平台。目前，网站用户量正以每月30%的速度快速增长，网站总访问量排名和日均访问量排名稳居全行业第一位。</p>
+			</div>
+		</div>
+	</div>
+	<div class="right">
+		<div class="ssa" style="margin-top:0;">
+			<h1><span class="tit" style="font-size:13px;">热门人才</span></h1>
+			<div class="myr">
+				<p><a href="http://job.21mmm.com/so.php?sotype=talent&amp;catid=1" target="_blank">美容类</a> <a href="http://job.21mmm.com/so.php?txt=%C3%C0%CC%E5%CA%A6&amp;place=%D6%D0%B9%FA&amp;alive=&amp;sotype=jobs" target="_blank"></a><a href="http://job.21mmm.com/so.php?sotype=talent&amp;catid=4" target="_blank">化妆类</a> <a href="http://job.21mmm.com/so.php?sotype=talent&amp;catid=3" target="_blank">美甲类</a> <a href="http://job.21mmm.com/so.php?sotype=talent&amp;catid=2" target="_blank">美发类</a> <a href="http://job.21mmm.com/so.php?cat_title=%B7%A2%D0%CD%CA%A6&amp;catid=45&amp;place=%D6%D0%B9%FA&amp;alive=&amp;sotype=talent&amp;x=12&amp;y=10" target="_blank">发型师</a> <a href="http://job.21mmm.com/so.php?cat_title=%C3%C0%C8%DD%CA%A6&amp;catid=22&amp;place=%D6%D0%B9%FA&amp;alive=&amp;sotype=talent&amp;x=17&amp;y=10" target="_blank">美容师</a> <a href="http://job.21mmm.com/so.php?cat_title=%C3%C0%BC%D7%CA%A6&amp;catid=83&amp;place=%D6%D0%B9%FA&amp;alive=&amp;sotype=talent&amp;x=14&amp;y=9" target="_blank">美甲师</a>				</p>
+		  </div>
+		</div>
+		<div class="ssa">
+			<h1><span class="tit" style="font-size:13px;">使用帮助</span></h1>
+			<ul class="qcnn">
+				{for var=$usehelp index=$key}
+				<li>·<a href='{URL_WWW}help/{$usehelp[$key]['code']}/{$usehelp[$key]['id']}.html' target='_blank'>{$usehelp[$key]['title']}</a></li>
+				{/for}
+			</ul>
+		</div>
+		<div class="ssa">
+			<h1><span class="tit" style="font-size:13px;">经验交流</span></h1>
+			<ul class="qcnn">
+				{for var=$exp index=$key}
+				<li>·<a href='{URL_WWW}help/{$exp[$key]['code']}/{$exp[$key]['id']}.html' target='_blank'>{$exp[$key]['title']}</a></li>
+				{/for}
+			</ul>
+		</div>
+	</div>
+
+{include:foot.html}
+</div>
+</body>
+</html>

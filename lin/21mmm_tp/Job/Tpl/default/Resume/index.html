@@ -1,0 +1,141 @@
+<smallinc file="public:header" load="__PUBLIC__/Skin/Job/common.css,__PUBLIC__/Skin/page.css" />
+<style type="text/css">
+<!--
+.STYLE1 {
+	color: #FF0000
+}
+.job_name {
+	font-weight:bold;
+}
+.job_name a {
+	font-size:20px;
+	color:#000;
+}
+.job_detail {
+	padding:10px 10px 0px 5px;
+}
+.magin_10 {
+	margin-bottom:8px;
+}
+.jl {
+	float:left;
+	width:77px;
+	height:100px;
+	border:1px solid #ccc;
+	text-align:center;
+}
+.jl img {
+	width:75px;
+	height:100px;
+}
+.jr {
+	float:right;
+	width:530px;
+	border:0px solid #f00;
+}
+-->
+</style>
+<div class="ad"><img src="__PUBLIC__/Skin/Job/ad_4.jpg" width="930" border="0"/></div>
+<div class="left">
+    <div class="login">
+        <h1><span class="zb"><a href="#">推荐职业</a></span></h1>
+        <div class="clear"></div>
+        <volist id="vo" name="up">
+            <div class='swck'>
+                <h2><span class='dx'><a href='{$vo.jid|rurl}' target='_blank'>{$vo.realname}</a></span></h2>
+                <p>{$vo.job_request|getEnumTitle}</p>
+                <p>{$vo.ctime|df}</p>
+            </div>
+        </volist>
+    </div>
+</div>
+<div class="zhigou">
+    <div class="zjms" style="padding-top:10px;">
+        <style>
+							.zhigou .zjms .gw * {vertical-align:middle;}
+						</style>
+        <include file="public:sobar" /> </div>
+    <div class="men" >
+        <div class="jt">
+            <div class="men_left"><img src="__PUBLIC__/Skin/Job/bj_20.jpg" /></div>
+            <div class="men_ce">
+                <ul class="huiyi">
+                    <li><a href="#" target="_blank" style="background-image:url(__PUBLIC__/Skin/Job/bj_23.jpg); color:#23548a;">搜索结果</a></li>
+                </ul>
+            </div>
+            <div class="men_left"><img src="__PUBLIC__/Skin/Job/bj_21.jpg" /></div>
+        </div>
+        <form  method="post" name="job" id="job" action="__APP__/jobapply/insert">
+            <div class="bg_fa" id="page_top"> </div>
+            <volist id="vo" name="list">
+                <div style="margin:10px auto;border-bottom:1px solid #ccc;width:95%;padding-bottom:10px; text-align:left;">
+                    <div class="job_name">
+                        <input type="checkbox" id="id[]" name="id[]" value="{$vo.pid}" />
+                        <a href="/resume/{$vo.pid}/show.html" target=_blank style="font-size:18px;color:#0c63e4">{$vo.realname}</a> </div>
+                    <div class="job_detail" >
+                        <div class="jl"><a href="/resume/{$vo.pid}/show.html" target="_blank" style="font-size:13px;color:#f80"><img src="{$vo.thumb|img}" /></a></div>
+                        <div class="jr">
+                            <div class="magin_10">
+                                <div>简历名称: <a href="/resume/{$vo.pid}/show.html" target="_blank" style="font-size:13px;color:#f80"> {$vo.resumename} </a><span >性别: {$vo.gender|sex} </span> | <span >学历:{$vo.study} </span> <span class="chense" style="margin-left:100px;">日期：{$vo.ctime|df}</span> </div>
+                            </div>
+                            <div class="magin_10"  style="color:#2A2A2A;"> <span class="bold">求职地点</span>:{$vo.local} </div>
+                            <div>希望职位:<span style="color:#f00;">{$vo.job_request|getEnumTitle}</span> </div>
+                            <div> 简介:{$vo.other} </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </volist>
+            <div id="page_bottom" class="bg_fa"> <a onclick="chkall('id[]')" style='cursor:pointer;'>全选</a> <a onclick="chkallno('id[]')" style='cursor:pointer;'> 取消全选</a> <a onclick="applyResume();">邀请面试</a> <a onclick="favResume();">放入收藏夹</a>
+                <!-- 每页显示：<select name=""><option>10条</option></select> <select name=""><option>按时间发布顺序排列</option></select>
+										</span>									
+						-->
+                {$page}</div>
+            <!--<input name="" type="submit" />-->
+        </form>
+        <div class="yema"> </div>
+    </div>
+</div>
+<div class="clear"></div>
+<textarea id="tplJob" style="display:none;">
+<#macro jobs data> 
+<table id="jobs">
+	<#if (data.list.length > 0)>
+        <caption>${data.caption}</caption>
+      <#list data.list as list>
+        <tr <#if (list_index % 2)>class="gray"</#if>>
+          
+          <td><input type="radio" id="id_${list_index + 1}" name="id[]" value="${list.id}" <#if (list_index == 0)>checked="checked" </#if> /></td>
+          <td>${list_index + 1}</td>
+          <td class="bold"><a href="${list.uid}">${list.title}</a></td>
+          <td></td>
+          
+        </tr>
+      </#list>
+    <#elseif (data.list.length > 0)>
+        <tr><td colspan="5">${data.list.length}</td></tr>
+    <#else>
+        <tr><td colspan="5">N/A</td></tr>
+    </#if>
+</table>
+</#macro>
+</textarea>
+<include file="public:footer" />
+<script type="text/javascript" src="__PUBLIC__/plugin/lightbox/js/jq.lightbox.js"></script>
+<load href="__PUBLIC__/Js/easyTemplate.js,__PUBLIC__/plugin/dialog/jq.dialog.js" />
+<load href="__PUBLIC__/plugin/dialog/screen.css,__PUBLIC__/plugin/dialog/example.css" />
+
+<script>
+
+
+
+
+//showPopWin("sb",200,200);
+window.onload = function(){
+	document.getElementById("page_top").innerHTML = document.getElementById("page_bottom").innerHTML;
+	$('#workplace').val('{.workplace}');
+	$('#category_id').val('{.category_id}');
+	$('#keyword').val('{.keyword}');
+}
+</script>
+<loads href="__PUBLIC__/Js/logininfo2.js" />

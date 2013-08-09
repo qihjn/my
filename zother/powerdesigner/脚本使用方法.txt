@@ -1,0 +1,2 @@
+'使用方法使用方法
+'PowerDesigner->Tools->Execute Commands->Edit/Run Scripts

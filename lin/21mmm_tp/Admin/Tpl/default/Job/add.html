@@ -1,0 +1,227 @@
+<include file="../Public/header" />
+
+<link href="__PUBLIC__/Skin/admin/company/list.css" rel="stylesheet" type="text/css" />
+<style>
+.r1 {
+	float:left;
+	width:14%;
+	font-weight:bold;
+	margin:2px 10px 2px 0;
+	text-align:right;
+}
+.r2 {
+	float:left;
+	margin-bottom:5px;
+	text-align:left;
+}
+.STYLE1 {
+	color: #FF0000
+}
+.STYLE3 {
+	color: #663333
+}
+</style>
+<div class="allnet">
+    <div style="float:none; width:720px; display:inline; margin-top:10px;">
+        <div style="font-size:15px;border-bottom:1px solid #ccc; color:#f90; font-weight:bold; margin-bottom:10px; text-align:left;">招聘信息 <span class="STYLE3"><span style="color:#CC3366;">一次只能发布一个职位，才能帮您正确匹配到人才</span></span> </div>
+        <form action="__URL__/insert" method="post" name="descform" id="descform">
+            <div id="pictureinfuture">
+                <div style='background:#eee;'>
+                    <div class='r1'>公司ID<span class="STYLE1">*</span>:</div>
+                    <div class='r2'>
+                        <input type="text" value="{$vo.cid}" name="cid" id="cid" />
+                        <span style="color:#f00;"></span></div>
+                    <div style='clear:both;'></div>
+                </div>
+                <div style='background:#fff;'>
+                    <div class='r1'>职位说明<span class="STYLE1">*</span>:</div>
+                    <div class='r2'>
+                        <input type=text value='{$vo.title}' name=title exp="[\W\w]{1,30}|名称不为空" />
+                        <span style="color:#f00;">此框是填写您对招聘岗位的习惯性说法，便于应聘者理解，比如：美容师，       有不同的称呼：美容SPA；美容美体师；初级美容师；美容师等，只能填写一种</span></div>
+                    <div style='clear:both;'></div>
+                </div>
+                <div style='background:#eee;'>
+                    <div class='r1'>工作地点<span class="STYLE1">*</span>:</div>
+                    <div class='r2'>
+                    	<script src="__PUBLIC__/Js/Job/city.js"></script>
+                        <script src="__PUBLIC__/Js/Job/place.js"></script>
+                        <script>areao.load('workplace','{$vo.province}','{$vo.city}','',2);</script>
+                        <!--<script>areao.load('workplace','{$province}','{$city}','{$area}',3);</script>-->
+                    </div>
+                    <div style='clear:both;'></div>
+                </div>
+                <div style='background:#fff;'>
+                    <div class='r1'>确认职位<span class="STYLE1">*</span>:</div>
+                    <div class='r2'>
+                        <p>
+                        <script src=""></script>
+                        <script></script>
+                        <select name="firstRequest" id="firstRequest">
+		      <option value="">不限</option>
+		  	  </select>
+          <select name="job_request" id="secondRequest">
+		      <option value="">不限</option>
+		  </select>
+                        <span style="color:#f00;"> 此项为本站人才分类，请选择与您上面职位说明最接近或一样的一种，这样适合的简历才能正确匹配，要选具体职位，如“美容师”<a href="http://public.21mmm.com/links/job/fbzw.jpg" target="_blank"><strong>点击查看怎么发布&gt;&gt;&gt;</strong></a><br />
+                            </span></p>
+                    </div>
+                    <div style='clear:both;'></div>
+                </div>
+                <div style='background:#eee;'>
+                    <div class='r1'>学历:</div>
+                    <div class='r2'><select name=study id=study><option value=''>请选择</option><option value='不限'>不限</option><option value='初中'>初中</option><option value='高中'>高中</option><option value='中专' selected>中专</option><option value='大专'>大专</option><option value='本科'>本科</option><option value='硕士'>硕士</option><option value='硕士以上'>硕士以上</option><option value='其他'>其他</option></select> 以上</div>
+                    <div style='clear:both;'></div>
+                </div>
+                <div style='background:#fff;'>
+                    <div class='r1'>需求人数:</div>
+                    <div class='r2'>
+                        <input type=text name=num value='{$vo.num}' style="width:50px;" id=num />
+                        人 [说明：默认 “0”，表示招聘人数不限，如需准确人数，请输入数字]</div>
+                    <div style='clear:both;'></div>
+                </div>
+                <div style='background:#eee;'>
+                    <div class='r1'>工作经验:</div>
+                    <div class='r2'>{$vo.experience}</div>
+                    <div style='clear:both;'></div>
+                </div>
+                <div style='background:#fff;'>
+                    <div class='r1'>年龄:</div>
+                    <div class='r2'>
+                        <input name="startage" type="text" id="startage" value='{$vo.startage}' size="3" />
+                        -
+                        <input name="endage" type="text" id="endage" value='{$vo.endage}' size="3" />
+                        
+                    </div>
+                    <div style='clear:both;'></div>
+                </div>
+                <div style='background:#eee;'>
+                    <div class='r1'>食宿情况:</div>
+                    <div class='r2'>{$vo.eatcheck}
+                        <!--<input type='checkbox' name=eatcheck value='1' {if {$eatcheck}==1}checked{/if} />-->
+                    </div>
+                    <div style='clear:both;'></div>
+                </div>
+                <div style='background:#fff;'>
+                    <div class='r1'>要求性别:</div>
+                    <div class='r2'>{$vo.sex}</div>
+                    <div style='clear:both;'></div>
+                </div>
+                <div style='background:#eee;'>
+                    <div class='r1'>工作类型:</div>
+                    <div class='r2'>{$vo.emtype}</div>
+                    <div style='clear:both;'></div>
+                </div>
+                <div style='background:#fff;'>
+                    <div class='r1'>薪水报酬:</div>
+                    <div class='r2'>{$vo.money}</div>
+                    <div style='clear:both;'></div>
+                </div>
+                <div style='background:#eee;'>
+                    <div class='r1'>有效期:</div>
+                    <div class='r2'>{$vo.worklife}</div>
+                    <div style='clear:both;'></div>
+                </div>
+                <div class='r1'>职位要求:</div>
+                <div class='r2'>
+                    <textarea name="request" id="request" style="width:560px; height:120px;">{$request}</textarea>
+                    <!--{func:crt_editor('{$request}','request')}-->
+                </div>
+                <div style='clear:both;'></div>
+                <div>
+                    <input type='hidden' value='{$vo.id}' id='id' name='id' />
+                    <input type="submit" value='确认' class="btn" style='border:1px solid #aaa;background:none;padding:3px;width:120px;' />
+                    <a href="http://user.21mmm.com/unit/info.php" target="_blank">请确认已填写过企业基本资料?查看&gt;&gt;&gt;</a>，以便招聘正常显示，<br/>
+                    <br/>
+                    <br/>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<include file="../Public/footer" />
+
+<script language="javascript" type="text/javascript" src="__PUBLIC__/Js/Inc/Enum.js"></script>
+
+<script language="" type="text/javascript">
+/*
+json 数据，有父类标识符
+1.只创建父类列表，并可选中，可有默认选中值
+2.创建父类，子类联动列表,并可根据id选中相应父子类，若有父类则选中父类，并且选中子类。无则直接选中父类.可有默认选中值
+3.
+*/
+
+//创建select
+function createSelect(name,egroup,valueKey){
+	if(!name) name = 'job_request';
+	if(!valueKey) valueKey = "evalue";
+	//if(!egroup) egroup = "";
+	//var egroup = 'job_category';
+	//var html = '<select name="'+name+'" id="'+name+'">';
+	
+	var i = 1;
+	for(var k in data){
+		if(data[k]['egroup']==egroup){
+			document.getElementById(name).options[i] = new Option(data[k]['ename'],data[k][valueKey]);
+			i++;
+		}
+		
+	}
+}
+
+//获取当前code也就是父value,只能用于行业，值不重复的
+function getParent(value,valueKey){
+	if(!valueKey) valueKey = 'evalue';
+	
+	egroup = '';
+	for(var k in data){
+		if(data[k][valueKey] == value){
+			egroup =  data[k]['egroup'];
+		}
+	}
+	for(var k in data){
+		if(data[k]['code'] == egroup){
+			//alert(data[k]);
+			return  data[k];
+		}
+	}
+}
+
+//获取当前code
+function getCode(value,egroup,valueKey){
+	if(!valueKey) valueKey = 'evalue';
+	//alert(egroup);
+	for(var k in data){
+		if(data[k]['egroup']==egroup && data[k][valueKey] == value){
+			return data[k]['code'];
+		}
+	}
+}
+
+document.getElementById("firstRequest").onchange = function(){
+	createSelect("secondRequest",getCode(this.value,'job_category'))
+	
+}
+
+
+//初始化职位连动
+createSelect("firstRequest",'job_category');
+createSelect("secondRequest",'');
+
+//选中类别
+var firstValue = secondValue = '';
+var dbValue = '{$vo.category_id}';
+//alert(getParent(dbValue)['evalue']);
+if(code = getCode(dbValue,'job_category')){
+	first = code;
+	selectByValue("firstRequest",dbValue);
+	createSelect("secondRequest",code);
+}else{
+	p = getParent(dbValue,'');
+	//alert(p['evalue']);
+	createSelect("firstRequest",'job_category'); //父下拉
+	selectByValue("firstRequest",p['evalue']); //选中父
+	
+	createSelect("secondRequest",p['code']); //二级
+	selectByValue("secondRequest",dbValue); //选中二级
+}
+</script>

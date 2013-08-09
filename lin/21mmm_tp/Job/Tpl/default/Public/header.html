@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="{$keywords}" />
+<meta name="description" content="{$description}" />
+<title>{$pageTitle}</title>
+<load href="{$$load}" />
+<load href="__PUBLIC__/Js/publicVar.js" />
+<script language="JavaScript">
+<!--
+//指定当前组模块URL地址 
+var URL = '__URL__';
+var APP	 =	 '__APP__';
+var PUBLIC = '__PUBLIC__';
+
+//-->
+</script>
+</head>
+<body>
+<div id="allnet">
+<div id="school">
+<div id="star">
+<div class="bj_live">
+    <p>
+    <div class="bj_live_left" id="loginbar">
+        <style>
+			.bj_live_left form * {vertical-align:middle;}
+			</style>
+        <form action="http://u.{*DOMAIN}/public/chklogin" method="POST">
+            <span style="font-weight:bold; color:#333;">通行证：</span>
+            <input name="username" id="username" type="text" style="width:70px;"/>
+            <span style="font-weight:bold; color:#333;">密码：</span>
+            <input name="password" id="password" type="password" style="width:70px;"/>
+            <!--<span style="padding-left:3px;">
+            <select name="u_type">
+                <option value="school">请选择</option>
+                <option value="school">培训机构</option>
+                <option value="unit">企业用户</option>
+                <option value="person">个人用户</option>
+            </select>
+            </span>--> <span style="vertical-align:middle;">
+            <input type="image" value="登录" src="__PUBLIC__/Skin/unit_web/nmdl.jpg" />
+            </span> <span style="padding-left:3px; vertical-align:middle;"><a href="http://user.21mmm.cn/register.php"><img src="__PUBLIC__/Skin/unit_web/zhuce.jpg" /></a></span> <span style="padding-left:3px;"><a href="http://user.21mmm.cn/fetchpwd.php">忘记密码</a></span>
+        </form>
+    </div>
+    <ul class="bj_live_right">
+        <li>·<a href="{&WWW_URL}/help/most/38.html" target="_blank"><font color="#FF0000">升级会员</font></a></li>
+        <!--<li>·<a href="{&WWW_URL}/help/most/37.html" target="_blank">付款</a></li>-->
+        <li>·<a href="{&WWW_URL}/help/most/27.html" target="_blank">客服</a></li>
+        <li>·<a href="{&WWW_URL}/help/most/31.html" target="_blank">导航</a></li>
+        <li>·<a href="javascript:;" onclick="window.external.addFavorite(window.location.href, '中华美容网');">收藏</a></li>
+        <li>·<a href="javascript:;" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage(window.location.href);">主页</a></li>
+        <li><img src="http://public.21mmm.com/links/index/dh.gif" width="87" height="22" border="0" /></li>
+    </ul>
+    </p>
+</div>
+<div class="clear"></div>
+<div class="logo">
+    <div class="logo_vi"><a href="#"><img src="__PUBLIC__/Skin/school_web/logo.jpg" /></a></div>
+    <div class="logo_ad">
+        <div class="logo_ad_left"><img src="__PUBLIC__/Skin/school_web/l_1.jpg" /></div>
+        <ul class="logo_center">
+            <li><a href="{&WWW_URL}/" target="_self">首页</a></li>
+            <li><a href="http://job.21mmm.com" target="_self">招聘主页</a></li>
+            <li><a href="http://job.21mmm.com/promo/person/fast_person/" target="_self">最新人才</a></li>
+            <li><a href="http://job.21mmm.com/promo/person/fast_job/" target="_self">最新职位</a></li>
+            <li><a href="http://school.21mmm.cn/" target="_self">培训课程</a></li>
+            <li><a href="http://pindao.huoban.taobao.com/tms/channel/beauty.htm?pid=mm_15250694_0_0&amp;eventid=101328" target="_blank">购化妆品</a></li>
+            <li><a href="http://www.21mmm.com/help/faq/71.html" target="_self">记住我们</a></li>
+            <li>
+                <script type='text/javascript' src='http://chat.53kf.com/kf.php?arg=linqiu9999&style=1'></script>
+            </li>
+        </ul>
+        <div class="logo_ad_left"><img src="__PUBLIC__/Skin/school_web/r_1.jpg" /></div>
+    </div>
+</div>
+
+
+<style>
+/*下面导航css*/
+#lvl a {
+	text-decration:none;
+	line-height:1.8;
+	float:left;
+	width:160px;
+	color:#454545;
+	overflow:hidden;
+}
+#lvl a:hover {
+	background-color:#f90;
+	text-decoration:none;
+}
+.STYLE1 {
+	color: #FF00FF
+}
+.STYLE2 {
+	color: #FF0000
+}
+.STYLE3 {
+	color: #000000;
+	font-weight: bold;
+}
+</style>
+<div class="menu">
+            <div class="menu_name"><a href="/"><img src="__PUBLIC__/Skin/Job/nav.jpg" /></a></div>
+            <div class="menu_caidan">
+                <ul style="margin-top:13px;">
+                    <li><a href="/" target="_blank">人才主页</a> | </li>
+                    <li>职位分类 | </li>
+                    <li>人才分类 | </li>
+                    <li><a href="/{$a_name}/promo/unit/fast_job/" target="_blank">职位列表</a> | </li>
+                    <li><a href="/{$a_name}/promo/person/fast_person/" target="_blank">人才列表</a> | </li>
+                    <li><a href="/{$a_name}/promo/unit/faish_job/" target="_blank">诚信招聘</a> | </li>
+                    <li><a href="/{$a_name}/promo/person/faith_person/" target="_blank">诚信求职</a> | </li>
+                    <li>相片人才 | </li>
+                </ul>
+                <ul>
+                    <li> 热门地区：<a href="/shanghai"> 上海 </a> |<a href="/beijing"> 北京 </a> |<a href="/guangdong"> 广东 </a> |<a href="/jiangsu"> 江苏</a> |<a href="/zhejiang"> 浙江 |</a><a href="/hubei"> 湖北 </a>| <a href="/fujian"> 福建 </a>|<a href="/sichuan"> 四川 </a> |<a href="/liaoning"> 辽宁 </a> |<a href="http://public.21mmm.com/links/job/qun.gif" target="_blank"><span style="color:#f00;">加入美容美发美甲QQ群</span> </a></li>
+                </ul>
+            </div>
+        </div>

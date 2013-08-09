@@ -1,0 +1,20 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.{0})$ home.php [L]
+
+# ¿Õ²ÎÊý
+#RewriteCond %{HTTP_HOST} ^([a-z0-9\-]+)\.21mmm\.cn$
+#RewriteRule ^(\s?)$ index.php/ [QSA,PT,L]
+
+
+#RewriteCond %{HTTP_HOST} ^u\.21mmm\.cn$
+#RewriteRule ^(.*?)$ user.php/$1 [QSA,PT,L]
+
+
+
+#RewriteCond %{HTTP_HOST} ^u.21mmm.cn$
+##RewriteCond %{REQUEST_URI} !^/bbs/
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.*)$ user.php/$1 [L]

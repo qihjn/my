@@ -1,0 +1,36 @@
+[ 2011-04-01T10:13:35+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cookie - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-01T10:13:35+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-01T10:13:36+08:00 ] SQL:  RunTime:0.024346s SQL = SHOW COLUMNS FROM mmm_index
+[ 2011-04-01T10:13:36+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 172 行.
+[ 2011-04-01T10:13:36+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 173 行.
+[ 2011-04-01T10:13:38+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cookie - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-01T10:13:38+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-01T10:13:38+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 172 行.
+[ 2011-04-01T10:13:38+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 173 行.
+[ 2011-04-01T10:13:38+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cookie - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-01T10:13:38+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-01T10:13:38+08:00 ] SQL:  RunTime:0.018250s SQL = SHOW COLUMNS FROM mmm_group
+[ 2011-04-01T10:13:38+08:00 ] SQL:  RunTime:0.000932s SQL = SELECT id,title FROM `mmm_group` WHERE status=1
+[ 2011-04-01T10:13:38+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 172 行.
+[ 2011-04-01T10:13:38+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 173 行.
+[ 2011-04-01T10:13:39+08:00 ] NOTIC: [8] Undefined index: loginUserName a11e0efd1232986d0d63e250325eef01.php 第 151 行.
+[ 2011-04-01T10:13:38+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cookie - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-01T10:13:38+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-01T10:13:38+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 172 行.
+[ 2011-04-01T10:13:38+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 173 行.
+[ 2011-04-01T10:13:38+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cookie - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-01T10:13:38+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-01T10:13:38+08:00 ] NOTIC: [8] Undefined index: authId PublicAction.class.php 第 43 行.
+[ 2011-04-01T10:13:38+08:00 ] SQL:  RunTime:0.318497s SQL = SHOW COLUMNS FROM mmm_node
+[ 2011-04-01T10:13:38+08:00 ] SQL:  RunTime:0.000625s SQL = SELECT `id` FROM `mmm_node` LIMIT 1 
+[ 2011-04-01T10:13:39+08:00 ] SQL:  RunTime:0.148880s SQL = SELECT id,name,group_id,title FROM `mmm_node` WHERE ( `level` = 2 ) AND ( `status` = 1 ) AND ( `pid` = '1' ) ORDER BY sort asc
+[ 2011-04-01T10:13:39+08:00 ] NOTIC: [8] Undefined index: _ACCESS_LIST PublicAction.class.php 第 55 行.
+[ 2011-04-01T10:13:39+08:00 ] NOTIC: [8] Undefined index: administrator PublicAction.class.php 第 57 行.
+[ 2011-04-01T10:13:39+08:00 ] NOTIC: [8] Undefined index: administrator PublicAction.class.php 第 57 行.
+[ 2011-04-01T10:13:39+08:00 ] NOTIC: [8] Undefined index: administrator PublicAction.class.php 第 57 行.
+[ 2011-04-01T10:13:39+08:00 ] NOTIC: [8] Undefined index: administrator PublicAction.class.php 第 57 行.
+[ 2011-04-01T10:13:39+08:00 ] NOTIC: [8] Undefined index: administrator PublicAction.class.php 第 57 行.
+[ 2011-04-01T10:13:39+08:00 ] NOTIC: [8] Undefined index: administrator PublicAction.class.php 第 57 行.
+[ 2011-04-01T10:13:39+08:00 ] NOTIC: [8] Undefined index: authId PublicAction.class.php 第 64 行.
+[ 2011-04-01T10:13:39+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 172 行.
+[ 2011-04-01T10:13:39+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 173 行.

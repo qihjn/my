@@ -1,0 +1,258 @@
+memcacheq 服务安装与原理
+
+MEMCACHEQ的特性：
+1 简单易用
+2 处理速度快
+3 多条队列
+4 并发性能好
+5 与memcache的协议兼容。这就意味着只要装了memcache的extension就可以了，不需要额外的插件。
+6 在zend framework中使用也很方便。
+
+http://memcachedb.org/memcacheq/INSTALL.html
+
+
+Web应用中为什么会需要消息队列？主要原因是由于在高并发环境下，由于来不及同步处理，请求往往会发生堵塞，比如说，大量的insert，update之类的请求同时到达mysql，直接导致无数的行锁表锁，甚至最后请求会堆积过多，从而触发too many connections错误。通过使用消息队列，我们可以异步处理请求，从而缓解系统的压力。在Web2.0的时代，高并发的情况越来越常见，从而使消息队列有成为居家必备的趋势，相应的也涌现出了很多实现方案，像Twitter以前就使用RabbitMQ实现消息队列服务，现在又转而使用Kestrel来实现消息队列服务，此外还有很多其他的选择，比如说：ActiveMQ，ZeroMQ等。
+
+上述消息队列的软件中，大多为了实现AMQP，STOMP，XMPP之类的协议，变得极其重量级，但在很多Web应用中的实际情况是：我们只是想找到一个缓解高并发请求的解决方案，不需要杂七杂八的功能，一个轻量级的消息队列实现方式才是我们真正需要的。
+
+第一感觉是能不能使用memcached来实现消息队列？稍加考虑后就会发现它不合适，因为memcached仅仅支持键值方式的操作，没有排序之类的功能，所以如果要用它来实现消息队列，则必须自己通过某个键来保存数组形式的队列，不过这样的话，在操作队列的时候很容易丢失数据，比如说我们要添加一个消息，则需先取出现有队列，然后把消息保存到队列尾部，最后保存队列，单纯使用memcached的话，由于我们无法保证整个过程的原子性，所以当处理若干个并发请求时，各个请求间可能会互相覆盖，丢失数据就在所难免。另外，memcached只是内存键值缓存而已，一旦宕机，数据就消失了。
+
+memcacheq的出现解决了上面的问题，它在memcached的基础上实现了消息队列，以php客户端为例：
+消息从尾部入栈：memcache_set
+消息从头部出栈：memcache_get
+
+memcacheq依附于memcached之上，所以你可以通过现有的memcached工具来操作它，这无疑是它的一大优势，但它也有一个很大的缺点，那就是memcacheq本身的开发维护似乎并不活跃，如果遇到问题的话，你很可能需要自己动手解决。
+
+memcachedq安装：
+
+1.安装linux开发工具包
+(1)在可视化窗口下载打开”添加删除程序”,找到”开发->开发工具”打钩,更新.插入对应的linux安装盘.
+2.安装依赖包
+memcacheQ是一个单纯的分布式消息队列服务。它的安装依赖于BerkeleyDB 和 libevent，所以要先安装这BerkeleyDB和libevent：
+一、Berkeley DB 5.0 
+Download from 
+How to install BerkekeyDB:
+http://download.oracle.com/berkeley-db/db-5.0.21.tar.gz
+$tar xvzf db-5.0.21.tar.gz
+$cd db-5.0.21/
+$cd build_unix/
+$../dist/configure
+$make
+$sudo make install
+
+二、libevent 1.4.x
+1.下载软件包：http://monkey.org/~provos/libevent/
+
+$tar xvzf libevent-1.4.x-stable.tar.gz
+$cd libevent-1.4.x-stable
+$./configure
+$make & make install
+
+系统需要动态加载新的lib,编辑/etc/ld.so.conf,在末尾加入两行:
+vi /etc/ld.so.conf
+/usr/local/lib
+/usr/local/BerkeleyDB.5.0/lib
+ldconfig
+
+
+注意FREEBSD下没有id.so.conf可以加入到环境变量中
+vi /etc/profile
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib:/usr/local/BerkeleyDB.4.7/lib 
+
+保存后,运行 ldconfig -v 命令.
+
+三、安装memcacheQ
+$tar xvzf memcacheq-0.2.x.tar.gz
+$cd memcacheq-0.2.x
+$./configure –enable-threads
+#./configure –with-bdb=/usr/local/BerkeleyDB.5.0 –with-libevent=/usr/local/lib –enable-threads
+$make
+$sudo make install
+
+四、启动memcacheQ
+memcacheq -d -r -u wuf -p21201 -H /data1/memcacheq -N -v -L 1024 -B 1024 > /data1/mq_error.log 2>&1
+ (普通用户不用加)-u root
+
+#memcacheq：memcacheq -d -r -H /data1/memcacheq -N -R -v -L 1024 -B 1024 > /data1/mq_error.log 2>&1
+-d 后台运行
+-p 指定监听端口,这里端口是21201
+-H 数据文件存放路径,这里是/data1/memcacheq(必须事先建好目录)
+-u 指定已什么用户运行,memcacheq不允许已root运行,所以必须指定一个用户.
+
+注:指定的用户必须有数据文件的读写权限,如这里的/data1/memcacheq和/data1目录.
+可以使用”chown 用户名 目录” 的命令给目录授权.
+
+五、关闭memcacheQ
+使用ps命令查查memcacheQ的进程:ps -ef|grep wuf,然后直接将进程kill掉.
+
+六、使用
+使用以上命令启动mq后，（注意上面的-B参数表示messag的body长度不能超过1024 bytes），使用mq时只需要用到两个命令：set和get：
+
+set <queue name> <flags> 0 <message_len>\r\n<put your message body here>\r\nSTORED\r\nget <queue name>\r\nVALUE <queue name> <flags> <message_len>\r\n<your message body will come here>\r\nEND\r\n可以看到，和memcache协议基本一致，只是把key name换成queue name，而且在set的命令中，忽略了expire_time的参数。毕竟mq的数据存储是存在berkeleyDB中，做了持久化存储，没有内存的过期时间。
+
+当使用set命令时，就向指定的消息队列中写入了一条新消息，也就是向BerkeleyDB中新insert了一条数据，当使用get命令时，就从 指定队列中取出一条新消息，也就是向BerkeleyDB中delete了一条数据。当使用stats查看一个指定队列时，可以看到这个队列一共接收了多 少消息，其中被取出了多少条。
+
+示例：
+
+fengbo@onlinegame-10-121:~$ telnet 127.0.0.1 22202
+Trying 127.0.0.1…
+Connected to 127.0.0.1.
+Escape character is ‘^]’.
+set q4 0 0 5
+hello
+STORED
+set q4 0 0 5
+world
+STORED
+stats queue
+STAT q4 2/0
+END
+get q4
+VALUE q4 0 5
+hello
+END
+stats queue
+STAT q4 2/1
+END
+上面执行了两次set的命令，使用stats queue查看时，可以看到q4的队列中共有消息2条，已取出0条；当使用get取出第一条后，再此使用stats queue查看，q4中消息有2条，其中已取出1条。
+
+
+七、ZEND_QUEUE
+
+zend framework有一个与MEMCACHEQ通信的adapter:
+Zend_Queue_Adapter_Memcacheq
+
+http://framework.zend.com/manual/en/zend.queue.adapters.html
+
+下面用一个真实的例子来演示如何在zend framework中使用MEMCACHEQ。
+
+一个新闻网站，每条新闻显示的时候，都要显示出来此新闻的访问量，同时还要把它的访问量加1。
+
+这个访问量是保存到news表中的，与news的其它信息保存在一起。
+这个数据变化得非常快，缓存的意义不大。
+如果每次用户查看新闻的时候，都去数据库中执行一次update visitCount+1的操作，
+肯定是比较费力的。
+用户必须等待update完成之后，才能看到新闻的内容。
+
+使用MEMCACHEQ之后呢，我们可以把每一次访问都记录到消息队列中，然后在后台再周期性去更新数据库。
+写入消息队列的速度是非常快的，比直接更新mysql快得多得多。
+
+在viewNews.php中：
+
+<?php
+// MemcacheQ config
+$queueOptions = array(
+    'name' => 'example-queue',
+    'driverOptions' => array(
+        'host' => '127.0.0.1',
+        'port' => 22201
+    )
+);
+ 
+// Instantiate Zend_Queue
+$queue = new Zend_Queue('MemcacheQ', $queueOptions);
+ 
+// Find out if the queue exists
+if (!$queue->getAdapter()->isExists($queueOptions['name']))
+{
+    // If not, create it
+    $queue->createQueue($queueOptions['name']);
+}
+ 
+// Build a query string (key=val&key=val) because we need a scalar value
+//用户在$timestamp访问了$page页面。
+$params = http_build_query(
+    array(
+     'timestamp' => $timestamp,
+     'page' => $page
+    )
+);
+// Send the data to the queue
+$queue->send($params);
+这样就把这一次访问保存到了消息队列[example-queue]中。
+
+然后再搞个cron，去处理队列中的消息。
+
+<?php
+// MemcacheQ config
+$queueOptions = array(
+    'name' => 'example-queue',
+    'driverOptions' => array(
+        'host' => '127.0.0.1',
+        'port' => 22201
+    )
+);
+ 
+// Instantiate Zend_Queue
+$queue = new Zend_Queue('MemcacheQ', $queueOptions);
+ 
+// Retrieve 5 items from the queue
+$messages = $queue->receive(5);
+ 
+// $message is now a instance of Zend_Queue_Message_Iterator
+// @TODO: Use a nice FilterIterator ;)
+foreach ($messages as $job)
+{
+    if ('creating queue' == $job->body || false === $job->body)
+    {
+        // Skip message
+        continue;
+    }
+    // Parse the query string to a array
+    parse_str($job->body, $data);
+ 
+    // Execute the heavy process
+ //更新数据库
+    $this->registerHit($data['timestamp'], $data['page']);
+}
+
+
+八、测试 
+vim memq.php
+<?php
+header("content-type:text/html;charset=utf-8");
+$q = new memcache();
+$q->addServer('219.239.89.72','22201');
+$q->setCompressThreshold(1024,0.3);
+if(isset($_POST['content'])) {
+    echo "bytes ", strlen($_POST['content']);
+    if(!$q->set('post', $_POST['content'] )) {
+      echo "set failed";
+    }
+}
+if(isset($_GET['get'])) {
+    print_r($q->get('post'));
+    $q->close();
+    exit;
+}
+$q->close();
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>写放数据</title>
+</head>
+<body>
+<form action="?" method="post">
+输入内容<br />
+<textarea name="content" cols="40" rows="10"></textarea>
+<input type="submit" value="submit" />
+</form>
+</body>
+</html>
+
+http://192.168.0.48/memq.php?
+1 2 3 4 5
+http://192.168.0.48/memq.php?get
+1
+http://192.168.0.48/memq.php?get
+2
+http://192.168.0.48/memq.php?get
+3
+http://192.168.0.48/memq.php?get
+4
+http://192.168.0.48/memq.php?get
+5
+按先进先取
+

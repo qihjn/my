@@ -1,0 +1,159 @@
+<include file="public:header" />
+<load href="__PUBLIC__/Skin/Job/common.css"/>
+<load href="__PUBLIC__/Skin/page.css"/>
+
+<style>
+#lvl a{text-decoration:none; line-height:1.8; float:left; width:160px; color:#454545; overflow:hidden;}
+#lvl a:hover{background-color:#f90; text-decoration:none;}
+.contact td{ border-bottom:solid 1px #ccc;}
+.STYLE2 {color: #FF0000}
+.STYLE4 {
+	font-weight: bold;
+	font-size: 12px;
+	color: #FF00CC;
+}
+</style>
+				<div class="ad"><a href="http://user.21mmm.com/register.php?type=person" target="_blank"><img src="__PUBLIC__/Skin/Job/ad_42.gif" width="930" border="0"/></a></div>
+				<div class="left">
+					<div class="login">
+						<h1><span class="zb"><a href="javascript:;">所有招聘职位</a></span><span style="float:right;"><a href="/company/show_{$vo.uid}.html">更多</a></span></h1>
+						<div class="clear"></div>
+						<ul class="xahn">
+							<volist id="vo" name="alljob">
+							<li><a href='{$vo.id|jurl}' class='tdl'>{$vo.title}</a></li>
+							</volist>
+						</ul>
+					</div>
+				  <div class="login">
+						<h1><span class="zb"><a href="#">快速搜索</a></span></h1>
+						<div class="clear"></div>
+						<div class="zhiyese">
+							<include file="public:sobox" />
+						</div>
+				        <h1><span class="zb"><a href="#">求职帮助</a></span></h1>
+		      <p align="left"><br />
+					      ·点“<span style="color:#f00;">立即申请职位</span>”，企业会收到您简历并约您面试 </p>
+					    <p>　</p>
+					    <p align="left">·如果招聘单位收取押金、报名费、存档费、保证金等均属违法行为，请求职者注意规避。</p>
+					    <p align="left">&nbsp;</p>
+					    <p align="left">·正规网站应聘.<span style="color:#f00;">求职有保障</span>,欢迎举报.如遇不法企业.请<a href="http://www.21mmm.com/help/most/27.html" target="_blank">联系我们</a></p>
+					    <p align="left">&nbsp;</p>
+				    <p align="left">·<a href="http://user.21mmm.com/register.php?type=person" target="_blank">一分钟注册简历,<span style="color:#f00;">好职位,相伴一生</span></a><br />
+					      <br />
+		            </p>
+				  </div>
+				</div>
+				<div class="zhigou">
+					<div class="men" >
+						<div class="jt">
+							<div class="men_left"><img src="__PUBLIC__/Skin/Job/bj_20.jpg" /></div>
+							<div class="men_ce">
+								<ul class="huiyi">
+									<li><a href="#" class=set>招聘职位</a></li>
+									<li><a href="/company/show_{$vo.uid}.html" >企业介绍</a></li>
+								</ul>
+							</div>
+							<div class="men_left"><img src="__PUBLIC__/Skin/Job/bj_21.jpg" /></div>
+						</div>
+						<div class="balei">
+							<div class="qywyd">
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      				<tr><td bgcolor="#ff811e" height="2"></td></tr>
+									<tr> 
+										<td height="25" bgcolor="#ffeee0" class="font-14"><Font color="#000000">&nbsp;<b>{$vo.title} - {$vo.company}</b></Font></td>
+									</tr>
+                    				<tr> 
+                      					<td>
+											<table width="100%" border="0" cellspacing="1" cellpadding="4">
+												<tr>
+													<td width="15%" height="23" align="left" bgcolor="f9f9f9">职位类型：</td>
+													<td width="35%" height="23" bgcolor="#FFFFFF">{$vo.emtype}</td>
+													<td width="15%" height="23" align="left" bgcolor="f9f9f9">薪金待遇：</td>
+													<td width="35%" height="23" bgcolor="#FFFFFF">{$vo.money}</td>
+												</tr>
+												<tr><td height="1" colspan="4" bgcolor="#dddddd"></td></tr>
+												<tr> 
+												  <td width="15%" height="23" align="left" bgcolor="f9f9f9">职位：</td>
+												  <td width="35%" height="23" bgcolor="#FFFFFF">{$vo.category_id|getEnumTitle}</td>
+												  <td width="15%" height="23" align="left" bgcolor="f9f9f9">招聘人数：</td>
+												  <td width="35%" height="23" bgcolor="#FFFFFF">{$vo.num}</td>
+												</tr>
+												<tr> 
+												  <td height="1" colspan="4" bgcolor="#dddddd"></td>
+												</tr>
+												<tr> 
+												  <td height="23" align="left" bgcolor="f9f9f9">发布日期：</td>
+												  <td height="23" bgcolor="#FFFFFF">{$vo.ctime|date='Y-m-d',###}</td>
+												  <td height="23" align="left" bgcolor="f9f9f9">有效期：</td>
+												  <td height="23" bgcolor="#FFFFFF">{$vo.worklife|getEnumTitle='worklife'}</td>
+												</tr>
+												<tr> 
+												  <td height="1" colspan="4" bgcolor="#dddddd"></td>
+												</tr>
+												<tr> 
+												  <td height="23" align="left" bgcolor="f9f9f9">工作地区：</td>
+												  <td height="23" bgcolor="#FFFFFF">{$vo.workplace}</td>
+												  <td height="23" align="left" bgcolor="f9f9f9"></td>
+												  <td height="23" bgcolor="#FFFFFF"></td>
+												</tr>
+												<tr> 
+												  <td height="1" colspan="4" bgcolor="#dddddd"></td>
+												</tr>
+												<tr> 
+												  <td height="23" align="left" bgcolor="f9f9f9">学历要求：</td>
+												  <td height="23" bgcolor="#FFFFFF">{$vo.study}</td>
+												  <td height="23" align="left" bgcolor="f9f9f9">工作经验：</td>
+												  <td height="23" bgcolor="#FFFFFF">{$vo.experience}</td>
+												</tr>
+												<tr> 
+												  <td height="1" colspan="4" bgcolor="#dddddd"></td>
+												</tr>
+												<tr> 
+												  <td height="23" align="left" bgcolor="f9f9f9">性别要求：</td>
+												  <td height="23" bgcolor="#FFFFFF">{$vo.sex|sex}</td>
+												  <td height="23" align="left" bgcolor="f9f9f9">年龄:</td>
+												  <td height="23" bgcolor="#FFFFFF">{$vo.age}</td>
+												</tr>
+												<tr> 
+												  <td height="1" colspan="4" bgcolor="#dddddd"></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+								<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+									<tr><td height="5"></td></tr>
+								</table>
+								<table width="100%" border="0" cellspacing="0" cellpadding="4">
+									<tr><td style="line-height:20px;"><strong>职位描述：</strong><br> {$vo.request} </td></tr>
+								</table>
+                                <div id="contact"></div>
+                               
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+								<tr><td height="5"></td></tr>
+							  </table>
+								<table width="100%" border="0" cellspacing="1" cellpadding="0">
+									<tr>
+										<td height="30" align="center"><a href="#" onclick="apply('{$vo.id}');"><img src="__PUBLIC__/Skin/Job/job_bt1.gif" width="140" height="36" border="0"></a>&nbsp;&nbsp;<a href="http://user.21mmm.com/person/resume.php" target="_blank" ><img src="__PUBLIC__/Skin/Job/job_bt2.gif" width="140" height="36" border="0"></a>&nbsp;&nbsp;<a href="#" onclick="a();" ><img src="__PUBLIC__/Skin/Job/job_bt3.gif" width="140" height="36" border="0"></a>&nbsp;&nbsp;</a> </td>
+									</tr>
+									<tr>
+										<td height="25" align="center"> <p>　</p>
+										  <p><a href="#"  onclick="fav({$vo.id});" style="color:#0066FF; text-decoration:underline;">『加入职位收藏夹』</a>&nbsp;&nbsp; <a href="#" style="color:#0066FF; text-decoration:underline;">『推荐给好友』</a> &nbsp;<span class="STYLE2">&nbsp; </span><a href="#" class="STYLE4" style="text-decoration:underline;">『在线咨询』</a> </p></td>
+									</tr>
+								</table>
+							</div>
+							
+							
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+<include file="public:footer" />
+<script language="javascript" type="text/javascript">
+
+function a(){
+	var url = URL+"/contact/uid/{$vo.uid}/workplace/{$vo.workplalce}/category_id/{$vo.category_id}";
+	contact(url); 
+
+}
+</script>

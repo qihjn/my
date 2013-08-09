@@ -1,0 +1,85 @@
+对于数据量很大的一张表，i/o效率底下，分表势在必行！
+
+ 
+
+使用程序分，对不同的查询，分配到不同的子表中，是个解决方案，但要改代码，对查询不透明。
+
+ 
+
+好在mysql 有两个解决方案：
+
+ 
+
+Partition（分区，在MySQL 5.1.中实现） 和 Mysql Merge存储引擎。
+
+ 
+
+本文讨论 Mysql Merge存储引擎。
+
+ 
+
+ 
+
+ 
+
+ CREATE TABLE t1 (  a INT NOT NULL AUTO_INCREMENT PRIMARY KEY,  message CHAR(20));
+ CREATE TABLE t2 (  a INT NOT NULL AUTO_INCREMENT PRIMARY KEY,  message CHAR(20));
+
+
+INSERT INTO t1 (message) VALUES ('Testing'),('table'),('t1');
+
+ INSERT INTO t2 (message) VALUES ('Testing'),('table'),('t2');
+
+ CREATE TABLE total (a INT NOT NULL AUTO_INCREMENT PRIMARY KEY, message CHAR(20)) ENGINE=MERGE  UNION=(t1,t2) INSERT_METHOD=LAST;
+
+ 
+
+ 
+
+ 
+
+对应定期分表的情况下，只要定期相应的增加一个基础表，再修改merge表中的 union 就行了（ALTER TABLE tbl_name  UNION=(...)）。
+
+ 
+
+如在增加一个表（需和其他基础表一样的结构）：
+
+ CREATE TABLE t3(  a INT NOT NULL AUTO_INCREMENT PRIMARY KEY,  message CHAR(20));
+
+ALTER TABLE total  UNION=(t1,t2,t3)
+
+ 
+
+ 
+
+INSERT_METHOD=LAST;表示插入的方法，INSERT_METHOD的值可以是 FIRST（插入第一个表），LAST（最后一个表），NO（不能插入）
+
+ 
+
+ 
+
+ 
+
+查询的时候，和平常一样
+
+ 
+
+select * from total where ....
+
+ 
+
+merge表会自动找到相应的基础表进行查询。
+
+ 
+
+需要注意的是 merge表并不维护 “唯一性”检查，唯一性有各基础表完成。所以插入新的记录时候可能和其他基础表的内容重复。所以再插入去需要用代码进行唯一性检查。
+
+ 
+
+ 
+
+详情参考：
+
+http://dev.mysql.com/doc/refman/5.1/en/merge-storage-engine.html
+
+http://dev.mysql.com/doc/refman/5.1/zh/storage-engines.html#merge-storage-engine

@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title></title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+                <textarea name="content" id="content" cols="45" rows="5"></textarea>
+                
+                <br />
+                <input type="submit" name="button" id="button" value="提交" />
+<br />
+</form>
+       
+        懒得打字？“快速提问”帮您忙！<br>
+        <select size="8" multiple="multiple" id="question">
+            <option>请选择常用问题</option>
+            <option>我对贵公司的产品非常感兴趣,能否发一些详细资料给我参考？</option>
+            <option>请您发一份比较详细的产品规格及相关报价单，谢谢！</option>
+            <option>请问贵公司产品的代理条件是什么？</option>
+            <option>我公司有意购买此产品，可否提供此产品的报价单和最小起订量，希望能与贵司合作！</option>
+            <option>您好，我是小批量买家，请问贵公司此产品的最小起订量是多少？</option>
+        </select>
+<input  type="text" value="bb" id="q" />
+<script language="javascript" src="jq.js" type="text/javascript"></script>
+<script language="javascript" >
+//alert($('#q').val());
+
+$("#question").change(function(){
+	$("#content").val($("#content").val()+$(this).val()+"\r\n");
+	
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,414 @@
+[ 2011-05-20T20:47:02+08:00 ] SQL:  RunTime:0.025694s SQL = SHOW COLUMNS FROM mmm_index
+[ 2011-05-20T20:47:02+08:00 ] NOTIC: [2048] Declaration of ResumeModel::delete() should be compatible with that of Model::delete() ResumeModel.class.php 第 3 行.
+[ 2011-05-20T20:47:02+08:00 ] SQL:  RunTime:0.106700s SQL = SHOW COLUMNS FROM u_person
+[ 2011-05-20T20:47:02+08:00 ] SQL:  RunTime:0.127099s SQL = SHOW COLUMNS FROM n_job
+[ 2011-05-20T20:47:03+08:00 ] SQL:  RunTime:0.037820s SQL = SHOW COLUMNS FROM u_unit
+[ 2011-05-20T20:47:03+08:00 ] SQL:  RunTime:0.069973s SQL = SHOW COLUMNS FROM adlink
+[ 2011-05-20T20:47:03+08:00 ] SQL:  RunTime:0.031267s SQL = SHOW COLUMNS FROM dbo_province
+[ 2011-05-20T20:47:03+08:00 ] NOTIC: [8] Undefined variable: code IndexAction.class.php 第 17 行.
+[ 2011-05-20T20:47:03+08:00 ] NOTIC: [8] Undefined index: IP_province functions.php 第 1250 行.
+[ 2011-05-20T20:47:03+08:00 ] NOTIC: [8] Undefined index: IP_province functions.php 第 1127 行.
+[ 2011-05-20T20:47:03+08:00 ] SQL:  RunTime:0.004104s SQL = SHOW COLUMNS FROM mmm_ip
+[ 2011-05-20T20:47:03+08:00 ] SQL:  RunTime:0.001360s SQL = select city,province from mmm_ip where 1019092016>=ip1 and 1019092016<=ip2 limit 1
+[ 2011-05-20T20:47:03+08:00 ] SQL:  RunTime:0.015905s SQL = SELECT `code` FROM `dbo_province` WHERE ( `title` LIKE '%上海%' ) LIMIT 1 
+[ 2011-05-20T20:47:03+08:00 ] SQL:  RunTime:0.532742s SQL = SELECT * FROM `u_person` WHERE ( (`local` LIKE '%上海%') OR (`local` LIKE '全国') OR (`local` = '') ) AND ( `status` = 1 ) ORDER BY ctime desc LIMIT 10 
+[ 2011-05-20T20:47:04+08:00 ] SQL:  RunTime:0.651079s SQL = SELECT * FROM `u_person` WHERE ( (`local` LIKE '%上海%') OR (`local` LIKE '全国') OR (`local` = '') ) AND ( `status` = 1 ) AND ( `up` = 1 ) ORDER BY ctime desc LIMIT 10 
+[ 2011-05-20T20:47:04+08:00 ] NOTIC: [8] Undefined variable: table CommonModel.class.php 第 140 行.
+[ 2011-05-20T20:47:04+08:00 ] NOTIC: [8] Undefined variable: field CommonModel.class.php 第 148 行.
+[ 2011-05-20T20:47:04+08:00 ] NOTIC: [8] Undefined variable: order CommonModel.class.php 第 149 行.
+[ 2011-05-20T20:47:04+08:00 ] NOTIC: [8] Undefined variable: sort CommonModel.class.php 第 150 行.
+[ 2011-05-20T20:47:07+08:00 ] SQL:  RunTime:2.730536s SQL = SELECT * FROM `u_person` LEFT JOIN img_base on img_base.tid=u_person.pid  WHERE ( `status` = '1' ) AND ( `setdefault` = '1' ) AND ( (`local` LIKE '%上海%') OR (`local` LIKE '全国') OR (`local` = '') ) AND ( `type` = 'job' ) AND ( `utype` = 'person_face' ) AND ( `thumb` != '' ) ORDER BY u_person.ctime desc LIMIT 6 
+[ 2011-05-20T20:47:10+08:00 ] SQL:  RunTime:3.207126s SQL = SELECT * FROM `u_person` WHERE ( (`local` LIKE '%上海%') OR (`local` LIKE '全国') OR (`local` = '') ) AND ( `em_type` IN ('实习','三者均可') ) ORDER BY ctime desc LIMIT 10 
+[ 2011-05-20T20:47:10+08:00 ] SQL:  RunTime:0.000299s SQL = SELECT COUNT(pid) AS tp_count FROM `u_person` LIMIT 1 
+[ 2011-05-20T20:47:10+08:00 ] NOTIC: [8] Undefined variable: order CommonModel.class.php 第 149 行.
+[ 2011-05-20T20:47:10+08:00 ] NOTIC: [8] Undefined variable: sort CommonModel.class.php 第 150 行.
+[ 2011-05-20T20:47:10+08:00 ] SQL:  RunTime:0.187023s SQL = SELECT *, j.title as jtitle,c.title as ctitle FROM n_job as j LEFT JOIN u_unit as c on c.uid=j.uid WHERE ( (`workplace` LIKE '%上海%') OR (`workplace` LIKE '全国') OR (`workplace` = '') ) ORDER BY j.ctime desc LIMIT 10 
+[ 2011-05-20T20:47:10+08:00 ] NOTIC: [8] Undefined variable: order CommonModel.class.php 第 149 行.
+[ 2011-05-20T20:47:10+08:00 ] NOTIC: [8] Undefined variable: sort CommonModel.class.php 第 150 行.
+[ 2011-05-20T20:47:10+08:00 ] SQL:  RunTime:0.162804s SQL = SELECT *, j.title as jtitle,c.title as ctitle FROM n_job as j LEFT JOIN u_unit as c on c.uid=j.uid WHERE ( (`workplace` LIKE '%上海%') OR (`workplace` LIKE '全国') OR (`workplace` = '') ) AND ( c.up = 1 ) ORDER BY j.ctime desc LIMIT 10 
+[ 2011-05-20T20:47:10+08:00 ] NOTIC: [8] Undefined variable: order CommonModel.class.php 第 149 行.
+[ 2011-05-20T20:47:10+08:00 ] NOTIC: [8] Undefined variable: sort CommonModel.class.php 第 150 行.
+[ 2011-05-20T20:47:13+08:00 ] SQL:  RunTime:3.143175s SQL = SELECT *, j.title as jtitle,c.title as ctitle FROM n_job as j LEFT JOIN u_unit as c on c.uid=j.uid WHERE ( (`workplace` LIKE '%上海%') OR (`workplace` LIKE '全国') OR (`workplace` = '') ) AND ( `emtype` IN ('实习','三者均可') ) ORDER BY j.ctime desc LIMIT 10 
+[ 2011-05-20T20:47:13+08:00 ] SQL:  RunTime:0.000327s SQL = SELECT COUNT(nid) AS tp_count FROM `u_unit` LIMIT 1 
+[ 2011-05-20T20:47:13+08:00 ] SQL:  RunTime:0.000225s SQL = SELECT COUNT(id) AS tp_count FROM `n_job` LIMIT 1 
+[ 2011-05-20T20:47:13+08:00 ] SQL:  RunTime:0.014662s SQL = SELECT * FROM `adlink` WHERE ( `pcode` IN ('-1','310000') ) ORDER BY ctime desc LIMIT 20 
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined index: titletext TagLibCx.class.php 第 65 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined index: titileurl TagLibCx.class.php 第 66 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined index: titletext TagLibCx.class.php 第 65 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined index: titileurl TagLibCx.class.php 第 66 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined index: titletext TagLibCx.class.php 第 65 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined index: titileurl TagLibCx.class.php 第 66 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: keywords 9531917b8e28722a58e571262e7b0bff.php 第 5 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: description 9531917b8e28722a58e571262e7b0bff.php 第 6 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: pageTitle 9531917b8e28722a58e571262e7b0bff.php 第 7 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: a_name 9531917b8e28722a58e571262e7b0bff.php 第 112 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: a_name 9531917b8e28722a58e571262e7b0bff.php 第 113 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: a_name 9531917b8e28722a58e571262e7b0bff.php 第 114 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: a_name 9531917b8e28722a58e571262e7b0bff.php 第 115 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: worklife_slt 9531917b8e28722a58e571262e7b0bff.php 第 250 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 283 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.072429s SQL = SHOW COLUMNS FROM mmm_enum
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.014909s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 283 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000712s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000566s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 283 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000638s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000533s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 283 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000508s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000509s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000502s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000575s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 283 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000551s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 283 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000507s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000540s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000604s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 283 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000531s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 283 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000509s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000591s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000502s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000499s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000581s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 283 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000523s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000507s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 283 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000502s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000502s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000519s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000501s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000500s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 303 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000503s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 303 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000503s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000501s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 303 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000685s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 303 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000637s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 303 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000626s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000605s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000564s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000623s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000530s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 303 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000507s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 303 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000634s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000538s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000514s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000504s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 303 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000513s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000507s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 303 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000505s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000513s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 303 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000510s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000509s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000506s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000505s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000508s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000922s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: provice 9531917b8e28722a58e571262e7b0bff.php 第 308 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000614s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000512s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000524s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000540s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000524s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000511s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000512s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000504s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000503s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000503s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000504s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000522s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000512s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000555s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000516s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 387 行.
+[ 2011-05-20T20:47:14+08:00 ] SQL:  RunTime:0.000516s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: provice 9531917b8e28722a58e571262e7b0bff.php 第 392 行.
+[ 2011-05-20T20:47:14+08:00 ] NOTIC: [8] Undefined variable: infouid 9531917b8e28722a58e571262e7b0bff.php 第 436 行.
+[ 2011-05-20T20:47:17+08:00 ] SQL:  RunTime:0.104508s SQL = SHOW COLUMNS FROM u_user
+[ 2011-05-20T20:47:17+08:00 ] NOTIC: [8] Undefined index: CnMQkauthId Cookie.class.php 第 33 行.
+[ 2011-05-20T21:05:47+08:00 ] SQL:  RunTime:0.003793s SQL = SHOW COLUMNS FROM mmm_index
+[ 2011-05-20T21:05:47+08:00 ] NOTIC: [2048] Declaration of ResumeModel::delete() should be compatible with that of Model::delete() ResumeModel.class.php 第 3 行.
+[ 2011-05-20T21:05:47+08:00 ] SQL:  RunTime:0.005072s SQL = SHOW COLUMNS FROM u_person
+[ 2011-05-20T21:05:47+08:00 ] SQL:  RunTime:0.004102s SQL = SHOW COLUMNS FROM n_job
+[ 2011-05-20T21:05:47+08:00 ] SQL:  RunTime:0.004362s SQL = SHOW COLUMNS FROM u_unit
+[ 2011-05-20T21:05:47+08:00 ] SQL:  RunTime:0.003534s SQL = SHOW COLUMNS FROM adlink
+[ 2011-05-20T21:05:47+08:00 ] SQL:  RunTime:0.003054s SQL = SHOW COLUMNS FROM dbo_province
+[ 2011-05-20T21:05:47+08:00 ] NOTIC: [8] Undefined variable: code IndexAction.class.php 第 17 行.
+[ 2011-05-20T21:05:47+08:00 ] SQL:  RunTime:0.000843s SQL = SELECT `code` FROM `dbo_province` WHERE ( `title` LIKE '%上海%' ) LIMIT 1 
+[ 2011-05-20T21:05:47+08:00 ] SQL:  RunTime:0.011100s SQL = SELECT * FROM `u_person` WHERE ( (`local` LIKE '%上海%') OR (`local` LIKE '全国') OR (`local` = '') ) AND ( `status` = 1 ) ORDER BY ctime desc LIMIT 10 
+[ 2011-05-20T21:05:47+08:00 ] SQL:  RunTime:0.020711s SQL = SELECT * FROM `u_person` WHERE ( (`local` LIKE '%上海%') OR (`local` LIKE '全国') OR (`local` = '') ) AND ( `status` = 1 ) AND ( `up` = 1 ) ORDER BY ctime desc LIMIT 10 
+[ 2011-05-20T21:05:47+08:00 ] NOTIC: [8] Undefined variable: table CommonModel.class.php 第 140 行.
+[ 2011-05-20T21:05:47+08:00 ] NOTIC: [8] Undefined variable: field CommonModel.class.php 第 148 行.
+[ 2011-05-20T21:05:47+08:00 ] NOTIC: [8] Undefined variable: order CommonModel.class.php 第 149 行.
+[ 2011-05-20T21:05:47+08:00 ] NOTIC: [8] Undefined variable: sort CommonModel.class.php 第 150 行.
+[ 2011-05-20T21:05:47+08:00 ] SQL:  RunTime:0.409849s SQL = SELECT * FROM `u_person` LEFT JOIN img_base on img_base.tid=u_person.pid  WHERE ( `status` = '1' ) AND ( `setdefault` = '1' ) AND ( (`local` LIKE '%上海%') OR (`local` LIKE '全国') OR (`local` = '') ) AND ( `type` = 'job' ) AND ( `utype` = 'person_face' ) AND ( `thumb` != '' ) ORDER BY u_person.ctime desc LIMIT 6 
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.526746s SQL = SELECT * FROM `u_person` WHERE ( (`local` LIKE '%上海%') OR (`local` LIKE '全国') OR (`local` = '') ) AND ( `em_type` IN ('实习','三者均可') ) ORDER BY ctime desc LIMIT 10 
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000185s SQL = SELECT COUNT(pid) AS tp_count FROM `u_person` LIMIT 1 
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: order CommonModel.class.php 第 149 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: sort CommonModel.class.php 第 150 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.001416s SQL = SELECT *, j.title as jtitle,c.title as ctitle FROM n_job as j LEFT JOIN u_unit as c on c.uid=j.uid WHERE ( (`workplace` LIKE '%上海%') OR (`workplace` LIKE '全国') OR (`workplace` = '') ) ORDER BY j.ctime desc LIMIT 10 
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: order CommonModel.class.php 第 149 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: sort CommonModel.class.php 第 150 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.002309s SQL = SELECT *, j.title as jtitle,c.title as ctitle FROM n_job as j LEFT JOIN u_unit as c on c.uid=j.uid WHERE ( (`workplace` LIKE '%上海%') OR (`workplace` LIKE '全国') OR (`workplace` = '') ) AND ( c.up = 1 ) ORDER BY j.ctime desc LIMIT 10 
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: order CommonModel.class.php 第 149 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: sort CommonModel.class.php 第 150 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.129965s SQL = SELECT *, j.title as jtitle,c.title as ctitle FROM n_job as j LEFT JOIN u_unit as c on c.uid=j.uid WHERE ( (`workplace` LIKE '%上海%') OR (`workplace` LIKE '全国') OR (`workplace` = '') ) AND ( `emtype` IN ('实习','三者均可') ) ORDER BY j.ctime desc LIMIT 10 
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000179s SQL = SELECT COUNT(nid) AS tp_count FROM `u_unit` LIMIT 1 
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000085s SQL = SELECT COUNT(id) AS tp_count FROM `n_job` LIMIT 1 
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000683s SQL = SELECT * FROM `adlink` WHERE ( `pcode` IN ('-1','310000') ) ORDER BY ctime desc LIMIT 20 
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined index: titletext TagLibCx.class.php 第 65 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined index: titileurl TagLibCx.class.php 第 66 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined index: titletext TagLibCx.class.php 第 65 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined index: titileurl TagLibCx.class.php 第 66 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined index: titletext TagLibCx.class.php 第 65 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined index: titileurl TagLibCx.class.php 第 66 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: keywords 9531917b8e28722a58e571262e7b0bff.php 第 5 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: description 9531917b8e28722a58e571262e7b0bff.php 第 6 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: pageTitle 9531917b8e28722a58e571262e7b0bff.php 第 7 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: a_name 9531917b8e28722a58e571262e7b0bff.php 第 112 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: a_name 9531917b8e28722a58e571262e7b0bff.php 第 113 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: a_name 9531917b8e28722a58e571262e7b0bff.php 第 114 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: a_name 9531917b8e28722a58e571262e7b0bff.php 第 115 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: worklife_slt 9531917b8e28722a58e571262e7b0bff.php 第 250 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 283 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.002735s SQL = SHOW COLUMNS FROM mmm_enum
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000643s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 283 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000389s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000361s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 283 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000373s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000361s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 283 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000359s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000356s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000369s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000356s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 283 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000357s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 283 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000356s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000356s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000368s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 283 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000360s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 283 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000356s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000354s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000358s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000389s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000415s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 283 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000409s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000358s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 283 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000357s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000356s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000356s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000358s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000354s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 303 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000357s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 303 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000355s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000355s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 303 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000358s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 303 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000354s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 303 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000355s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000367s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000374s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000355s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000355s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 303 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000356s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 303 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000356s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000355s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000355s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000357s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 303 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000381s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000373s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 303 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000358s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000357s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 303 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000370s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000364s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000357s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000356s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000354s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000356s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: provice 9531917b8e28722a58e571262e7b0bff.php 第 308 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000365s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000360s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000355s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000356s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000407s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000362s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000357s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000356s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000354s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000352s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000353s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000354s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000357s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000355s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000356s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined index: local2 9531917b8e28722a58e571262e7b0bff.php 第 387 行.
+[ 2011-05-20T21:05:48+08:00 ] SQL:  RunTime:0.000373s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: provice 9531917b8e28722a58e571262e7b0bff.php 第 392 行.
+[ 2011-05-20T21:05:48+08:00 ] NOTIC: [8] Undefined variable: infouid 9531917b8e28722a58e571262e7b0bff.php 第 436 行.
+[ 2011-05-20T21:05:50+08:00 ] SQL:  RunTime:0.003491s SQL = SHOW COLUMNS FROM u_user
+[ 2011-05-20T21:05:50+08:00 ] NOTIC: [8] Undefined index: CnMQkauthId Cookie.class.php 第 33 行.

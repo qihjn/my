@@ -1,0 +1,28 @@
+                        	<eq name="logined" value="n">
+                            <div class="bj_live_left">
+                            <form action="__APP__/public/checklogin" method="post">
+                                <span style="font-weight:bold; color:#333;">通行证：</span>	    
+                                <input name="username" type="text" style="width:70px;" id="username"/>
+                                <span style="font-weight:bold; color:#333;">密码：</span>
+                                <input name="password" type="text" style="width:70px;" id="password"/>
+                                <span style="vertical-align:middle;"><input type="image"  src="__PUBLIC__/Skin/Index/nmdl.jpg" /></span>
+                                <span style="padding-left:3px; vertical-align:middle;"><a href="/public/register"><img src="__PUBLIC__/Skin/Index/zhuce.jpg" /></a></span>
+                                <span style="padding-left:3px;"><a href="#">忘记密0000码</a></span>欢迎您{$Think.session.loginUserName}
+                            </form>
+                            </div>
+                            </eq>
+                            <eq name="logined" value="y">
+                             <div class="bj_live_left">
+                             	您好:
+                                <span style="font-weight:bold; color:#333;">{$u.username}</span>	    
+                                上次登录:
+                                <span style="font-weight:bold; color:#333;">{$u.lastLoginTime}</span>
+                                登录次数:
+                                <span style="font-weight:bold; color:#333;">{$u.loginCount}</span>			
+                               	新消息:
+                                <span style="font-weight:bold; color:#333;">{$u.loginCount}</span>
+                                <span style="padding-left:3px;"><a href="/public/logout" style="color:#f00;">退出</a></span>
+                             </div>
+                            </eq>
+                            
+                           

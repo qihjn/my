@@ -1,0 +1,106 @@
+<include file="Public:header" />
+<script type="text/javascript">
+    function checkForm() {
+        var title = $("#title").val();
+        var username = $("#username").val();
+        var sex = $("#sex").val();
+        var content = $("#content").val();
+        var verifyCode = $("#verifyCode").val();
+
+        if (title == '') {
+            alert('主题必须填写');
+            return false;
+        } else if (username == '') {
+            alert('姓名必须填写');
+            return false;
+        } else if (sex == '') {
+            alert('性别必须选择');
+            return false;
+        } else if (content == '') {
+            alert('内容必须填写');
+            return false;
+        } else if (verifyCode == '') {
+            alert('验证码必须填写');
+            return false;
+        } else {
+            return true;
+        }
+    }
+</script><!--单页-->
+<div id="page" class="clear">
+<div id="category">
+<ul>
+<include file="Public:about_left" />
+</ul>
+</div>
+<div id="main">
+<h3 class="title">意见反馈<em> Feedback</em></h3>
+<div class="con">
+
+<div class="pages"><div class="plist">{$pageContentBar}</div></div>
+<div id="fbTable">
+<volist name="dataContentList" id="fRow">
+<div class="fbRow clear">
+<div class="Face"><img src="__PUBLIC__/Front/{$fRow.sex|a2bc=1,'boy.jpg','gril.jpg'}" />
+<br />
+{$fRow.username}</div>
+<div class="fbCon"><h3>{$fRow.title}</h3>
+<div>
+ {$fRow.content|nl2br}
+  <neq name="fRow['reply_content']" value="">
+    <span>管理回复:<br />
+{$fRow.reply_content|strip_tags|nl2br}</span></neq>
+</div>
+</div>
+</div>
+</volist>
+</div>
+
+<div class="pages"><div class="plist">{$pageContentBar}</div></div>
+
+</div>
+<div class="con"><form action="{:U('Feedback/doInsert')}" method="post" onsubmit="return checkForm()">
+  <label>主题：
+    <input type="text" name="title" id="title" />
+  </label>
+  *<br />
+  <label>姓名：
+    <input type="text" name="username" id="username" />
+    * 性别：
+    <select name="sex" id="sex">
+      <option value="1" selected="selected">男</option>
+      <option value="0">女</option>
+    </select>
+  </label>
+  * <br />
+  <label>电话：
+    <input type="text" name="telephone" id="telephone" />
+    传真： 
+    <input type="text" name="fax" id="fax" />
+  </label>
+  <br />
+  <label>手机：
+    <input type="text" name="mobile_tel" id="mobile_tel" /> 
+    q q ：
+    <input type="text" name="qq" id="qq" />
+  </label>
+  <br />
+  <label>网址：
+    <input type="text" name="web_url" id="web_url" />
+  邮箱：
+  <input type="text" name="email" id="email" /></label>
+  <br />
+  <label>留言内容：
+      <br />
+      <textarea name="content" cols="50" rows="7" id="content"></textarea>
+  </label>
+  *<br />
+  验证码：
+   <input name="verifyCode" type="text" class="t_input" id="verifyCode" style="margin-right:5px;width:55px;" value="" maxlength="4" /><img src="{:U('Index/verify')}" align="absmiddle" class="checkcode" title="如果您无法识别验证码，请点图片更换" id="verifyImage"/> 
+   <input type="submit" name="button" id="button" value="提交留言" />
+</form>
+</div>
+</div>
+</div>
+<!--底部-->
+<include file="Public:footer" />

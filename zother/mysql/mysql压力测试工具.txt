@@ -1,0 +1,22 @@
+1.	mysql压力测试工具 mysqlslap
+mysqlslap -uxxx -pxxx --create-schema=test --number-of-queries=5000000 --concurrency=1  -q"insert into t(v)values('aaaaaaa');"
+
+
+
+
+
+
+其中: create-schema用来指定mysqlslap需要的数据库，如果不指定，他会默认找mysqlslap这个库。 number-of-queries，要执行的查询次数。 concurrency,并发的链接数。 -q 后面就是要执行的sql语句，也可以指定取一个文件中的数据。
+
+测试，分别50和100个并发，执行1000次总查询：
+mysqlslap -a --concurrency=50,100 --number-of-queries 1000 --debug-info
+mysqlslap -a --only-print
+测试同时不同的存储引擎的性能进行对比：
+mysqlslap -a --concurrency=50,100 --number-of-queries 1000 --iterations=5 --engine=myisam,innodb --debug-info
+
+评论表测试
+mysqlslap -uroot -p2144testmysql --create-schema=app_2144_cn --number-of-queries=100 --concurrency=100  -q"SELECT *,p.id as pid FROM t_photo_cache AS p,t_comment as c,flash_flash as f where c.f_gid = p.gid and c.f_id = p.topicid and f.id = p.gid and c.f_hide=0 and p.hide=0 and c.f_uid<>0;"
+
+
+龙斗士count的测试
+mysqlslap -uroot -p2144testmysql --create-schema=app_2144_cn --number-of-queries=100 --concurrency=100  -q"SELECT COUNT(1) from  t_comment_6 left join t_photo on gid=f_gid and topicid=f_id   WHERE f_gid='27578' AND ( f_hide=0  ) AND f_category_id = 1  ORDER BY f_top DESC,f_id DESC;"

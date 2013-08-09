@@ -1,0 +1,495 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="Discuz二次开发,Discuz程序文件目录含义" />
+<meta name="Description" content="DZ程序文件目录含义" />
+<title>Discuz!程序文件目录含义</title>
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="themes\zmb\style.css" rel="stylesheet" type="text/css" />
+<link href="themes\zmb\css\main.css" rel="stylesheet" type="text/css" />
+<link href="themes\zmb\css\css01.css" rel="stylesheet" type="text/css" />
+
+<body>
+
+<div class="block box"> </div>
+<div class="blank"></div>
+<div class="wrapper1">
+   <div class="box_1">
+   <div>
+     <table width="100%" border="0" cellspacing="0" cellpadding="0">
+       <tr>
+         <td width="75%" bgcolor="#F0F6FC" valign="top">
+      <div class="box_news">
+        <h2>Discuz!程序文件目录含义</h2>
+        <div class="box_news_info">最模板 / 2010-09-02 <a href="#" class="link08">收藏</a> <a href="#" class="link08">推荐</a> <a href="#" class="link08">投稿</a></div>
+        <div class="box_news_content">
+          <p>&nbsp;<font size="6">DZ</font><font face="宋体 "><font style="FONT-SIZE: 22pt">程序文件<span class="t_tag" href="tag.html" nclick="tagshow(event)">目录</span>含义</font></font><br />
+<font size="3"><font color="#000000"><font face="宋体 ">基于</font><font face="Calibri ">7.0</font><font face="宋体 ">的标准程序</font><font face="Calibri ">,</font><font face="宋体 ">部分与插件无关的文件不作说明</font></font></font><br />
+<font size="3"><font color="#000000"><strong><u><font face="宋体 ">文件颜色说明</font></u></strong><strong><u>:</u></strong></font></font><br />
+<font size="3"><strong><font color="red"><font face="宋体 ">红色</font></font></strong><strong><font color="red">:</font></strong><strong><font color="red"><font face="宋体 ">程序核心文件，修改这类文件时千万要注意安全</font></font></strong><strong><font color="red">!</font></strong></font><br />
+<font size="3"><strong><font color="darkorange"><font face="宋体 ">橙色</font></font></strong><strong><font color="darkorange">:</font></strong><strong><font color="darkorange"><font face="宋体 ">做插件几乎不会用到的文件，大概了解功能就可以了</font></font></strong><strong><font color="darkorange">,</font></strong><strong><font color="darkorange"><font face="宋体 ">其实我也不推荐修改这些文件</font></font></strong></font><br />
+<font size="3"><strong><font color="green"><font face="宋体 ">绿色</font></font></strong><strong><font color="green">:</font></strong><strong><font color="green"><font face="宋体 "><span class="t_tag" href="tag.html" nclick="tagshow(event)">函数</span>类文件</font></font></strong><strong><font color="green">,</font></strong><strong><font color="green"><font face="宋体 ">许多功能强大的自定义函数可以调用这类文件来使用</font></font></strong></font><br />
+<font size="3"><strong><font color="blue"><font face="宋体 ">蓝色</font></font></strong><strong><font color="blue">:</font></strong><strong><font color="blue"><font face="宋体 ">最标准的插件制作常用文件</font></font></strong></font><font size="3"><strong><font color="purple"><font face="宋体 ">紫色</font></font></strong><strong><font color="purple">:</font></strong><strong><font color="purple"><font face="宋体 ">该文件被</font></font></strong><strong><font color="purple">Zend</font></strong><strong><font color="purple"><font face="宋体 ">加密，请不要修改这类文件</font></font></strong></font><br />
+<font size="3"><font color="#000000"><strong><font face="宋体 ">每个目录里面都有一个空的</font></strong><strong><span class="t_tag" href="tag.html" nclick="tagshow(event)">index</span>.htm,</strong><strong><font face="宋体 ">这是为了防止列目录用的，不必理会</font></strong><strong>.</strong></font></font><br />
+<font size="3"><strong><font color="red"><font face="宋体 ">根目录</font></font></strong><strong><font color="red">./</font></strong><strong><font color="red"><font face="宋体 ">（这里都是最基本的程序）</font></font></strong></font><br />
+<font color="blue"><font face="Calibri "><font size="3">admincp.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3"><span class="t_tag" href="tag.html" nclick="tagshow(event)">后台</span><span class="t_tag" href="tag.html" nclick="tagshow(event)">系统</span>设置主程序文件，一般只处理<span class="t_tag" href="tag.html" nclick="tagshow(event)">菜单</span>的显示的访问权限，不处理管理控制。</font></font></font><br />
+<font size="3"><font color="blue"><font face="Calibri ">ajax.php&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">论坛<span class="t_tag" href="tag.html" nclick="tagshow(event)">模板</span>的</font></font><font color="blue"><font face="Calibri ">ajax</font></font><font color="blue"><font face="宋体 ">判断及<span class="t_tag" href="tag.html" nclick="tagshow(event)">数据</span>返回都在这里进行</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">attachment.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">附件文件，仅仅处理附件<span class="t_tag" href="tag.html" nclick="tagshow(event)"><a href="http://soft.zdnet.com.cn/software_zone/2009/1207/1540973.shtml" target="_self"><u><strong>下载</strong></u></a></span>的功能。</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">announcement.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛公告的显示，一般很少改</font></font></font><br />
+<font size="3"><font color="darkorange"><font face="Calibri ">config.inc.php&mdash;&mdash;</font></font><font color="darkorange"><font face="宋体 ">配置论坛<span class="t_tag" href="tag.html" nclick="tagshow(event)">数据库</span>、密码等信息，这个大家最熟悉了</font></font></font><br />
+<font color="darkorange"><font face="Calibri "><font size="3"><a title="Discuz" href="http://soft.zdnet.com.cn/files/list-0-0-50118-1-1.htm">Discuz</a>_version.php&mdash;&mdash;</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">论坛版本信息，用来更新用的，没有官方说明绝对不要修改</font></font></font><br />
+<font color="darkorange"><font face="Calibri "><font size="3">eccredit.php&mdash;&mdash;</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">论坛商品功能以及信用度查看的处理文件</font></font></font><br />
+<font color="darkorange"><font face="Calibri "><font size="3">faq.php&mdash;&mdash;</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">论坛自带的帮助</font></font></font><br />
+<font color="darkorange"><font face="Calibri "><font size="3">favicon.ico&mdash;&mdash;</font></font></font><font size="3"><font color="darkorange"><font face="宋体 ">显示在</font></font><font color="darkorange"><font face="Calibri ">IE</font></font><font color="darkorange"><font face="宋体 ">标题栏的的图标</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">forumdisplay.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">很简单，论坛主题列表的显示</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">index.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">控制首页元素显示</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">invite.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛邀请<span class="t_tag" href="tag.html" nclick="tagshow(event)">注册</span>程序文件</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">leftmenu.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">首页侧栏文件</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">logging.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">登陆系统，判断用户名、密码。</font></font></font><br />
+<font size="3"><font color="blue"><font face="Calibri ">magic.php&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">论坛道具程序文件，处理道具<a href="http://soft.zdnet.com.cn/software_zone/2009/1207/1540973.shtml" target="_self"><u><strong>购买</strong></u></a>、赠送等操作</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">medal.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛勋章中心程序文件，处理勋章发送等功能</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">member.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">控制会员列表显示，积分策略等等信息显示</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">memcp.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">会员个人中心显示</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">misc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">控制评分功能、论坛界面显示功能等等</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">modcp.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">这个是论坛<span class="t_tag" href="tag.html" nclick="tagshow(event)">前台</span>的版主操作的迷你后台程序</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">my.php&mdash;&mdash;</font></font></font><font size="3"><font color="blue"><font face="宋体 ">查看一切和自己在这个论坛的行为，例如</font></font><font color="blue"><font face="Calibri ">&ldquo;</font></font><font color="blue"><font face="宋体 ">我的帖子</font></font><font color="blue"><font face="Calibri ">&rdquo;</font></font><font color="blue"><font face="宋体 ">，</font></font><font color="blue"><font face="Calibri ">&ldquo;</font></font><font color="blue"><font face="宋体 ">用户组权限</font></font><font color="blue"><font face="Calibri ">&rdquo;</font></font><font color="blue"><font face="宋体 ">等等</font></font></font><br />
+<font size="3"><font color="darkorange"><font face="Calibri ">plugin.php&mdash;&mdash;</font></font><font color="darkorange"><font face="宋体 ">论坛插件，这个主要控制论坛插件的菜单的显示，一般极少修改</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">pm.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛短信息程序，控制短信息发表与浏览</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">post.php&mdash;&mdash;</font></font></font><font size="3"><font color="blue"><font face="宋体 ">与</font></font><font color="blue"><font face="Calibri ">viewthread.php</font></font><font color="blue"><font face="宋体 ">相似，但是更多是管理帖子发表、编辑等等信息，也会有权限的控制提示</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">redirect.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">控制显示论坛的最后发表的主题访问，也控制主题的转向功能</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">register.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">注册文件，同时也会控制注册的信息的合法性</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">relatekw.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛相关<span class="t_tag" href="tag.html" nclick="tagshow(event)">标签</span>生成</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">relatethread.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛相关主题</font></font></font><br />
+<font color="darkorange"><font face="Calibri "><font size="3">robots.txt&mdash;&mdash;</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">设置里面的地址可以阻止搜索机器人访问对应的页面</font></font></font><font color="darkorange"><br />
+<font face="Calibri "><font size="3">rss.php&mdash;&mdash;RSS</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">快速订阅，不用多说了吧？</font></font></font><br />
+<font size="3"><font color="blue"><font face="Calibri ">search.php&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">处理论坛搜索功能中的信息筛选</font></font></font><br />
+<font size="3"><font color="darkorange"><font face="Calibri ">seccode.php&mdash;&mdash;</font></font><font color="darkorange"><font face="宋体 ">论坛注册，生成<span class="t_tag" href="tag.html" nclick="tagshow(event)">验证</span>码的程序</font></font></font><br />
+<font color="darkorange"><font face="Calibri "><font size="3">sitemap.php&mdash;&mdash;</font></font></font><font size="3"><font color="darkorange"><font face="宋体 ">论坛</font></font><font color="darkorange"><font face="Calibri ">SiteMAP</font></font><font color="darkorange"><font face="宋体 ">功能程序</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">space.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">个人资料查看的程序</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">stats.php&mdash;&mdash;</font></font></font><font size="3"><font color="blue"><font face="宋体 ">处理</font></font><font color="blue"><font face="Calibri ">&ldquo;</font></font><font color="blue"><font face="宋体 ">统计</font></font><font color="blue"><font face="Calibri ">&rdquo;</font></font><font color="blue"><font face="宋体 ">中的统计信息，也允许查看论坛对应的统计数据</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3"><a href="http://soft.zdnet.com.cn/software_zone/2009/1207/1540973.shtml" target="_self"><u><strong>tag</strong></u></a>.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛标签整理页</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">task.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛任务程序，任务主程序触发，判断均在此进行</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">topic.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">一般无法直接访问，控制页面显示，显示主题条数</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">topicadmin.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">控制的是管理人员的前台管理操作，如精华、置顶、高亮等等</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">trade.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">处理论坛的交易主题</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">video.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">处理论坛的<span class="t_tag" href="tag.html" nclick="tagshow(event)">视频</span>主题，包括显示和调用。</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">viewthread.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">处理浏览帖子时候的帖子信息显示，例如信息、标题等等，同时也处理访问帖子的权限，如阅读权限是否足够等等。</font></font></font><br />
+<br />
+<font size="3"><strong><font color="red">./admin</font></strong><strong><font color="red"><font face="宋体 ">（管理后台的程序文件，全部在这里，仅能通过</font></font></strong><strong><font color="red">admincp.php</font></strong><strong><font color="red"><font face="宋体 ">来访问，下面的解释说明这个文件对应着后台对应的设置<span class="t_tag" href="tag.html" nclick="tagshow(event)">项目</span>）</font></font></strong></font><font size="3"><font face="Calibri "><font color="#000000">&nbsp; &nbsp;&nbsp; &nbsp;<br />
+</font><font color="blue">admingroups.inc.php&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">管理组</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">adv.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛广告</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">announce.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛公告</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">attach.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛附件</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">checktools.inc.php&mdash;&mdash;</font></font></font><font size="3"><font color="blue"><font face="宋体 ">文件检查，邮件设置，</font></font><font color="blue"><font face="Calibri ">FTP</font></font><font color="blue"><font face="宋体 ">权限检查，附件水印设置</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">counter.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">更新论坛统计</font></font></font><br />
+<font color="green"><font face="Calibri "><font size="3">cpanel.share.php&mdash;&mdash;</font></font></font><font color="green"><font face="宋体 "><font size="3">检查后台访问进程的文件，也有一些管理文件删除的函数</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">creditwizard.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">积分设置向导</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">db.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">数据库备份，导入，导出，优化，检验</font></font></font><br />
+<font color="darkorange"><font face="Calibri "><font size="3"><a title="Discuz" href="http://soft.zdnet.com.cn/files/list-0-0-50118-1-1.htm">Discuz</a>db.md5&mdash;&mdash;</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">数据库检验文件</font></font></font><br />
+<font color="darkorange"><font face="Calibri "><font size="3"><a title="Discuz" href="http://soft.zdnet.com.cn/files/list-0-0-50118-1-1.htm">Discuz</a>files.md5&mdash;&mdash;</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">程序文件检验文件</font></font></font><br />
+<font color="darkorange"><font face="Calibri "><font size="3">ec.inc.php&mdash;&mdash;</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">支付宝及其它电子商务</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">faq.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛帮助</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">forums.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">版区下面的所有设置</font></font></font><br />
+<font color="green"><font face="Calibri "><font size="3">global.func.php&mdash;&mdash;</font></font></font><font size="3"><font color="green"><font face="宋体 ">后台函数库，像</font></font><font color="green"><font face="Calibri ">showsettings</font></font><font color="green"><font face="宋体 ">等后台设置显示函数都在这里可以找到</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">home.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">后台首页内容</font></font></font><br />
+<font color="darkorange"><font face="Calibri "><font size="3">insenz.func.php&mdash;&mdash;INSENZ</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">营销函数库</font></font></font><br />
+<font color="darkorange"><font face="Calibri "><font size="3">insenz.inc.php&mdash;&mdash;INSENZ</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">营销</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">jswizard.inc.php&mdash;&mdash;JS</font></font></font><font color="blue"><font face="宋体 "><font size="3">调用向导</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">login.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">后台登陆提示页面</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">logs.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛所有的运行记录</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">magics.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛道具</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">main.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛后台的风格控制程序</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">medals.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">勋章中心</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">members.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">用户分类下面的所有设置</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">menu.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">系统设置的菜单栏</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">misc.inc.php&mdash;&mdash;</font></font></font><font size="3"><font color="blue"><font face="宋体 ">在线列表定制，友情连接，</font></font><font color="blue"><font face="Calibri "><a title="Discuz" href="http://soft.zdnet.com.cn/files/list-0-0-50118-1-1.htm">Discuz</a>!</font></font><font color="blue"><font face="宋体 "><span class="t_tag" href="tag.html" nclick="tagshow(event)">代码</span>设置，词语过滤，主题图标，附件类型，计划任务，标签，边栏</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">moderate.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">主题，回复，用户审核</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">plugins.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛插件</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">profilefields.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">用户信息编辑</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">project.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛<span class="t_tag" href="tag.html" nclick="tagshow(event)">方案</span></font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">prune.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">批量删帖</font></font></font><br />
+<font color="darkorange"><font face="Calibri "><font size="3">qihoo.inc.php&mdash;&mdash;QIHOO</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">搜索</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">quickqueries.inc.php&mdash;&mdash;</font></font></font><font size="3"><font color="blue"><font face="宋体 ">常用</font></font><font color="blue"><font face="Calibri ">SQL</font></font><font color="blue"><font face="宋体 ">命令文件，可以在这里添加常用的</font></font><font color="blue"><font face="Calibri ">SQL</font></font><font color="blue"><font face="宋体 ">语句来快速执行</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">ranks.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">信用等级</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">recyclebin.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">回收站</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">runwizard.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">运行设置向导</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">search.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">后台自带的设置搜索功能</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">settings.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">全局下面的大部分设置项目</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">smilies.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">表情</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">styles.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛风格</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">tasks.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛任务</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">templates.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛模板设置</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">threads.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">主题设置</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">threadtypes.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">主题分类</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">tools.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛工具</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">tradelog.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">交易记录查看</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">usergroups.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">用户设置，发帖数级别</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">video.inc.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">视频设置</font></font></font><br />
+<font color="darkorange"><font face="Calibri "><font size="3">zip.func.php&mdash;&mdash;</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">数据压缩及解压程序</font></font></font><br />
+<br />
+<strong><font color="red"><font size="3">./Api</font></font></strong><strong><font color="red"><font face="宋体 "><font size="3">（主要是和通行证及数据调用有关的内容）</font></font></font></strong><br />
+<font color="blue"><font face="Calibri "><font size="3">advcache.php&mdash;&mdash;</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛广告显示管理</font></font></font><br />
+<font size="3"><font color="green"><font face="Calibri ">dbbak.php&mdash;&mdash;</font></font><font color="green"><font face="宋体 ">数据库操作函数</font></font></font><br />
+<font size="3"><font color="purple"><font face="Calibri ">google.php&mdash;&mdash;GOOGLE</font></font><font color="purple"><font face="宋体 ">搜索</font></font></font><br />
+<font size="3"><font color="purple"><font face="Calibri ">insenz.php&mdash;&mdash;</font></font><font color="purple"><font face="宋体 ">论坛营销</font></font></font><br />
+<font size="3"><font color="darkorange"><font face="Calibri "><span class="t_tag" href="tag.html" nclick="tagshow(event)">javascript</span>.php&mdash;&mdash;JS</font></font><font color="darkorange"><font face="宋体 ">调用</font></font></font><br />
+<font size="3"><font color="darkorange"><font face="Calibri ">uc.php&mdash;&mdash;Ucentre</font></font><font color="darkorange"><font face="宋体 ">通讯</font></font></font><br />
+<font size="3"><font color="darkorange"><font face="Calibri ">uchome.php&mdash;&mdash;UHome</font></font><font color="darkorange"><font face="宋体 ">通讯</font></font></font><br />
+<font size="3"><font color="seagreen"><font face="Calibri ">video.php&mdash;&mdash;</font></font><font color="seagreen"><font face="宋体 ">视频调用函数</font></font></font><font color="red"><br />
+<strong><font size="3">&nbsp; &nbsp;</font></strong></font><strong><font color="sienna"><font size="3">/trade</font></font></strong><br />
+<font color="purple"><font face="Calibri "><font size="3">&nbsp;  &nbsp;alipay.api.php&mdash;&mdash;</font></font></font><font color="purple"><font face="宋体 "><font size="3">支付宝接口</font></font></font><br />
+<font color="purple"><font face="Calibri "><font size="3">&nbsp; &nbsp;credit.notify.php&mdash;&mdash;</font></font></font><font color="purple"><font face="宋体 "><font size="3">积分充值信息</font></font></font><br />
+<font color="purple"><font face="Calibri "><font size="3">&nbsp;  &nbsp;trade.notify.php&mdash;&mdash;</font></font></font><font color="purple"><font face="宋体 "><font size="3">交易信息</font></font></font><br />
+<font color="red"><br />
+<strong><font size="3">./archiver==</font></strong></font><font size="3"><strong><font color="red"><font face="宋体 ">（特别说明下，因为</font></font></strong><strong><font color="red">archiver</font></strong><strong><font color="red"><font face="宋体 ">中的目录的文件没有调用</font></font></strong><strong><font color="red">commom.inc.php</font></strong><strong><font color="red"><font face="宋体 ">，所以所有变量、函数都不能直接使用，必须要搜索数据库来进行判断）</font></font></strong></font><br />
+<font color="darkorange"><font face="Calibri "><font size="3">&nbsp; &nbsp; index.php  archiver</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">首页</font></font></font><br />
+<font face="Calibri "><font size="3"><font color="#000000">&nbsp; &nbsp;</font><strong><font color="sienna">/include</font></strong></font></font><br />
+<font color="darkorange"><font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;thread.inc.php  archiver</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">主题显示</font></font></font><font color="darkorange"><br />
+<font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;index.inc.php</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">这个是过滤论坛权限和界面显示用的</font></font></font><font color="darkorange"><br />
+<font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;forum.inc.php  archiver</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">论坛显示</font></font></font><br />
+<br />
+<strong><font color="red"><font size="3">./attachments</font></font></strong><strong><font color="red"><font face="宋体 "><font size="3">是论坛附件的存放目录</font></font></font></strong><br />
+<strong><font color="red"><font size="3">./forumdata</font></font></strong><strong><font color="red"><font face="宋体 "><font size="3">是论坛记录和<span class="t_tag" href="tag.html" nclick="tagshow(event)">缓存</span>文件的存放目录，一般这些文件都是<span class="t_tag" href="tag.html" nclick="tagshow(event)">自动</span>生成的，所以不要修改。至于有什么用途也说下吧。</font></font></font></strong><br />
+<font face="Calibri "><font size="3"><font color="#000000">&nbsp; &nbsp;</font><strong><font color="darkred">/cache</font></strong></font></font><strong><font color="darkred"><font face="宋体 "><font size="3">（很好用的功能，调用的这里的文件变量是非常快的）</font></font></font></strong><br />
+<font color="darkorange"><font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp;  admingroup_X.php</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">管理组权限</font></font></font><br />
+<font color="darkorange"><font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp; cache_archiver.php  archiver</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">存档</font></font></font><font color="darkorange"><br />
+<font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp; cache_bbcodes.php  BBCODE</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">和</font></font></font><font size="3"><font color="darkorange"><font face="Calibri ">SMILES<br />
+&nbsp; &nbsp;&nbsp; &nbsp; cache_blog.php</font></font><font color="darkorange"><font face="宋体 ">所有用户组的权限变量和</font></font><font color="darkorange"><font face="Calibri ">smilies</font></font><font color="darkorange"><font face="宋体 ">、</font></font><font color="darkorange"><font face="Calibri ">bbcode</font></font><font color="darkorange"><font face="宋体 ">，还有发帖数等级的信息</font></font></font><font color="darkorange"><br />
+<font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp; cache_censor.php</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">屏蔽信息</font></font></font><font color="darkorange"><br />
+<font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp;  cache_crons.php</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">计划任务</font></font></font><br />
+<font color="darkorange"><font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp; cache_faqs.php  FAQ<br />
+&nbsp; &nbsp;&nbsp; &nbsp; cache_forumdisplay.php</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">论坛信息与公告</font></font></font><font color="darkorange"><br />
+<font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp;  cache_forums.php</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">同上</font></font></font><br />
+<font color="darkorange"><font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp; cache_icons.php</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">论坛图标</font></font></font><font color="darkorange"><br />
+<font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp;  cache_index.php</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">在线列表、联盟论坛、公告</font></font></font><font color="darkorange"><br />
+<font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp;  cache_ipbanned.php</font></font></font><font size="3"><font color="darkorange"><font face="宋体 ">封</font></font><font color="darkorange"><font face="Calibri ">IP</font></font><font color="darkorange"><font face="宋体 ">段记录</font></font></font><br />
+<font color="darkorange"><font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp; cache_magics.php</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">论坛道具属性</font></font></font><font color="darkorange"><br />
+<font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp;  cache_medals.php</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">勋章信息</font></font></font><font color="darkorange"><br />
+<font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp; cache_post.php  smilies</font></font></font><font size="3"><font color="darkorange"><font face="宋体 ">、</font></font><font color="darkorange"><font face="Calibri ">bbcode</font></font><font color="darkorange"><font face="宋体 ">、</font></font></font><font size="3"><font color="darkorange"><font face="Calibri ">icons<br />
+&nbsp; &nbsp;&nbsp; &nbsp; cache_profilefields.php</font></font><font color="darkorange"><font face="宋体 ">用户栏目定制</font></font></font><br />
+<font color="darkorange"><font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp;  cache_ranks.php</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">信用等级</font></font></font><br />
+<font color="darkorange"><font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp;  cache_register.php</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">注册</font></font></font><br />
+<font color="darkorange"><font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp; cache_request.php</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">论坛任务信息</font></font></font><br />
+<font color="darkorange"><font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp; cache_secqaa.php</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">验证提问</font></font></font><br />
+<font color="darkorange"><font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp; cache_smilies.php</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">论坛表情</font></font></font><font color="darkorange"><br />
+<font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp;  cache_settings.php setting</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">表设置的参数变量</font></font></font><br />
+<font color="darkorange"><font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp;  cache_topicadmin.php</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">主题管理</font></font></font><br />
+<font color="darkorange"><font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp;  cache_usergroups.php</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">用户组基本信息</font></font></font><br />
+<font color="darkorange"><font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp;  cache_viewpro.php</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">用户资料</font></font></font><font color="darkorange"><br />
+<font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp;  cache_viewthread.php</font></font></font><font size="3"><font color="darkorange"><font face="宋体 ">论坛，用户组，</font></font><font color="darkorange"><font face="Calibri ">smilies</font></font><font color="darkorange"><font face="宋体 ">、</font></font><font color="darkorange"><font face="Calibri ">bbcode</font></font><font color="darkorange"><font face="宋体 ">、</font></font></font><font size="3"><font color="darkorange"><font face="Calibri ">icons<br />
+&nbsp; &nbsp;&nbsp; &nbsp; plugin_XX.php</font></font><font color="darkorange"><font face="宋体 ">插件表</font></font></font><font color="darkorange"><br />
+<font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp;  style_XX.php</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">风格缓存</font></font></font><font color="darkorange"><br />
+<font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp; usergroup_XX.php</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">用户组缓存</font></font></font><br />
+<font color="darkorange"><font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp; requestxxxxxx.php</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">这个是记录论坛任务的缓存文件</font></font></font><br />
+<strong><font color="sienna"><font size="3">&nbsp; &nbsp; /templates</font></font></strong><font size="3"><strong><font color="sienna"><font face="宋体 ">（基于</font></font></strong><strong><font color="sienna">HTML</font></strong><strong><font color="sienna"><font face="宋体 ">所生成的模板</font></font></strong><strong><font color="sienna"><span class="t_tag" href="tag.html" nclick="tagshow(event)">PHP</span></font></strong><strong><font color="sienna"><font face="宋体 ">，比较少做插件会用到，忽略）</font></font></strong></font><br />
+<strong><font color="sienna"><font size="3">&nbsp; &nbsp; /threadcaches (</font></font></strong><font size="3"><strong><font color="sienna"><font face="宋体 ">主题缓存存放目录</font></font></strong><strong><font color="sienna">)</font></strong></font><br />
+<font face="宋体 "><font size="3"><font color="#000000">根部的一些文件就是数据记录文件了。</font></font></font><br />
+<br />
+<strong><font color="red"><font size="3">./images</font></font></strong><font size="3"><strong><font color="red"><font face="宋体 ">是图片目录，直接跳过，需要说明的是</font></font></strong><strong><font color="red">./images/admincp/admincp.<span class="t_tag" href="tag.html" nclick="tagshow(event)">css</span></font></strong><strong><font color="red"><font face="宋体 ">可以用来定义系统设置的界面</font></font></strong></font><br />
+<br />
+<strong><font color="red"><font size="3">./include</font></font></strong><strong><font color="red"><font face="宋体 "><font size="3">是论坛核心程序目录，非常有必要去了解。</font></font></font></strong><br />
+<font color="darkorange"><font face="Calibri "><font size="3">serverbusy.htm</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">系统错误信息（<span class="t_tag" href="tag.html" nclick="tagshow(event)">服务器</span>忙碌就显示这个页面）</font></font></font><br />
+<font size="3"><font color="darkorange"><font face="Calibri ">xmlparser.class.php</font></font><font color="darkorange"><font face="宋体 ">主要是标签处理</font></font></font><br />
+<font size="3"><font color="blue"><font face="Calibri ">viewthread_video.inc.php</font></font><font color="blue"><font face="宋体 ">视频主题行为处理</font></font></font><br />
+<font size="3"><font color="blue"><font face="Calibri ">viewthread_trade.inc.php</font></font><font color="blue"><font face="宋体 ">商品主题行为处理</font></font></font><br />
+<font size="3"><font color="blue"><font face="Calibri ">viewthread_reward.inc.php</font></font><font color="blue"><font face="宋体 ">悬赏主题行为处理</font></font></font><br />
+<font size="3"><font color="blue"><font face="Calibri ">viewthread_poll.inc.php</font></font><font color="blue"><font face="宋体 ">投票主题行为处理</font></font></font><br />
+<font size="3"><font color="blue"><font face="Calibri ">viewthread_debate.inc.php</font></font><font color="blue"><font face="宋体 ">辩论主题行为处理</font></font></font><br />
+<font size="3"><font color="blue"><font face="Calibri ">viewthread_activity.inc.php</font></font><font color="blue"><font face="宋体 ">活动主题行为处理</font></font></font><br />
+<font size="3"><font color="green"><font face="Calibri ">trade.func.php</font></font><font color="green"><font face="宋体 ">交易行为函数库</font></font></font><br />
+<font size="3"><font color="blue"><font face="Calibri ">threadpay.inc.php</font></font><font color="blue"><font face="宋体 ">**帖</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">template.func.php</font></font></font><font color="blue"><font face="宋体 "><font size="3">控制模板缓存生成的文件</font></font></font><br />
+<font size="3"><font color="blue"><font face="Calibri ">task.func.php</font></font><font color="blue"><font face="宋体 ">论坛任务常用函数库</font></font></font><br />
+<font size="3"><font color="green"><font face="Calibri ">swfupload.func.php</font></font><font color="green"><font face="宋体 ">批量上传管理</font></font></font><br />
+<font size="3"><font color="blue"><font face="Calibri ">sendmail.inc.php</font></font><font color="blue"><font face="宋体 ">发送</font></font><font color="blue"><font face="Calibri ">EMAIL</font></font><font color="blue"><font face="宋体 ">的程序</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">security.inc.php</font></font></font><font color="blue"><font face="宋体 "><font size="3">好像是代理一类的，不管</font></font></font><br />
+<font size="3"><font color="darkorange"><font face="Calibri ">seccode.class.php</font></font><font color="darkorange"><font face="宋体 "><span class="t_tag" href="tag.html" nclick="tagshow(event)">验证码</span>处理库</font></font></font><br />
+<font size="3"><font color="darkorange"><font face="Calibri ">search_qihoo.inc.php  qihoo</font></font><font color="darkorange"><font face="宋体 ">搜索</font></font></font><br />
+<font size="3"><font color="darkorange"><font face="Calibri ">search_sort.inc.php</font></font><font color="darkorange"><font face="宋体 ">搜索排序</font></font></font><br />
+<font size="3"><font color="darkorange"><font face="Calibri ">search_trade.inc.php</font></font><font color="darkorange"><font face="宋体 ">搜索特殊主题</font></font></font><br />
+<font size="3"><font color="darkorange"><font face="Calibri ">request.func.php</font></font><font color="darkorange"><font face="宋体 ">和</font></font><font color="darkorange"><font face="Calibri ">request</font></font><font color="darkorange"><font face="宋体 ">里面的文件有关，这是个函数文件</font></font></font><br />
+<font size="3"><font color="blue"><font face="Calibri ">relatethreads.inc.php</font></font><font color="blue"><font face="宋体 ">应该说是生成相关主题的程序</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">promotion.inc.php</font></font></font><font size="3"><font color="blue"><font face="宋体 ">记录当前用户的</font></font><font color="blue"><font face="Calibri ">IP</font></font><font color="blue"><font face="宋体 ">等信息</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">printable.inc.php</font></font></font><font color="blue"><font face="宋体 "><font size="3"><span class="t_tag" href="tag.html" nclick="tagshow(event)">打印</span>主题用的程序</font></font></font><br />
+<font size="3"><font color="green"><font face="Calibri ">post.func.php</font></font><font color="green"><font face="宋体 ">不错的函数文件，主要是记录信息、更新帖子的函数</font></font></font><br />
+<font size="3"><font color="blue"><font face="Calibri ">pmprompt.inc.php</font></font><font color="blue"><font face="宋体 ">短信息内容处理</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">newthread.inc.php</font></font></font><font color="blue"><font face="宋体 "><font size="3">发新话题的信息处理</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">newreply.inc.php</font></font></font><font color="blue"><font face="宋体 "><font size="3">发回复的信息处理</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">moderation.inc.php</font></font></font><font color="blue"><font face="宋体 "><font size="3">版主管理</font></font></font><br />
+<font size="3"><font color="green"><font face="Calibri ">misc.func.php</font></font><font color="green"><font face="宋体 ">又是函数文件，控制管理</font></font><font color="green"><font face="Calibri ">PM</font></font><font color="green"><font face="宋体 ">，评分</font></font><font color="green"><font face="Calibri ">PM</font></font><font color="green"><font face="宋体 ">，评分记录，附件高亮显示，</font></font><font color="green"><font face="Calibri ">IP</font></font><font color="green"><font face="宋体 ">转换为地理位置</font></font></font><font color="green"><br />
+<font face="Calibri "><font size="3">membermerge.func.php</font></font></font><font color="green"><font face="宋体 "><font size="3">合并用户时的函数处理文件</font></font></font><br />
+<font size="3"><font color="green"><font face="Calibri ">magic.func.php</font></font><font color="green"><font face="宋体 ">道具处理函数库</font></font></font><br />
+<font size="3"><font color="green"><font face="Calibri ">insenz.func.php</font></font><font color="green"><font face="宋体 ">论坛营销管理函数库</font></font></font><br />
+<font size="3"><font color="darkorange"><font face="Calibri ">image.class.php</font></font><font color="darkorange"><font face="宋体 ">图片显示处理</font></font></font><br />
+<font size="3"><font color="red"><font face="Calibri ">global.func.php</font></font><font color="red"><font face="宋体 ">丰富的函数库，都是前台用的，如除去</font></font><font color="red"><font face="Calibri ">HTML</font></font><font color="red"><font face="宋体 ">、发</font></font><font color="red"><font face="Calibri ">PM</font></font><font color="red"><font face="宋体 ">、发</font></font><font color="red"><font face="Calibri ">EMAIL</font></font><font color="red"><font face="宋体 ">等等，<span class="t_tag" href="tag.html" nclick="tagshow(event)">建议</span>大家研究下。</font></font></font><br />
+<font size="3"><font color="darkorange"><font face="Calibri ">gifmerge.class.php</font></font><font color="darkorange"><font face="宋体 ">图片显示处理</font></font></font><br />
+<font size="3"><font color="green"><font face="Calibri ">ftp.func.php</font></font><font color="green"><font face="宋体 ">远程</font></font><font color="green"><font face="Calibri ">FTP</font></font><font color="green"><font face="宋体 ">附件处理函数文件</font></font></font><br />
+<font size="3"><font color="blue"><font face="Calibri ">forumselect.inc.php</font></font><font color="blue"><font face="宋体 ">论坛列表显示</font></font></font><br />
+<font size="3"><font color="green"><font face="Calibri ">forum.func.php</font></font><font color="green"><font face="宋体 ">处理论坛信息用的函数，如论坛菜单下拉等等</font></font></font><br />
+<font size="3"><font color="blue"><font face="Calibri ">editpost.inc.php</font></font><font color="blue"><font face="宋体 ">编辑帖子的信息处理</font></font></font><br />
+<font size="3"><font color="green"><font face="Calibri ">editor.func.php</font></font><font color="green"><font face="宋体 ">编辑器管理的函数库</font></font></font><br />
+<font size="3"><font color="green"><font face="Calibri ">ec_credit.func.php</font></font><font color="green"><font face="宋体 ">积分交易文件</font></font></font><font color="green"><br />
+<font face="Calibri "><font size="3"><a title="Discuz" href="http://soft.zdnet.com.cn/files/list-0-0-50118-1-1.htm">Discuz</a>code.func.php  <a title="Discuz" href="http://soft.zdnet.com.cn/files/list-0-0-50118-1-1.htm">Discuz</a>!</font></font></font><font color="green"><font face="宋体 "><font size="3">代码转换处理程序</font></font></font><br />
+<font size="3"><font color="darkorange"><font face="Calibri ">diff.class.php</font></font><font color="darkorange"><font face="宋体 ">数据库处理</font></font></font><br />
+<font size="3"><font color="darkorange"><font face="Calibri ">db_mysql_error.inc.php</font></font><font color="darkorange"><font face="宋体 ">数据库错误汇报</font></font></font><font color="darkorange"><br />
+<font face="Calibri "><font size="3">db_mysql.class.php</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">数据库中心操作程序</font></font></font><br />
+<font size="3"><font color="green"><font face="Calibri ">cron.func.php</font></font><font color="green"><font face="宋体 ">控制计划任务执行的程序</font></font></font><br />
+<font size="3"><font color="darkorange"><font face="Calibri ">counter.inc.php</font></font><font color="darkorange"><font face="宋体 ">记录操作系统与浏览器的统计</font></font></font><br />
+<font size="3"><font color="red"><font face="Calibri ">common.inc.php</font></font><font color="red"><font face="宋体 ">最重要的核心程序，读取</font></font><font color="red"><font face="Calibri ">COOKIES</font></font><font color="red"><font face="宋体 ">信息，定义全局系统函数变量</font></font></font><br />
+<font size="3"><font color="darkorange"><font face="Calibri ">chinese.class.php</font></font><font color="darkorange"><font face="宋体 ">处理乱码和字符集用的</font></font></font><br />
+<font size="3"><font color="blue"><font face="Calibri ">category.inc.php</font></font><font color="blue"><font face="宋体 ">控制帖数，今日发帖数的统计</font></font></font><br />
+<font size="3"><font color="green"><font face="Calibri ">cache.func.php</font></font><font color="green"><font face="宋体 ">控制生成缓存文件的程序</font></font></font><font color="green"><br />
+<font face="Calibri "><font size="3">attachment.func.php</font></font></font><font size="3"><font color="green"><font face="宋体 ">识别附件拓展名，控制附件前面显示类别图片的程序，</font></font><font color="green"><font face="宋体 ">还有附件大小的记录判断</font></font></font><br />
+<font size="3"><font color="blue"><font face="Calibri ">advertisements.inc.php</font></font><font color="blue"><font face="宋体 ">处理广告显示用的</font></font></font><font color="sienna"><br />
+<strong><font size="3">&nbsp; &nbsp;  /crons</font></strong></font><strong><font color="sienna"><font face="宋体 "><font size="3">这里是计划任务文件，你可以增加自己的计划任务，而且可以调用系统变量</font></font></font></strong><strong><font color="sienna"><br />
+<strong><font size="3">&nbsp; &nbsp;  /tables</font></strong></font></strong><strong><font color="sienna"><font face="宋体 "><font size="3">几个语言文件，很少改，跳过</font></font></font></strong><br />
+<strong><font color="sienna"><font size="3">&nbsp; &nbsp; /magic</font></font></strong><strong><font color="sienna"><font face="宋体 "><font size="3">道具脚本文件目录，跳过</font></font></font></strong><br />
+<strong><font color="sienna"><font size="3">&nbsp; &nbsp; /request</font></font></strong><strong><font color="sienna"><font face="宋体 "><font size="3">不用了解，直接忽略</font></font></font></strong><br />
+<strong><font color="sienna"><font size="3">&nbsp; &nbsp; /tasks</font></font></strong><strong><font color="sienna"><font face="宋体 "><font size="3">论坛任务脚本文件目录</font></font></font></strong><br />
+<strong><font color="sienna"><font size="3">&nbsp; &nbsp; /js</font></font></strong><font size="3"><strong><font color="sienna"><font face="宋体 ">所有</font></font></strong><strong><font color="sienna">JS</font></strong><strong><font color="sienna"><font face="宋体 ">调用文件以及</font></font></strong><strong><font color="sienna">AJAX</font></strong><strong><font color="sienna"><font face="宋体 ">效果显示控制文件均在这里</font></font></strong></font><br />
+<font color="blue"><font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp;bbcode.js <a title="Discuz" href="http://soft.zdnet.com.cn/files/list-0-0-50118-1-1.htm">Discuz</a>!</font></font></font><font size="3"><font color="blue"><font face="宋体 ">代码</font></font><font color="blue"><font face="Calibri ">JS</font></font><font color="blue"><font face="宋体 ">效果文件</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp;calendar.js</font></font></font><font color="blue"><font face="宋体 "><font size="3">日历显示</font></font></font><br />
+<font color="red"><font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp;  &nbsp;common.js</font></font></font><font size="3"><font color="red"><font face="宋体 ">几乎所有的</font></font><font color="red"><font face="Calibri ">AJAX</font></font><font color="red"><font face="宋体 ">显示控制都在这里</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp;floatadv.js</font></font></font><font color="blue"><font face="宋体 "><font size="3">广告</font></font></font><br />
+<font color="darkorange"><font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp;google.js  GOOGLE</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">搜索</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp;iframe.js</font></font></font><font color="blue"><font face="宋体 "><font size="3"><span class="t_tag" href="tag.html" nclick="tagshow(event)">框架</span>显示</font></font></font><br />
+<font color="darkorange"><font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp;  &nbsp;insenz_reg.js</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">营销</font></font></font><br />
+<font color="darkorange"><font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp;md5.js MD5</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">处理</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp;  &nbsp;post.js</font></font></font><font size="3"><font color="blue"><font face="宋体 ">发帖页面</font></font><font color="blue"><font face="Calibri ">AJAX</font></font><font color="blue"><font face="宋体 ">效果处理</font></font></font><br />
+<font color="darkorange"><font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp;qihoo.js QIHOO</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">搜索</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp;  &nbsp;slide.js</font></font></font><font color="blue"><font face="宋体 "><font size="3">图片附件显示效果处理</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp;tree.js</font></font></font><font color="blue"><font face="宋体 "><font size="3">树状表显示</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp;  &nbsp;video.js</font></font></font><font color="blue"><font face="宋体 "><font size="3">视频显示</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">&nbsp; &nbsp;&nbsp; &nbsp;viewthread.js</font></font></font><font size="3"><font color="blue"><font face="宋体 ">主题浏览中的</font></font><font color="blue"><font face="Calibri ">AJAX</font></font><font color="blue"><font face="宋体 ">效果</font></font></font><br />
+<br />
+<strong><font color="red"><font size="3">./ipdata</font></font></strong><font size="3"><strong><font color="red"><font face="宋体 ">（</font></font></strong><strong><font color="red">IP</font></strong><strong><font color="red"><font face="宋体 ">库文件目录，下面那个</font></font></strong><strong><font color="red">wry.dat</font></strong><strong><font color="red"><font face="宋体 ">就是</font></font></strong><strong><font color="red">IP</font></strong><strong><font color="red"><font face="宋体 ">库，这个我不会改）</font></font></strong></font><strong><font color="red"><br />
+<strong><font size="3">./plugins</font></strong></font></strong><strong><font color="red"><font face="宋体 "><font size="3">（插件存放目录）</font></font></font></strong><br />
+<strong><font color="red"><font size="3">./templates</font></font></strong><font size="3"><strong><font color="red"><font face="宋体 ">（模板目录，一般做</font></font></strong><strong><font color="red">HACK</font></strong><strong><font color="red"><font face="宋体 ">也要改模板，因此说明下）</font></font></strong></font><br />
+<strong><font color="sienna"><font size="3">/default</font></font></strong><strong><font color="sienna"><font face="宋体 "><font size="3">（默认模板，从这个开始，其它风格以此类推）</font></font></font></strong><br />
+<font color="blue"><font face="Calibri "><font size="3">activity_applylist.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">活动主题申请列表</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">adv.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛广告显示</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">announcement.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">公告</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">attachpay.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">收费附件</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">attachpay_view.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">查看已付费购买附件的用户列表</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">campaign.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛列表</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">credits.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">积分策略</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">css_append.htm CSS</font></font></font><font color="blue"><font face="宋体 "><font size="3">拓展</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">css_calendar.htm CSS</font></font></font><font color="blue"><font face="宋体 "><font size="3">日历</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">css_common.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">大部分风格修改都在此</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">css_editor.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">编辑器风格</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">css_float.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">浮动框风格</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">css_script.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">常用</font></font><font color="blue"><font face="Calibri ">JS</font></font><font color="blue"><font face="宋体 ">脚本</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">css_seditor.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">编辑器风格</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">css_topicadmin.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">主题管理界面风格</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">css_viewthread.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">主题浏览页面风格</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">customtopics.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">首页那个用户专题</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">debate_umpire.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">辩论主题显示</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3"><a title="Discuz" href="http://soft.zdnet.com.cn/files/list-0-0-50118-1-1.htm">Discuz</a>.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛的首页</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3"><a title="Discuz" href="http://soft.zdnet.com.cn/files/list-0-0-50118-1-1.htm">Discuz</a>code.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">附件显示信息都在这里</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">ec_credit.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">积分交易</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">ec_explain.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">同上，这个是说明</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">ec_list.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">交易列表</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">ec_rate.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">交易评价</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">emailfriend.htm EMAIL</font></font></font><font color="blue"><font face="宋体 "><font size="3">推荐主题</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">faq.htm FAQ</font></font></font><font color="blue"><font face="宋体 "><font size="3">帮助手册，下面都是，只不过显示部分不一样，省略。</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">faq_navbar.htm FAQ</font></font></font><font color="blue"><font face="宋体 "><font size="3">的边栏显示</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">footer.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛底部信息</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">footer_ajax.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">论坛底部的</font></font><font color="blue"><font face="Calibri ">AJAX</font></font><font color="blue"><font face="宋体 ">显示</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">footer_nofloat.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛底部无悬浮框页面</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">forumdisplay.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛主题列表</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">forumdisplay_passwd.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">密码论坛输入密码提示页</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">forumdisplay_simple.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛主题列表</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">forumdisplay_subforum.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">二级论坛列表</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">frame.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">树状框架</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">getpasswd.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">取回密码</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">groupexpiry.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">公众用户组</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">header.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">头部连接（上面有</font></font><font color="blue"><font face="Calibri ">&ldquo;</font></font><font color="blue"><font face="宋体 ">注册</font></font><font color="blue"><font face="Calibri ">&rdquo;&ldquo;</font></font><font color="blue"><font face="宋体 ">登录</font></font><font color="blue"><font face="Calibri ">&rdquo;</font></font><font color="blue"><font face="宋体 ">提示的就是）</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">header_ajax.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">头部连接</font></font><font color="blue"><font face="Calibri ">AJAX</font></font><font color="blue"><font face="宋体 ">显示</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">index.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">首页</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">invite_index.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">邀请注册</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">invite_send.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">邀请注册发送页面</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">jsmenu.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛的下拉框</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">leftmenu.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛的树状列表栏</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">login.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">登录页面</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">magic_index.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛道具首页</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">magic_log.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛道具行为记录</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">magic_market.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛道具交易市场</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">magic_opreation.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛道具选项</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">magic_use.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">道具使用</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">medal.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">勋章中心</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">memberlist.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">会员列表，上面那个</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">memcp_credits.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">控制面板（也叫</font></font><font color="blue"><font face="Calibri ">&ldquo;</font></font><font color="blue"><font face="宋体 ">个人中心</font></font><font color="blue"><font face="Calibri ">&rdquo;</font></font><font color="blue"><font face="宋体 ">）</font></font><font color="blue"><font face="Calibri ">&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">积分交易</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">memcp_credits_action.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">控制面板</font></font><font color="blue"><font face="Calibri ">&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">积分交易操作</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">memcp_credits_log.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">控制面板</font></font><font color="blue"><font face="Calibri ">&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">积分交易记录</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">memcp_profile.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">控制面板</font></font><font color="blue"><font face="Calibri ">&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">编辑个人资料</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">memcp_usergroups.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">控制面板</font></font><font color="blue"><font face="Calibri ">&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">公众用户组</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">memcp_usergroups_misc.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">控制面板</font></font><font color="blue"><font face="Calibri ">&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">公众用户组处理</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">memcp_validating.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">控制面板</font></font><font color="blue"><font face="Calibri ">&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">审核提示</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">modcp.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">版主后台首页</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">modcp_announcements.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">版主后台</font></font><font color="blue"><font face="Calibri ">&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">公告</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">modcp_forumaccess.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">版主后台</font></font><font color="blue"><font face="Calibri ">&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">论坛管理权限</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">modcp_forums.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">版主后台</font></font><font color="blue"><font face="Calibri ">&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">论坛管理</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">modcp_home.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">版主后台</font></font><font color="blue"><font face="Calibri ">&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">主页</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">modcp_login.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">版主后台登录提示页</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">modcp_logs.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">版主后台</font></font><font color="blue"><font face="Calibri ">&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">记录查看</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">modcp_members.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">版主后台</font></font><font color="blue"><font face="Calibri ">&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">用户编辑</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">modcp_moderate.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">版主后台</font></font><font color="blue"><font face="Calibri ">&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">审核</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">modcp_moderate_float.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">版主后台</font></font><font color="blue"><font face="Calibri ">&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">审核浮动框</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">modcp_posts.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">版主后台</font></font><font color="blue"><font face="Calibri ">&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">帖子管理</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">modcp_recyclebins.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">版主后台</font></font><font color="blue"><font face="Calibri ">&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">回收站</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">modcp_report.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">版主后台</font></font><font color="blue"><font face="Calibri ">&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">报告管理</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">modcp_threads.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">版主后台</font></font><font color="blue"><font face="Calibri ">&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">主题管理</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">my.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">会员论坛行为</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">my_activities.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">会员论坛行为</font></font><font color="blue"><font face="Calibri ">&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">我的活动</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">my_buddylist.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">会员论坛行为</font></font><font color="blue"><font face="Calibri ">&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">我的好友</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">my_debate.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">会员论坛行为</font></font><font color="blue"><font face="Calibri ">&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">我的辩论</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">my_favorites.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">会员论坛行为</font></font><font color="blue"><font face="Calibri ">&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">我的收藏</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">my_grouppermission.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">会员论坛行为</font></font><font color="blue"><font face="Calibri ">&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">我的用户组权限</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">my_polls.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">会员论坛行为</font></font><font color="blue"><font face="Calibri ">&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">我的投票</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">my_posts.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">会员论坛行为</font></font><font color="blue"><font face="Calibri ">&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">我的回复</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">my_rewards.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">会员论坛行为</font></font><font color="blue"><font face="Calibri ">&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">我的悬赏</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">my_subscriptions.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">会员论坛行为列表</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">my_threads.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">会员论坛行为</font></font><font color="blue"><font face="Calibri ">&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">我的主题</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">my_trades.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">会员论坛行为</font></font><font color="blue"><font face="Calibri ">&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">我的商品</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">my_tradestats.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">会员论坛行为</font></font><font color="blue"><font face="Calibri ">&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">我的商品状态</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">my_tradethreads.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">会员论坛行为</font></font><font color="blue"><font face="Calibri ">&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">我的商品主题</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">my_video.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">会员论坛行为</font></font><font color="blue"><font face="Calibri ">&mdash;&mdash;</font></font><font color="blue"><font face="宋体 ">我的视频</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">nopermission.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">关闭论坛显示的提示页</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">pay.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">买帖子</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">pay_view.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">看帖子被谁买了</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">pm.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">短信息左边菜单条</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">pm_archive_html.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">导出短消息</font></font><font color="blue"><font face="Calibri ">HTML</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">pm_checknew.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">查看新短信</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">pm_node.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">短信快速提示</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">pm_search.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">搜索短消息</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">pm_search_result.htm&nbsp;&nbsp;</font></font></font><font color="blue"><font face="宋体 "><font size="3">搜索短消息结果</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">pm_send.htm&nbsp;&nbsp;</font></font></font><font color="blue"><font face="宋体 "><font size="3">发送短消息</font></font></font><font size="3"><font color="blue"><font face="Calibri "><br />
+pm_viewnew.htm</font></font><font color="blue"><font face="宋体 ">浏览短信息，内容更详细</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">post.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">帖子发表</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">post_activity.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">活动主题发表</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">post_attachments.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">发帖子的附件<span class="t_tag" href="tag.html" nclick="tagshow(event)">模块</span></font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">post_debate.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">辩论主题发表</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">post_forumselect.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">发表主题时的论坛选择列表</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">post_poll.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">发表投票主题</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">post_reward.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">发表悬赏</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">post_sortoption.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">排序列表</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">post_swfattachlist.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">批量上传附件</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">post_trade.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">发表商品</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">post_video.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">发表视频</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">rate.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">评分</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">rate_view.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">评分记录浏览</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">register.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">注册</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">relatekw.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">相关主题</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">relatetag.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">相关标签</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">reportpost.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">主题报告</font></font></font><br />
+<font color="darkorange"><font face="Calibri "><font size="3">request_assistant.htm</font></font></font><font color="darkorange"><font face="宋体 "><font size="3">都是数据返回操作页，下均同</font></font></font><br />
+<font face="Calibri "><font size="3"><font color="darkorange">request_birthday.htm</font><br />
+<font color="darkorange">request_forumtree.htm</font><br />
+<font color="darkorange">request_modlist.htm</font><br />
+<font color="darkorange">request_rowcombine.htm</font><br />
+<font color="darkorange">request_tag.htm</font><br />
+<font color="darkorange">request_thread.htm</font><br />
+<font color="blue">search.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">搜索主页</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">search_qihoo.htm QIHOO</font></font></font><font color="blue"><font face="宋体 "><font size="3">搜索</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">search_sort.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">排序</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">search_sortoption.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">分类排序操作</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">search_trade.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">商品搜索</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">search_threads.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">搜索后的帖子列表</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">seccheck.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">验证检查</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">seditor.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">编辑器中的标准</font></font><font color="blue"><font face="Calibri "><a title="Discuz" href="http://soft.zdnet.com.cn/files/list-0-0-50118-1-1.htm">Discuz</a>!</font></font><font color="blue"><font face="宋体 ">代码</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">showmessage.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">系统返回错误信息那个</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">stats_main.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">统计首页</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">stats_misc.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">管理统计、时间、积分等等一堆</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">stats_navbar.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">统计上面那个菜单条</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">stats_onlinetime.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">时间统计</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">stats_team.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">管理团队</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">stats_trade.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">商品交易统计</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">tag.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛标签</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">tag_threads.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">和标签相关的主题列表</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">task.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛任务</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">task_parter.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">完成任务的会员</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">topic.htm</font></font></font><font size="3"><font color="blue"><font face="宋体 ">又是</font></font><font color="blue"><font face="Calibri ">QIHOO</font></font><font color="blue"><font face="宋体 ">的随机广告</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">topicadmin.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">主题管理</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">topicadmin_action.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">主题管理动作选择</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">topicadmin_getip.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">主题内查看</font></font></font><font size="3"><font color="blue"><font face="Calibri ">IP<br />
+topicadmin_modlayer.htm</font></font><font color="blue"><font face="宋体 ">版主推荐</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">trade.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">商品主题显示</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">trade_displayorder.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">商品列表</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">trade_info.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">商品信息</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">trade_view.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">商品显示</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">viewpro_classic.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">会员详细信息查看</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">viewthread.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">浏览帖子</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">viewthread_activity.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">活动主题的查看</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">viewthread_activity_info.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">活动主题的信息表格</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">viewthread_debate.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">辩论主题的查看</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">viewthread_debate_umpire.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">辩论双方论点</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">viewthread_fastpost.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">浏览主题时快速发帖</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">viewthread_iframe.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">浏览主题时候的框架显示</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">viewthread_mod.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">帖子管理记录</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">viewthread_node.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">主题左侧用户信息</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">viewthread_pay.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">帖子支付页面</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">viewthread_poll.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">投票主题</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">viewthread_poll_voters.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">投票者</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">viewthread_printable.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">打印主题</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">viewthread_relatedthread.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">相关主题查看</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">viewthread_reward.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">悬赏主题查看</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">viewthread_reward_price.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">悬赏信息</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">viewthread_trade.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">商品主题查看</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">viewthread_video.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">视频主题查看</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">warn_view.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">会员警告信息查看</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">whosonline.htm</font></font></font><font color="blue"><font face="宋体 "><font size="3">详细的在线动作</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">actions.lang.php&nbsp;&nbsp;</font></font></font><font color="blue"><font face="宋体 "><font size="3">动作语言包</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">admincp.lang.php</font></font></font><font color="blue"><font face="宋体 "><font size="3">后台语言包</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">admincp.menu.lang.php</font></font></font><font color="blue"><font face="宋体 "><font size="3">后台菜单语言包</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">admincp.msg.lang.php</font></font></font><font color="blue"><font face="宋体 "><font size="3">后台提示信息语言包</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">archiver.lang.php  archiver</font></font></font><font color="blue"><font face="宋体 "><font size="3">语言包</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">emails.lang.php</font></font></font><font size="3"><font color="blue"><font face="宋体 ">一堆</font></font><font color="blue"><font face="Calibri ">EMAIL</font></font><font color="blue"><font face="宋体 ">信息</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">feed.lang.php</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛动态语言包</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">magics.lang.php</font></font></font><font color="blue"><font face="宋体 "><font size="3">道具中心语言包</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">messages.lang.php</font></font></font><font color="blue"><font face="宋体 "><font size="3">错误信息语言包</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">misc.lang.php</font></font></font><font color="blue"><font face="宋体 "><font size="3">像最后编辑，由谁管理等等</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">modactions.lang.php</font></font></font><font color="blue"><font face="宋体 "><font size="3">管理代号</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">pms.lang.php  PM</font></font></font><font color="blue"><font face="宋体 "><font size="3">，都是管理理由</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">request.lang.php</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛使用说明语言包</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">runtime.lang.php</font></font></font><font color="blue"><font face="宋体 "><font size="3">人性时间提示语言包</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">seccode.lang.php</font></font></font><font color="blue"><font face="宋体 "><font size="3">验证信息语言包</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">swfupload.lang.php</font></font></font><font color="blue"><font face="宋体 "><font size="3">批量上传附件信息语言包</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">tasks.lang.php</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛任务语言包</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">templates.lang.php</font></font></font><font color="blue"><font face="宋体 "><font size="3">前台模板的语言包</font></font></font><font color="blue"><br />
+<font face="Calibri "><font size="3">wap.lang.php  wap</font></font></font><font color="blue"><font face="宋体 "><font size="3">用的语言包</font></font></font><br />
+<br />
+<font size="3"><strong><font color="red">./uc_client</font></strong><br />
+<strong><font color="red">./uc_server  (UCenter</font></strong></font><font size="3"><strong><font color="red"><font face="宋体 ">的通讯及处理文件，也保存有会员头像等信息，不必理会</font></font></strong><strong><font color="red">)</font></strong></font><br />
+<strong><font color="red"><font size="3">./wap  (WAP</font></font></strong><font size="3"><strong><font color="red"><font face="宋体 "><span class="t_tag" href="tag.html" nclick="tagshow(event)">模式</span>控制都在这里</font></font></strong><strong><font color="red">)</font></strong></font><br />
+<font color="blue"><font face="Calibri "><font size="3">index.php</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛首页</font></font></font><font color="red"><br />
+<strong><font size="3">&nbsp;&nbsp;</font></strong></font><strong><font color="sienna"><font size="3">/include</font></font></strong><br />
+<font color="blue"><font face="Calibri "><font size="3">&nbsp;&nbsp;forum.inc.php</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛列表显示和权限控制</font></font></font><br />
+<font color="green"><font face="Calibri "><font size="3">&nbsp;&nbsp;global.func.php</font></font></font><font color="green"><font face="宋体 "><font size="3">全局函数</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">&nbsp;&nbsp;goto.inc.php</font></font></font><font color="blue"><font face="宋体 "><font size="3">主题跳转</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">&nbsp;&nbsp;home.inc.php</font></font></font><font color="blue"><font face="宋体 "><font size="3">主页查看</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">&nbsp;&nbsp;login.inc.php</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛登录</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">&nbsp;&nbsp;my.inc.php</font></font></font><font color="blue"><font face="宋体 "><font size="3">个人在论坛的所有的活动的信息的查看</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">&nbsp;&nbsp;myphone.inc.php</font></font></font><font color="blue"><font face="宋体 "><font size="3">我的手机信息查看</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">&nbsp;&nbsp;post.inc.php</font></font></font><font color="blue"><font face="宋体 "><font size="3">发帖功能操作</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">&nbsp;&nbsp;register.inc.php</font></font></font><font color="blue"><font face="宋体 "><font size="3">注册</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">&nbsp;&nbsp;search.inc.php</font></font></font><font color="blue"><font face="宋体 "><font size="3">搜索</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">&nbsp;&nbsp;stats.inc.php</font></font></font><font color="blue"><font face="宋体 "><font size="3">论坛统计</font></font></font><br />
+<font color="blue"><font face="Calibri "><font size="3">&nbsp;&nbsp;thread.inc.php</font></font></font><font color="blue"><font face="宋体 "><font size="3">主题浏览</font></font></font></p>                           <div class="box_news_info2"></div></div>
+      </div></td>
+         <td width="25%" valign="top" bgcolor="#F6FBFC" style="border-left:1px solid #D0E4ED;">&nbsp;</td>
+       </tr>
+     </table>
+   </div>
+   </div>
+</div>
+<div class="blank"></div>
+<div id="footer1">
+  <div align="center" style="padding:20px;">
+    <p>&nbsp;</p>
+  </div>
+
+</div>
+</body>
+</html>

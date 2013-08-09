@@ -1,0 +1,104 @@
+<include file="public:header" />
+<load href="__PUBLIC__/Skin/Job/common.css"/>
+<load href="__PUBLIC__/Skin/page.css"/>
+<style type="text/css">
+<!--
+.STYLE1 {color: #FF0000}
+
+.job_name{	font-weight:bold;}
+.job_name a{ font-size:20px; color:#000;}
+.job_detail{ padding:10px 10px 0px 25px;}
+.magin_10{ margin-bottom:8px;}
+
+-->
+</style>
+
+				<div class="ad"><img src="__PUBLIC__/Skin/Job/ad_4.jpg" width="930" border="0"/></div>
+				<div class="left" id="jleft">
+					<div class="login">
+						<h1><span class="zb"><a href="#">推荐职业</a></span></h1>
+						<div class="clear"></div>
+						<volist id="vo" name="up">
+						<div class='swck'>
+							<h2><span class='dx'>{:jurl2($vo['id'],$vo['jtitle'],'_blank')}</span></h2>
+							<p><a href='{$vo.nid|curl}' target='_blank'>{$vo.ctitle}</a></p>
+							<p>{$vo.workplace}</p>
+							<p>{$vo.ctime|date='Y-m-d',###}</p>
+						</div>
+						</volist>
+					</div>
+				</div>
+				<div class="zhigou" id="jright">
+					<div class="zjms" style="padding-top:10px;">
+						<style>
+							.zhigou .zjms .gw * {vertical-align:middle;}
+						</style>
+						<include file="public:sobar" />
+					</div>
+					<div class="men" >
+						<div class="jt">
+							<div class="men_left"><img src="__PUBLIC__/Skin/Job/bj_20.jpg" /></div>
+							<div class="men_ce">
+								<ul class="huiyi">
+									<li><a href="#" target="_blank" style="background-image:url(__PUBLIC__/Skin/Job/bj_23.jpg); color:#23548a;">搜索结果</a></li>
+								</ul>
+							</div>
+							<div class="men_left"><img src="__PUBLIC__/Skin/Job/bj_21.jpg" /></div>
+						</div>
+                        <form  method="post" name="job" id="job" action="__APP__/jobapply/insert">
+                        <div class="bg_fa" id="page_top">
+									
+						</div>
+                        <volist id="vo" name="list">
+                        <div style="margin:10px auto;border-bottom:1px solid #ccc;width:95%;padding-bottom:10px; text-align:left;">
+    <div class="job_name">
+        <input type="checkbox" id="id[]" name="id[]" value="{$vo.id}" />
+        <a href="/job/show_{$vo.id}.html" target=_blank style="font-size:18px;color:#0c63e4">{$vo.jtitle}</a> </div>
+    <div class="job_detail">
+        <div class="magin_10">
+            <div>公司名称: <a href="/company/show_{$vo.nid}.html" target="_blank" style="font-size:13px;color:#f80"> {$vo.ctitle} </a> <span style=" margin-left:30px; color:#f80;">发布日期：{$vo.ctime|date='Y-m-d',###}</span> </div>
+            
+        </div>
+        <div class="magin_10"  style="color:#2A2A2A;"> <span class="bold">工作地点</span>:{$vo.workplace}  | <span class="bold">所属行业</span>:{$vo.category_id|getEnumTitle=profesion} |  <span class="bold">公司性质</span>:{$vo.nature} |  <span class="bold">学历要求</span>:{$vo.study}</div>
+        <div> 职位要求:
+            {$vo.request} </div>
+    </div>
+</div>
+                        </volist>
+                        <div id="page_bottom" class="bg_fa">
+									
+										<a onclick="chkall('id[]')" style='cursor:pointer;'>全选</a> <a onclick="chkallno('id[]')" style='cursor:pointer;'> 取消全选</a>
+									  <a onclick="apply();">申请此职位</a> <a onclick="fav();">放入收藏夹</a><!-- 每页显示：<select name=""><option>10条</option></select> <select name=""><option>按时间发布顺序排列</option></select>
+										</span>									
+						-->{$page}</div>  
+                        <input name="" type="submit" />
+						</form>
+                        
+						<div class="yema">
+						
+					</div> 
+					</div>
+				</div>
+				<div class="clear"></div>
+                
+<include file="public:footer" />
+
+
+<script>
+//$('#page_bottom').style.display='none';
+
+
+//showPopWin("sb",200,200);
+window.onload = function(){
+	document.getElementById("page_top").innerHTML = document.getElementById("page_bottom").innerHTML;
+	$('#workplace').val('{.workplace}');
+	$('#category_id').val('{.category_id}');
+	$('#keyword').val('{.keyword}');
+	
+	//G("jleft").style.height="1588px";
+	//同步左右div高度
+	//equalHight("jleft","jright");
+}
+
+</script>
+<loads href="__PUBLIC__/Js/logininfo2.js" />

@@ -1,0 +1,422 @@
+svn命令 通常都有帮助,可通过如下方式查询：
+
+$ svn help
+
+知道了子命令，但是不知道子命令的用法，还可以查询：
+
+$ svn help add
+
+开发人员常用命令
+
+(1) 导入项目
+
+$ cd ~/project
+$ mkdir -p svntest/{trunk,branches,tags}
+$ svn import svntest https://localhost/test/svntest --message "Start project"
+...
+$ rm -rf svntest
+
+我们新建一个项目svntest，在该项目下新建三个子目录：trunk，开发主干；branches，开发分支；tags，开发阶段性标签。然后导入到版本库test下，然后把svntest拿掉。
+
+(2) 导出项目
+
+$ svn checkout https://localhost/test/svntest/trunk
+
+修订版本号的指定方式是每个开发人员必须了解的，以下是几个参考例子，说明可参考svn推荐书。
+
+$ svn diff --revision PREV:COMMITTED foo.c
+# shows the last change committed to foo.c
+
+$ svn log --revision HEAD
+# shows log message for the latest repository commit
+
+$ svn diff --revision HEAD
+# compares your working file (with local changes) to the latest version
+# in the repository
+
+$ svn diff --revision BASE:HEAD foo.c
+# compares your “pristine” foo.c (no local changes) with the
+# latest version in the repository
+
+$ svn log --revision BASE:HEAD
+# shows all commit logs since you last updated
+
+$ svn update --revision PREV foo.c
+# rewinds the last change on foo.c
+# (foo.c's working revision is decreased)
+
+$ svn checkout --revision 3
+# specified with revision number
+
+$ svn checkout --revision {2002-02-17}
+$ svn checkout --revision {15:30}
+$ svn checkout --revision {15:30:00.200000}
+$ svn checkout --revision {"2002-02-17 15:30"}
+$ svn checkout --revision {"2002-02-17 15:30 +0230"}
+$ svn checkout --revision {2002-02-17T15:30}
+$ svn checkout --revision {2002-02-17T15:30Z}
+$ svn checkout --revision {2002-02-17T15:30-04:00}
+$ svn checkout --revision {20020217T1530}
+$ svn checkout --revision {20020217T1530Z}
+$ svn checkout --revision {20020217T1530-0500}
+
+(3) 日常指令
+
+$ svn update
+
+$ svn add foo.file
+$ svn add foo1.dir
+$ svn add foo2.dir --non-recursive
+$ svn delete README
+$ svn copy foo bar
+$ svn move foo1 bar1
+
+$ svn status
+$ svn status --verbose
+$ svn status --verbose --show-updates
+$ svn status stuff/fox.c
+
+$ svn diff
+$ svn diff > patchfile
+
+$ svn revert README
+$ svn revert
+
+修改冲突发生时，会生成三个文件：.mine, .rOLDREV, .rNEWREV。比如：
+
+$ ls -l
+sandwich.txt
+sandwich.txt.mine
+sandwich.txt.r1
+sandwich.txt.r2
+
+解决修改冲突方式之一：修改冲突的文件sandwich.txt，然后运行命令：
+
+$ svn resolved sandwich.txt
+
+方式之二：用库里的新版本覆盖你的修改：
+
+$ cp sandwich.txt.r2 sandwich.txt
+$ svn resolved sandwich.txt
+
+方式之三：撤销你的修改，这种方式不需要运行resolved子命令:
+
+$ svn revert sandwich.txt
+Reverted 'sandwich.txt'
+$ ls sandwich.*
+sandwich.txt
+
+确保没问题后，就可以提交了。
+
+$ svn commit --message "Correct some fatal problems"
+$ svn commit --file logmsg
+$ svn commit
+
+(4) 检验版本历史
+
+$ svn log
+$ svn log --revision 5:19
+$ svn log foo.c
+$ svn log -r 8 -v
+
+$ svn diff
+$ svn diff --revision 3 rules.txt
+$ svn diff --revision 2:3 rules.txt
+$ svn diff --revision 4:5 http://svn.red-bean.com/repos/example/trunk/text/rules.txt
+
+$ svn cat --revision 2 rules.txt
+$ svn cat --revision 2 rules.txt > rules.txt.v2
+
+$ svn list http://svn.collab.net/repos/svn
+$ svn list --verbose http://svn.collab.net/repos/svn
+
+$ svn checkout --revision 1729 # Checks out a new working copy at r1729
+…
+$ svn update --revision 1729 # Updates an existing working copy to r1729
+…
+
+(5) 其他有用的命令
+
+svn cleanup
+
+为失败的事务清场。
+
+(6) 分支和合并
+
+建立分支方法一：先checkout然后做拷贝，最后提交拷贝。
+
+$ svn checkout http://svn.example.com/repos/calc bigwc
+A bigwc/trunk/
+A bigwc/trunk/Makefile
+A bigwc/trunk/integer.c
+A bigwc/trunk/button.c
+A bigwc/branches/
+Checked out revision 340.
+
+$ cd bigwc
+$ svn copy trunk branches/my-calc-branch
+$ svn status
+A + branches/my-calc-branch
+
+$ svn commit -m "Creating a private branch of /calc/trunk."
+Adding branches/my-calc-branch
+Committed revision 341.
+
+建立分支方法二：直接远程拷贝。
+
+$ svn copy http://svn.example.com/repos/calc/trunk \
+http://svn.example.com/repos/calc/branches/my-calc-branch \
+-m "Creating a private branch of /calc/trunk."
+
+Committed revision 341.
+
+建立分支后，你可以把分支checkout并继续你的开发。
+
+$ svn checkout http://svn.example.com/repos/calc/branches/my-calc-branch
+
+假设你已经checkout了主干，现在想切换到某个分支开发，可做如下的操作：
+
+$ cd calc
+$ svn info | grep URL
+URL: http://svn.example.com/repos/calc/trunk
+$ svn switch http://svn.example.com/repos/calc/branches/my-calc-branch
+U integer.c
+U button.c
+U Makefile
+Updated to revision 341.
+$ svn info | grep URL
+URL: http://svn.example.com/repos/calc/branches/my-calc-branch
+
+合并文件的命令参考：
+
+$ svn diff -r 343:344 http://svn.example.com/repos/calc/trunk
+$ svn merge -r 343:344 http://svn.example.com/repos/calc/trunk
+$ svn commit -m "integer.c: ported r344 (spelling fixes) from trunk."
+$ svn merge -r 343:344 http://svn.example.com/repos/calc/trunk my-calc-branch
+$ svn merge http://svn.example.com/repos/branch1@150 \
+http://svn.example.com/repos/branch2@212 \
+my-working-copy
+$ svn merge -r 100:200 http://svn.example.com/repos/trunk my-working-copy
+$ svn merge -r 100:200 http://svn.example.com/repos/trunk
+$ svn merge --dry-run -r 343:344 http://svn.example.com/repos/calc/trunk
+
+最后一条命令仅仅做合并测试，并不执行合并操作。
+
+建立标签和建立分支没什么区别，不过是拷贝到不同的目录而已。
+
+$ svn copy http://svn.example.com/repos/calc/trunk \
+http://svn.example.com/repos/calc/tags/release-1.0 \
+-m "Tagging the 1.0 release of the 'calc' project."
+
+$ ls
+my-working-copy/
+$ svn copy my-working-copy http://svn.example.com/repos/calc/tags/mytag
+Committed revision 352.
+
+后一种方式直接把本地的工作拷贝复制为标签。
+
+此外，你还可以删除某个分支。
+
+$ svn delete http://svn.example.com/repos/calc/branches/my-calc-branch \
+-m "Removing obsolete branch of calc project."
+
+管理人员常用命令
+
+(7) 版本库管理
+
+$ svnadmin help
+...
+$ svnadmin help create
+...
+$ svnadmin create --fs-type bdb /usr/local/repository/svn/test
+$ chown -R svn.svn /usr/local/repository/svn/test
+
+建立版本库，库类型为bdb（使用Berkeley DB做仓库），库名称为test。
+svn版本库有两种存储方式：基于Berkeley DB(bdb)或者基于文件系统(fsfs)，通过 –fs-type可指定存储方式。
+
+(8) 查询版本库信息
+
+$ svnlook help
+...
+$ svnlook help tree
+...
+$ svnlook tree /usr/local/repository/svn/test --show-ids
+
+bash> svn help
+用法：svn <subcommand> [options] [args]
+Subversion 命令行客户端，版本 1.2.0。
+请使用 “svn help <subcommand>” 显示子命令的辅助说明。
+大多数的子命令可接受文件或目录参数，对目录进行递回存取。
+如无指定参数给命令，默认将会自当前的目录 (包含) 进
+行递归存取。
+
+可用的子命令：(括号内是子命令的简写)
+   add
+   blame (praise, annotate, ann)
+   cat
+   checkout (co) //从源码库取出一个工作版本的拷贝
+   cleanup //
+   commit (ci) //提交当前工作拷贝的更改。这个地方是有可能出现代码冲突的。
+   copy (cp) //做一个工作拷贝的拷贝。
+   delete (del, remove, rm) //删除本地或者svn server response上的文件或者目录。
+   diff (di) //比较某个文件与库中的对应文件的不同，类似于系统的diff命令。参数：文件名。
+   export //导出一个无版本控制的目录树拷贝。一般用于导出发行，或者投入运行的版本。
+   help (?, h)
+   import //将本地当前目录下的文件导入到svn response 中。
+   info //当前目录下工作拷贝中某文件(文件夹)的信息，如URL，版本，修改日期等。参数：要看的文件(文件夹)
+   list (ls) //列出当前工作拷贝下的文件 ，相当于系统的ls命令，不过只能在工作拷贝目录下使用。
+   lock
+   log
+   merge //将两个来源之间的差异应用至工作拷贝路径。
+   mkdir //在本地或者svn respon上新建一个文件夹.参数：URL或者路径
+   move (mv, rename, ren)
+   propdel (pdel, pd)
+   propedit (pedit, pe)
+   propget (pget, pg)
+   proplist (plist, pl)
+   propset (pset, ps)
+   resolved
+   revert
+   status (stat, st) //svn工作拷贝当前状态，与svn server上的源码比较的结果。
+   switch (sw)
+   unlock
+   update (up) //将svn server端文件同步到本地
+
+Subversion 是个版本控制系统的工具。
+欲取得详细资料，请参考 http://subversion.tigris.org/
+
+
+
+>svn co
+checkout (co): Check out a working copy from a repository.
+usage: checkout URL[@REV]... [PATH]
+
+   If specified, REV determines in which revision the URL is first
+   looked up.
+
+   If PATH is omitted, the basename of the URL will be used as
+   the destination. If multiple URLs are given each will be checked
+   out into a sub-directory of PATH, with the name of the sub-directory
+   being the basename of the URL.
+
+有效选项：
+   -r [--revision] arg       : ARG (一些命令需要 ARG1:ARG2 )
+                             修订版参数可以是：
+                                 数字       修订版号
+                                 "{" 日期 "}" 在指定时间以后的修订版date
+                                 "HEAD"       最近的档案库
+                                 "BASE"       基线，基于修订版的工作条目
+                                 "COMMITTED"   最后提交或基线之前
+                                 "PREV"       修订版提交之前
+   -q [--quiet]             : 打印尽可能少
+   -N [--non-recursive]     : 只在单个目录操作
+   --username arg           : 指定用户 ARG
+   --password arg           : 指定密码 ARG
+   --no-auth-cache           : 不要缓冲用户验证
+   --non-interactive         : 不要交互提示
+   --config-dir arg         : 从目录 ARG 读取用户配置文件
+   --ignore-externals       : ignore externals definitions
+  
+sh> svn add
+add: 把文件和目录放入版本控制中，
+通过调度加到档案库。它们会在下一次提交时加入。
+用法：add 路径...
+
+有效选项：
+   --targets arg             : 传递文件 ARG 内容为附件参数
+   -N [--non-recursive]     : 只在单个目录操作
+   -q [--quiet]             : 打印尽可能少
+   --config-dir arg         : 从目录 ARG 读取用户配置文件
+   --force                   : 强制操作运行
+   --auto-props             : 使自动属性有效
+   --no-auto-props           : 使自动属性无效  
+  
+   eg.(下面的命令必须在工作拷贝目录下运行)
+   sh> svn add test.c //加一个文件
+   sh> svn add test //加一个目录，目录下有任意结构的文件夹
+  
+sh> svn import http://localhost/svn/hehehehehhe -m=sdfsdf   //可在任何目录下，将当前文件夹下的所以文件递归导入到svn response 的hehehhhe目录下。
+
+sh>svn export
+export: 产生一个无版本控制的目录树拷贝。
+用法：1、export [-r REV] URL[@PEGREV] [PATH]
+       2、export [-r REV] PATH1[@PEGREV] [PATH2]
+
+   1、从 URL 指定的档案库，导出一个干净的目录树到 PATH。如果有指定
+     REV 的话，内容即为该修订版的，否则就是 HEAD 修订版。如果 PATH
+     被省略的话，地址(URL)的最后部份会被用来当成本地的目录名称。
+
+   2、在工作拷贝中，从指定的 PATH1 导出一个干净的目录树到 PATH2。如果
+     有指定 REV 的话，会从指定的修订版导出，否则从 WORKING 导出。如果
+     PATH2 被省略的话，PATH1 的最后部份会被用来当成本地的目录名称。
+     如果没有指定 REV 的话，所有的本地修改都还会保持著，但是未纳入
+     版本控制的文件不会被复制。
+
+     如果指定了 PEGREV ，将从指定的修订版本开始查找。
+
+
+有效选项：
+   -r [--revision] arg       : ARG (一些命令需要 ARG1:ARG2 )
+                             修订版参数可以是：
+                                 数字       修订版号
+                                 "{" 日期 "}" 在指定时间以后的修订版date
+                                 "HEAD"       最近的档案库
+                                 "BASE"       基线，基于修订版的工作条目
+                                 "COMMITTED"   最后提交或基线之前
+                                 "PREV"       修订版提交之前
+   -q [--quiet]             : 打印尽可能少
+   -N [--non-recursive]     : 只在单个目录操作
+   --force                   : 强制操作运行
+   --username arg           : 指定用户 ARG
+   --password arg           : 指定密码 ARG
+   --no-auth-cache           : 不要缓冲用户验证
+   --non-interactive         : 不要交互提示
+   --config-dir arg         : 从目录 ARG 读取用户配置文件
+   --native-eol arg         : 使用一个与标准不同的 EOL 标记
+                             文件的系统标记是一个本地的 svn:eol-style 属性。
+                             ARG 可能是一下之一 'LF'，'CR'，'CRLF'
+   --ignore-externals       : ignore externals definitions
+  
+   eg.
+   sh> svn export http://localhost/svn/hehehehehhhe
+  
+sh> svn merge  
+merge: 将两个来源之间的差异应用至工作拷贝路径。
+用法：1、merge sourceURL1[@N] sourceURL2[@M] [WCPATH]
+       2、merge sourceWCPATH1@N sourceWCPATH2@M [WCPATH]
+       3、merge -r N:M SOURCE[@REV] [WCPATH]
+
+   1、第一种形式中，来源 URL 各被指定到修订版 N 与 M。这两个就是作为
+     比较的来源。如果没有指定修订版的话，默认为 HEAD。
+
+   2、在第二种形式中，对应到两个来源的工作拷贝路径的 URL 定义出用以
+     进行比较的来源。这里必须指定修订版。
+
+   3、第三种形式中，SOURCE 可为 URL 或工作拷贝项目，后者会使用对应的
+     地址(URL)。在修订版 REV 的 地址(URL) 会以它存在于修订版 N 与 M 的路径来作
+     比较。如果未指定 REV，就会假设为 HEAD。
+
+   WCPATH 是接受改变的工作拷贝路径。如果省略 WCPATH 的话，默认值为
+   '.'，除非来源的主要名字符合 '.' 里的某个文件；在这种情况下，文件
+   差异将会直接应用至该文件去。
+
+有效选项：
+   -r [--revision] arg       : ARG (一些命令需要 ARG1:ARG2 )
+                             修订版参数可以是：
+                                 数字       修订版号
+                                 "{" 日期 "}" 在指定时间以后的修订版date
+                                 "HEAD"       最近的档案库
+                                 "BASE"       基线，基于修订版的工作条目
+                                 "COMMITTED"   最后提交或基线之前
+                                 "PREV"       修订版提交之前
+   -N [--non-recursive]     : 只在单个目录操作
+   -q [--quiet]             : 打印尽可能少
+   --force                   : 强制操作运行
+   --dry-run                 : 尝试操作但不修改
+   --diff3-cmd arg           : 使用 ARG 作为合并命令
+   --ignore-ancestry         : 合并时忽略原始信息
+   --username arg           : 指定用户 ARG
+   --password arg           : 指定密码 ARG
+   --no-auth-cache           : 不要缓冲用户验证
+   --non-interactive         : 不要交互提示
+   --config-dir arg         : 从目录 ARG 读取用户配置文件  

@@ -1,0 +1,1 @@
+2、解压 php.xol.zip 后,把php.xol文件复制到PowerDesigner的安装目录 Resource Files\Object Languages 目录下面.默认路径为: “C:\Program Files\Sybase\PowerDesigner 12\Resource Files\Object Languages” .

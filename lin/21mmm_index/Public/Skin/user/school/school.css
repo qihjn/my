@@ -1,0 +1,161 @@
+*{
+	font-size: 12px;
+	margin:0 auto;
+}
+
+body{width:100%; background-image:url(../../images/school_web/bg.jpg); background-repeat:repeat;}
+#allnet{text-align:center; margin-left:auto; margin-right:auto; width:950px; padding-bottom:5px; background-color:#fff;}
+#school{width:950px; float:left; background-color:#fff; padding-bottom:5px;}
+#star{width:930px; float:left; margin-left:10px; display:inline;}
+a img{border:none;} 
+li{list-style-type:none;}
+.clear{clear:both;}
+a.video{
+	background-image: url(../../images/school_web/bj_2.gif);
+	background-repeat: no-repeat;
+	padding-left:18px;
+	background-position:left center;
+}
+a.scho{
+	background-image:url(../../images/school_web/schol.gif);
+	background-repeat: no-repeat;
+	padding-left:18px;
+	background-position:left center;
+}
+.ad{width:100%; float:left; margin-top:5px; display:inline; text-align:center; clear:both;}
+/* µÇÂ½¿ò */
+.bj_live{width:100%; height:24px; text-align:center; float:left; display:inline;}
+.bj_live p{line-height:24px; text-align:left; padding-left:10px; font-size:13px; color:#333;}
+.bj_live a:link {color:#333; text-decoration:none;}
+.bj_live a:visited  {color:#333; text-decoration:none; }
+.bj_live a:hover {color:#333; text-decoration:underline;}
+.bj_live_left{ float:left; padding-left:5px; text-align:left; padding-top:3px;}
+.bj_live_right{float:right; text-align:left; width:370px; background-image:url(../../images/school_web/xg.jpg); height:24px; padding:0;}
+.bj_live_right li{float:left; margin-left:9px; display:inline; text-align:left; color:#443f39; line-height:24px;}
+.bj_live_right a:link {color:#443f39; text-decoration:none;}
+.bj_live_right a:visited  {color:#443f39; text-decoration:none; }
+.bj_live_right a:hover {color:#443f39; text-decoration:underline;}
+/* logo */
+.logo{ width:100%; float:left; margin-top:5px; text-align:center; display:inline; clear:both;}
+.logo_vi{width:212px; float:left; text-align:center;}
+.logo_ad{ float:right; text-align:left; margin-top:2px; display:inline; height:30px; background-image:url(../../images/school_web/bj_nav.jpg); background-repeat:repeat-x;}
+.logo_ad_left{width:5px; float:left; text-align:center; height:30px;}
+.logo_center{padding:0; padding-right:5px; float:left; text-align:left;}
+.logo_center li{float:left; margin-left:12px; padding-right:10px; text-align:left; line-height:30px; display:inline; background-image:url(../../images/school_web/bj_cen.jpg); background-repeat:no-repeat; background-position:right center;}
+.logo_center li a:link {color:#fff; text-decoration:none;}
+.logo_center li a:visited  {color:#fff; text-decoration:none; }
+.logo_center li a:hover {color:#fff; text-decoration:underline;}
+/*menu*/
+.menu{ width:100%; float:left; margin-top:5px; display:inline; text-align:center; background-image:url(../../images/school_web/menu.jpg); height:52px; clear:both;}
+.menu_name{float:left; width:166px; text-align:center; height:52px;}
+.menu_caidan{float:left; margin-left:10px; width:744px; display:inline;}
+.menu_caidan ul{ padding:0;}
+.menu_caidan li{ margin-left:5px; display:inline; padding-top:25px; text-align:center; float:left; color:#2b52a1;}
+.menu_caidan li a:link {color:#2b52a1; text-decoration:none;}
+.menu_caidan li a:visited {color:#2b52a1; text-decoration:none;}
+.menu_caidan li a:hover {color:#fff; text-decoration:none; background-color:#2b52a1;}
+.menu_search{ float:left; margin-left:20px; display:inline; margin-top:18px; color:#333;}
+/*center*/
+.left{width:178px; float:left; border:1px solid #b5cdf0; padding-bottom:5px; margin-top:5px; display:inline;}
+.left h1{width:159px; float:left; margin-left:5px; margin-top:5px; display:inline; text-align:center;}
+.left h2{width:100%; clear:both; margin-top:5px; float:left; display:inline; height:24px; background-color:#dee7f6; line-height:24px;}
+.titi{ float:left; padding-left:5px; text-align:left; color:#29539d;}
+.titi a:link {color:#29539d; text-decoration:none;}
+.titi a:visited  {color:#29539d; text-decoration:none; }
+.titi a:hover {color:#29539d; text-decoration:underline;}
+.left_ad{ width:168px; float:left; margin-top:5px; margin-left:5px; display:inline; text-align:center;}
+.tjpx{width:168px; float:left; margin-top:5px; margin-left:5px; display:inline; text-align:center; padding:0; clear:both;}
+.tjpx li{width:100%; text-align:left; line-height:22px; float:left; color:#333;}
+.tjpx li a:link {color:#333; text-decoration:none;}
+.tjpx li a:visited {color:#333; text-decoration:none;}
+.tjpx li a:hover {color:#cc0000; text-decoration:underline;}
+.left p{width:168px; float:left; margin-top:5px; margin-left:5px; display:inline; text-align:left; line-height:20px; color:#cc0000;}
+.left p a:link {color:#008080; text-decoration:none;}
+.left p a:visited {color:#008080; text-decoration:none;}
+.left p a:hover {color:#cc0000; text-decoration:underline;}
+.right{width:740px; float:left; margin-left:10px; margin-top:5px; display:inline; text-align:center;}
+.right_ad{width:365px; float:left; margin-left:10px; display:inline; text-align:center;}
+
+.xueo{width:363px; float:left; margin-left:10px; margin-top:5px; display:inline; border:1px solid #a7c4df; padding-bottom:5px;}
+.xueo h1{width:100%; height:27px; float:left; background-image:url(../../images/school_web/bj_1.jpg); border-bottom:1px solid #a7c4df; background-repeat:repeat-x; }
+.setting{padding-left:10px; float:left; text-align:left; line-height:27px; color:#163c76; font-size:13px;}
+.setting a:link {color:#163c76; text-decoration:none; font-size:13px;}
+.setting a:visited {color:#163c76; text-decoration:none; font-size:13px;}
+.setting a:hover {color:#163c76; text-decoration:underline; font-size:13px;}
+.more{float:right; padding-right:5px; text-align:left; padding-top:3px;}
+.more a:link {color:#163c76; text-decoration:none; font-weight:normal;}
+.more a:visited {color:#163c76; text-decoration:none; font-weight:normal;}
+.more a:hover {color:#163c76; text-decoration:underline; font-weight:normal;}
+
+.zcb{width:343px; float:left; margin-top:5px; margin-left:10px; display:inline; text-align:center; padding:0; clear:both;}
+.zcb li{width:100%; text-align:left; line-height:24px; float:left; color:#333;}
+.zcb li a:link {color:#333; text-decoration:underline; font-size:13px;}
+.zcb li a:visited {color:#333; text-decoration:underline; font-size:13px;}
+.zcb li a:hover {color:#cc0000; text-decoration:underline; font-size:13px;}
+.tusiba{width:100%; height:27px; float:left; background-image:url(../../images/school_web/bj_3.gif); background-repeat:repeat-x; padding:0;}
+.tusiba li{margin-left:-1px; float:left; display:inline;  text-align:center; border-left:1px solid #a7c4df; border-right:1px solid #a7c4df; height:27px; line-height:27px; width:58px;}
+.tusiba li a:link {color:#163c76; text-decoration:none; display:block; }
+.tusiba li a:visited {color:#163c76; text-decoration:none; display:block;}
+.tusiba li a:hover {color:#163c76; text-decoration:none; font-weight:bold; display:block; background-repeat:repeat-x; background-image:url(../../images/school_web/bj_4.gif);}
+.tusiba li a.set {color:#163c76; text-decoration:none; font-weight:bold; display:block; background-repeat:repeat-x; background-image:url(../../images/school_web/bj_4.gif);}
+
+.shangtong{width:232px; float:left; margin-top:5px; margin-left:10px; display:inline; text-align:center; padding:0;}
+.shangtong li{width:100%; text-align:left; line-height:21px; float:left; color:#163c76;}
+.shangtong li a:link {color:#163c76; text-decoration:none; }
+.shangtong li a:visited {color:#163c76; text-decoration:none; }
+.shangtong li a:hover {color:#cc0000; text-decoration:none; }
+.xyzp{width:738px; float:left; margin-top:5px; border:1px solid #dadada; background-color:#f2f2f2; padding-bottom:5px;}
+.xyzp_l{width:17px; float:left; margin-top:40px; display:inline; text-align:center;}
+.xyzp_c{width:704px;float:left;overflow:hidden;height:120px;position:relative;}
+.xyzp_pic{ width:105px; float:left; margin-left:10px; margin-top:10px; display:inline; text-align:center;}
+.xyzp_pic img{padding:3px; background-color:#fff;}
+.xyzp_pic p{width:100%; text-align:center; line-height:20px;}
+.xyzp_pic p a:link {color:#333; text-decoration:none; }
+.xyzp_pic p a:visited {color:#333; text-decoration:none; }
+.xyzp_pic p a:hover {color:#333; text-decoration:underline; }
+.xxfy{width:738px; float:left; border:1px solid #a7c4df; background-image:url(../../images/school_web/bj_5.jpg); background-repeat:repeat-x; height:29px; line-height:29px; clear:both;}
+
+.buyZonePrice{ float:left; margin-top:5px; display:inline;  border:1px solid #FFF; border-top:0; width:738px;}
+.bg_fa,tr.bg_fa td{background:#FAFAFA}
+.bg_e7{background-color:#f1f3f9!important}
+.buyZonePrice table{background:#FFF}
+.buyZonePrice th{background:#f1f3f9;line-height:20px; text-align:center; font-size:13px;}
+.buyZonePrice td{line-height:20px; padding-left:5px; }
+.buyZonePrice a:link {color:#cc0000; text-decoration:none; font-weight:bold; }
+.buyZonePrice a:visited {color:#cc0000; text-decoration:none; font-weight:bold;}
+.buyZonePrice a:hover {color:#cc0000; text-decoration:underline; font-weight:bold;}
+.yema{ width:100%; margin-top:10px; float:left; display:inline;}
+.yema p{float:left; text-align:left;}
+.yema p a:link { margin-left:6px; padding:3px; text-align:center; background-color:#f7fcff; border:1px solid #bee0ff; color:#3074ab; display:block; text-decoration:none;}
+.yema p a:visited { margin-left:10px;padding:3px; text-align:center; background-color:#f7fcff;  border:1px solid #bee0ff; color:#3074ab; display:block; text-decoration:none;}
+.yema p a:hover { margin-left:10px; padding:3px; text-align:center;background-color:#ffecd2; border:1px solid #ff6600; color:#cc0000;display:block; text-decoration:none;}
+
+
+
+
+
+/*foot*/
+.foot{
+	width:100%;
+	line-height:20px;
+	clear:both;
+	color:#666;
+	margin-top:5px;
+	float:left;
+}
+.foot .text{ border-top:3px solid #e0e0e0;  clear:both; color:#666; text-align:center; padding-top:5px;}
+.foot a:link {
+	color: #333;
+	text-decoration:none;
+}
+.foot a:visited {
+	color: #333;
+	text-decoration:none;
+}
+.foot a:hover {
+    color: #cc0000;
+	text-decoration: underline;
+}
+
+
+

@@ -1,0 +1,95 @@
+html, body, img, a img, form,ul,li,p{margin:0; padding:0; border:0 none}
+img{text-align:absmiddle; background-color:transparent}
+html, body, p, table{font:normal normal normal 14PX Tahoma,Verdana,Helvetica,Arial,sans-serif; line-height:150%}
+body, table{background-color:white}
+@media print{body *{color:#000 !important; border-color:#ccc !important}
+}
+
+h1, h2, h3, h4, h5, h6{margin:0; padding:0; text-shadow:gray 0px 0px 5px; font-family:Verdana,Geneva,Arial,Helvetica,sans-serif; font-size-adjust:none; font-stretch:normal; font-style:normal; font-variant:normal; font-weight:bold; line-height:1.5em}
+ h1{font-size:15px}
+ h2{font-size:14px}
+ h3{font-size:13px}
+ h4{font-size:12px}
+ h5{font-size:11px}
+ h6{font-size:12px}
+
+
+a{text-decoration:none; color:#174B73; border-bottom:1px dashed gray}
+
+a:hover{color:#F60; border-bottom:1px dashed gray}
+
+.bgcolor1{background-color:#FFF}
+.bgcolor2{background-color:#40984C}
+
+.bgcolor3{background-color:#E9E9E9}
+
+.bgcolor5{background-color:#DFDFD0}
+.bgcolor6{background-color:#F8F8F8}
+
+.bgcolor7{background-color:#5E0700}
+
+.alpha80{filter:alpha(opacity=80)}
+.alpha100{filter:alpha(opacity=100)}
+
+.shadow{filter:progid:DXImageTransform.Microsoft.Shadow(Color=gray,Direction=120,strength=3)}
+
+.red{color:red}
+.green{color:green}
+.blue{color:blue}
+.white{color:white}
+.gray{color:gray}
+.orange{color:orange}
+.yellow{color:yellow}
+
+.line1{border-bottom:1px solid #4A7B26}
+.line2{border-bottom:1px solid #4A7B26; border-top:1px solid #4A7B26}
+
+.pic {padding:2px ;border:1px solid silver}
+div.pic{padding:3px}
+div.pic img{border:1px solid gray}
+.tLeft{text-align:left}
+.tRight{text-align:right}
+.tCenter{text-align:center}
+.tTop{vertical-align:top}
+.tBottom{vertical-align:bottom}
+.tMiddle{vertical-align:middle}
+.hMargin{margin-left:3px; margin-right:3px}
+.vMargin{margin-top:3px; margin-bottom:3px}
+
+.fLeft{float:left}
+.fRig{float:right}
+.fNone{float:none}
+.cBoth{clear:both}
+
+.bold{font-weight:bold}
+.normal{font-weight:normal}
+
+.75{width:75%}
+.100{width:100%}
+.25{width:25%}
+
+.over{background-color:#CFC}
+.out{background-color:#FFF}
+.down{background-color:#CF9}
+.click{background-color:#CC3}
+
+.space{letter-spacing:4px}
+
+.huge{width:350px}
+.large{width:280px}
+.medium{width:150px}
+.small{width:65px}
+.mini{width:35px}
+.readonly{filter:alpha(opacity=60)}
+
+.bLeft{border-left-width:2px; border-left-color:gray}
+.bLeftRequire{border-left-width:2px; border-left-color:red}
+.bRight{border-right-width:2px; border-color:gray}
+.bBottom{border-bottom-width:2px; border-color:gray}
+.bTop{border-top-width:2px; border-color:gray}
+.dashed{border:1pt dashed gray}
+.solid{border:1pt solid gray}
+.wrongBorder{border:2pt solid orange}
+
+.none{display:none}
+.inline{display:inline}

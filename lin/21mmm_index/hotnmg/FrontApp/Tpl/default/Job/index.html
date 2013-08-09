@@ -1,0 +1,40 @@
+<include file="Public:header" />
+<!--单页-->
+<div id="page" class="clear">
+<div id="category">
+<ul>
+<include file="Public:about_left" /></ul>
+</div>
+<div id="main">
+<h3 class="title">招纳贤士<em> Job</em></h3>
+<form action="{:U('Search/getList')}" method="get"><div class="search">内容搜索: <input name="keyword" type="text" id="keyword" size="15" /><input name="submit" type="submit" value="提交搜索" id="submit" /><input name="module" type="hidden" value="Job" /></div></form>
+<ul class="list">
+<volist name="dataContentList" id="row">
+<table width="100%" border="0" cellpadding="0" cellspacing="1" class="xtable">
+  <tr>
+    <td colspan="2" class="jobTitle"><h3><if condition="$row['link_url'] neq ''"><a href="{$row.link_url}" target="_blank" style="{$row.title_style}">{$row.title}</a><else/><a href="{:U('Job/detail',array('item'=>$row['id']))}" target="_blank" style="{$row.title_style}">{$row.title}</a></if>
+    <span style="font-size:12px"> 
+    (<if condition="$row['time_type'] eq 1">长期招聘
+      <else/>限时招聘:{$row.end_time|date='Y-m-d',###}到期 </if>) </span></h3></td>
+    </tr>
+  <tr>
+    <td>招聘人数</td>
+    <td>{$row.number}</td>
+  </tr>
+  <tr>
+    <td width="10%">基本要求</td>
+    <td width="90%">{$row.description|nl2br}</td>
+  </tr>
+  <tr>
+    <td colspan="2"></td>
+    </tr>
+</table>
+</volist>
+</ul>
+<div class="pages">
+      <div class="plist">{$pageContentBar}</div>
+    </div>
+</div>
+</div>
+<!--底部-->
+<include file="Public:footer" />

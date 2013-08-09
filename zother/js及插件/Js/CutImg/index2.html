@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="css/imgareaselect-default.css" />
+</head>
+
+<body>
+ <div id="main">
+
+<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="jquery.imgareaselect.pack.js"></script>
+<script type="text/javascript">
+function preview(img, selection) {
+    if (!selection.width || !selection.height)
+        return;
+    
+    var scaleX = 100 / selection.width;
+    var scaleY = 100 / selection.height;
+
+    $('#preview img').css({
+        width: Math.round(scaleX * 710),
+        height: Math.round(scaleY * 585),
+        marginLeft: -Math.round(scaleX * selection.x1),
+        marginTop: -Math.round(scaleY * selection.y1)
+    });
+
+    $('#x1').val(selection.x1);
+    $('#y1').val(selection.y1);
+    $('#x2').val(selection.x2);
+    $('#y2').val(selection.y2);
+    $('#w').val(selection.width);
+    $('#h').val(selection.height);    
+}
+
+$(function () {
+    $('#photo').imgAreaSelect({ aspectRatio: '1:1', handles: true,
+        fadeSpeed: 200, onSelectChange: preview });
+});
+</script>
+
+   <img id="photo" src="flower2.jpg" />
+   <div id="preview" style="width: 100px; height: 100px; overflow: hidden;">
+    <img src="flower2.jpg" style="width: 100px; height: 100px;" />
+   </div>
+
+
+
+  <table style="margin-top: 1em;">
+   <thead>
+    <tr>
+     <th colspan="2" style="font-size: 110%; font-weight: bold; text-align: left; padding-left: 0.1em;">
+      Coordinates
+     </th>
+     <th colspan="2" style="font-size: 110%; font-weight: bold; text-align: left; padding-left: 0.1em;">
+      Dimensions
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td style="width: 10%;"><b>X<sub>1</sub>:</b></td>
+     <td style="width: 30%;"><input type="text" id="x1" value="-" /></td>
+     <td style="width: 20%;"><b>Width:</b></td>
+     <td><input type="text" value="-" id="w" /></td>
+    </tr>
+    <tr>
+     <td><b>Y<sub>1</sub>:</b></td>
+     <td><input type="text" id="y1" value="-" /></td>
+     <td><b>Height:</b></td>
+     <td><input type="text" id="h" value="-" /></td>
+    </tr>
+    <tr>
+     <td><b>X<sub>2</sub>:</b></td>
+     <td><input type="text" id="x2" value="-" /></td>
+     <td></td>
+     <td></td>
+    </tr>
+    <tr>
+     <td><b>Y<sub>2</sub>:</b></td>
+     <td><input type="text" id="y2" value="-" /></td>
+     <td></td>
+     <td></td>
+    </tr>
+   </tbody>
+  </table>
+ 
+</body>
+</html>

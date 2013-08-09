@@ -1,0 +1,50 @@
+<?php
+function transcontent($s) {
+    global $redirHost;
+    $s = stripslashes($s);
+   // $s = convert_embed($s);
+    $re = array();
+    $re["content"] = $s;
+	// 1、[^\s]  2、 (((f|ht){1}tp://)[-a-zA-Z0-9@:%_\+.~#?&//=]+) 3、 ([\w-]+\.)+[\w-]+.([^a-z])(/[\w- ./?%&=]*)?|[a-zA-Z0-9\-\.][\w-]+.([^a-z])(/[\w- ./?%&=]*)?   
+	//preg_match_all("/http:\/\/[^\s]+/i",$s,$arrLinks); //原正则 网址后带内容就有问题
+	preg_match_all("/http:\/\/[-a-zA-Z0-9@:%_+.~#?&\/=]+/i",$s,$arrLinks);
+    $re["urlcnt"] = count($arrLinks[0]);
+
+
+    if($re["urlcnt"]) {
+        $arrLinks = array_unique($arrLinks[0]);
+       // $re["urls"] = arrtoshorturl($arrLinks);
+		
+    }
+    $arrRep = array();
+    for($i=0; $i<count($re["urls"]); $i++) {
+        $tmp = $re["urls"][$i];
+        $l = "http://".$tmp["l"];
+        $shorturl = "http://".$redirHost[0].$tmp["s"];
+        $shottitle = (strlen($l)<=60)?" title= \"".$l."\" ":" title= \"".$shorturl."\" ";
+        //需要判断是否普通替换或者视频替换
+        if($tmp["v"]!=""){
+            $s = "<a href=\"".$shorturl."\" ".$shottitle."target=\"_blank\" mt=\"video\">".$shorturl."</a><img class=\"small_icon videoicon\" alt=\"\" src=\"http://t.house365.com/style/default/images/common/transparent.gif\"/>";
+        }else{
+			if($tmp['type'] == 1){
+				$s = "<a href=\"".$shorturl."\" ".$shottitle." target=\"_blank\" mt=\"music\">".$shorturl."</a><img class=\"small_icon musicicon\" alt=\"\" src=\"http://t.house365.com/style/default/images/common/transparent.gif\"/>";
+			}else{
+				$s = "<a href=\"".$shorturl."\" ".$shottitle."target=\"_blank\" mt=\"url\">".$shorturl."</a>";
+			}
+        }
+        if(strpos($l,$redirHost[0])!==false) {
+            $re["content"] = str_replace($l,$s,$re["content"]);
+        }else{
+            $arrRep[1][$l] = $s;
+        }
+    }
+    if(count($arrRep[1])) {
+        foreach($arrRep[1] as $l=>$s) {
+            $re["content"] = str_replace($l,$s,$re["content"]);
+        }
+    }
+    Return $re;
+}
+
+var_dump(transcontent('http://365url.cc/I3433J'));
+?>

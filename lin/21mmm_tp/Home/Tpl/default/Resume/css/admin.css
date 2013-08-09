@@ -1,0 +1,216 @@
+body, h2, h3, h4, ul, li, form, p, label{margin:0; padding:0}
+li{list-style:none}
+.align-mid{text-align:center}
+.align-right{text-align:right}
+.clear{clear:both}
+body {
+	font: 12px/1.6 "ËÎÌו";
+	color:#000000;
+	text-align:center;
+	background: #7b4350;
+	margin: 10px auto;
+	width:983px;
+}
+#top{margin:0 auto;clear:both;height: 71px;background:url(../images/top_bj.jpg) repeat-x top;}
+#topl{float:left;margin-right:-13px;width:13px;}
+#topr{float:right;margin-left:-13px;width:13px;}
+#topm{
+	width:auto;
+	margin:0 13px 0 13px;
+}
+#logo{
+	float:left;margin-right:-218px;
+	width:218px;
+	padding: 10px 0px 0px;
+}
+#topm_r{
+	float:right;
+	width:525px;margin-left:-525px;
+	text-align: right;
+}
+#topm_r_u{
+	color: #CCCCCC;
+	height: 20px;
+	padding: 6px 10px 0px 0px;
+}
+#topm_r_d{
+	height: 20px;
+}
+#topm_r_d_l{
+	float:left;width:10px;
+}
+#topm_r_d_r{
+	float:right;width:10px;
+}
+#topm_r_d_m{
+	background: url(../images/admin_r3_c30.gif) repeat-x top;
+	color: #FFFFFF;
+	text-align: center;
+	padding: 1px 0px 0px 15px;
+	width:490px;
+	float: left;
+}
+#topm_r_d_m a{
+	color: #FFFFFF;
+}
+#topm_r_d_m a:hover {
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+#title_line{margin:0 auto;clear:both;height: 27px;background: url(../images/admin_r5_c21.jpg) repeat-x top;}
+#line_l{float:left;margin-right:-4px;width:4px;}
+#line_r{float:right;margin-left:-4px;width:4px;}
+#line_m{
+	width:auto;
+	margin:0 4px 0 4px;
+	height: 27px;
+	color: #FFFFFF;
+}
+#line_m_l{ 
+	background: url(../images/admin_r5_c6.jpg) no-repeat 10px 0px;
+	float: left;
+	width: 500px;
+	height: 22px;
+	text-align: left;
+	padding: 5px 0px 0px 10px;
+}
+#line_m_l span{
+	background: url(../_images/admin/ico23.gif) no-repeat 0px 2px;
+	height: 27px;
+	padding: 0px 0px 0px 15px;
+}
+
+#line_m_r{
+	width:450px;
+	float: right;
+	text-align: right;
+	height:27px;
+}
+#line_m_r a:link {color:#FFFF00; text-decoration:none;}
+#line_m_r a:visited  {color:#FFFF00; text-decoration:none; }
+#line_m_r a:hover {color:#FFFF00; text-decoration:underline;}
+#line_m_r span{
+	position: relative;
+	top: -3px;
+}
+#line_m_r img{
+	position: relative;
+	top: 3px;
+	padding: 0px 0px 0px 5px;
+} 
+
+
+#line_m_r b{
+	color: #FFFF00;
+	margin: 0px 5px 0px 0px;
+}
+#bottom{margin:0 auto;clear:both;}
+#bottom_l{float:left;margin-right:-9px;width:9px;}
+#bottom_r{float:right;margin-left:-9px;width:9px;}
+#bottom_m{
+	width:auto;
+	height: 61px;
+	color: #FFFFFF;
+	background: url(../images/admin_r38_c6.gif) repeat-x;
+	text-align: center;
+	margin-top: 0;
+	margin-right:9px;
+	margin-bottom: 0;
+	margin-left:9px;
+	padding-top: 8px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+#bottom_m span{
+	color: #D0DDB5;	
+}
+#bottom_line{margin:0 auto;clear:both;}
+#bottom_line_l{float:left;margin-right:-11px;width:11px;}
+#bottom_line_r{float:right;margin-left:-11px;width:11px;}
+#bottom_line_m{
+	width:auto;
+	margin:0 4px;
+	height:30px;
+	background: url(../images/yy.gif) repeat-x;
+}
+
+
+
+
+#main{margin:0 auto;clear:both;background: #FFFFFF;}
+.main_line{height: 4px;}
+.main_line_l{float:left;margin-right:-4px;width:4px;}
+.main_line_r{float:right;margin-left:-4px;width:4px;}
+.main_line_m{
+	width:auto;
+	margin:0 4px 0 4px;
+	height: 4px;
+	background: #FFFFFF;
+}
+#main_m{
+	background: #FFFFFF;
+	width:auto;
+	padding: 6px 10px;
+}
+#main_m_l{
+	float: left;
+	width: 160px;	
+}
+#main_m_r{
+	float: right;
+	width: 200px;
+	margin-left:-200px;
+}
+#main_m_m{
+	width: auto;
+	margin:0 210px 0 170px;
+}
+.column{
+	margin: 0px 0px 10px;
+	width: 160px;	
+}
+.column_u{
+	background: url(../images/menu.gif) no-repeat;
+	height: 25px;
+	cursor:pointer;
+}
+.column_u h2{
+	background: url(../images/ico7.gif) no-repeat 9px 8px;
+	font-size: 14px;
+	color: #FFFFFF;
+	text-align: left;
+	padding: 3px 0px 0px 25px;
+}
+.column_d_u{
+	line-height:4px;
+}
+.column_d_m{
+	background: #f0e8e6;
+	border-right: 1px solid #914917;
+	border-left: 1px solid #914917;
+	padding: 2px 8px 5px;
+}
+.column_d_m li span{
+	background: url(../images/ico2.gif) no-repeat 5px 3px;
+	padding: 0px 0px 0px 15px;
+}
+.column_d_m li{
+	background: url(../images/ico8.gif) repeat-x bottom;
+	text-align: left;
+	padding: 3px 0px 2px;
+}
+.column_d_m li a{
+	color: #6b021a;	
+}
+.column_d_m li a:hover{
+	color:#FF6600;
+	text-decoration:underline;
+}
+
+
+#nauk{ width:795px; float:right;}
+
+.banmin{ width:795px; margin-top:5px;  float:left; display:inline;}
+.banmin td{line-height:30px; padding-left:5px}
+.bg_e7{background-color:#f1f1f1;!important}

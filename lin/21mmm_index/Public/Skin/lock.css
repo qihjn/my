@@ -1,0 +1,34 @@
+.control{
+	border:1px solid #f86;
+}
+.control .topic{
+	background:url('../images/float_title.gif') repeat-x top;
+	height:32px;
+	width:auto;
+	cursor:move;
+}
+.control .topic .txt{
+	float:left;
+	height:26px !important;
+	height:32px;	
+	font-size:18px;
+	font-weight:bold;
+	color:#fff;
+	padding:6px 0px 0px 10px;
+}
+.control .topic .unlock{
+	float:right;
+	height:32px;
+	width:8px;
+	margin-right:10px;
+	cursor:pointer;
+	background:url('../images/close.gif') no-repeat 0px 10px;
+}
+
+.send_btn{
+	border:1px solid #ccc;
+	color:#333;
+	padding:4px;
+	line-height:26px;
+	height:26px;
+}

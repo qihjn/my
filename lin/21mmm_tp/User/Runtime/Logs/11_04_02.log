@@ -1,0 +1,5 @@
+[ 2011-04-02T15:00:26+08:00 ] SQL:  RunTime:0.003598s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-04-02T15:00:26+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-04-02T15:00:26+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-04-02T15:00:29+08:00 ] ERR: (ThinkException) 无法加载模块Register.php
+[ 2011-04-02T15:00:41+08:00 ] ERR: (ThinkException) 无法加载模块Register.php

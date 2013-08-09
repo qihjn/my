@@ -1,0 +1,80 @@
+<tagLib name="html,cx" />
+<include file="Public:header" />
+<div class="mainarea">
+<div class="maininner">
+<script type="text/javascript">
+    $(document).ready(function() {
+        // validate signup form on keyup and submit
+        $("#mainFrom").validate({
+            rules: {
+                title: "required",
+                link_label: {
+                    required: true,
+                    english: true
+                }
+            },
+            messages: {
+                title: "标题必须填写",
+                link_label: {
+                    required: "标识必须填写",
+                    english: '标识必须为英文字母或数字的组合'
+                }
+            }
+        });
+    });
+</script>
+<div class="block style4">
+  <table cellspacing="3" cellpadding="3">
+    <tr>
+      <th style="width:50px; text-align:center"><a href="http://www.sgcms.cn/manual.php?app=shuguangCorp&module={$moduleName}" target="_blank"><img src="__PUBLIC__/Admin/help_1.gif" alt="" align="absmiddle" /><br />
+        帮助</a></th>
+      <td>1.标签标识必须填写，并且只能为英言语字母或数字的组合。</td>
+    </tr>
+    </table>
+</div>
+<form method="post" action="{:U("Label/doInsert")}" enctype="multipart/form-data" id="mainFrom">
+	<div class="body_content">
+		<div class="top_action"><a href="__URL__">返回列表</a></div>
+		<table cellspacing="0" cellpadding="0" id="maintable" class="formtable">
+		<tr>
+		  <th style="width:8em;"><label for="title">标　　题</label></th>
+		<td><input name="title" id="title" size="60"></td></tr>
+		
+        <tr>
+		  <th style="width:8em;">链接标识</th>
+		<td><input name="link_label" type="text"   id="link_label" size="10"/></td></tr>
+        
+        
+        
+        <tr>
+		  <th style="width:8em;">标签内容</th>
+		<td> </td></tr>
+        
+        <tr>
+		  <th >&nbsp;</th>
+		  <td ><textarea name="content" cols="60" rows="5" style="width:500px; height:100px"></textarea></td>
+		</tr>
+        
+         <tr>
+		  <th colspan="2" style="width:8em;">以下为选填内容</th>
+		</tr>
+        
+         <tr>
+           <th style="width:8em;">备　　注</th>
+          <td><textarea name="description" cols="60" rows="5"  id="description"></textarea></td></tr>
+		<td></td>
+		  </tr>
+		</tbody>
+		</table>
+	</div>
+	<div class="foot_action">
+		<input type="submit" name="submit" value="提交录入" class="submit">
+        <input type="reset" name="button" id="button" value="还原重填" class="submit"/>
+	</div>
+	</form>
+</div>
+</div>
+<div class="side">
+<include file="Public:sider" />
+</div>
+<include file="Public:footer" />

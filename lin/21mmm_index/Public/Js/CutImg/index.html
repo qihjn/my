@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="css/imgareaselect-default.css" />
+</head>
+
+<body>
+<img id="img" src="flower2.jpg" />
+<div id="preview"></div> 
+<div><input type="button" id="cls" value="保存"  /></div> 
+
+<input id="x1" type="text" name="x1" value="" />
+<input id="y1" type="text" name="y1" value="" />
+<input id="x2" type="text" name="x2" value="" />
+<input id="y2" type="text" name="y2" value="" />
+<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="jquery.imgareaselect.dev.js"></script>
+<script type="text/javascript">
+//clear();
+var cut;
+$(document).ready(function () {
+    	cut = $('#img').imgAreaSelect({instance: true,x1:100,y1:100,x2:200,y2:200,		  
+        onSelectEnd: function (img, selection) {
+            $('input[name=x1]').val(selection.x1);
+            $('input[name=y1]').val(selection.y1);
+            $('input[name=x2]').val(selection.x2);
+            $('input[name=y2]').val(selection.y2);    
+        }
+    });
+	
+
+	
+});
+function clear(){
+	cut.setOptions({ hide: true });
+	cut.update();
+}
+
+window.onload = function(){
+	document.getElementById("cls").onclick = clear;
+}
+</script>
+
+
+</body>
+</html>

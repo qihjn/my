@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>标准对联广告Js代码</title>
+<style type="text/css">
+<!--
+#lovexin12,#lovexin14{
+width:120px;
+height:240px;
+background-color:#ededed;
+border:1px solid #ddd;
+}
+html,body{
+height:1203px;
+}
+#mm{
+height:1000px;
+}
+-->
+</style>
+
+
+</head>
+<body onresize="showSize();">
+<div id="mm">
+mmm
+</div>
+</body>
+</html>
+<script language="JavaScript" type="text/javascript">
+
+function heartBeat() {
+    var diffY;
+    if (document.documentElement && document.documentElement.scrollTop)
+    	diffY = document.documentElement.scrollTop;
+    else if (document.body)
+    	diffY = document.body.scrollTop
+    else
+    {
+        /*Netscape stuff*/
+
+    }
+    percent = .1 * (diffY - lastScrollY);
+    if (percent > 0) percent = Math.ceil(percent);
+    else percent = Math.floor(percent);
+    document.getElementById("lovexin12").style.top = parseInt(document.getElementById("lovexin12").style.top) + percent + "px";
+    document.getElementById("lovexin14").style.top = parseInt(document.getElementById("lovexin12").style.top) + percent + "px";
+    lastScrollY = lastScrollY + percent;
+
+}
+
+function hideDuilian(id){
+	document.getElementById(id).style.display = 'none';
+}
+(function(){
+lastScrollY = 0;
+var f1 = 'http://qq61.com/outjs/src/bukade/120-270-1.swf';
+var f2 = 'http://qq61.com/outjs/src/bukade/120-270-2.swf';
+suspendcode12 = '<div id="lovexin12" style="width:120px; height:270px; border:1px solid #ddd; left:2px;position:absolute;top:120px;"><embed width="120px" height="270px" src="'+f1+'" quality="high"/><p style="height:21px;line-height:23px;overflow:hidden;text-align:center;background:#ddd;color:#666;cursor:pointer;" onclick="hideDuilian(\'lovexin12\');">\u5173\u95ED</p></div>';
+suspendcode14 = '<div id="lovexin14" style="width:120px; height:270px; border:1px solid #ddd; right:2px;position:absolute;top:120px;"><embed width="120px" height="270px" src="'+f2+'" quality="high"/><p style="height:21px;line-height:23px;overflow:hidden;text-align:center;background:#ddd;color:#666;cursor:pointer;" onclick="hideDuilian(\'lovexin14\');">\u5173\u95ED</p></div>';
+
+//if(window.screen.width >= 1024){
+	document.write(suspendcode12);
+	document.write(suspendcode14);
+	window.setInterval("heartBeat()", 1);
+//}
+})();
+
+
+
+</script>
+    <script>
+	function showSize(){
+	document.getElementById("mm").innerHTML = document.body.clientWidth;
+	//alert('ss');
+}
+	function getInfo(){    var s = "";    s += " 网页可见区域宽："+ document.body.clientWidth;    s += " 网页可见区域高："+ document.body.clientHeight;    s += " 网页可见区域宽："+ document.body.offsetWidth + " (包括边线和滚动条的宽)";    s += " 网页可见区域高："+ document.body.offsetHeight + " (包括边线的宽)";    s += " 网页正文全文宽："+ document.body.scrollWidth;    s += " 网页正文全文高："+ document.body.scrollHeight;    s += " 网页被卷去的高(ff)："+ document.body.scrollTop;    s += " 网页被卷去的高(ie)："+ document.documentElement.scrollTop;    s += " 网页被卷去的左："+ document.body.scrollLeft;    s += " 网页正文部分上："+ window.screenTop;    s += " 网页正文部分左："+ window.screenLeft;    s += " 屏幕分辨率的高："+ window.screen.height;    s += " 屏幕分辨率的宽："+ window.screen.width;    s += " 屏幕可用工作区高度："+ window.screen.availHeight;    s += " 屏幕可用工作区宽度："+ window.screen.availWidth;    s += " 你的屏幕设置是 "+ window.screen.colorDepth +" 位彩色";    s += " 你的屏幕设置 "+ window.screen.deviceXDPI +" 像素/英寸";    alert (s);}getInfo();</script>  

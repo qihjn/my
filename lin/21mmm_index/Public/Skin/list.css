@@ -1,0 +1,42 @@
+
+
+#page-list{
+	width:80%;
+	display:inline;
+}
+#page-list ul{
+	background:none;
+	margin:0px;
+	padding:0px;
+	list-style-type:none;
+}
+#page-list ul li{
+	background:none;
+	background-color:#f7fcff;
+	float:left;
+	text-align:center;
+	margin:3px 5px;
+	border:1px solid #bee0ff;
+	padding:1px 5px;
+	width:auto;
+	height:auto;
+	line-height:20px;
+	font-size:12px;
+}
+#page-list li.on{
+	background:none;
+	background:#ffecd2;
+	float:left;
+	text-align:center;
+	margin:3px 5px;
+	border:1px solid #ff6600;
+	padding:1px 5px;
+	width:auto;
+	height:auto;
+	line-height:20px;
+	font-size:12px;
+}
+#page-list li a{
+	text-decoration:none;
+	color:#3074ab;
+}

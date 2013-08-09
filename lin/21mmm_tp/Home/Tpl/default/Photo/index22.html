@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>图吧</title>
+<load href='__PUBLIC__/Css/tuba.css' />
+</head>
+<body>
+	<div id="allnet">
+		
+		<include file="Public:head" />
+		<div class="content">
+			<div class="flashbox" align="center">
+				<div id=SwitchBigPic>
+                <volist name="qiehuan" id="vo">	
+					<div><a href="__URL__/show/id/{$vo.id}" target="_blank"  title="{$vo.title}"><img class="pic" alt="《玩命快递3》最新动作大片" src="{$vo.thumb}" /></a></div>
+                </volist>
+				</div>
+				<ul id=SwitchNav>
+                <volist name="qiehuan" id="vo">	
+				  <li><a href="__URL__/show/id/{$vo.id}" target="_blank"  title="{$vo.title}"><STRONG>{$vo.title|mb_strcut=0,30,'utf-8'}</STRONG>{$vo.intro|default="这条信息的文字介绍这条信息的文字介绍这条信息的文字介绍"|mb_strcut=0,30,'utf-8'}</a> </li>
+				</volist>	
+				</ul>
+			</div>
+			<div class="newsph">
+				<div class="newsphbt"><h1>最新排行</h1><img src="__PUBLIC__/Images/news_r.jpg" /></div>
+				<ul>
+                	<volist name="listnewest" id="up">
+					<li><a href="__URL__/show/id/{$up.id}" target="_blank"  title="{$up.title}">{$up.title|mb_strcut=0,48,'utf-8'}</a></li>
+                    </volist>
+					
+				</ul>
+			</div>
+			<div class="clear"></div>
+			<div class="title1"style="margin-top:10px"><h1>{$cline1.title}</h1><span><a href="__URL__/lists/cid/{$cline1.id}" target="_blank" title="{$cline1.title}">更多>></a></span></div>
+			<ul class="mfhf">
+				<volist name="line1" id="vo">
+				<li><a href="__URL__/show/id/{$vo.id}" target="_blank" title="{$vo.title}"><img src="{$vo.thumb}" alt="{$vo.title}"/></a><p><a href="__URL__/show/id/{$vo.id}" target="_blank"  title="{$vo.title}">{$vo.title|mb_strcut=0,30,'utf-8'}</a></p></li>
+            	</volist>
+			</ul>
+			<div class="title2"><h1>{$cline1.title}</h1></div>
+			<div class="content_l">
+				<ul class="mrfh">
+					<volist name="line2z" id="vo">
+                    <li><a href="__URL__/show/id/{$vo.id}" target="_blank" title="{$vo.title}"><img src="{$vo.thumb}" alt="{$vo.title}"/></a><p><a href="__URL__/show/id/{$vo.id}" target="_blank"  title="{$vo.title}">{$vo.title|mb_strcut=0,30,'utf-8'}</a></p></li>
+                    </volist>
+				</ul>
+			</div>
+			<div class="content_r">
+				<div class="title3"><h1>{$cline1.title}</h1><span><a href="__URL__/lists/cid/{$cline1.id}" target="_blank" title="{$cline1.title}">更多>></a></span></div>
+				<ul>
+                
+                    <volist name="line2ys" id="vo">
+                    <li><a href="__URL__/show/id/{$vo.id}" target="_blank" title="{$vo.title}"><img src="{$vo.thumb}" alt="{$vo.title}"/></a><p><a href="__URL__/show/id/{$vo.id}" target="_blank"  title="{$vo.title}">{$vo.title|mb_strcut=0,30,'utf-8'}</a></p></li>
+                    </volist>
+                
+				</ul>
+				<div class="title3"><h1>{$cline1.title}</h1><span><a href="__URL__/lists/cid/{$cline1.id}" target="_blank" title="{$cline1.title}">更多>></a></span></div>
+				<ul>
+					<volist name="line2yz" id="vo">
+                    <li><a href="__URL__/show/id/{$vo.id}" target="_blank" title="{$vo.title}"><img src="{$vo.thumb}" alt="{$vo.title}"/></a><p><a href="__URL__/show/id/{$vo.id}" target="_blank"  title="{$vo.title}">{$vo.title|mb_strcut=0,30,'utf-8'}</a></p></li>
+                    </volist>
+				</ul>
+				<div class="title3"><h1>{$cline1.title}</h1><span><a href="__URL__/lists/cid/{$cline1.id}" target="_blank" title="{$cline1.title}">更多>></a></span></div>
+				<ul>
+				
+                    <volist name="line2yx" id="vo">
+                    <li><a href="__URL__/show/id/{$vo.id}" target="_blank" title="{$vo.title}"><img src="{$vo.thumb}" alt="{$vo.title}"/></a><p><a href="__URL__/show/id/{$vo.id}" target="_blank"  title="{$vo.title}">{$vo.title|mb_strcut=0,30,'utf-8'}</a></p></li>
+                    </volist>
+				
+                </ul>
+			</div>
+			<div class="banner"><img src="__PUBLIC__/Images/banner.jpg" alt="我是广告"/></div>
+			<div class="content_l">
+				<div class="title4"><h1>{$cline1.title}</h1></div>
+				<ul class="czsj">
+                <volist name="line3z" id="vo">
+					<li><a href="__URL__/show/id/{$vo.id}" target="_blank" title="{$vo.title}"><img src="{$vo.thumb}" alt="{$vo.title}"/></a><p><a href="__URL__/show/id/{$vo.id}" target="_blank"  title="{$vo.title}">{$vo.title|mb_strcut=0,30,'utf-8'}</a></p></li>
+                </volist>
+				</ul>
+			</div>
+			<div class="content_r">
+				<div class="title1"><h1>{$cline3ys.title}</h1><span><a href="__URL__/lists/cid/{$cline3ys.id}" target="_blank" title="{$cline3ys.title}">更多>></a></span></div>
+				<ul>
+					<volist name="line3ys" id="vo">
+                    <li><a href="__URL__/show/id/{$vo.id}" target="_blank" title="{$vo.title}"><img src="{$vo.thumb}" alt="{$vo.title}"/></a><p><a href="__URL__/show/id/{$vo.id}" target="_blank"  title="{$vo.title}">{$vo.title|mb_strcut=0,30,'utf-8'}</a></p></li>
+                    </volist>
+				</ul>
+				<div class="title1"><h1>{$cline3yz.title}</h1><span><a href="__URL__/lists/cid/{$line3yz.id}" target="_blank" title="{$line3yz.title}">更多>></a></span></div>
+				<ul>
+					<volist name="line3yz" id="vo">
+                    <li><a href="__URL__/show/id/{$vo.id}" target="_blank" title="{$vo.title}"><img src="{$vo.thumb}" alt="{$vo.title}"/></a><p><a href="__URL__/show/id/{$vo.id}" target="_blank"  title="{$vo.title}">{$vo.title|mb_strcut=0,30,'utf-8'}</a></p></li>
+                    </volist>
+				</ul>
+				<div class="title1"><h1>{$cline3yx.title}</h1><span><a href="__URL__/lists/cid/{$cline3yx.id}" target="_blank" title="{$cline3yx.title}">更多>></a></span></div>
+				<ul>
+					<volist name="line3yx" id="vo">
+                    <li><a href="__URL__/show/id/{$vo.id}" target="_blank" title="{$vo.title}"><img src="{$vo.thumb}" alt="{$vo.title}"/></a><p><a href="__URL__/show/id/{$vo.id}" target="_blank"  title="{$vo.title}">{$vo.title|mb_strcut=0,30,'utf-8'}</a></p></li>
+                    </volist>
+				</ul>
+			</div>
+			
+			<include file="Public:foot" />
+		</div>
+	</div>
+	
+</body>
+</html>
+<load href='__PUBLIC__/Js/prototype.js' />
+<load href='__PUBLIC__/Js/changimages.js' />
+<SCRIPT>
+	var bigswitch = new SwitchPic(
+		{
+			bigpic:"SwitchBigPic",
+			switchnav:"SwitchNav",
+			selectstyle:"selected",
+			objname:"bigswitch"
+		}
+	) ;
+	bigswitch.goSwitch(bigswitch,0);
+	bigswitch.autoSwitchTimer = setTimeout("bigswitch.autoSwitch(bigswitch) ;", 3000);
+	</SCRIPT>

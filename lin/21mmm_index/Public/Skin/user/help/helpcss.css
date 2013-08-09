@@ -1,0 +1,99 @@
+/*@charset "gb2312";*/
+
+/* css reset */
+body, div, address, blockquote, iframe, ul, ol, li, dl, dt, dd, 
+h1, h2, h3, h4, h5, h6, p, pre, table, caption, th, td, 
+form, legend, fieldset, input, button, select, textarea {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 100%;
+    font-family: inherit;
+}
+ol, ul {
+    list-style: none;
+}
+fieldset, img {
+    border: 0;
+}
+:focus {
+    outline: 0;
+}
+table {
+    border-collapse: collapse;   
+    border-spacing: 0;
+}
+caption, th {
+    text-align: left;
+}
+
+/* global style */
+body{width:100%; background:#CCDFE5 url(../../images/help/helpbg.jpg) repeat-x;font-size:12px;color:#000000;font-family:"ËÎÌו";}
+.clear{clear:both;}
+
+/* layout style */
+.logo{width:840px; margin:0 auto;padding-top:30px;overflow:hidden;}
+.logo img{width:212px;float:left;}
+.logo span{width:45px;float:right;margin-top:13px;}
+.logo span a:link {font-size:12px;color:#000000;text-decoration:none;}
+.logo span a:visited {font-size:12px;color:#000000;text-decoration:none;}
+.logo span a:hover {font-size:12px;color:#ff0000;text-decoration: underline;background-color:#ECF5FA;}
+
+.content{width:834px; margin:0 auto;margin-top:15px;overflow:hidden;}
+.content_bt{width:834px;height:52px;background:url(../../images/help/help_top.jpg) no-repeat;}
+.content_bt h1{font-size:16px;font-weight:bold;color:#343434;padding-left:10px;padding-top:18px;}
+.content_bk{width:832px;padding-bottom:10px;border-left:1px solid #438AA6;border-right:1px solid #438AA6;border-bottom:1px solid #438AA6;overflow:hidden;}
+
+.content_l{width:211px;float:left;margin-top:15px;border-right:1px dotted #438AA6;}
+.content_l img{width:160px;height:130px;margin:0 auto;display:block;margin-bottom:8px;}
+.content_l h2{font-size:12px;font-weight:bold;color:#343434;padding-left:18px;padding-top:8px;}
+.content_l ul{width:171px;margin:8px auto;}
+.content_l li{width:171px;height:26px;line-height:26px;color:#1A66B3;overflow:hidden;}
+.content_l li a:link {font-size:12px;color:#1A66B3;text-decoration:none;}
+.content_l li a:visited {font-size:12px;color:#1A66B3;text-decoration:none;}
+.content_l li a:hover {font-size:12px;color:#ff0000;text-decoration: underline;background-color:#ECF5FA;}
+.content_r{width:620px;float:left;margin-top:15px;}
+.content_rbt{width:590px;height:35px;margin:0 auto;overflow:hidden;}
+a.rbt1{width:50px; float:left; height:35px; line-height:35px; text-align:center; display:inline;}
+a.rbt1:link { background-image:url(../../images/help/helpbt11.jpg); width:50px; color:#315C6F; font-size:14px;font-weight:bold; display:block; text-decoration:none;}
+a.rbt1:visited {background-image:url(../../images/help/helpbt11.jpg); width:50px; color:#315C6F; font-size:14px; font-weight:bold; display:block; text-decoration:none;}
+a.rbt1:hover { background-image:url(../../images/help/helpbt12.jpg); width:50px; color:#578900; font-size:14px;font-weight:bold; display:block; text-decoration:underline;}
+a.rbt2{width:70px; float:left; height:35px; line-height:35px; text-align:center; display:inline;}
+a.rbt2:link { background-image:url(../../images/help/helpbt21.jpg); width:70px; color:#315C6F; font-size:14px;font-weight:bold; display:block; text-decoration:none;}
+a.rbt2:visited {background-image:url(../../images/help/helpbt21.jpg); width:70px; color:#315C6F; font-size:14px; font-weight:bold; display:block; text-decoration:none;}
+a.rbt2:hover { background-image:url(../../images/help/helpbt22.jpg); width:70px; color:#578900; font-size:14px;font-weight:bold; display:block; text-decoration:underline;}
+.content_rl{width:270px;float:left;margin-top:15px;}
+.content_rl img{width:220px;height:455px;margin:0 auto;display:block;}
+.content_rr{width:350px;float:left;margin-top:15px;}
+.content_rr h2{font-size:12px;font-weight:bold;color:#343434;padding-left:26px;padding-top:8px;}
+.content_rr ul{width:310px;margin:8px auto;}
+.content_rr li{width:310px;height:26px;line-height:26px;color:#1A66B3;overflow:hidden;}
+.content_rr li a:link {font-size:12px;color:#1A66B3;text-decoration:none;}
+.content_rr li a:visited {font-size:12px;color:#1A66B3;text-decoration:none;}
+.content_rr li a:hover {font-size:12px;color:#ff0000;text-decoration: underline;background-color:#ECF5FA;}
+
+/* helpcon style */
+.helpcon_bt{width:834px;height:52px;background:url(../../images/help/help_top.jpg) no-repeat;padding:0 1px;}
+a.conbt1{width:79px; float:left; height:50px; line-height:50px; text-align:center; display:inline;margin-top:2px;border-right:1px dotted #438AA6;}
+a.conbt1:link {width:79px; color:#315C6F; font-size:14px;font-weight:bold; display:block; text-decoration:none;}
+a.conbt1:visited {width:79px; color:#315C6F; font-size:14px; font-weight:bold; display:block; text-decoration:none;}
+a.conbt1:hover {background-color:#ffffff;width:79px; color:#578900; font-size:14px;font-weight:bold; display:block; text-decoration:underline;}
+a.conbt2{width:96px; float:left; height:50px; line-height:50px; text-align:center; display:inline;margin-top:2px;}
+a.conbt2:link {width:96px; color:#315C6F; font-size:14px;font-weight:bold; display:block; text-decoration:none;}
+a.conbt2:visited {width:96px; color:#315C6F; font-size:14px; font-weight:bold; display:block; text-decoration:none;}
+a.conbt2:hover {background-color:#ffffff;width:96px; color:#578900; font-size:14px;font-weight:bold; display:block; text-decoration:underline;}
+.content_r h3{font-size:14px;font-weight:bold;color:#343434;padding-left:26px;padding-top:8px;}
+.content_r p{margin:15px;font-size:12px;line-height:20px;}
+.content_r p img{width:254px;height:186px;float:right;display:block;}
+
+.foot{width:834px;margin-left:auto;margin-right:auto;margin-top:5px;text-align:center;font-size:12px;line-height:20px;color:#8E8D8D;clear:both;}
+.foot .text{clear:both; color:#8E8D8D; text-align:center; padding-top:8px;}
+.foot a:link {color: #8E8D8D;text-decoration:none;}
+.foot a:visited {color: #8E8D8D;text-decoration:none;}
+.foot a:hover {color: #000000;text-decoration: underline;}
+/* default link style */
+a:link		{text-decoration:none; font-size:12px; color:#000000}
+a:visited	{text-decoration:none; font-size:12px; color:#000000}
+a:hover		{text-decoration:underline; font-size:12px; color:#000000}
+a:active	{text-decoration:none; font-size:12px; color:#000000}

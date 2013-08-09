@@ -1,0 +1,144 @@
+<smallinc file="public:header" load="__PUBLIC__/plugin/lightbox/css/lightbox.css,__PUBLIC__/Skin/Job/common.css" />
+<style>
+/*#lvl a{text-decoration:none; line-height:1.8; float:left; width:160px; color:#454545; overflow:hidden;}
+#lvl a:hover{background-color:#f90; text-decoration:none;}
+.contact td{ border-bottom:solid 1px #ccc;}
+.STYLE2 {color: #FF0000}
+.STYLE4 {
+	font-weight: bold;
+	font-size: 12px;
+	color: #FF00CC;
+}*/
+</style>
+
+    
+
+				
+				<div class="ad"><img src="__PUBLIC__/Skin/Job/ad_4.jpg" width="930" border="0"/></div>
+				<div class="left">
+					<div class="login">
+						<h1><span class="zb"><a href="javascript:;">所有招聘职位</a></span></h1>
+						<div class="clear"></div>
+						<ul class="xahn">
+							<volist id="j" name="alljob">
+							<li><a href='{$j.id|jurl}' class='tdl'>{$j.title}</a></li>
+							</volist>
+						</ul>
+					</div>
+					<div class="login">
+						<h1><span class="zb"><a href="#"></a></span></h1>
+						<div class="clear"></div>
+					  <div class="zhiyese"></div>
+					</div>
+				</div>
+				<div class="zhigou">
+					<div class="men" >
+						<div class="jt">
+							<div class="men_left"><img src="__PUBLIC__/Skin/Job/bj_20.jpg" /></div>
+							<div class="men_ce">
+								<ul class="huiyi">
+									<li><a href="javascript:void(0);" class=set>企业介绍</a></li>
+									<li><a href="/job/show_{$jid}.html" >招聘职位</a></li>
+								</ul>
+							</div>
+							<div class="men_left"><img src="__PUBLIC__/Skin/Job/bj_21.jpg" /></div>
+						</div>
+						<div class="balei">
+							<div class="qywyd">
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+									<tr><td height="25"><strong style="color:#e17704; font-size:13px;">{$vo.title}</strong> &nbsp;&nbsp; [<a href="http://www.baidu.com/s?wd={$vo.title}" style="color:#454545; text-decoration:none;" target="_blank">百度一下</a>]</td></tr>
+									<tr>
+										<td>
+											<table width="100%" border="0" cellspacing="0" cellpadding="0">
+												<tr>
+													<td width="322">
+														<table width="100%" border="0" cellspacing="1" cellpadding="0">
+															<tr bgcolor="#FFFFFF"> 
+																<td width="67" height="25" align="left">经营品牌：</td>
+																<td width="252" height="25">{$vo.manage}</td>
+															</tr>
+															<tr bgcolor="#FFFFFF"> 
+																<td width="67" height="25" align="left">所在地区：</td>
+																<td width="252" height="25">{$vo.location}</td>
+															</tr>
+															<tr bgcolor="#FFFFFF"> 
+																<td width="67" height="25" align="left">注册日期：</td>
+																<td width="252" height="25">{$vo.pubtime}</td>
+															</tr>
+															<tr bgcolor="#FFFFFF"> 
+																<td width="67" height="25" align="left">企业性质：</td>
+																<td height="25">{$vo.nature}</td>
+															</tr>
+															<tr bgcolor="#FFFFFF"> 
+																<td width="67" height="25" align="left">所属行业：</td>
+																<td height="25">{$vo.category_id|getEnumTitle}</td>
+															</tr>
+															<tr bgcolor="#FFFFFF"> 
+																<td width="67" height="25" align="left">注册资金：</td>
+																<td height="25">{$vo.capital} 万元人民币</td>
+															</tr>
+															<tr bgcolor="#FFFFFF"> 
+																<td width="67" height="25" align="left">员工人数：</td>
+																<td height="25">{$vo.scale}</td>
+															</tr>
+															<tr bgcolor="#FFFFFF"> 
+																<td width="67" height="25" align="left">联系地址：</td>
+																<td height="25">{$vo.addr}</td>
+															</tr>
+														</table>													</td>
+													<td align="center" valign="top"><img src="{$vo.logo|img}" width="160" height="128" /></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr><td height="10"></td></tr>
+								</table>
+							</div>
+							<div class="qywyd" style="margin-top:5px;">
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+									<tr><td style=" line-height:20px;">{$vo.content}</td></tr>
+									<tr id="content2" style="display:none;"><td style="line-height:20px;">{$vo.content2}</td></tr>
+									<tr><td height="10"></td></tr>
+								</table>
+							</div>
+							<div>
+								
+                                
+							</div>
+                            
+                            <smallinc file="public:lightbox" listvar="figure" />
+                            
+							<div class="buyZonePrice">	
+								<table  width="100%" border="0"  cellpadding="5" cellspacing="1">
+									<tr>
+										<th width="36"></th>
+										<th width="200">职位</th>
+										<th width="101">工作地点</th>
+										<th width="99">发布日期</th>
+									    <th width="93">有效期</th>
+									    <th width="99">招聘人数</th>
+									</tr>
+									<volist id="j" name="alljob">
+									<tr {if $key%2==0}class='bg_fa'{/if}{if $key%2!=0}class='bg_e7'{/if}>
+										<td align='center'>{$key+1}</td>
+										<td align='cneter'><a href='{$j.id|jurl}'  style='text-decoration:underline; color:#333;'>{$j.title}</a></td>
+										<td align='center'>{$j.workplace}</td>
+										<td align='center'>{$j.ctime|df}</td>
+									    <td align='center'>{$j.worklife|getEnumTitle='worklife'}</td>
+									    <td align='center'>{$j.num}</td>
+									</tr>  
+									</volist>        
+								</table>	
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			
+<include file="public:footer" />
+<script type="text/javascript" src="__PUBLIC__/plugin/lightbox/js/jq.lightbox.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $('#gallery a').lightBox();
+    });
+    </script>    

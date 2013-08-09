@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link href="{URL_PUBLIC}style/unit/list.css" rel="stylesheet" type="text/css" />
+<link href="{URL_PUBLIC}style/list.css" rel="stylesheet" type="text/css" />
+
+<script src="{URL_PUBLIC}js/category.js" language="javascript"></script>
+<script language='javascript' src='{URL_PUBLIC}/js/upload.js'></script>
+<script  language="javascript">
+ function chkform(){
+	var descform=document.getElementById('descform')
+	if(descform.title.value==''){
+	alert("产品名称不能为空");
+	document.descform.title.focus();
+	return false;
+	}
+}	 
+</script>
+<title>企业会员后台管理</title>
+<style type="text/css">
+<!--
+.STYLE1 {color: #FF0000}
+-->
+</style>
+</head>
+
+<body>
+	 <div class="allnet">
+	{include:top.html}
+	{include:menu.html}
+
+
+<!--列表开始-->
+<table  border="0" align="center" cellpadding="0" cellspacing="0" style="float:left; width:720px;">
+	  <tr>
+	    <td height="30">
+	    	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	      <tr>
+	        <td width="15" height="30"><img src="{URL_PUBLIC}images/unit/tab_03.gif" width="15" height="30" /></td>
+	        <td background="{URL_PUBLIC}images/unit/tab_05.gif"><img src="{URL_PUBLIC}images/unit/311.gif" width="16" height="16" /> <span class="STYLE4">我的供求</span></td>
+	        <td width="14"><img src="{URL_PUBLIC}images/unit/tab_07.gif" width="14" height="30" /></td>
+	      </tr>
+	    </table></td>
+	  </tr>
+	  <tr>
+	    <td> <form  method="post" name="proxy_info" >
+	    	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	      <tr>
+	        <td width="9" background="{URL_PUBLIC}images/unit/tab_12.gif">&nbsp;</td>
+	        <td bgcolor="#d3e7fc">
+				        <td bgcolor="#d3e7fc"><table width="99%" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CECECE">
+				          <tr>
+				            <td width="8%" height="18" background="{URL_PUBLIC}images/unit/tab_14.gif"><div align="center" >选择</div></td>
+				            <td width="8%" height="18" background="{URL_PUBLIC}images/unit/tab_14.gif"><div align="center" >序号</div></td>
+				            <td width="15%" height="18" background="{URL_PUBLIC}images/unit/tab_14.gif" ><div align="center" >名称</div></td>
+				            <td width="10%" height="18" background="{URL_PUBLIC}images/unit/tab_14.gif" ><div align="center">供/求</div></td>
+				            <td width="14%" height="18" background="{URL_PUBLIC}images/unit/tab_14.gif" ><div align="center">类别</div></td>
+				            <td width="10%" height="18" background="{URL_PUBLIC}images/unit/tab_14.gif" ><div align="center">有效期</div>	<td width="15%" height="26" background="{URL_PUBLIC}images/unit/tab_14.gif"><div align="center">发布日期</div></td></td>
+				            <td width="12%" height="18" background="{URL_PUBLIC}images/unit/tab_14.gif" ><div align="center" >编辑</div></td>
+				            <td width="13%" height="18" background="{URL_PUBLIC}images/unit/tab_14.gif" ><div align="center" >删除</div></td>
+				          </tr>
+				          {for var=$supply_list index=$key}
+				          <tr>
+				            <td height='18' bgcolor='#FFFFFF'><div align='center' ><input type='checkbox' id='id[]' name='id[]' value='{$supply_list[$key]['id']}'/></div></td>
+				            <td height='18' bgcolor='#FFFFFF'><div align='center' >{$supply_list[$key]['id']}</div></td>
+				            <td height='18' bgcolor='#FFFFFF'><div align='center'>{$supply_list[$key]['title']}</div></td>
+				            <td height='18' bgcolor='#FFFFFF'><div align='center'>{$supply_list[$key]['infotype']}</div></td>
+				            <td height='18' bgcolor='#FFFFFF'><div align='center'>{$supply_list[$key]['firsttype']}</div></td>
+				            <td height='18' bgcolor='#FFFFFF'><div align='center' >{$supply_list[$key]['period']}</div></td>
+							<td height='18' bgcolor='#FFFFFF'><div align='center'>{$supply_list[$key]['ctime']}</div></td>
+				            <td height='18' bgcolor='#FFFFFF'><div align='center'><img src='images/037.gif' width='9' height='9' />[<a href='supply_manager.php?act=modify&id={$supply_list[$key]['id']}'>编辑</a>]</div></td>
+				            <td height='18' bgcolor='#FFFFFF'><div align='center'><span class='STYLE2'><img src='{URL_PUBLIC}images/unit/010.gif' width='9' height='9' /> </span><a href='supply_manager.php?act=del&id={$supply_list[$key]['id']}'>删除</a></div></td>
+				          </tr>
+				          {/for}
+				        </table>
+						 </form>
+	         </td>
+	        <td width="9" background="{URL_PUBLIC}images/unit/tab_16.gif">&nbsp;</td>
+	      </tr>
+	    </table></td>
+	  </tr>
+	  <tr>
+	    <td height="29">
+	    	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	      <tr>
+	        <td width="15" height="29"><img src="{URL_PUBLIC}images/unit/tab_20.gif" width="15" height="29" /></td>
+	        <td background="{URL_PUBLIC}images/unit/tab_21.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+	          <tr>
+	            <td width="21%" class="STYLE2 STYLE1" style="text-align:left;">
+	              <img src="{URL_PUBLIC}images/unit/q.gif" width="40" height="19" onclick="chkall('id[]')" style='cursor:pointer;' /><span class="STYLE2 STYLE1" style="text-align:left;"><a href='/unit/supply_manager.php'><img src="{URL_PUBLIC}images/unit/x.gif" width="40" height="19" /></a></span><a href="javascript:delSubmitForm()"><img src="{URL_PUBLIC}images/unit/s.gif" width="40" height="19" /></td>
+	            <td width="79%" style='text-align:right;'>{$pagelist}</td>
+	          </tr>
+	        </table></td>
+	        <td width="14"><img src="{URL_PUBLIC}images/unit/tab_22.gif" width="14" height="29" /></td>
+	      </tr>
+	    </table></td>
+	  </tr>
+	</table>
+<!--列表结束-->    
+
+<!--发布表彰开始-->
+	<table  border="0" align="center" cellpadding="0" cellspacing="0" style="float:left; width:720px;">
+	  <tr>
+	    <td height="30">
+	    	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	      <tr>
+	        <td width="15" height="30"><img src="{URL_PUBLIC}images/unit/tab_03.gif" width="15" height="30" /></td>
+	        <td background="{URL_PUBLIC}images/unit/tab_05.gif"><img src="{URL_PUBLIC}images/unit/311.gif" width="16" height="16" /> <span class="STYLE4">供求信息</span></td>
+	        <td width="14"><img src="{URL_PUBLIC}images/unit/tab_07.gif" width="14" height="30" /></td>
+	      </tr>
+	    </table></td>
+	  </tr>
+	  <tr>
+	    <td>
+	    	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	      <tr>
+	        <td width="9" background="{URL_PUBLIC}images/unit/tab_12.gif">&nbsp;</td>
+	        <td bgcolor="#ffffff">
+	 					<div style='text-align:left;line-height:20px;width:80%;'>
+								<form action="?act=save" method="post" onsubmit="return chkform()" enctype="multipart/form-data" name="descform" id="descform">
+									<div id="pictureinfuture" style='margin-top:12px;margin-left:30px;'>
+										<div>
+											<div style='float:left;width:15%;font-weight:bold;margin:2px 0;'>产品名称:</div><div style='float:left;margin-bottom:5px;'><input type=text value='{$title}' name=title exp="[\W\w]{1,30}|名称不为空" /></div>
+											<div style='clear:both;'></div>
+										</div>
+										<div style='background:#eee;'>
+											<div style='float:left;width:15%;font-weight:bold;margin:2px 0;'>信息类型:</div><div style='float:left;margin-bottom:5px;'>
+												<!--[if IE]>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<![endif]-->
+                                                <input name="infotype" type="radio" id="infotype" value="0" checked="checked" /> 供应
+                                                <input type="radio" id="infotype" name="infotype" value="1" /> 求购
+												</div>
+											<div style='clear:both;'></div>
+										</div>
+										<div style='background:#fff;'>
+											<div style='float:left;width:15%;font-weight:bold;margin:2px 0;'>大分类:</div>
+											<div style='float:left;margin-bottom:5px;'><!--[if IE]>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<![endif]--><!--{$firsttype_slt}--><select id="firsttype" name="firsttype"></select></div>
+											<div style='clear:both;'></div>
+										</div>
+										<div style='background:#eee;'>
+											<div style='float:left;width:15%;font-weight:bold;margin:2px 0;'>小分类:</div><div style='float:left;margin-bottom:5px;'><!--{$smallclass_slt}--><div id="small"></div></div>
+											<div style='clear:both;'></div>
+										</div>
+										<div style='background:#fff;'>
+											<div style='float:left;width:15%;font-weight:bold;margin:2px 0;'>产品属性:</div><div style='float:left;margin-bottom:5px;'>
+											  
+                                              <select name="property" id="property">
+                                              	<option value="0">长期求购</option>
+                                                <option value="1">新奇特产品</option>
+												<option value="2">特价产品</option>
+												<option value="3">紧急求购</option>
+									          </select>
+										  </div>
+											<div style='clear:both;'></div>
+										</div>
+										<div style='background:#eee;'>
+											<div style='float:left;width:15%;font-weight:bold;margin:2px 0;'>有效期:</div><div style='float:left;margin-bottom:5px;'>{$period_slt}</div>
+											<div style='clear:both;'></div>
+										</div>
+										<div style='background:#fff;'>
+											<div style='float:left;width:15%;font-weight:bold;margin:2px 0;'>产品图片:</div><div style='float:left;margin-bottom:5px;'><!--[if IE]>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<![endif]-->
+											  <input type="file" name="productimg" id="productimg" />
+                                              
+                                             
+											</div>
+											<div style='clear:both;'></div>
+										</div>
+										<div style='background:#eee;'>
+											<div style='float:left;width:15%;font-weight:bold;margin:2px 0;'>详细说明:</div><div style='float:left;margin-bottom:5px;'></div>
+								<textarea name="content"  cols="36" rows="8" id="content" >{$content}</textarea>
+			<div style='clear:both;'></div>
+										</div>
+										<!--<div style='background:#eee;'>
+											{func:crt_editor('{$request}','request')}										
+										</div>-->
+										<div>
+											<input type='hidden' value='{$id}' id=id name='id' />
+                                            <input type='hidden' value='{$uid}' id=uid name='uid' />
+											<input type="submit" value='确认' class="btn" style='border:1px solid #aaa;background:none;padding:3px;width:120px;' />
+										</div>
+									</div>
+								</form>
+			  </div>
+            </td>
+	        <td width="9" background="{URL_PUBLIC}images/unit/tab_16.gif">&nbsp;</td>
+	      </tr>
+	    </table></td>
+	  </tr>
+	  <tr>
+	    <td height="29">
+	    	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	      <tr>
+	        <td width="15" height="29"><img src="{URL_PUBLIC}images/unit/tab_20.gif" width="15" height="29" /></td>
+	        <td background="{URL_PUBLIC}images/unit/tab_21.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+	          <tr>
+	            <td width="21%">&nbsp;</td>
+	            <td width="79%" class="STYLE1">&nbsp;</td>
+	          </tr>
+	        </table></td>
+	        <td width="14"><img src="{URL_PUBLIC}images/unit/tab_22.gif" width="14" height="29" /></td>
+	      </tr>
+	    </table></td>
+	  </tr>
+	</table>
+<!--发布表单结束-->
+
+</div>
+<div style="clear:both"></div>
+{include:foot.html}
+</body>
+</html>
+<script language="javascript">
+
+/***************创建xml对象*******************/
+function createXmlDom(){
+	if (window.ActiveXObject){
+		var arrIE=["MSXML2.DOMDocument.5.0","MSXML2.DOMDocument.4.0",
+				   "MSXML2.DOMDocument.3.0","MSXML2.DOMDocument",
+				   "Microsoft.XMLDOM"];
+		for(var i=0;i<arrIE.length;i++){
+			try{
+				var xmlDom=new ActiveXObject(arrIE[i]);
+				return xmlDom;
+			}
+			catch(oError){}
+			throw new Error("MSXML is not installed onyour system");
+		}
+	}
+	else if (document.implementation.createDocument){//Mozilla, Firefox, Opera, etc.
+		var xmlDom=document.implementation.createDocument("","",null);
+		return xmlDom;
+	}
+
+}
+
+/**************得到xml文档对象的DOM***************/
+function getXml(filename){
+	var xmlDoc=null;
+	if (window.ActiveXObject){//ie
+		xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+	}
+	else if (document.implementation.createDocument){//Mozilla, Firefox, Opera, etc.
+		xmlDoc=document.implementation.createDocument("","",null);
+	}
+	xmlDoc.async=false;
+	xmlDoc.load(filename);
+	return xmlDoc;
+}
+
+
+//绑定下拉列表，通常是第一级分类
+function bindSelect(){
+	var op;
+	//alert("hi");
+	for(var i=0;i<nodes.length;i++){
+		var province=nodes[i].getElementsByTagName("biglist")[0].firstChild.data;
+		
+		op=document.createElement("option");
+		op.setAttribute("text",province);
+		op.setAttribute("value",i);
+		op.innerHTML=province;
+		//alert(op.getAttribute("vales"));
+		document.getElementById("firsttype").appendChild(op);
+	}	
+}
+
+//绑定checkbox通过是第二级分类
+function bindCheckBox(bigID){
+	var citys=nodes[bigID].getElementsByTagName("list");
+	var chk,sp;
+	var parent=document.getElementById("small");
+	parent.innerHTML="";
+	for(var i=0;i<citys.length;i++){
+		chk=document.createElement("input");
+		chk.type="checkbox";
+		chk.name="secondtype[]";
+		chk.id="secondtype"+i;
+		chk.value=i;
+		
+		sp=document.createElement("span");
+		sp.innerHTML=citys[i].firstChild.data+" ";
+		
+		parent.appendChild(chk);
+		parent.appendChild(sp);
+	}
+}
+
+
+var xmlDoc=getXml("class.xml");
+
+var nodes=xmlDoc.documentElement.getElementsByTagName("lists");
+
+bindCheckBox(0); //页面加载后默认显示第一个下拉列表类别的子类
+window.onload=function(){
+	bindSelect();
+	//bindCheckBox(0);
+	document.getElementById("firsttype").onchange=function(){
+		bindCheckBox(this.selectedIndex);
+	}
+	
+}
+
+</script>
+<script>
+	function chkall(n){
+		var l=document.getElementsByName(n);
+		for(i=0;i<l.length;i++){
+			l[i].checked=true;
+		}
+	}
+	//function delSubmitForm(){
+//		document.forms.inboxForm.action="del.php";
+//		document.all("proxy_info").submit();
+//	}
+	function delSubmitForm(){
+				document.forms.proxy_info.action="del.php";
+				document.all("proxy_info").submit();
+			}
+</script>

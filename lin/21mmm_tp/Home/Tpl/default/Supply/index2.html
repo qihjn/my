@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>中华美容网</title>
+<link href="__PUBLIC__/Css/supply/index.css" rel="stylesheet" type="text/css" />
+<SCRIPT language=javascript src="__PUBLIC__/js/picmarquees.js" type=text/javascript></SCRIPT>
+
+</head>
+<body>
+	<div id="allnet">
+		
+		<div class="main_s">
+			<div class="main_sl"><img src="__PUBLIC__/images/supply/gxbt.jpg" /></div>
+			<div class="main_sr">
+				<div class="main_srl"><img src="__PUBLIC__/images/supply/gxr_l.jpg" /></div>
+				<div class="main_srm">
+					<span><a href="{URL_USER}unit/supply_manager.php">我要发布供求信息</a></span>
+					<span style="margin-left:5px;"><a href="#">我要在此主页推广</a></span>
+				</div>
+				<div class="main_srr"><img src="__PUBLIC__/images/supply/gxr_r.jpg" /></div>					
+			</div>
+		</div>
+		<div class="main_x">
+			<div class="main_xl">
+				<div id="ifocus">
+					<div id="ifocus_pic">
+						<div id="ifocus_piclist" style="left:0; top:0;">
+							<ul>
+								<li><img src="__PUBLIC__/images/supply/01.jpg" alt="akjhxy" border="0" /></li>
+								<li><img src="__PUBLIC__/images/supply/02.jpg" alt="akjhxy" border="0" /></li>
+								<li><img src="__PUBLIC__/images/supply/03.jpg" alt="akjhxy" border="0" /></li>
+								<li><img src="__PUBLIC__/images/supply/04.jpg" alt="akjhxy" border="0" /></li>
+							</ul>
+						</div>
+						<div id="ifocus_opdiv"></div>
+						<div id="ifocus_tx">
+							<ul>
+								<li class="current">天使爱美丽</li>
+								<li class="normal">rtutyj</li>
+								<li class="normal">df规划jfgh</li>
+								<li class="normal">djhfghjfg</li>
+							</ul>
+						</div>
+					</div>
+					<div id="ifocus_btn">
+						<ul>
+							<li class="current"><A href="javascript:void(0);">1</A></li>
+							<li class="normal"><A href="javascript:void(0);">2</A></li>
+							<li class="normal"><A href="javascript:void(0);">3</A></li>
+							<li class="normal"><A href="javascript:void(0);">4</A></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="main_xr">
+				<div class="col_gy">
+			      <div class="title1"><h2>最新供应</h2>
+			        <a href="{URL_USER}unit/supply_manager.php" class="fabu">我要发布</a></div>
+					<div class="colbox">
+						<dl>
+							<dd><a href="#"><img src="__PUBLIC__/images/supply/col90-85-1.jpg" alt="雅诗兰黛护肤专家答疑 全新即时修护特润精华露" /></a></dd>
+							<dt><h3><a href="#" class="fontbt1">雅诗兰黛护肤专家答疑 全新即时修护特润精华露</a></h3><div>ANR是雅诗兰黛最经典的修护产品，也是全世界第一瓶精华。它渗透到皮肤的真皮层进行修护，白天保护，晚间修护。</div><p><a href="#">浏览全文 >></a></p></dt>
+						</dl>
+						<ul>
+                        	{for var=$newsell index=$key}
+							<li><img src='__PUBLIC__/images/supply/sale.gif' />[{$newsell[$key]['cate']}] <a href='show_{$newsell[$key]['id']}.html'>{$newsell[$key]['title']}</a></li>
+                            {/for}
+							
+						</ul>
+					</div>
+				</div>
+				<div class="col_qg">
+				    <div class="title1"><h2>最新求购</h2><a href="{URL_USER}unit/supply_manager.php" class="fabu">我要发布</a></div>
+					<div class="colbox">
+						<dl>
+							<dd><a href="#"><img src="__PUBLIC__/images/supply/col90-85-2.jpg" alt="在日常护肤中 让净化直至心灵深处　" /></a></dd>
+							<dt><h3><a href="#" class="fontbt1">在日常护肤中 让净化直至心灵深处　</a></h3><div>2009年8月，LUNASOL日月晶采品牌将在中国市场全新导入护肤系列，将品牌的“净化妆容”理念更加充分地展现给消费者。</div><p><a href="#">浏览全文 >></a></p></dt>
+						</dl>
+						<ul>
+							{for var=$newbuy index=$key}
+							<li><img src='__PUBLIC__/images/supply/buy.gif' />[{$newbuy[$key]['cate']}] <a href='show_{$newbuy[$key]['id']}.html'>{$newbuy[$key]['title']}</a></li>
+                            {/for}
+						</ul>
+					</div>
+				</div>
+				<div class="search">
+				    <div class="search_l"><img src="__PUBLIC__/images/supply/search_l.jpg" /></div>
+					<div class="search_m">
+					  <p style="padding-top:11px;"><h4>中华美容供需搜索：</h4>&nbsp;&nbsp;<input name="" type="text" style="width:270px;"/>&nbsp;<input type="image" src="__PUBLIC__/images/supply/search_an.jpg" style="vertical-align:middle;position:relative;bottom:3px;"/></p>
+					<p style="padding-top:10px;color:#c46786;"><b>关键字：</b>美容、美体、保养肌肤、美容、美体、保养肌肤、</p>
+				
+				</div>
+			</div>
+		</div>	
+		<div class="content">
+			<div class="content_l">
+			    <div class="content_l_row">
+				  <div class="quiz">
+					<div class="title2">{include:../www/link.html}
+		{include:../www/foot.html}	</div>
+				  </div>
+					</div>	
+				</div>
+			</div>
+		</div>
+    </div>
+</body>
+</html>

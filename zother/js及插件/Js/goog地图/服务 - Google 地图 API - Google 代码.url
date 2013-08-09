@@ -1,0 +1,9 @@
+[DEFAULT]
+BASEURL=http://code.google.com/intl/zh-CN/apis/maps/documentation/javascript/v2/services.html
+[DOC#1770#422]
+BASEURL=http://ditu.google.cn/mapfiles/home3.html
+[InternetShortcut]
+URL=http://code.google.com/intl/zh-CN/apis/maps/documentation/javascript/v2/services.html
+Modified=F047D8FE71D9CB0123
+IconFile=http://code.google.com/favicon.ico
+IconIndex=1

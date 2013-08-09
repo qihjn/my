@@ -1,0 +1,31 @@
+<include file="Public:header" />
+<!--单页-->
+<div id="page" class="clear">
+<div id="category">
+<ul>
+<include file="Public:about_left" />
+</ul>
+</div>
+<div id="main">
+<h3 class="title"><neq name="Think.get.category" value="">{$Think.get.category|selectCategory}<else/>搜索中心</neq> <em>Search</em></h3>
+ <form action="{:U('Search/getList')}" method="get"><div class="search">搜索中心: 
+ <select name="module" id="module">
+   <option value="News" {$module|selected='News'}>新闻</option>
+   <option value="Product" {$module|selected='Product'}>产品</option>
+   <option value="Job" {$module|selected='Job'}>招聘</option>
+   <option value="Download" {$module|selected='Download'}>下载</option>
+ </select><input name="keyword" type="text" id="keyword" size="15" /><input name="submit" type="submit" value="提交搜索" id="submit" /></div>
+
+ </form>
+<ul class="list">
+<volist name="dataContentList" id="row">
+<li><if condition="$row['link_url'] neq ''"><a href="{$row.link_url}" target="_blank" style="{$row.title_style}">{$row.title}</a><else/><a href="{:U("$module/detail",array('item'=>$row['id']))}" target="_blank" style="{$row.title_style}">{$row.title}</a></if> <span class="time">[{$row.create_time|date="Y-m-d",###}]</span></li>
+</volist>
+</ul>
+<div class="pages">
+      <div class="plist"> {$pageContentBar} </div>
+    </div>
+</div>
+</div>
+<!--底部-->
+<include file="Public:footer" />

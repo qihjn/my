@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+
+<input type="button" name="" value="载入图片" onclick="addImg('http://app.2144.cn/upload/2011/06/17/4dfb1c9cd388e.jpg')" /> 
+<script type="text/javascript"> 
+<!-- 
+function addImg(isrc) 
+{ 
+var Img = new Image(); 
+Img.onload = function () 
+{ 
+document.body.appendChild(Img); 
+} 
+Img.src = isrc; 
+} 
+//--> 
+</script> 
+
+详细出处参考：http://www.jb51.net/article/26635.htm
+<!--<img src="http://app.2144.cn/upload/2011/06/17/4dfb1c9cd388e.jpg" onload="loadImg();"  />-->
+<script language="javascript" type="text/javascript">
+window.onload = function(){
+	i = new Image();
+	if(i.complete){
+		alert(i.width);
+	}
+	i.onload=function(){
+		alert(i.width);
+		var img2 = document.createElement("img");
+		img2.src = i.src;
+		//document.body.appendChild(img2);
+	}
+	i.src = "http://app.2144.cn/upload/2011/06/17/4dfb1c9cd388e.jpg";
+}
+/*function loadImg(){
+	alert('s');
+}*/
+/*var src = "http://app.2144.cn/upload/2011/06/17/4dfb1c9cd388e.jpg";
+var img = document.createElement("img");
+img.src = src;
+var i = new Image();
+i.src = src;
+
+if(i.complete){
+	
+}
+document.body.appendChild(img);
+img.load = function(){
+	//alert("O");
+	//img.width = i.width - 800;
+	alert(img.width);
+	img.setAttribute("width",800);
+	
+}*/
+
+</script>
+
+
+</body>
+</html>

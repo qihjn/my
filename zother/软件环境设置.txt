@@ -1,0 +1,8 @@
+1.设置系统背景及菜单颜色为 85,203,215
+2.设置dw的收藏栏，放入常用的form,table,text标签
+3.设置dw的代码颜色
+4.设置zend的代码颜色
+4.设置zend的快捷键，右缩进，左缩进ctrl+shift+<,ctrl+shift+>等
+5.自动备份程序  host,vhost.conf,web,mysql 
+
+

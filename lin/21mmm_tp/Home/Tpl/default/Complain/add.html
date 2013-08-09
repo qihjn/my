@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>投诉与建议</title>
+<style type="text/css">
+<!--
+body{ background-color:#003333; margin:0;}
+.content {
+	font-size: 9pt;
+	line-height: 150%;
+	color: #666666;
+	text-decoration: none;
+}
+.border {
+	font-size: 9pt;
+	color: #333333;
+	text-decoration: none;
+	border: 1px solid #333333;
+}
+-->
+</style>
+</head>
+
+<body>
+<table width="500" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td><img src="__PUBLIC__/Images/compaintop.gif" width="500" height="83"></td>
+  </tr>
+  
+  <tr>
+    <td align="center" bgcolor="#FFFFFF">
+<table width="80%" border="0" cellspacing="2" cellpadding="2">
+        <tr>
+          <td class="content">
+                    
+             中华美容网欢迎您投诉!</p>
+            </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" bgcolor="#FFFFFF">
+        <table width="80%" border="0" cellpadding="2" cellspacing="2" class="content">
+		<form action="/complain/insert" method="post" name="form1"  onsubmit="return CheckForm(this);">
+				<input type=hidden name=doPost value=true>
+          
+          <tr> 
+            <td align="left">主　题：</td>
+            <td align="left"><input name="title" type="text" class="border" id="title"></td>
+          </tr>
+          <tr> 
+            <td align="left" valign="top">您的意见和建议：</td>
+            <td align="left"><textarea name="content" cols="40" rows="15" class="border" id="content" check="Require" warning="意见和建议不能为空"></textarea></td>
+          </tr>
+          <tr align="left"> 
+            <td colspan="2" style="color:#f00;">您的联系方式，可选。</td>
+            </tr>
+          <tr> 
+            <td width="27%" align="left">您的邮箱：</td>
+            <td width="73%" align="left"><input name="email" type="text" class="border" id="email" ></td>
+          </tr>
+          <tr> 
+            <td width="27%" align="left">您的电话：</td>
+            <td width="73%" align="left"><input name="phone" type="text" class="border" id="phone"></td>
+          </tr>
+		   <tr> 
+            <td width="27%" align="left">您的姓名：</td>
+            <td width="73%" align="left"><input name="realname" type="text" class="border" id="realname"></td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+            <td><input name="Submit" type="submit" class="content" value="提交">
+              　
+              <input name="Submit2" type="submit" class="content" value="取消"></td>
+          </tr>
+         
+          
+		  </form>
+        </table>
+    </td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+</table>
+
+</body>
+</html>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/Js/Form/CheckForm.js"></script>

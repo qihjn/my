@@ -1,0 +1,62 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+#求职招聘
+#RewriteRule ^(.+)$ index.php/$1 [L]
+RewriteRule ^job/show_([0-9]+).html$ index.php/job/show/id/$1 [L]
+RewriteRule ^job/index/(.*)$ index.php/job/index/$1 [L]
+RewriteRule ^job/(.*)$ index.php/job/$1 [L]
+
+RewriteRule ^resume/(\d+)/show.html$ index.php/resume/show/id/$1 [L]
+RewriteRule ^resume/index/(.*)$ index.php/resume/index/$1 [L]
+
+RewriteRule ^company/show_(\d+).html$ index.php/company/show/id/$1 [L]
+#
+RewriteRule ^public/(.*)$ index.php/$1 [L]
+RewriteRule ^([a-zA-Z]+)$ index.php/index/index/code/$1 [L]
+#RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
+
+
+# 空参数
+#RewriteCond %{HTTP_HOST} ^([a-z0-9\-]+)\.21mmm\.cn$
+#RewriteRule ^(\s?)$ index.php/ [QSA,PT,L]
+
+
+#RewriteCond %{HTTP_HOST} ^u\.21mmm\.cn$
+#RewriteRule ^(.*?)$ user.php/$1 [QSA,PT,L]
+
+
+
+
+#旧url 301 转向
+#RewriteRule ^([a-z]+)/promo/person/(\w+)/([page_]*)([0-9]*)$ index.php/resume/index/province/$1/page/$4
+#RewriteRule ^([a-z]+)/promo/unit/(\w+)/([page_]*)([0-9]*)$ index.php/job/index/province/$1/page/$4
+
+#RewriteRule ^promo/(\w+)/(\w+)/([page_]*)([0-9]*)$ promo.php?utype=$1&promo=$2&$3=$4 [L]
+#RewriteRule ^([a-z]+)/promo/(\w+)/(\w+)/([page_]*)([0-9]*)$ promo.php?utype=$2&promo=$3&$4=$5&area=$1 [L]
+#人才列表 /shanghai/promo/person/fast_person/page_2 
+#职位列表 /hubei/promo/unit/fast_job/page_7 
+
+
+
+#RewriteRule ^resume/([0-9]+)/show.html$ person.php?pid=$1 [L]
+#RewriteRule ^company/show_([0-9]+).html$ company.php?uid=$1 [L]
+#RewriteRule ^job/show_([0-9]+).html$ index.php/job/show/id/$1 [L]
+#RewriteRule ^promo/(\w+)/(\w+)/([page_]*)([0-9]*)$ promo.php?utype=$1&promo=$2&$3=$4 [L]
+#RewriteRule ^([a-zA-Z]+)$ index.php?code=$1 [L]
+#RewriteRule ^([a-z]+)/promo/(\w+)/(\w+)/([page_]*)([0-9]*)$ promo.php?utype=$2&promo=$3&$4=$5&area=$1 [L]
+
+
+#二级域名跳转
+
+
+
+
+
+
+#RewriteCond %{HTTP_HOST} ^u.21mmm.cn$
+##RewriteCond %{REQUEST_URI} !^/bbs/
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.*)$ user.php/$1 [L]

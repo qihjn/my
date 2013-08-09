@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link rel="stylesheet" media="all" type="text/css" href="screen.css" />
+		<link rel="stylesheet" media="all" type="text/css" href="example.css" />
+<script language="javascript" src="../../Js/jq.js"></script><script language="javascript" src="jq.dialog.js"></script>
+
+</head>
+
+<body>
+<script language="javascript">
+var statesdemo = {
+		state0: {
+			html:'<input type="text" />',
+			buttons: { Cancel: false, Next: true },
+			focus: 1,
+			submit:function(v,m,f){ 
+				if(!v) return true;
+				else
+					$.prompt.goToState('state1');
+				return false; 
+			}
+		},
+		state1: {
+			html:'test 2',
+			buttons: { Back: -1, Exit: 0 },
+			focus: 1,
+			submit:function(v,m,f){ 
+				if(v==0) $.prompt.close()
+				else if(v=-1)
+				$.prompt.goToState('state0');
+				return false;
+			}
+		}
+};
+
+</script>
+<button onclick="$.prompt(statesdemo)" title="Example 1">Example 1</button>
+
+</body>
+</html>

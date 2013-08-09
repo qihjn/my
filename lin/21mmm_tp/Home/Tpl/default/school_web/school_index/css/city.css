@@ -1,0 +1,152 @@
+*{
+	font-size: 12px;
+	margin:0 auto;
+}
+
+body{width:100%; background-image:url(../images/bg.jpg); background-repeat:repeat;}
+#allnet{text-align:center; margin-left:auto; margin-right:auto; width:950px; padding-bottom:5px; background-color:#fff;}
+#school{width:950px; float:left; background-color:#fff; padding-bottom:5px;}
+#star{width:930px; float:left; margin-left:10px; display:inline;}
+a img{border:none;} 
+li{list-style-type:none;}
+.clear{clear:both;}
+a.video{
+	background-image: url(../images/bj_2.gif);
+	background-repeat: no-repeat;
+	padding-left:18px;
+	background-position:left center;
+}
+a.scho{
+	background-image:url(../images/schol.gif);
+	background-repeat: no-repeat;
+	padding-left:18px;
+	background-position:left center;
+}
+.ad{width:100%; float:left; margin-top:5px; display:inline; text-align:center; clear:both;}
+/* µÇÂ½¿ò */
+.bj_live{width:100%; height:24px; text-align:center; float:left; display:inline;}
+.bj_live p{line-height:24px; text-align:left; padding-left:10px; font-size:13px; color:#333;}
+.bj_live a:link {color:#333; text-decoration:none;}
+.bj_live a:visited  {color:#333; text-decoration:none; }
+.bj_live a:hover {color:#333; text-decoration:underline;}
+.bj_live_left{ float:left; padding-left:5px; text-align:left; padding-top:3px;}
+.bj_live_right{float:right; text-align:left; width:370px; background-image:url(../images/xg.jpg); height:24px; padding:0;}
+.bj_live_right li{float:left; margin-left:9px; display:inline; text-align:left; color:#443f39; line-height:24px;}
+.bj_live_right a:link {color:#443f39; text-decoration:none;}
+.bj_live_right a:visited  {color:#443f39; text-decoration:none; }
+.bj_live_right a:hover {color:#443f39; text-decoration:underline;}
+/* logo */
+.logo{ width:100%; float:left; margin-top:5px; text-align:center; display:inline; clear:both;}
+.logo_vi{width:212px; float:left; text-align:center;}
+.logo_ad{ float:right; text-align:left; margin-top:2px; display:inline; height:30px; background-image:url(../images/bj_nav.jpg); background-repeat:repeat-x;}
+.logo_ad_left{width:5px; float:left; text-align:center; height:30px;}
+.logo_center{padding:0; padding-right:5px; float:left; text-align:left;}
+.logo_center li{float:left; margin-left:12px; padding-right:10px; text-align:left; line-height:30px; display:inline; background-image:url(../images/bj_cen.jpg); background-repeat:no-repeat; background-position:right center;}
+.logo_center li a:link {color:#fff; text-decoration:none;}
+.logo_center li a:visited  {color:#fff; text-decoration:none; }
+.logo_center li a:hover {color:#fff; text-decoration:underline;}
+/*menu*/
+.menu{ width:100%; float:left; margin-top:5px; display:inline; text-align:center; background-image:url(../images/menu.jpg); height:52px; clear:both;}
+.menu_name{float:left; width:166px; text-align:center; height:52px;}
+.menu_caidan{float:left; margin-left:10px; width:744px; display:inline;}
+.menu_caidan ul{ padding:0;}
+.menu_caidan li{ margin-left:5px; display:inline; padding-top:25px; text-align:center; float:left; color:#2b52a1;}
+.menu_caidan li a:link {color:#2b52a1; text-decoration:none;}
+.menu_caidan li a:visited {color:#2b52a1; text-decoration:none;}
+.menu_caidan li a:hover {color:#fff; text-decoration:none; background-color:#2b52a1;}
+.menu_search{ float:left; margin-left:20px; display:inline; margin-top:18px; color:#333;}
+/*center*/
+.left{width:200px; float:left; margin-top:5px; display:inline; text-align:center; background-color:#f2f7fb; padding-bottom:5px;}
+.left_menu{width:190px; margin-top:5px; margin-left:5px; display:inline; text-align:center; float:left; clear:both;}
+.xxfy{width:718px; float:left; border:1px solid #a7c4df; background-image:url(../images/bj_5.jpg); background-repeat:repeat-x; height:29px; line-height:29px; clear:both;}
+.right{width:720px; float:left; margin-top:10px; margin-left:10px; display:inline;}
+.xuexi{ width:100%; float:left; margin-top:5px; display:inline;}
+.xuexi h1{width:100%; background-image:url(../images/bj_xx.jpg); height:34px; line-height:34px; text-align:left;}
+.title{float:left; padding-left:15px; text-align:left; color:#29539d; font-weight:normal;}
+.title a:link {color:#476885; text-decoration:none; font-size:13px;}
+.title a:visited  {color:#476885; text-decoration:none; font-size:13px;}
+.title a:hover {color:#476885; text-decoration:underline; font-size:13px;}
+.xuexi_center{width:100%; float:left; background-image:url(../images/bj_xc.jpg); background-repeat:repeat-y;}
+.chufei{width:360px; float:left; margin-top:5px; margin-left:15px; display:inline; padding:0;}
+.chufei li{width:100%; text-align:left; float:left; line-height:24px;}
+.yihou{float:left; color:#333; text-align:left;}
+.yihou a:link {color:#476885; text-decoration:none; padding-left:10px;}
+.yihou a:visited  {color:#476885; text-decoration:none; padding-left:10px;}
+.yihou a:hover {color:#476885; text-decoration:underline;padding-left:10px; }
+
+.yiqian{float:right; text-align:left; color:#FF9900;}
+
+.titi{ float:left; padding-left:5px; text-align:left; color:#29539d;}
+.titi a:link {color:#29539d; text-decoration:none;}
+.titi a:visited  {color:#29539d; text-decoration:none; }
+.titi a:hover {color:#29539d; text-decoration:underline;}
+.more{float:right; text-align:left; padding-right:15px;}
+.more a:link {color:#29539d; text-decoration:none;}
+.more a:visited  {color:#29539d; text-decoration:none; }
+.more a:hover {color:#29539d; text-decoration:underline;}
+.heshi_pic{width:200px; float:right; margin-right:30px; margin-top:20px; display:inline; text-align:center;}
+.xuexi_bottom{width:100%; height:9px; text-align:center; float:left;}
+.pingqiao{width:450px; float:left; margin-top:10px; margin-left:20px; display:inline; text-align:left;}
+.pingqiao p{width:100%; text-align:left; font-size:12px; line-height:22px; color:#333; text-indent:20px;}
+.xyzp{width:718px; float:left; margin-top:5px; border:1px solid #dadada; background-color:#f2f2f2; padding-bottom:5px;}
+.xyzp_l{width:17px; float:left; margin-top:40px; display:inline; text-align:center;}
+.xyzp_c{width:684px; float:left;}
+.xyzp_pic{ width:100px; float:left; margin-left:12px; margin-top:10px; display:inline; text-align:center;}
+.xyzp_pic img{padding:1px; background-color:#fff;}
+.xyzp_pic p{width:100%; text-align:center; line-height:20px;}
+.xyzp_pic p a:link {color:#333; text-decoration:none; }
+.xyzp_pic p a:visited {color:#333; text-decoration:none; }
+.xyzp_pic p a:hover {color:#333; text-decoration:underline; }
+.laoshi{width:142px; float:left; margin-top:10px; margin-left:30px; display:inline;}
+.laoshi_pic{width:100%; text-align:center;}
+.laoshi_pic img{border:1px solid #dadada;}
+.laoshi h2{width:100%; text-align:center; line-height:20px;}
+.laoshi h2 a:link {color:#29539d; text-decoration:none;}
+.laoshi h2 a:visited  {color:#29539d; text-decoration:none; }
+.laoshi h2 a:hover {color:#29539d; text-decoration:underline;}
+.laoshi p{width:100%; text-align:left; line-height:20px; color:#666;}
+
+.xxkc{width:680px; float:left; margin-left:20px; margin-top:10px; display:inline;}
+.xxkc h2{width:100%; height:50px; line-height:50px; background-image:url(../images/kc.jpg); background-position:left center; background-repeat:no-repeat;}
+.list{float:left; padding-left:60px; text-align:left; color:#29539d; font-size:14px;}
+.wybm{float:right; text-align:left; }
+.wybm img{padding:10px;}
+.jklb{width:100%; float:left; margin-top:5px; display:inline; line-height:20px;}
+
+/*foot*/
+.foot{
+	width:100%;
+	line-height:20px;
+	clear:both;
+	color:#666;
+	margin-top:5px;
+	float:left;
+}
+.foot .text{ border-top:3px solid #e0e0e0;  clear:both; color:#666; text-align:center; padding-top:5px;}
+.foot a:link {
+	color: #333;
+	text-decoration:none;
+}
+.foot a:visited {
+	color: #333;
+	text-decoration:none;
+}
+.foot a:hover {
+    color: #cc0000;
+	text-decoration: underline;
+}
+
+/*Ôö¼Óschool*/
+.school_mc{width:100%; height:130px; text-align:center; background-image:url(../images/ad_12.jpg); float:left; margin-top:5px; display:inline;}
+
+.mchen{float:left; margin-top:40px; text-align:left; margin-left:380px;display:inline;  color:#23437e; font-size:30px;  font-family:"ºÚÌå"; }
+
+
+
+
+
+
+
+
+
+

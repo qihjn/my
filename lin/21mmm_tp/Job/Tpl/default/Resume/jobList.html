@@ -1,0 +1,19 @@
+	<div class="zhigou_box">
+                <div class="zhigou_bt"><span>
+                    <h1><a href="{$$titleurl}"  target="_blank">{$$title}</a></h1>
+                    </span></div>
+                <div class="zhigou_box_bk">
+                    <table width="95%" border="0" cellspacing="0" cellpadding="0">
+                        <volist name="{$$listvar}" id="vo">
+                        <tr align='left'>
+                            <td width='50%'><a href='/job/{$vo.id}/show.html' target='_blank'  class='manname'>{$vo.jtitle}</a></td>
+                            <td width='50%'><a href='/company/show_{$vo.uid}.html' target='_blank'>{$vo.ctitle}</a></td>
+                        </tr>
+                        </volist>
+                        <tr align="left">
+                            <td colspan="1" align="left"><a href="{$$puburl}" style="color:#23548A;">我要发布</a><span></td>
+                            <td colspan="1" align="right"><a href="{$$titleurl}" style="color:#FC4716;"  target="_blank">更多</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>

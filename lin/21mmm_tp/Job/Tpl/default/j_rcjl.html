@@ -1,0 +1,408 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content='{$keywords}'>
+<meta  name="description" content='{$description}'>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{func:str_replace('/', ',', '{$local}')} 招聘 {$job_request} 求职 {$household} {for var=$ustudy index=$key}{$ustudy[$key]['college']} {/for} -中华美容网--21mmm.com</title>
+<script src="{URL_PUBLIC}js/province.js" language="javascript"></script>
+<script src="{URL_PUBLIC}js/city.js" language="javascript"></script>
+<script src="{URL_PUBLIC}js/area.js" language="javascript"></script>
+<script src="{URL_PUBLIC}js/place.js" language="javascript"></script>
+<script src="{URL_PUBLIC}js/jquery.js" type="text/javascript"></script>
+<script src="{URL_PUBLIC}js/cat.js" type="text/javascript"></script>
+<script src="{URL_PUBLIC}js/popwindow.js" type="text/javascript"></script>
+<style>
+#lvl a{text-decration:none; line-height:1.8; float:left; width:160px; color:#454545; overflow:hidden;}
+#lvl a:hover{background-color:#f90; text-decoration:none;}
+</style>
+<link href="{URL_PUBLIC}style/popwindow.css" rel="stylesheet" type="text/css" />
+<link href="{URL_PUBLIC}style/unit/city.css" rel="stylesheet" type="text/css" />
+</head>
+<style type="text/css">
+input[type~='submit']{background-color:#005C89;color:#FFFFFF; border:1px outset;height:24px;}
+input[type~='button']{background-color:#005C89;color:#FFFFFF; border:1px outset;height:24px;}
+.list{width:200px; float:left; border:#CAD9EA 1px solid; padding:1px 1px 1px 1px}
+.border_1{border:#CAD9EA 1px solid; width:691px; margin-top:5px;}
+.border_list{border-top:#E8E8E8 1px solid;line-height:30px;height:30px;}
+.list_head{font-size: 12px;font-weight: bold; line-height:30px; padding-left:5px}
+
+.wen_head{height:30px;font-weight:bold; color:#FFFFFF;}
+.border_2{border-top:#CAD9EA 1px solid;line-height:30px;}
+.border_3{text-align:left;padding-left:5px;}
+.border_4{text-align:center;}
+.border_5{text-align:left;padding-left:5px;width:200px;}
+.border_6{border-left:#CAD9EA 1px solid;}
+.border_7{width:90px;padding-left:5px;}
+.border_8{text-align:left;padding-left:5px;}
+.wen_bg{border-top:#CAD9EA 1px solid;height:30px;line-height:30px; background-color:#F5FAFE}
+input[type='text']{border-top: #1A1A1A 1px solid;border-left: #1A1A1A 1px solid;border-bottom:#CECECE 1px solid;border-right:#CECECE 1px solid;height:18px;}
+.border_top{border-top:#CAD9EA 1px solid}
+.border_left{border-left:#CAD9EA 1px solid}
+.border_right{border-right:#CAD9EA 1px solid}
+.border_bottom{border-bottom:#CAD9EA 1px solid}
+textarea{border-top: #1A1A1A 1px solid;border-left: #1A1A1A 1px solid;border-bottom:#CECECE 1px solid;border-right:#CECECE 1px solid;}
+.white_border{ border:#FFFFFF 1px solid}
+.copyright{
+	background-color:#E8F3FD;
+	width:99.8%;
+	border:#9DB3C5 1px solid;
+	margin:10px 0px 0px 0px !important;
+	padding:10px 0;
+	text-align:center;
+	clear:both;
+}
+.cuti{
+	font-weight:bold;
+}
+.hengji{width:148px; float:left; background-color:#f5fafe; text-align:center; margin-top:5px; margin-left:10px; display:inline;}
+.hengji_pic{ width:100%; text-align:center; padding-bottom:5px;}
+.hengji_pic img{ padding:30px; text-align:center; padding-bottom:0; padding-top:10px;}
+.hengji_pic p{width:100%; line-height:20px; text-align:center; color:#333;}
+.hengji_pic p a:link {color:#cc0000; text-decoration:none; }
+.hengji_pic p a:visited {color:#cc0000; text-decoration:none; }
+.hengji_pic p a:hover {color:#cc0000; text-decoration:underline; }
+.renzhu{width:520px; float:right; margin-top:5px; display:inline; margin-right:5px;}
+.renzhu h2{width:100%; text-align:left; height:30px; background-color:#f5fafe;}
+.texe_l{float:left; padding-top:3px; padding-left:10px; text-align:left; color:#333;}
+.renzhu p{width:100%; text-align:left; line-height:20px; padding-top:10px; color:#333;}
+.renzhu p a:link {color:#02275d; text-decoration:underline; }
+.renzhu p a:visited {color:#02275d; text-decoration:underline; }
+.renzhu p a:hover {color:#02275d; text-decoration:underline; }
+
+.contact{ text-align:center;}
+.contact a{ display:block;  width:137px; height:24px; line-height:24px;  text-align:center; font-size:13px; font-weight:bold; color:#FFC; background-image:url({URL_PUBLIC}images/unit/textbg1.gif); }
+.contact a:hover{ color:#FFF; font-size:14px;}
+.STYLE1 {color: #FF0033}
+.STYLE3 {color: #FF0000}
+</style>
+<body>
+	<div id="allnet">
+		<div id="school">
+			<div id="star">
+				{include:head.html}
+				<div class="ad"><img src="{URL_PUBLIC}images/unit/ad_4.jpg" width="930" border="0"/></div>
+				<div class="left">
+					<div class="login">
+						<h1><span class="zb"><a href="#">快速搜索</a></span></h1>
+						<div class="clear"></div>
+						{include:sobox.html}
+					</div>
+					<div class="login">
+						<h1><span class="zb"><a href="#">进入你感兴趣的地区人才</a></span></h1>
+						<div class="clear"></div>
+						<ul class="zhaopinhui">
+							{for var=$area_rencai index=$key}
+							<li>·点击进入>>><a href='{$area_rencai[$key]['link']}'>{$area_rencai[$key]['title']}</a></li>
+							{/for}
+						</ul>
+					</div>
+					<div class="login">
+						<h1><span class="zb"><a href="#">匹配人才</a></span></h1>
+						<div class="clear"></div>
+						<div class="buyZonePrice" style="width:210px;">	
+								<table  width="100%" border="0"  cellpadding="3" cellspacing="1">
+									<tr>
+										<th width="49">姓名</th>
+										<th width="38">性别</th>
+										<th width="101">意向工作职业</th>
+									</tr>
+                                    {matchperson}
+									<tr class="bg_fa">
+										<td height="20" align="center"><a href="/resume/{pid}/show.html" target="_blank">{realname}</a></td>
+										<td align="center">{gender}</td>
+										<td align="center">{job_request}</td>
+									</tr>      
+									{/matchperson}
+							</table>	
+					  </div>
+					</div>
+					<div class="login">
+						<h1><span class="zb">招聘帮助</span></h1>
+						<div class="clear"></div>
+						<ul class="zhaopinhui">
+							<li><strong>提示1：</strong><a href="http://www.21mmm.com/help/unit/56.html" target="_blank" class="STYLE3"><span style="color:#f00;">VIP会员</span></a>点击简历下方<span style="color:#cc0000;">邀请面试</span>，对方即能收到您的邀请</li>
+							<li><strong>提示2：</strong>申请成为<a href="http://www.21mmm.com/help/unit/56.html" target="_blank" class="STYLE3">招聘<span style="color:#f00;">VIP会员</span></a>，招聘效果更佳</li>
+							<li><strong>提示3：</strong>如果求职者在外地，建议使用QQ远程视频，进行初步面试</li>
+							<li><strong>提示4：</strong>该简历已通过基本审核，但因不可控因素，本网站无法完全保证该简历的真实性。敬请单位注意规避招聘风险。</li>
+							<li><strong>提示5：</strong><span style="color:#f00;">如果许多简历上出现相同的描述</span>，是由于该简历未填写完整，则由系统默认显示内容，不影响简历的真实性。</li>
+							<li><a href="http://www.21mmm.com/help/unit/72.html" target="_blank"><strong>提示6：</strong><span style="color:#f00;">怎么招聘最划算，不浪费？“自助式招聘”-想招就招，招满就停！</span></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="zhigou">
+					<div style="text-align:left;">
+						<div class="border_1" >
+						  <table width="100%" border="0" cellpadding="0" cellspacing="3">
+							<tr>
+								<td style="text-align:center;font-size:16px;font-weight:bold;" height="30">{$realname}的个人简历<span style="font-size:12px; font-weight:normal; color:#555;">(简历编号：230145625)</span></td>
+							</tr>
+							<tr>
+							  <td class="wen_bg border_3 cuti">个人基本信息</td>
+							</tr>
+						  </table>
+						  <table width="97%" border="0" align="center" cellpadding="0" cellspacing="0">
+							<tr>
+							  <td width="37%" height="24" align="left">姓名：{$realname}</td>
+							  <td width="43%" align="left">性别：{func:getitemconf({$gender},'gender','user')}</td>
+							  <td width="20%" rowspan="7" align="center">
+							  	<table border="0" cellpadding="3" cellspacing="2" >
+									<tr>
+									  <td><img src="{$thumb}"  height="150px" width="120px" border=0  /></td>
+									</tr>
+							  	</table>
+							  </td>
+							</tr>
+							<tr align="left">
+							  <td height="24">生日：{$birthday}</td>
+							  <td width="43%">身高：{$high}[厘米]</td>
+							</tr>
+							<tr align="left">
+							  <td height="24">体重：{$weight}[公斤]</td>
+							  <td width="43%">学历程度：{$study}</td>
+							</tr>
+
+							
+							<tr align="left">
+							  	<td height="24">户口所在地：{$household}</td>
+								<td width="43%">婚姻情况：{$marriage}</td>
+						    </tr>
+							<tr align="left">
+							  <td height="24">现居住地：{$inplace}</td>
+							  <td width="43%">更新日期：{func:date('Y-m-d', {$ctime})}</td>
+							</tr>
+						
+						  </table>
+							<table width="100%" border="0" cellpadding="0" cellspacing="3">
+							<tr>
+							  <td align="left" class="wen_bg border_3 cuti">自我简介/职业目标</td>
+							</tr>
+						  </table>
+						  <table width="97%" border="0" align="center" cellpadding="0" cellspacing="0">
+							<tr align="left">
+							  <td>{$other}.</td>
+							</tr>
+						  </table>
+						  <table width="100%" border="0" cellpadding="0" cellspacing="3">
+							<tr>
+							  <td align="left" class="wen_bg border_3 cuti">职业概况与求职意向</td>
+							</tr>
+						  </table>
+						  <table width="97%" border="0" align="center" cellpadding="0" cellspacing="0">
+							
+							<tr align="left">
+							  <td height="24" colspan="2" align="left">期望工作地区：{$local}</td>
+							</tr>
+							<tr align="left">
+							  <td height="24" colspan="2" align="left">期望从事行业：{$job_request}</td>
+							</tr>
+							<tr align="left">
+							  <td height="24" align="left">期望工作性质:{$em_type}</td>
+							  <td align="left">期望薪水：{$money}</td>
+							</tr>
+							 <tr align="left">
+							  <td height="24" colspan="2" align="left">到岗时间：{func:getitemconf({$toposi},'toposi','user')}</td>
+							</tr>
+						  </table>
+						<table width="100%" border="0" cellpadding="0" cellspacing="3">
+							<tr>
+							  <td class="wen_bg border_3 cuti">教育背景</td>
+							</tr>
+						  </table>
+						  {for var=$ustudy index=$key}
+						  <table width='97%' border='0' align='center' cellpadding='0' cellspacing='0'>
+							<tr>
+							  <td width='11%' height='24' align='left'>毕业学校：</td>
+							  <td height='24' colspan='3' align='left'><strong>{$ustudy[$key]['college']}</strong></td>
+						    </tr>
+							<tr>
+							  <td width='11%' height='24' align='left'>在读时间：</td>
+							  <td width='37%' align='left'>{$ustudy[$key]['starttime']} ~ {$ustudy[$key]['endtime']}</td>
+							  <td width='9%' height='24' align='right'>学历：</td>
+							  <td width='43%' height='24' align='left'>{$ustudy[$key]['lvl']}</td>
+							</tr>
+							<tr>
+							  <td width='11%' height='24' align='left'>专业类别：</td>
+							  <td height='24' colspan='3' align='left'><strong>{$ustudy[$key]['special']}</strong></td>
+						    </tr>
+							<tr>
+							   <td width='11%'>描述：</td>
+							   <td colspan='3'>{$ustudy[$key]['desc']}</td>
+							</tr>
+						  </table>
+						  {/for}
+						 
+						 <table width="100%" border="0" cellpadding="0" cellspacing="3">
+							<tr>
+							  <td class="wen_bg border_3 cuti">工作经历</td>
+							</tr>
+						  </table>
+						  {for var=$uwork index=$key}
+						  <table width='97%' border='0' align='center' cellpadding='0' cellspacing='0'>
+							<tr>
+							  <td height='24'>{$uwork[$key]['company']} {$uwork[$key]['starttime']} {$uwork[$key]['endtime']} {$uwork[$key]['work']} {$uwork[$key]['desc']}</td>
+						    </tr>
+							
+						  </table>
+						  {/for}
+						  {for var=$skill_list index=$key}
+						  <table width='100%' border='0' cellpadding='0' cellspacing='3'>
+							<tr>
+							  <td class='wen_bg border_3 cuti'>技能专长</td>
+							</tr>
+						  </table>
+						  <table width='97%' border='0' align='center' cellpadding='0' cellspacing='0'>
+							<tr align='left'>
+							  <td width='17%' height='24' >美容师证：</td><td>{$skill_list[$key][certificate]}</td>
+							</tr>  
+							<tr align='left'>
+          					  <td width='17%' height='24'>普通话：</td><td>{$skill_list[$key][mandarin_level]}</td>
+        					</tr>
+							<tr align='left' height='24'>
+          				      <td >方言：</td><td>{$skill_list[$key][dialect]}</td><td width='10%'align='left'>水平：</td><td>{$skill_list[$key][dialect_level]}</td>
+       						</tr>
+						   <tr align='left' height='24'>
+         					  <td>外语：</td><td width='30%'>{$skill_list[$key][foreign_language]}</td><td  align='left'>水平：</td><td align='left'>{$skill_list[$key][foreign_level]}</td>
+        					</tr>
+						  <tr align='left' height='24'>
+						  	<td>技能描述：</td><td colspan='3'>{$skill_list[$key][des]}</td>
+						  </tr>
+							<tr align='left'>
+							  <td height='10' colspan='4'></td>
+							</tr>
+						  </table>
+						  {/for}
+						  <table width="100%" border="0" cellpadding="0" cellspacing="3">
+							<tr>
+							  <td align="left" class="wen_bg border_3 cuti">住房要求</td>
+							</tr>
+						  </table>
+						  <table width="97%" border="0" align="center" cellpadding="0" cellspacing="0">
+							<tr align="left">
+							  <td width="17%" height="24" colspan="2" align="left">{$housing}</td>
+							  <td width="17%" align="left">&nbsp;</td>
+							  <td width="66%" align="left">&nbsp;</td>
+							</tr>
+							<tr align="left">
+							  <td height="10" colspan="4"></td>
+							</tr>
+						  </table>
+						  
+							<table width="100%" border="0" cellpadding="0" cellspacing="3">
+							<tr>
+							  <td class="wen_bg border_3 cuti">个人职业风采</td>
+							</tr>
+						  </table>
+							<div id='photolist' style="float:left">{for var=$photolist index=$key}
+								<a href='{$photolist[$key][imgurl]}' target='_blank'><img src='{$photolist[$key][thumb]}' height='110'width='132' /></a>{/for}
+								
+								
+								
+							</div>
+							</table>
+							<table width="100%" border="0" cellpadding="0" cellspacing="3">
+								<tr>
+								  <td class="wen_bg border_3 cuti">联系方法</td>
+								</tr>
+						    </table>
+
+
+<div id="a" style="display:none;">
+<table width="200">
+<form action="http://user.{$mainurl}/passport.php" method="POST">
+<tr>
+    <td align="right"><span style="font-weight:bold; color:#333;">通行证：</span></td>
+    <td><input name="username" id="username" type="text" style="width:130px;"/></td>
+</tr>
+<tr>
+    <td align="right"><span style="font-weight:bold; color:#333;">密码：</span></td>
+    <td><input name="userpass" id="userpass" type="password" style="width:130px;"/></td>
+</tr>
+<tr>
+    <td colspan="2" align="center"><span style="padding-left:3px;"><select name="u_type" id="u_type"><option value="unit">企业用户</option><option value="person">个人用户</option><option value="school">培训机构</option></select></span></td>
+</tr>
+<tr><td colspan="2" align="center">
+    <span style="vertical-align:middle;"><input type="image" value="登录" src="{URL_PUBLIC}images/unit_web/nmdl.jpg" />
+    &nbsp;&nbsp;</span>
+        <span style="padding-left:3px; vertical-align:middle;"><a href="http://user.{$mainurl}/register.php"><img src="{URL_PUBLIC}images/unit_web/zhuce.jpg" /></a></span>
+</td>
+</tr>
+</form>
+</table>
+</div>       
+							 <div class="xyzp_c" style="width:690px;">
+                             	
+                             	{if {$noonline}==1 }
+<div style="margin:10px 5px 5px 20px;">
+			  <p>·您是VIP会员请[<a href="http://user.21mmm.com/login.php" target="_blank" class="STYLE1"><span style="color:#f00;">登录</span></a>]；您还没有<a href="http://user.21mmm.com/register.php" target="_blank" class="STYLE1">注册</a>，请<a href="http://user.21mmm.com/register.php" target="_blank" class="STYLE1"><span style="color:#f00;">注册</span></a>；如有问题<a href="http://www.21mmm.com/help/most/27.html" target="_blank"><span style="color:#f00;">联系我们</span></a></p>
+			  <p>·只有<a href="http://www.21mmm.com/help/unit/56.html" target="_blank" class="STYLE1"><span style="color: #990066;">招聘VIP会员</span></a>才能查看人才联系信息，邀请人才面试,<a href="http://www.21mmm.com/help/unit/56.html" target="_blank"><span style="color:#f00;">如何升级成为招聘会员?</span></a></p>
+			  <script language="javascript" src="http://com.zoosnet.net/JS/LsJS.aspx?siteid=COM20648652&float=1"></script>
+                               </div>
+                               
+								
+                                {/if}
+                                
+                                {if {$online}==1 }
+                                <div style="margin:10px; text-align: center;">
+                                    <table width="100%" border="1" bordercolor="#C1D3E3" style="border-collapse:collapse;">
+                                    <tr>
+                                        <td width="9%" height="20" align="center"><strong>手机</strong></td>
+                                        <td width="39%" align="left"><span class="ji">{$mobile}</span></td>
+                                        <td width="9%" align="center"><strong>Q  Q</strong></td>
+                                        <td width="43%" align="left"><span class="ji">{$qq}</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td height="20" align="center"><strong>电话</strong></td>
+                                        <td align="left"><span class="ji">{$phone}</span></td>
+                                        <td align="center"><strong>Email</strong></td>
+                                        <td align="left"><span class="ji">{$email}</span></td>
+                                    </tr>
+                                </table>
+                                <br /><br />
+                            	</div>
+                                {/if}
+							</div>
+                            
+						
+                          	<div class="contact">
+                            	<table cellspacing="5">
+                            	    <tr>
+                                    <td height="35">
+                                      <a href="/inv.php?pid={$pid}" target="_blank" >邀请面试</a></td>
+                                    <td>
+                                      <a href="/resume_fav.php?pid={$pid}" target="_blank" >简历收藏</a></td>
+                                    <td>
+                                      <a href="#" style="color:#FFC;">在线咨询</a></td>
+                                    </tr>
+                                </table>
+                           </div>
+                           <div class="clear"></div>
+                          
+                          
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+				{include:foot.html}
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript">                        
+ //测试弹出 
+function testMessageBox(ev) {
+    var objPos = mousePosition(ev);
+    //messContent += '<div style="padding:20px 0 20px 0;text-align:center"><table width="200"><form action="http://user.{$mainurl}/passport.php" method="POST"><tr><td align="right"><span style="font-weight:bold; color:#333;">通行证：</span></td> <td><input name="username" id="username" type="text" style="width:130px;"/></td></tr>';
+	//messContent += '<tr>    <td align="right"><span style="font-weight:bold; color:#333;">密码：</span></td>    <td><input name="userpass" id="userpass" type="password" style="width:130px;"/></td></tr>';
+	//messContent += '<tr>    <td colspan="2" align="center"><span style="padding-left:3px;"><select name="u_type"><option value="school">培训机构</option><option value="unit">企业用户</option><option value="person">个人用户</option></select></span></td></tr>';
+	//messContent += '<tr><td colspan="2" align="center">    <span style="vertical-align:middle;"><input type="image" value="登录" src="{URL_PUBLIC}images/unit_web/nmdl.jpg" />    &nbsp;&nbsp;</span>        <span style="padding-left:3px; vertical-align:middle;"><a href="http://user.{$mainurl}/register.php"><img src="{URL_PUBLIC}images/unit_web/zhuce.jpg" /></a></span></td></tr>';
+	//messContent += '<\/form><\/table><\/div>';
+	//messContent="";
+	messContent = document.getElementById("a").innerHTML;
+    showMessageBox('窗口标题', messContent, objPos, 250);
+} 
+
+/*var eName = "u_type";
+selectByValue(eName,getCookie("c_" + eName));
+remember(eName);*/
+</script>

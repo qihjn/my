@@ -1,0 +1,116 @@
+{// 引入标签库 }
+<tagLib name="html" />
+{// 加载头部公共文件 }
+<include file="../Public/header" />
+<!-- 菜单区域  -->
+
+<!-- 主页面开始 -->
+<div id="main" class="main" >
+
+<!-- 主体内容  -->
+<div class="content" >
+<div class="title">数据列表</div>
+<!--  功能操作区域  -->
+<div class="operate" >
+<html:imageBtn name="add" value="新增" click="add()" style="impBtn hMargin fLeft shadow" />
+<html:imageBtn name="edit" value="编辑" click="edit()" style="impBtn hMargin fLeft shadow" />
+<html:imageBtn name="delete" value="删除" click="foreverdel()" style="impBtn hMargin fLeft shadow" />
+</div>
+
+<form action="__URL__/insert" method="post" name="form1" id="form1">
+<input type="hidden" id="id" name="id" value="{$p.id}" />
+<table width="90%" border="1" cellpadding="5" bordercolor="#6699FF">
+    <tr>
+    	<td width="15%" height="25" align="right" valign="middle">标题</td>
+        <td width="85%">
+			<input type="text" id="title" name="title" value="{$p.title}" />
+		</td>
+    </tr>
+    <tr>
+        <td width="15%" height="25" align="right" valign="middle">所属类别</td>
+        <td>
+        <label for="cid"></label>
+        {$sltCid}
+        </td>
+    </tr>
+    <tr>
+        <td width="15%" height="25" align="right" valign="middle">简介</td>
+        <td>
+            <textarea id="intro" name="intro" >{$p.intro}</textarea>
+        </td>
+    </tr>
+    <tr>
+        <td width="15%" height="25" align="right" valign="middle">属性</td>
+        <td>
+        	<input name="up" type="checkbox" id="up" value="1" <eq name="up" value="1" >checked="checked"</eq>  />
+            <label for="top">推荐</label>
+            
+            <input type="checkbox" name="top" id="top" value="1" <eq name="top" value="1" >checked="checked"</eq> />
+            <label for="top">置顶</label>
+            
+            <input type="checkbox" name="hot" id="hot" value="1" <eq name="hot" value="1" >checked="checked"</eq> />
+            <label for="top">热门</label>
+            
+            <input type="checkbox" name="status" id="status" value="1" <eq name="status" value="1" >checked="checked"</eq> />
+            <label for="top">显示</label>
+        </td>
+    </tr>
+    <tr>
+        <td width="15%" height="25" align="right" valign="middle">缩略图</td>
+        <td><input name="thumb" type="text" id="thumb" value="{$p.thumb}" /></td>
+    </tr>
+    <tr>
+        <td width="15%" height="25" align="right" valign="middle">内容</td>
+        <td>
+			<textarea name="content" id="content" rows="50" cols="152" style="width: 800px; height: 295px">
+
+        	</textarea>
+        </td>
+    </tr>
+    <tr>
+        <td width="15%" height="25" align="right" valign="middle">上传图片</td>
+        <td><input type="file" name="fileField" id="fileField" />
+            <label for="button3"></label>
+            <input type="submit" name="button3" id="button3" value="提交" /></td>
+    </tr>
+     <tr>
+        <td width="15%" height="25" align="right" valign="middle">批量上传</td>
+        <td>
+			<div id="video">
+            <script language="javascript" type="text/javascript" src="__PUBLIC__/Js/swfobject.js"></script>
+			<script type="text/javascript">
+				var s1 = new SWFObject("__PUBLIC__/Swf/up.swf","single","350","150","7");
+				s1.addParam("allowfullscreen","true");
+				s1.addVariable("upUrl","http://p.ionline.cn/upload.php");
+				s1.write("video");
+			</script>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td width="15%" height="25" align="right" valign="middle">内容</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td height="25" colspan="2" align="center" valign="middle"><input type="submit" name="button" id="button" value="提交" />
+             &nbsp;
+             <input type="reset" name="button2" id="button2" value="重置" /></td>
+        </tr>
+</table>
+{__NOTOKEN__}
+</form>
+
+
+<form action="http://p.ionline.cn/upload.php" method="post" enctype="multipart/form-data" name="form2" id="form2">
+    <label for="Filedata"></label>
+    <input type="file" name="Filedata" id="Filedata" />
+    <input type="submit" name="button4" id="button4" value="提交" />
+</form>
+</div>
+
+</div>
+</body>
+</html>
+<!-- 2. 页尾引入 editor js and init code -->
+<script type="text/javascript" src="__PUBLIC__/editor/editor-aio.js"></script>
+<script type="text/javascript">KISSY.Editor("content")</script>

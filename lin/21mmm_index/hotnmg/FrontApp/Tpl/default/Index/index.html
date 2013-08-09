@@ -1,0 +1,75 @@
+<taglib name="sgcms"/>
+<include file="Public:header" />
+<script src="__ROOT__/Public/Front/jquery-1.3.2.min.js"></script> 
+<script src="__ROOT__/Public/Front/jquery.tools.min.js"></script>
+<!--JS幻灯片-->
+<div id="ishow" class="clear"><!--定位-->
+<div class="tab">
+<a class="backward">prev</a>
+  <div class="images">
+<sgcms:getData model="Ad" name="ad" id="row" limit="5" where="category_id=33 and status=0" order="id DESC">
+    <div><a href="{$row.link_url}" target="_blank"><img src="__ROOT__/Uploads/{$row.attach_file}" alt="{$row.title}"/></a></div>
+</sgcms:getData>
+    
+  </div>
+  <a class="forward">next</a> 
+<div class="tabs clear"> 
+    <a href="#"></a> 
+    <a href="#"></a> 
+    <a href="#"></a> 
+</div>
+<script type="text/javascript">
+$("div.tabs").tabs(".images > div", { 
+        effect: 'fade', 
+        fadeOutSpeed: "slow", 
+        rotate: true 
+    }).slideshow();
+$("div.tabs").tabs().play();
+    </script></div>
+</div>
+
+<!--首页内容主体-->
+<div id="index_main" class="clear">
+<!--新闻-->
+<div id="news"><h3>行业新闻<em>news</em></h3>
+<ul>
+<sgcms:getData model="News" name="news" id="row" limit="15" order="id DESC" >
+<li><a href="{:U('News/detail',array('item'=>$row['id']))}" target="_blank">{$row.title}</a></li>
+</sgcms:getData>
+</ul>
+</div>
+<!--联系-->
+<div id="Contact"><a href="{:U('Page/detail',array('item'=>'contact'))}" class="us">联系我们</a><a href="{:U('Feedback/index')}" class="fb">客户反馈</a><a href="{:U('News/index')}" class="m">媒体报道</a></div>
+<!--产品-->
+<div id="Products"><h3>早教商城<em>Shop</em></h3>
+<ul>
+<sgcms:getData model="Product" name="productList" id="row" limit="3" order="id DESC" where="attach=1">
+<li><a href="{:U('Product/detail',array('item'=>$row['id']))}" target="_blank"><img src="__ROOT__/Uploads/{$row.attach_thumb}" width="115" height="87" align="left" /></a>
+  <h4><a href="{:U('Product/detail',array('item'=>$row['id']))}" target="_blank">{$row.title}</a></h4><p>{$row.description|msubstr=0,50}</p></li>
+</sgcms:getData>
+</ul>
+</div>
+
+</div>
+
+<!--友情链接-->
+<div id="friend"><h3>友情链接<em>Link</em></h3>
+<div>
+<sgcms:getData model="Link" name="linkImage" id="row" limit="10" order="id DESC" where="link_type='image'" >
+<eq name="row['link_type']" value="image">
+<a href="{$row.link_url}"><img src="__ROOT__/Uploads/{$row.attach_image}" width="88" height="31" /></a>
+</eq>
+</sgcms:getData>
+</div>
+<div>
+<sgcms:getData model="Link" name="linkText" id="rowTxt" limit="10" order="id DESC"  where="link_type='text'">
+<eq name="rowTxt['link_type']" value="text">
+<a href="{$rowTxt.link_url}">{$rowTxt.title}</a>
+</eq>
+</sgcms:getData>
+
+</div>
+</div>
+
+<!--底部-->
+<include file="Public:footer" />

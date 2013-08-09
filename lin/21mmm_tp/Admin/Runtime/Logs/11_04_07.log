@@ -1,0 +1,325 @@
+[ 2011-04-07T16:55:39+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cookie - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-07T16:55:39+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-07T16:55:39+08:00 ] SQL:  RunTime:0.026011s SQL = SHOW COLUMNS FROM mmm_index
+[ 2011-04-07T16:55:39+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 172 行.
+[ 2011-04-07T16:55:39+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 173 行.
+[ 2011-04-07T16:55:40+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cookie - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-07T16:55:40+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-07T16:55:40+08:00 ] SQL:  RunTime:0.023686s SQL = SHOW COLUMNS FROM mmm_group
+[ 2011-04-07T16:55:40+08:00 ] SQL:  RunTime:0.012936s SQL = SELECT id,title FROM `mmm_group` WHERE status=1
+[ 2011-04-07T16:55:40+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 172 行.
+[ 2011-04-07T16:55:40+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 173 行.
+[ 2011-04-07T16:55:40+08:00 ] NOTIC: [8] Undefined index: loginUserName a11e0efd1232986d0d63e250325eef01.php 第 151 行.
+[ 2011-04-07T16:55:40+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cookie - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-07T16:55:40+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-07T16:55:40+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 172 行.
+[ 2011-04-07T16:55:40+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 173 行.
+[ 2011-04-07T16:55:40+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cookie - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-07T16:55:40+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-07T16:55:40+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 172 行.
+[ 2011-04-07T16:55:40+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 173 行.
+[ 2011-04-07T16:55:40+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cookie - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-07T16:55:40+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-07T16:55:40+08:00 ] NOTIC: [8] Undefined index: authId PublicAction.class.php 第 43 行.
+[ 2011-04-07T16:55:40+08:00 ] SQL:  RunTime:0.114822s SQL = SHOW COLUMNS FROM mmm_node
+[ 2011-04-07T16:55:40+08:00 ] SQL:  RunTime:0.000842s SQL = SELECT `id` FROM `mmm_node` LIMIT 1 
+[ 2011-04-07T16:55:40+08:00 ] SQL:  RunTime:0.039113s SQL = SELECT id,name,group_id,title FROM `mmm_node` WHERE ( `level` = 2 ) AND ( `status` = 1 ) AND ( `pid` = '1' ) ORDER BY sort asc
+[ 2011-04-07T16:55:40+08:00 ] NOTIC: [8] Undefined index: _ACCESS_LIST PublicAction.class.php 第 55 行.
+[ 2011-04-07T16:55:40+08:00 ] NOTIC: [8] Undefined index: administrator PublicAction.class.php 第 57 行.
+[ 2011-04-07T16:55:40+08:00 ] NOTIC: [8] Undefined index: administrator PublicAction.class.php 第 57 行.
+[ 2011-04-07T16:55:40+08:00 ] NOTIC: [8] Undefined index: administrator PublicAction.class.php 第 57 行.
+[ 2011-04-07T16:55:40+08:00 ] NOTIC: [8] Undefined index: administrator PublicAction.class.php 第 57 行.
+[ 2011-04-07T16:55:40+08:00 ] NOTIC: [8] Undefined index: administrator PublicAction.class.php 第 57 行.
+[ 2011-04-07T16:55:40+08:00 ] NOTIC: [8] Undefined index: administrator PublicAction.class.php 第 57 行.
+[ 2011-04-07T16:55:40+08:00 ] NOTIC: [8] Undefined index: authId PublicAction.class.php 第 64 行.
+[ 2011-04-07T16:55:40+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 172 行.
+[ 2011-04-07T16:55:40+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 173 行.
+[ 2011-04-07T16:55:48+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cookie - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-07T16:55:48+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [2048] Declaration of ResumeModel::delete() should be compatible with that of Model::delete() ResumeModel.class.php 第 3 行.
+[ 2011-04-07T16:55:49+08:00 ] SQL:  RunTime:0.069969s SQL = SHOW COLUMNS FROM u_person
+[ 2011-04-07T16:55:49+08:00 ] SQL:  RunTime:0.057839s SQL = SHOW COLUMNS FROM mmm_category
+[ 2011-04-07T16:55:49+08:00 ] SQL:  RunTime:0.059449s SQL = SHOW COLUMNS FROM mmm_enum
+[ 2011-04-07T16:55:49+08:00 ] SQL:  RunTime:0.000434s SQL = SELECT COUNT(pid) AS tp_count FROM `u_person` LIMIT 1 
+[ 2011-04-07T16:55:49+08:00 ] SQL:  RunTime:0.033458s SQL = SELECT * FROM `u_person` ORDER BY `pid` desc LIMIT 0,10 
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) Cookie.class.php 第 51 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 172 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 173 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined variable: q a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 39 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined variable: q a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 41 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined variable: q a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 43 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined variable: q a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 46 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined variable: q a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 48 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: pid a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 99 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: uid a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 100 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: username a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 101 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: realname a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 102 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: resumename a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 103 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: email a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 104 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: firstRequest a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 108 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: categoryId a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 109 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: userId a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 110 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: createTime a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 111 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: createTime1 a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 112 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: recommend a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 113 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: status a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 114 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: istop a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 115 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: viewCount a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 116 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: viewCount1 a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 117 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: orderType a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 118 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: orderBy a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 119 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: pageSize a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 120 行.
+[ 2011-04-07T16:55:49+08:00 ] SQL:  RunTime:0.015483s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-04-07T16:55:49+08:00 ] SQL:  RunTime:0.000542s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: id a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 149 行.
+[ 2011-04-07T16:55:49+08:00 ] SQL:  RunTime:0.000512s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-04-07T16:55:49+08:00 ] SQL:  RunTime:0.000498s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-04-07T16:55:49+08:00 ] SQL:  RunTime:0.000528s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-04-07T16:55:49+08:00 ] SQL:  RunTime:0.000513s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-04-07T16:55:49+08:00 ] SQL:  RunTime:0.000500s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-04-07T16:55:49+08:00 ] SQL:  RunTime:0.000498s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: id a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 149 行.
+[ 2011-04-07T16:55:49+08:00 ] SQL:  RunTime:0.000499s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: id a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 149 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: id a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 149 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: id a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 149 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: id a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 149 行.
+[ 2011-04-07T16:55:49+08:00 ] SQL:  RunTime:0.000506s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: id a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 149 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: id a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 149 行.
+[ 2011-04-07T16:55:49+08:00 ] SQL:  RunTime:0.000499s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-04-07T16:55:49+08:00 ] SQL:  RunTime:0.000499s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-04-07T16:55:49+08:00 ] SQL:  RunTime:0.000562s SQL = SELECT * FROM `mmm_enum` WHERE egroup = 'job_category'
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined variable: choldValue EnumModel.class.php 第 299 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: id a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 149 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: id a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 149 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: firstRequest a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 217 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: firstRequest a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 230 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: realname a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 236 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: up a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 239 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: top a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 240 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: status a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 241 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: _order a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 244 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: _sort a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 245 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: listRows a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 246 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: firstRequest a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 249 行.
+[ 2011-04-07T16:55:49+08:00 ] NOTIC: [8] Undefined index: job_request a3ff6ad6529a50e226fc516cf8ecf7e4.php 第 250 行.
+[ 2011-04-07T17:00:00+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cookie - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-07T17:00:00+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-07T17:00:00+08:00 ] NOTIC: [8] Undefined index: authId PublicAction.class.php 第 43 行.
+[ 2011-04-07T17:00:00+08:00 ] SQL:  RunTime:0.003699s SQL = SHOW COLUMNS FROM mmm_node
+[ 2011-04-07T17:00:00+08:00 ] SQL:  RunTime:0.000826s SQL = SELECT `id` FROM `mmm_node` LIMIT 1 
+[ 2011-04-07T17:00:00+08:00 ] SQL:  RunTime:0.000376s SQL = SELECT id,name,group_id,title FROM `mmm_node` WHERE ( `level` = 2 ) AND ( `status` = 1 ) AND ( `pid` = '1' ) ORDER BY sort asc
+[ 2011-04-07T17:00:00+08:00 ] NOTIC: [8] Undefined index: _ACCESS_LIST PublicAction.class.php 第 55 行.
+[ 2011-04-07T17:00:00+08:00 ] NOTIC: [8] Undefined index: administrator PublicAction.class.php 第 57 行.
+[ 2011-04-07T17:00:00+08:00 ] NOTIC: [8] Undefined index: administrator PublicAction.class.php 第 57 行.
+[ 2011-04-07T17:00:00+08:00 ] NOTIC: [8] Undefined index: administrator PublicAction.class.php 第 57 行.
+[ 2011-04-07T17:00:00+08:00 ] NOTIC: [8] Undefined index: administrator PublicAction.class.php 第 57 行.
+[ 2011-04-07T17:00:00+08:00 ] NOTIC: [8] Undefined index: administrator PublicAction.class.php 第 57 行.
+[ 2011-04-07T17:00:00+08:00 ] NOTIC: [8] Undefined index: administrator PublicAction.class.php 第 57 行.
+[ 2011-04-07T17:00:00+08:00 ] NOTIC: [8] Undefined index: authId PublicAction.class.php 第 64 行.
+[ 2011-04-07T17:00:00+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 172 行.
+[ 2011-04-07T17:00:00+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 173 行.
+[ 2011-04-07T17:03:29+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cookie - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-07T17:03:29+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-07T17:03:29+08:00 ] SQL:  RunTime:0.050119s SQL = SHOW COLUMNS FROM u_user
+[ 2011-04-07T17:03:29+08:00 ] SQL:  RunTime:0.003517s SQL = SHOW COLUMNS FROM mmm_category
+[ 2011-04-07T17:03:29+08:00 ] SQL:  RunTime:0.003598s SQL = SHOW COLUMNS FROM mmm_enum
+[ 2011-04-07T17:03:29+08:00 ] SQL:  RunTime:0.000440s SQL = SELECT COUNT(id) AS tp_count FROM `u_user` LIMIT 1 
+[ 2011-04-07T17:03:30+08:00 ] SQL:  RunTime:0.039565s SQL = SELECT * FROM `u_user` ORDER BY `id` desc LIMIT 0,10 
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) Cookie.class.php 第 51 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 172 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 173 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined variable: q 2fbdd9813fc726514b2462360c86c5a3.php 第 44 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined variable: q 2fbdd9813fc726514b2462360c86c5a3.php 第 46 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined variable: q 2fbdd9813fc726514b2462360c86c5a3.php 第 62 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: u_type 2fbdd9813fc726514b2462360c86c5a3.php 第 84 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: id 2fbdd9813fc726514b2462360c86c5a3.php 第 85 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: username 2fbdd9813fc726514b2462360c86c5a3.php 第 86 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: email 2fbdd9813fc726514b2462360c86c5a3.php 第 87 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: _order 2fbdd9813fc726514b2462360c86c5a3.php 第 88 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: _sort 2fbdd9813fc726514b2462360c86c5a3.php 第 89 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: listRows 2fbdd9813fc726514b2462360c86c5a3.php 第 90 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: firstRequest 2fbdd9813fc726514b2462360c86c5a3.php 第 94 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: categoryId 2fbdd9813fc726514b2462360c86c5a3.php 第 95 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: userId 2fbdd9813fc726514b2462360c86c5a3.php 第 96 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: createTime 2fbdd9813fc726514b2462360c86c5a3.php 第 97 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: createTime1 2fbdd9813fc726514b2462360c86c5a3.php 第 98 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: recommend 2fbdd9813fc726514b2462360c86c5a3.php 第 99 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: status 2fbdd9813fc726514b2462360c86c5a3.php 第 100 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: istop 2fbdd9813fc726514b2462360c86c5a3.php 第 101 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: viewCount 2fbdd9813fc726514b2462360c86c5a3.php 第 102 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: viewCount1 2fbdd9813fc726514b2462360c86c5a3.php 第 103 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: orderType 2fbdd9813fc726514b2462360c86c5a3.php 第 104 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: orderBy 2fbdd9813fc726514b2462360c86c5a3.php 第 105 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: pageSize 2fbdd9813fc726514b2462360c86c5a3.php 第 106 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: status 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: status 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: status 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: status 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: status 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: status 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: status 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: status 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: status 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: status 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: status 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: status 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: status 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: status 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: status 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: status 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: status 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: status 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: status 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: status 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:03:30+08:00 ] NOTIC: [8] Undefined index: nid 2fbdd9813fc726514b2462360c86c5a3.php 第 139 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cookie - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [2048] Declaration of ResumeModel::delete() should be compatible with that of Model::delete() ResumeModel.class.php 第 3 行.
+[ 2011-04-07T17:11:28+08:00 ] SQL:  RunTime:0.005079s SQL = SHOW COLUMNS FROM u_person
+[ 2011-04-07T17:11:28+08:00 ] SQL:  RunTime:0.003453s SQL = SHOW COLUMNS FROM mmm_category
+[ 2011-04-07T17:11:28+08:00 ] SQL:  RunTime:0.003485s SQL = SHOW COLUMNS FROM mmm_enum
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: marriage ResumeAction.class.php 第 83 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: housing ResumeAction.class.php 第 84 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: toposi ResumeAction.class.php 第 85 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: em_type ResumeAction.class.php 第 86 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 172 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 173 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: resumename 77887f5c7c1c6d7fb8ca6a4235b32ba5.php 第 75 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: realname 77887f5c7c1c6d7fb8ca6a4235b32ba5.php 第 79 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: job_request 77887f5c7c1c6d7fb8ca6a4235b32ba5.php 第 85 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: local 77887f5c7c1c6d7fb8ca6a4235b32ba5.php 第 89 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: local 77887f5c7c1c6d7fb8ca6a4235b32ba5.php 第 89 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: mobile 77887f5c7c1c6d7fb8ca6a4235b32ba5.php 第 93 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: email 77887f5c7c1c6d7fb8ca6a4235b32ba5.php 第 97 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: qq 77887f5c7c1c6d7fb8ca6a4235b32ba5.php 第 101 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: work 77887f5c7c1c6d7fb8ca6a4235b32ba5.php 第 110 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: skill 77887f5c7c1c6d7fb8ca6a4235b32ba5.php 第 114 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: edu 77887f5c7c1c6d7fb8ca6a4235b32ba5.php 第 125 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: other 77887f5c7c1c6d7fb8ca6a4235b32ba5.php 第 130 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: phone 77887f5c7c1c6d7fb8ca6a4235b32ba5.php 第 134 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: inplace 77887f5c7c1c6d7fb8ca6a4235b32ba5.php 第 138 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: city 77887f5c7c1c6d7fb8ca6a4235b32ba5.php 第 138 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: household 77887f5c7c1c6d7fb8ca6a4235b32ba5.php 第 144 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: city 77887f5c7c1c6d7fb8ca6a4235b32ba5.php 第 144 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: birthday 77887f5c7c1c6d7fb8ca6a4235b32ba5.php 第 149 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: high 77887f5c7c1c6d7fb8ca6a4235b32ba5.php 第 186 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: weight 77887f5c7c1c6d7fb8ca6a4235b32ba5.php 第 190 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: card 77887f5c7c1c6d7fb8ca6a4235b32ba5.php 第 194 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: domain 77887f5c7c1c6d7fb8ca6a4235b32ba5.php 第 214 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: addr 77887f5c7c1c6d7fb8ca6a4235b32ba5.php 第 251 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: part 77887f5c7c1c6d7fb8ca6a4235b32ba5.php 第 255 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: authId 77887f5c7c1c6d7fb8ca6a4235b32ba5.php 第 269 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: id 77887f5c7c1c6d7fb8ca6a4235b32ba5.php 第 273 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: pid 77887f5c7c1c6d7fb8ca6a4235b32ba5.php 第 274 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: thumb 77887f5c7c1c6d7fb8ca6a4235b32ba5.php 第 291 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: thumb 77887f5c7c1c6d7fb8ca6a4235b32ba5.php 第 1062 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: native 77887f5c7c1c6d7fb8ca6a4235b32ba5.php 第 1079 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: certificate 77887f5c7c1c6d7fb8ca6a4235b32ba5.php 第 1080 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: foreign_language 77887f5c7c1c6d7fb8ca6a4235b32ba5.php 第 1081 行.
+[ 2011-04-07T17:11:28+08:00 ] NOTIC: [8] Undefined index: foreign_level 77887f5c7c1c6d7fb8ca6a4235b32ba5.php 第 1082 行.
+[ 2011-04-07T17:11:29+08:00 ] ERR: (ThinkException) 非法操作err
+[ 2011-04-07T17:13:32+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cookie - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-07T17:13:32+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-07T17:13:32+08:00 ] NOTIC: [8] Undefined index: authId PublicAction.class.php 第 43 行.
+[ 2011-04-07T17:13:32+08:00 ] SQL:  RunTime:0.003734s SQL = SHOW COLUMNS FROM mmm_node
+[ 2011-04-07T17:13:32+08:00 ] SQL:  RunTime:0.000751s SQL = SELECT `id` FROM `mmm_node` LIMIT 1 
+[ 2011-04-07T17:13:32+08:00 ] SQL:  RunTime:0.000395s SQL = SELECT id,name,group_id,title FROM `mmm_node` WHERE ( `level` = 2 ) AND ( `status` = 1 ) AND ( `pid` = '1' ) ORDER BY sort asc
+[ 2011-04-07T17:13:32+08:00 ] NOTIC: [8] Undefined index: _ACCESS_LIST PublicAction.class.php 第 55 行.
+[ 2011-04-07T17:13:32+08:00 ] NOTIC: [8] Undefined index: administrator PublicAction.class.php 第 57 行.
+[ 2011-04-07T17:13:32+08:00 ] NOTIC: [8] Undefined index: administrator PublicAction.class.php 第 57 行.
+[ 2011-04-07T17:13:32+08:00 ] NOTIC: [8] Undefined index: administrator PublicAction.class.php 第 57 行.
+[ 2011-04-07T17:13:32+08:00 ] NOTIC: [8] Undefined index: administrator PublicAction.class.php 第 57 行.
+[ 2011-04-07T17:13:32+08:00 ] NOTIC: [8] Undefined index: administrator PublicAction.class.php 第 57 行.
+[ 2011-04-07T17:13:32+08:00 ] NOTIC: [8] Undefined index: administrator PublicAction.class.php 第 57 行.
+[ 2011-04-07T17:13:32+08:00 ] NOTIC: [8] Undefined index: authId PublicAction.class.php 第 64 行.
+[ 2011-04-07T17:13:32+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 172 行.
+[ 2011-04-07T17:13:32+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 173 行.
+[ 2011-04-07T21:18:33+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cookie - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-07T21:18:33+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-07T21:18:40+08:00 ] SQL:  RunTime:0.750393s SQL = SHOW COLUMNS FROM mmm_index
+[ 2011-04-07T21:18:40+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 172 行.
+[ 2011-04-07T21:18:40+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 173 行.
+[ 2011-04-07T21:18:44+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cookie - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-07T21:18:44+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-07T21:18:44+08:00 ] SQL:  RunTime:0.204606s SQL = SHOW COLUMNS FROM mmm_group
+[ 2011-04-07T21:18:45+08:00 ] SQL:  RunTime:0.104878s SQL = SELECT id,title FROM `mmm_group` WHERE status=1
+[ 2011-04-07T21:18:45+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 172 行.
+[ 2011-04-07T21:18:45+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 173 行.
+[ 2011-04-07T21:18:45+08:00 ] NOTIC: [8] Undefined index: loginUserName a11e0efd1232986d0d63e250325eef01.php 第 151 行.
+[ 2011-04-07T21:18:50+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cookie - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-07T21:18:50+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-07T21:18:50+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 172 行.
+[ 2011-04-07T21:18:50+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 173 行.
+[ 2011-04-07T21:18:46+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cookie - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-07T21:18:46+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-07T21:18:46+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 172 行.
+[ 2011-04-07T21:18:46+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 173 行.
+[ 2011-04-07T21:18:54+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cookie - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-07T21:18:54+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) App.class.php 第 66 行.
+[ 2011-04-07T21:18:54+08:00 ] NOTIC: [8] Undefined index: authId PublicAction.class.php 第 43 行.
+[ 2011-04-07T21:18:55+08:00 ] SQL:  RunTime:0.403670s SQL = SHOW COLUMNS FROM mmm_node
+[ 2011-04-07T21:18:55+08:00 ] SQL:  RunTime:0.203608s SQL = SELECT `id` FROM `mmm_node` LIMIT 1 
+[ 2011-04-07T21:18:55+08:00 ] SQL:  RunTime:0.100106s SQL = SELECT id,name,group_id,title FROM `mmm_node` WHERE ( `level` = 2 ) AND ( `status` = 1 ) AND ( `pid` = '1' ) ORDER BY sort asc
+[ 2011-04-07T21:18:55+08:00 ] NOTIC: [8] Undefined index: _ACCESS_LIST PublicAction.class.php 第 55 行.
+[ 2011-04-07T21:18:55+08:00 ] NOTIC: [8] Undefined index: administrator PublicAction.class.php 第 57 行.
+[ 2011-04-07T21:18:55+08:00 ] NOTIC: [8] Undefined index: administrator PublicAction.class.php 第 57 行.
+[ 2011-04-07T21:18:55+08:00 ] NOTIC: [8] Undefined index: administrator PublicAction.class.php 第 57 行.
+[ 2011-04-07T21:18:55+08:00 ] NOTIC: [8] Undefined index: administrator PublicAction.class.php 第 57 行.
+[ 2011-04-07T21:18:55+08:00 ] NOTIC: [8] Undefined index: administrator PublicAction.class.php 第 57 行.
+[ 2011-04-07T21:18:55+08:00 ] NOTIC: [8] Undefined index: administrator PublicAction.class.php 第 57 行.
+[ 2011-04-07T21:18:55+08:00 ] NOTIC: [8] Undefined index: authId PublicAction.class.php 第 64 行.
+[ 2011-04-07T21:18:55+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 172 行.
+[ 2011-04-07T21:18:55+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\lin\21mmm_tp\Admin\Conf\config.php:1) View.class.php 第 173 行.

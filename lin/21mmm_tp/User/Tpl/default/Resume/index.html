@@ -1,0 +1,79 @@
+<tagLib name="html" />
+<include file="../Public/header" />
+<!-- 菜单区域  -->
+
+<!-- 主页面开始 -->
+<div id="main" class="main" >
+
+<!-- 主体内容  -->
+<div class="content" >
+<div class="title">数据列表</div>
+<!--  功能操作区域  -->
+<div class="operate" >
+<html:imageBtn name="add" value="新增" click="add()" style="impBtn hMargin fLeft shadow" />
+<html:imageBtn name="edit" value="编辑" click="edit()" style="impBtn hMargin fLeft shadow" />
+<html:imageBtn name="delete" value="删除" click="foreverdel()" style="impBtn hMargin fLeft shadow" />
+<!-- 查询区域 -->
+<div class="fRig">
+<form method='post' action="__URL__">
+<div class="fLeft"><span id="key"><input type="text" name="name" title="组名" class="medium" ></span></div>
+<html:imageBtn type="submit" name="search" value="查询" style="impBtn hMargin fLeft shadow" />
+
+<!-- 高级查询区域 -->
+<div  id="searchM" class=" none search cBoth" >
+</div>
+</form>
+</div>
+</div>
+<!-- 功能操作区域结束 -->
+
+<!-- 列表显示区域  -->
+<div class="list" >
+<html:list id="checkList" name="user" style="list" checkbox="true" action="true" datasource="list" show="id:编号|5%,realname:姓名:edit,title:标题,job_request:求职意向,local:工作地,mobile:手机,email:邮箱,ctime|toDate='y-m-d':发表时间,status|getStatus:状态" actionlist="status|showStatus=$user['id'],edit:编辑:id" /> 
+</div>
+<!--  分页显示区域 -->
+<div class="page">{$page}</div>
+<!-- 列表显示区域结束 -->
+</div>
+<!-- 主体内容结束 -->
+</div>
+<!-- 主页面结束 -->
+<table width="748" height="113" border="1" align="center" cellpadding="3" cellspacing="1" bordercolor="#000000">
+    <tr bgcolor="#CC6699">
+        <td width="59" height="53">简历名称</td>
+        <td width="60" align="center">开放方式</td>
+        <td width="35">修改</td>
+        <td width="31">预览</td>
+        <td width="30">刷新</td>
+        <td width="50">浏览数</td>
+        <td width="91">更新日期</td>
+        <td width="60" align="center">是否为默认</td>
+        <td width="28">复制</td>
+        <td width="29">外发</td>
+        <td width="29">个人风采</td>
+    </tr>
+    {allresume}
+    <tr class="resumelink" bgcolor="#FF99CC">
+        <td height="52">{resumename}</td>
+        <td ><form action="setting.post.php?pid={pid}" method="post" name="resumeform{pid}" id="resumeform{pid}">
+            <input type="radio" name="hide" value='0' {checked0} />
+            显示&nbsp;
+            <input type="radio" name="hide" value='1'{checked1} />
+            隐藏&nbsp;
+            <input type="submit" name="submit{pid}"  value='提交' />
+        </form></td>
+        <td><a href="resume_update.php?pid={pid}">修改</a></td>
+        <td><a href="{URL_UNIT}resume/{pid}/show.html" target="_blank">预览</a></td>
+        <td><a href="resume_refresh.php?pid={pid}">刷新</a></td>
+        <td width="35">{brows_num}</td>
+        <td>{ctime}</td>
+        <td>{setdefault}<a href="resume_default.php?pid={pid}&amp;uid={uid}">改为{common}</a></td>
+        <td><a href="resume_copy.php?pid={pid}">复制</a></td>
+        <td><a href="send.php?pid={pid}">外发</a></td>
+        <td><a href="/person/upload.php?pid={pid}">上传</a></td>
+        <!--    <td><a href="resume_delete.php?pid={pid}">删除</a></td>
+-->
+    </tr>
+    {/allresume}
+</table>
+<include file="../Public/footer" />

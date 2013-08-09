@@ -1,0 +1,12 @@
+set profiling=1;
+show tables;
+show profiles;
+show profile for query 1;
+show profile CPU,BLOCK IO,MEMORY for query 1;
+
+SELECT main.*, field.* FROM  uchome_space main  LEFT JOIN uchome_spacefield field  ON field.uid=main.uid  ORDER BY main.experience limit 10;
+
+
+SELECT COUNT(1) from  t_comment_6 left join t_photo on gid=f_gid and topicid=f_id                 WHERE f_gid='6426'
+
+SELECT COUNT(1) from  t_comment_6 left join t_photo on gid=f_gid and topicid=f_id                 WHERE f_gid='27578' 

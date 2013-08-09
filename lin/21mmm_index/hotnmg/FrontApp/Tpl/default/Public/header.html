@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><present name="moduleTitle">{$moduleTitle}-</present><present name="contentDetail">{$contentDetail.title}-</present>{$sysConfig.site_name} </title>
+<meta name="keywords" content="{$contentDetail.keyword|default=$sysConfig['seo_keyword']}" />
+<meta name="description" content="{$contentDetail.description|default=$sysConfig['seo_description']} " />
+<link href="__PUBLIC__/Front/style.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+#childNav{ position:relative; }
+.childNav{ position:absolute; left:200px;  height:22px; line-height:22px; background:url(/Public/Front/1px_bg.gif);   display:none; padding:0 10px;}
+.childNav a{ color:#36C; font-size:13px; font-weight:bold;}
+</style>
+
+<script src="__PUBLIC__/Front/jquery-1.3.2.min.js"></script> 
+<script src="__PUBLIC__/Front/jquery.tools.min.js"></script>
+
+<script type="text/javascript" >
+$(function(){
+	$("#verifyImage").click(function(){
+		resetVerifyCode();						
+	})
+})
+function resetVerifyCode()
+{
+	$("#verifyImage").attr('src', "{:U('Index/verify',0,0,0)}__"+ Math.random());
+}
+
+</script>
+
+</head>
+
+<body>
+{$sysConfig.header_content}
+<!--<div id="top_menu">
+<ul>
+<volist name="globalMenu" id="row">
+    <eq name="row['status']" value="0">
+    <li><a href="{$row.link_url}" target="{$row.target}" style="{$row.title_style}">{$row.title}</a></li>
+    </eq>
+</volist>
+</ul>
+</div>-->
+<!--头部以及菜单-->
+<div id="header">
+<div id="logo"><a href="__ROOT__" id="top"><img src="__PUBLIC__/Front/logo.jpg" /></a></div>
+<div id="nav">
+  <ul>
+<li><a href="__APP__" class="{$moduleName|a2bc="Index","nav_select"}">首 页</a></li>
+
+<li><a href="{:U('Page/detail',array('item'=>'about'))}"  urn="childNav_zxjj">中心简介</a></li>
+
+<li><a href="{:U('News/index')}"  urn="childNav_xwdt">新闻动态</a></li>
+
+<li><a href="{:U('Download/index')}"  urn="childNav_kctx">课程体系</a></li>
+
+<li><a href="{:U('Product/index')}"  urn="childNav_zjsc">早教商城</a></li>
+
+<li><a href="{:U('Feedback/index')}"   urn="childNav_jmcy">加盟创业</a></li>
+
+<li><a href="{:U('Job/index')}" urn="childNav_rczp">人才招聘</a></li>
+
+<li><a href="{:U('Tags/index')}"  urn="childNav_lxwm">联系我们</a></li>
+</ul>
+</div>
+
+<div id="childNav">
+    <div id="childNav_zxjj" class="childNav">
+        <a href="{:U('Page/detail',array('item'=>'ppdw'))}" target="_blank">品牌定位</a>
+        <a href="{:U('Page/detail',array('item'=>'ppwh'))}" target="_blank">品牌文化</a>
+        <a href="{:U('Page/detail',array('item'=>'mrjz'))}" target="_blank">名人见证</a>
+        <a href="{:U('Page/detail',array('item'=>'jtjs'))}" target="_blank">集团介绍</a>
+    </div>
+    
+    <div id="childNav_xwdt" class="childNav">
+        <a href="{:U('Page/detail',array('category'=>'5'))}" target="_blank">集团新闻</a>
+        <a href="{:U('Page/detail',array('category'=>'4'))}" target="_blank">市场活动</a>
+        <a href="{:U('Page/detail',array('category'=>'3'))}" target="_blank">加盟动态</a>
+        <a href="{:U('Page/detail',array('category'=>'2'))}" target="_blank">行业新闻</a>
+    </div>
+    
+    <div id="childNav_kctx" class="childNav">
+        <a href="{:U('Page/detail',array('item'=>'kctx'))}" target="_blank">课程体系</a>
+        <a href="{:U('Page/detail',array('item'=>'kcys'))}" target="_blank">课程优势</a>
+        <a href="{:U('Page/detail',array('item'=>'kkxx'))}" target="_blank">开课信息</a>
+        <a href="{:U('Page/detail',array('item'=>'zxzx'))}" target="_blank">在线咨询</a>
+    </div>
+    
+    <div id="childNav_zjsc" class="childNav">
+        <a href="{:U('Page/detail',array('item'=>'msjj'))}" target="_blank">蒙氏教具</a>
+        <a href="{:U('Page/detail',array('item'=>'mswj'))}" target="_blank">蒙氏玩具</a>
+        <a href="{:U('Page/detail',array('item'=>'jjzl'))}" target="_blank">早教资料</a>
+        <a href="{:U('Page/detail',array('item'=>'gmzx'))}" target="_blank">购买咨询</a>
+    </div>
+    
+    <div id="childNav_jmcy" class="childNav">
+        <a href="{:U('Page/detail',array('item'=>'ppjs'))}" target="_blank">品牌介绍</a>
+        <a href="{:U('Page/detail',array('item'=>'jmdt'))}" target="_blank">加盟动态</a>
+        <a href="{:U('Page/detail',array('item'=>'jmys'))}" target="_blank">加盟优势</a>
+        <a href="{:U('Page/detail',array('item'=>'jmlc'))}" target="_blank">加盟流程</a>
+        <a href="{:U('Page/detail',array('item'=>'cgal'))}" target="_blank">成功案例</a>
+    </div>
+    
+    <div id="childNav_rczp" class="childNav">
+        <a href="{:U('Page/detail',array('item'=>'qyjs'))}" target="_blank">企业介绍</a>
+        <a href="{:U('Page/detail',array('item'=>'zxzp'))}" target="_blank">最新招聘</a>
+        
+    </div>
+    
+    <div id="childNav_lxwm" class="childNav">
+        <a href="{:U('Page/detail',array('item'=>'jtzb'))}" target="_blank">集团总部</a>
+        <a href="{:U('Page/detail',array('item'=>'fycx'))}" target="_blank">分园查询</a>
+        <a href="{:U('Page/detail',array('item'=>'schz'))}" target="_blank">市场合作</a>
+    </div>
+</div>
+<script language="javascript" type="text/javascript">
+var coord, currentShow;
+function mouseCoords(ev) { 
+  if(ev.pageX || ev.pageY){ 
+  	return {x:ev.pageX, y:ev.pageY}; 
+  } 
+  
+  return { 
+	x:ev.clientX + document.body.scrollLeft - document.body.clientLeft, 
+	y:ev.clientY + document.body.scrollTop - document.body.clientTop 
+  }; 
+} 
+
+$('#nav a').each(function(){
+	 this.onmouseover = function(e){
+		
+		e =e || window.event;
+		coord = mouseCoords(e);
+		showChildNav(this.getAttribute('urn'), coord);
+	};
+	
+	 this.onmouseout = function(e){
+		//showChildNav(this.getAttribute('urn'), coord);
+		//$(currentShow).css('display','none');
+	};
+});
+
+function showChildNav(parent,coord){
+	
+	if(currentShow){
+		currentShow.css('display','none'); //清除上一个显示
+	}
+	
+	//显示
+	currentShow = $('#' + parent)
+	if(currentShow){
+		currentShow.css('left',coord.x-50);
+		currentShow.css('display','block');
+	}
+	
+	//$('<a href="http://www.baidu.com">bbb</a>').appendTo('#childNav');
+}
+</script>
+</div>

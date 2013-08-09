@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{$resumename}_{func:str_replace('/', ',', '{$local}')} 招聘 {$job_request} 求职 {$household}  -中华美容网--21mmm.com</title>
+<link href="{URL_PUBLIC}style/unit/resume.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="allnet"> {include:../www/head.html}
+<div class="ad"><img src="{URL_PUBLIC}images/unit/ad_4.jpg" width="940" border="0"/></div>
+    <div class="left">
+        
+        
+        
+        <div class="box">
+            <div class="title">快速搜索</div>
+            <div class="content" style="padding:0;">
+                {include:sobox.html}
+            </div>
+        </div>
+        
+        <div class="box">
+            <div class="title">招聘帮助</div>
+            <div class="content">
+                <h1>&nbsp;</h1>
+                <div class="clear"></div>
+                <ul class="zhaopinhui">
+                    <li><strong>提示1：</strong><a href="http://www.21mmm.com/help/unit/56.html" target="_blank" class="STYLE3"><span style="color:#f00;">VIP会员</span></a>点击简历下方<span style="color:#cc0000;">邀请面试</span>，对方即能收到您的邀请</li>
+                    <li><strong>提示2：</strong>如果求职者在外地，建议使用QQ远程视频，进行初步面试</li>
+                    <li><strong>提示3：</strong>该简历已通过基本审核，但因互联网不可控因素，本站无法完全保证简历的真实性。敬请单位注意规避招聘风险。</li>
+                    <li><strong>提示4:</strong> 如发现有非法信息或虚假简历,请通过页部底部的投诉与建议,将简历网址提交给我们,以便核实删除;良好的招聘环境需要我们共同的维护~!</li>
+                    <li><a href="http://www.21mmm.com/help/unit/72.html" target="_blank"><strong>提示5：</strong><span style="color:#f00;">怎么招聘最划算，不浪费？&ldquo;自助式招聘&rdquo;-想招就招，招满就停！</span></a></li>
+                </ul>
+                <p>&nbsp;</p>
+            </div>
+        </div>
+        
+        <div class="box">
+            <div class="title">以下人才适合您</div>
+            <div class="content">
+                <table  width="100%" border="0"  cellpadding="3" cellspacing="1">
+                    
+                    {matchperson}
+                    <tr class="bg_fa">
+                        <td width="20%" height="20"><a href="/resume/{pid}/show.html" target="_blank" class="red">{realname}</a></td>
+                        <td width="10%">{gender}</td>
+                        <td>{job_request}</td>
+                    </tr>
+                    {/matchperson}
+                </table>
+                <p>&nbsp;</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="title">您感兴趣的-地区人才</div>
+            <div class="content">
+                {for var=$area_rencai index=$key}
+                <li>·点击进入>>><a href='{$area_rencai[$key]['link']}'>{$area_rencai[$key]['title']}</a></li>
+                {/for}
+            </div>
+        </div>
+        
+    </div>
+    
+    
+    <div class="resume">
+        <div class="r_top"></div>
+        <div class="r_name">{$realname}  -- 个人简历</div>
+        <div class="r_box">
+            <div class="r_title"><span class="r_base">基本资料</span></div>
+            <div class="r_content" style="position:relative; padding-bottom:8px;">
+            <div class="photoborder"></div>
+            <table width="100%" align="center" cellpadding="0" cellspacing="0">
+							<tr>
+							  <td width="30%" height="24" align="left">名称：{$realname}</td>
+							  <td width="40%" align="left">性别：{func:getitemconf({$gender},'gender','user')}</td>
+							  <td width="30%" rowspan="7" align="center">
+							  	<table border="0" cellpadding="3" cellspacing="2" >
+									<tr>
+									  <td><img src="{$thumb}"  height="150px" width="120px" border=0  /></td>
+									</tr>
+							  	</table>
+							  </td>
+					</tr>
+							<tr align="left">
+							  <td height="24">生日：{$birthday}</td>
+							  <td width="43%">身高：{$high}[厘米]</td>
+							</tr>
+							<tr align="left">
+							  <td height="24">体重：{$weight}[公斤]</td>
+							  <td width="43%">学历程度：{$study}</td>
+							</tr>
+
+							
+							<tr align="left">
+							  	<td height="24">户口所在地：{$household}</td>
+								<td width="43%">婚姻情况：{$marriage}</td>
+						    </tr>
+							<tr align="left">
+							  <td height="24">现居住地：{$inplace}</td>
+							  <td width="43%">更新日期：{func:date('Y-m-d', {$ctime})}</td>
+							</tr>
+                            
+						
+			    </table>
+            </div>
+        </div>
+        <div class="r_box">
+            <div class="r_title"><span class="r_base2">详细信息·求职意向</span></div>
+            <div class="r_content">
+            			<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+							
+							<tr align="left">
+							  <td height="24" colspan="2" align="left">期望工作地区：{$local}</td>
+							</tr>
+							<tr align="left">
+							  <td height="24" colspan="2" align="left">期望从事行业：{$job_request}</td>
+							</tr>
+							<tr align="left">
+							  <td height="24" align="left">期望工作性质:{$em_type}</td>
+							  <td align="left">证件号码：{$card}</td>
+							</tr>
+							 <tr align="left">
+							  <td height="24"align="left">到岗时间：{func:getitemconf({$toposi},'toposi','user')}</td>
+                              <td align="left">期望薪水：{$money}</td>
+							</tr>
+                            <tr align="left">
+						          <td height="24"align="left">住房要求：{$housing}</td>
+						          <td align="left">证书名称：{$certificate}</td>
+				            </tr>
+						      <tr align="left">
+						          <td height="24"align="left">外语：{$foreign_language}</td>
+						          <td align="left">水平：{$foreign_level}</td>
+					          </tr>
+						  </table>
+            </div>
+        </div>
+        {if "{$work}"!="" }
+        <div class="r_box">
+            <div class="r_title"><span class="r_base">工作经历</span></div>
+            <div class="r_content">
+            {$work}
+            </div>
+        </div>
+        {/if}
+        
+        {if "{$skill}"!="" }
+        <div class="r_box">
+            <div class="r_title"><span class="r_base">技能专长</span></div>
+            <div class="r_content">
+            {$skill}
+            </div>
+        </div>
+        {/if}
+        
+        {if "{$edu}"!="" }
+        <div class="r_box">
+            <div class="r_title"><span class="r_base">教育经历</span></div>
+            <div class="r_content">
+            {$edu}
+            </div>
+        </div>
+        {/if}
+        
+        {if "{$other}"!="" }
+        <div class="r_box">
+            <div class="r_title"><span class="r_base">自我简介</span></div>
+            <div class="r_content">
+            {$other}
+            </div>
+        </div>
+        {/if}
+        
+        
+        
+        <div class="r_box">
+            <div class="r_title"><span class="r_base">个人风采</span></div>
+            <div class="r_content">
+            {for var=$photolist index=$key}
+			<a href='{$photolist[$key][imgurl]}' target='_blank'><img src='{$photolist[$key][thumb]}' height='150'width='120' /></a>{/for}
+            </div>
+        </div>
+        
+        
+        <div class="r_box">
+            <div class="r_title"><span class="r_base">联系方法</span></div>
+            <div class="r_content">
+                             	
+                             	{if {$noonline}==1 }
+                    <div style="margin:10px 5px 5px 20px;">
+                                  <p>·您是VIP会员请[<a href="http://user.21mmm.com/login.php" target="_blank" class="STYLE1"><span style="color:#f00;">登录</span></a>]；您还没有<a href="http://user.21mmm.com/register.php?type=unit" target="_blank" class="STYLE1">注册</a>，请<a href="http://user.21mmm.com/register.php?type=unit" target="_blank" class="STYLE1"><span style="color:#f00;">注册</span></a>；如有问题<a href="http://www.21mmm.com/help/most/27.html" target="_blank"><span style="color:#f00;">联系我们</span></a></p>
+                                  <p>·只有<a href="http://www.21mmm.com/help/unit/56.html" target="_blank" class="STYLE1"><span style="color: #990066;">招聘VIP会员</span></a>才能查看人才联系信息，邀请人才面试,<a href="http://www.21mmm.com/help/unit/56.html" target="_blank"><span style="color:#f00;">如何升级成为招聘会员?</span></a></p>
+                                  
+                </div>
+                               
+								
+                                {/if}
+                                
+                                {if {$online}==1 }
+                                <ul class="contact">
+                                
+                                    <li>手机：<span>{$mobile}</span></li>
+                                    <li>Email：<span>{$email}</span></li>
+                                    <li>Q  Q：<span>{$qq}</span></li>
+                                    <li>电话：<span>{$phone}</span></li>
+                            	</ul>
+                                
+                                {/if}
+                                
+                               
+
+			</div>
+        	
+        </div>
+         <div class="ba">
+            <a href="/inv.php?pid={$pid}" target="_blank" >邀请面试</a>
+            <a href="/resume_fav.php?pid={$pid}" target="_blank" >简历收藏</a>
+            <a href="#" style="color:#FFC;">在线咨询</a>
+         </div>
+        
+    </div>
+    <div class="clear"></div>
+    {include:foot.html}
+</div>
+</body>
+</html>

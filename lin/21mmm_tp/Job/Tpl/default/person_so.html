@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content='{$keywords}'>
+<meta  name="description" content='{$description}'>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{$pagetitle}找美容美发美甲化妆工作</title>
+<link href="{URL_PUBLIC}/style/unit/common.css" rel="stylesheet" type="text/css" />
+<link href="{URL_PUBLIC}/style/list.css" rel="stylesheet" type="text/css" />
+<script src="{URL_PUBLIC}js/province.js" language="javascript"></script>
+<script src="{URL_PUBLIC}js/city.js" language="javascript"></script>
+<script src="{URL_PUBLIC}js/area.js" language="javascript"></script>
+<script src="{URL_PUBLIC}js/place.js" language="javascript"></script>
+<script src="{URL_PUBLIC}js/jquery.js" type="text/javascript"></script>
+<script src="{URL_PUBLIC}js/cat.js" type="text/javascript"></script>
+<style type="text/css">
+<!--
+.STYLE1 {color: #FF0000}
+
+.job_name{	font-weight:bold;}
+.job_name a{ font-size:20px; color:#000;}
+.job_detail{ padding:10px 10px 0px 25px;}
+.magin_10{ margin-bottom:8px;}
+.chense{ color:#f80;}
+.STYLE2 {font-weight: bold}
+-->
+</style>
+</head>
+<body>
+	<div id="allnet">
+		<div id="school">
+			<div id="star">
+				{include:head.html}
+				<div class="ad"><img src="{URL_PUBLIC}images/unit_web/ad_4.jpg" width="930" border="0"/></div>
+				<div class="left">
+					<div class="login">
+						<h1><span class="zb"><a href="#">推荐人才</a></span></h1>
+						<div class="clear"></div>
+						{up}
+						<div class='swck'>
+							<h2><span class='dx'><a href='/resume/{pid}/show.html' target='_blank'>{realname}</a></span>&nbsp;{gender}</h2>
+							<p>{job_request}</p>
+							<p>{ctime}</p>
+						</div>
+						{/up}
+					</div>
+				</div>
+				<div class="zhigou">
+					<div class="zjms">
+						<style>
+							.zhigou .zjms .gw *{vertical-align:middle;}
+						</style>
+						<form action='so.php' method="get" >
+							<!--职位选项：<input type="text" name="cat_title" id="cat_title" value="" readonly onclick="category.show(this)" /><input type="hidden" name="catid" id="catid" value="" readonly />-->
+							<!--关键字：<input type="text" name="txt" id="txt" value="{$txt}" />-->
+							<script>//areao.load('place', '上海市', '', '', 1);</script>
+							职位选项：
+							<input type="text" name="cat_title" id="cat_title" value="" readonly="readonly" onclick="category.show(this)" />
+							<input type="hidden" name="catid" id="catid" value="" readonly="readonly" />
+						  地区：{$province} 
+						
+							<input name="sotype" type="radio" value="jobs"/>职位 <input name="sotype" type="radio" value="talent" checked="checked" />人才 
+							<input name="image" type=image style="vertical-align:inherit;" src="{URL_PUBLIC}images/unit_web/icon-go.gif" />
+							<p><a href="/so.php?catid=22&sotype=talent"><span class="STYLE1">*热门搜索&gt;&gt;&gt;</span></a><span class="STYLE1"><a href="http://job.21mmm.com/so.php?sotype=talent&amp;catid=1" target="_self">美容类</a>  <a href="http://job.21mmm.com/so.php?sotype=talent&amp;catid=3" target="_self">美甲类</a> <a href="http://job.21mmm.com/so.php?sotype=talent&amp;catid=2" target="_self">美发类</a> <a href="http://job.21mmm.com/so.php?cat_title=发型师&amp;catid=45&amp;place=中国&amp;alive=&amp;sotype=talent&amp;x=12&amp;y=10" target="_self">发型师 <a href="/so.php?catid=22&amp;sotype=talent">美容师</a> <a href="/so.php?catid=83&amp;sotype=talent">美甲师</a></span> <span class="STYLE1">（因网站功能升级，以下如果出现11月1日的数据较多，是因为这一天为数据转换日，均为有效数据，请放心查询<strong>）</strong></span></p>
+							<p><a href="http://www.21mmm.com/help/most/38.html" target="_blank">*招聘VIP会员</a>在<a href="http://user.21mmm.com/login.php" target="_blank">登录</a>后勾选以下适合的人才,点&quot;<span style="color:#f00;">邀请面试</span>&quot;,即可批量向人才发出面试通知,方便简单.</p>
+						</form>
+					</div>
+					<div class="men" >
+						<div class="jt">
+							<div class="men_left"><img src="{URL_PUBLIC}images/unit_web/bj_20.jpg" /></div>
+							<div class="men_ce">
+								<ul class="huiyi">
+									<li><a href="#" target="_blank" style="background-image:url({URL_PUBLIC}images/unit_web/bj_23.jpg); color:#23548a;">搜索结果</a></li>
+								</ul>
+							</div>
+							<div class="men_left"><img src="{URL_PUBLIC}images/unit_web/bj_21.jpg" /></div>
+						</div>
+                        
+                        
+                        
+						<div class="buyZonePrice" style="width:691px; margin-left:0;" id="inv" >
+                        <span style="float:right; text-align:left;">
+									  <input name="" type="button" value=" 邀请面试 " onclick="inv()" /> <input name="" type="button" value="放入收藏夹" onclick='fav()' /> 每页显示：<select name=""><option>=10条</option></select> <select name=""><option>按时间发布顺序排列</option></select></span>		
+                        {list}
+                        <div style="margin:10px auto;border-bottom:1px solid #ccc;width:95%;padding-bottom:10px; text-align:left;">
+                            <div class="job_name">
+                                <input type="checkbox" id="pid[]" name="pid[{pid}]" value="{pid}" />
+                                <a href="/resume/{pid}/show.html" target="_blank" style="font-size:18px;color:#0c63e4">{realname}</a> 
+                            	 <span >性别: {gender} </span>
+                                | <span >学历:{study} </span>
+                                <span class="chense" style="margin-left:100px;">日期：{ctime}</span>
+                            </div>
+                            
+                            <div class="job_detail">
+                                <div class="magin_10"  style="color:#2A2A2A;"> <span class="bold">求职地点</span>:{local} </div>
+                                <div>希望职位:<span style="color:#f00;">{job_request}</span>  </div>
+                                <div> 简介:
+                                    {other} </div>
+                            </div>
+                        </div>
+                        {/list}
+                        <span style="float:right; text-align:left;">
+                        			<a onclick="chkall('pid[]')" style='cursor:pointer;'>全选</a> <a onclick="chkallno('pid[]')" style='cursor:pointer;'> 取消全选</a>
+									  <input name="" type="button" value=" 邀请面试 " onclick="inv()" /> <input name="" type="button" value="放入收藏夹" onclick='fav()' /> 每页显示：<select name=""><option>10条</option></select> <select name=""><option>按时间发布顺序排列</option></select></span>
+								{if {$list_c}==0}
+								<tr>
+									<td colspan="7" style="text-align:left;">提示：你是否搜索方法不对，尝试用逗号隔开，如：美，容</td>
+								</tr>
+								{/if}
+						</div>
+						<div class="yema">
+						<p>{$pagelist}</p>
+					</div> 
+					</div>
+				</div>
+				<div class="clear"></div>
+				{include:foot.html}
+		</div>
+	</div>
+<script>
+function inv() {
+	var ids = g();
+	//alert(ids.join(','));
+	if(ids.length > 0) {
+		
+		window.open('/inv.php?pid=' + ids.join(','), '_blank');
+	}
+}
+
+function fav() {
+	var ids = g();
+	if(ids.length > 0) window.open('/fav.php?ut=person&pid=' + ids.join(','), '_blank');
+}
+
+function g() {
+	var is = document.getElementById('inv').getElementsByTagName('input');
+	var ids = new Array();
+	var j = 0;
+	for(var i = 0; i < is.length; ++i) {
+		if(is[i].type == 'checkbox' && is[i].checked) {
+			ids[j++] = is[i].value;
+		}
+	}
+	return ids;
+}
+</script>
+</body>
+</html>
+
+<script>
+	function chkall(n){
+		var l=document.getElementsByName(n);
+		for(i=0;i<l.length;i++){
+			l[i].checked=true;
+		}
+	}
+	function chkallno(n){
+		var l=document.getElementsByName(n);
+		for(i=0;i<l.length;i++){
+			l[i].checked=false;
+		}
+	}
+	
+	function applySubmitForm(){
+				document.forms.job.action="apply_job.php";
+				document.all("job").submit();
+			
+	}
+</script>

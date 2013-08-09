@@ -1,0 +1,215 @@
+<tagLib name="html" />
+<include file="../Public/header" />
+<!-- 菜单区域  -->
+
+<!-- 主页面开始 -->
+<div id="main" class="main" >
+
+<!-- 主体内容  -->
+<div class="content" >
+<div class="title">数据列表</div>
+<script language="javascript" type="text/javascript" src="/Public/Js/Job/cate.js"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/Js/Job/city.js"></script>
+<!-- 查询区域 -->
+<table width="100%" border="1" cellpadding="3" cellspacing="3" id="search-table"><form method="get" action="__URL__">
+		<tr>
+		  <th width="8%">简历ID</th><td width="25%"><input name="pid" type="text" id="pid" value="{$q.pid}"></td>
+		  <th width="9%">用户ID</th>
+		  <td width="31%"><input name="uid" type="text" id="uid" value="{$q.uid}" /></td>
+		  <th width="10%">用户名</th>
+		  <td width="17%"><input name="username" type="text" disabled="disabled" id="username" value="{$q.username}" size="20" /></td>
+		  </tr>
+		<tr>
+		  <th>姓名</th><td><input name="realname" type="text" id="realname" value="{$q.realname}"></td>
+		  <th>简历名称</th>
+		  <td><input name="resumename" type="text" id="resumename" value="{$q.resumename}" /></td>
+		  <th>Email</th>
+		  <td><input name="email" type="text" id="email" size="20" /></td>
+		  </tr>
+		<tr>
+		  <th>求职地区</th><td><select name="province" id="province"></select><select name="city" id="city"></select></td>
+		  <th>行业类别</th>
+		  <td><select name="firstRequest" id="firstRequest">
+		      <option value="">不限</option>
+		  	  </select>
+          <select name="job_request" id="secondRequest">
+		      <option value="">不限</option>
+		  </select></td>
+		  <th>照片简历</th>
+		  <td><input name="thumb" type="checkbox" id="thumb" /></td>
+		</tr>
+		<tr>
+		    <th>其它参数</th><td>
+		        <select name="up" id="up">
+		            <option value="" selected="selected">未推荐</option>
+		            <option value="1">已推荐</option>
+		            </select>
+		        <select name="top" id="top">
+		                    <option value="" selected="selected">未置顶</option>
+		                    <option value="1">已置顶</option>
+		                    </select>
+		        <select name="status" id="status">
+		            <option value="" selected="selected">显示中</option>
+		            <option value="1">隐藏中</option>
+		            </select></td>
+		    <th>结果排序</th>
+		    <td><select name="_order" id="_order">
+		        <option value="" selected="selected">默认排序</option>
+		        <option value="viewCount">点击数排序</option>
+		        </select>
+		        <select name="_sort" id="_sort">
+		            <option value="0" selected="selected">递减</option>
+		            <option value="asc">递增</option>
+                </select>
+		        <select name="listRows" id="listRows">
+		            <option value="15">默认15个</option>
+		            <option value="20">每页显示20个</option>
+		            <option value="50">每页显示50个</option>
+		            <option value="100">每页显示100个</option>
+		            </select>
+		       
+		        <script type="text/javascript">
+/*
+	设定选择值
+*/
+
+setValue("pid",'{.pid}');
+setValue("uid",'{.uid}');
+setValue("username",'{.username}');
+setValue("realname",'{.realname}');
+setValue("resumename",'{.resumename}');
+setValue("email",'{.email}');
+/*selectByValue("province",'安徽省');
+showCity("city","安徽省");
+selectByValue("city",'巢湖市');*/
+	//$("#firstRequest").val('{$Think.get.firstRequest}');
+//	$("#categoryId").val('{$Think.get.categoryId}');
+//	$("#userId").val('{$Think.get.userId}');
+//	$("#createTime").val('{$Think.get.createTime}');
+//	$("#createTime1").val('{$Think.get.createTime1}');
+//	$("#recommend").val('{$Think.get.recommend}');
+//	$("#status").val('{$Think.get.status}');
+//	$("#istop").val('{$Think.get.istop}');
+//	$("#viewCount").val('{$Think.get.viewCount}');
+//	$("#viewCount1").val('{$Think.get.viewCount1}');
+//	$("#orderType").val('{$Think.get.orderType}');
+//	$("#orderBy").val('{$Think.get.orderBy}');
+//	$("#pageSize").val('{$Think.get.pageSize}');
+	
+	//document.getElementById("email").value="sb";
+//	alert(document.getElementById("email").value);
+	
+                </script></td>
+		    <th><input type="submit" name="submit" value="搜索" class="submit" id="submit" /></th>
+		    <td> 要查询均为精确查找 <a href="__URL__" >默认 </a></td>
+		    </tr>
+		</form></table>
+	</div>
+	
+
+	
+<!--  功能操作区域  -->
+<div class="operate" >
+<html:imageBtn name="add" value="新增" click="add()" style="impBtn hMargin fLeft shadow" />
+<html:imageBtn name="edit" value="编辑" click="edit()" style="impBtn hMargin fLeft shadow" />
+<html:imageBtn name="delete" value="删除" click="foreverdel()" style="impBtn hMargin fLeft shadow" />
+<html:imageBtn name="delete" value="投递" click="foreverdel()" style="impBtn hMargin fLeft shadow" />
+选择简历->选择公司
+
+
+</div>
+<!-- 功能操作区域结束 -->
+
+<!-- 列表显示区域 一共100%,还有8px指定给了checkbox,所以总共是100%+8px  -->
+<div class="list" >
+<html:list id="checkList" name="user" style="list" checkbox="true" action="true" datasource="list" show="pid:编号|5%,realname:姓名|5%:edit,resumename:标题|15%,job_request|getEnumTitle:求职意向|20%,local:工作地|15%,email:邮箱,uid:用户ID|5%,ctime|toDate='y-m-d':发表时间|10%,status|getStatus:状态|5%" actionlist="status|showStatus=$user['id'],edit:编辑:pid" pk="pid" /> 
+</div>
+<!--  分页显示区域 -->
+<div class="page">{$page}</div>
+<!-- 列表显示区域结束 -->
+</div>
+<!-- 主体内容结束 -->
+</div>
+<!-- 主页面结束 -->
+
+<include file="../Public/footer" />
+
+<script language="javascript" type="text/javascript" src="__PUBLIC__/Js/Inc/Enum.js"></script>
+
+<script language="" type="text/javascript">
+
+
+//创建select
+function createSelect(name,egroup,valueKey){
+	if(!name) name = 'job_request';
+	if(!valueKey) valueKey = "evalue";
+	//if(!egroup) egroup = "";
+	//var egroup = 'job_category';
+	//var html = '<select name="'+name+'" id="'+name+'">';
+	var i = 1;
+	for(var k in data){
+		if(data[k]['egroup']==egroup){
+			document.getElementById(name).options[i] = new Option(data[k]['ename'],data[k][valueKey]);
+			i++;
+			//html += '<option value="'+data[k][valueKey]+'">'+data[k]['ename']+'</option>';
+		}
+		
+	}
+	//html += '</select>';
+	//return html;
+}
+
+//获取当前code
+function getCode(value,egroup,valueKey){
+	if(!valueKey) valueKey = 'evalue';
+	//alert(egroup);
+	for(var k in data){
+		if(data[k]['egroup']==egroup && data[k][valueKey] == value){
+			return data[k]['code'];
+		}
+	}
+}
+
+
+//alert(first());
+createSelect("firstRequest","job_category");
+createSelect("secondRequest",getCode('{$Think.get.firstRequest}'));
+
+document.getElementById("firstRequest").onchange = function(){
+	//alert(this.value);
+	//alert(getCode(this.value,'job_category'));
+	createSelect("secondRequest",getCode(this.value,'job_category'))
+	
+}
+
+
+//选中select
+var op = document.getElementById("firstRequest").options;
+for(var i =0; i< op.length; i++){
+	if(op[i].value  == '{$Think.get.firstRequest}'){
+		//alert(i);
+		document.getElementById("firstRequest").selectedIndex = i;
+		//e.selectedIndex = 2;
+	}
+}
+document.getElementById("realname").value = "{$Think.get.realname}";
+
+//其它参数选中
+selectByValue("up",'{$Think.get.up}');
+selectByValue("top",'{$Think.get.top}');
+selectByValue("status",'{$Think.get.status}');
+
+//结果排序选中
+selectByValue("up",'{$Think.get._order}');
+selectByValue("top",'{$Think.get._sort}');
+selectByValue("status",'{$Think.get.listRows}');
+
+//行业选中
+selectByValue("up",'{$Think.get.firstRequest}');
+selectByValue("top",'{$Think.get.job_request}');
+
+loadProvinceCicy("province","city");
+
+//showCity("city","安徽省");
+</script>
+

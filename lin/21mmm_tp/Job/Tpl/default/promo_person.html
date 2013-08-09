@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content='{$keywords}发型师，美发师，美容师,美甲师,化妆师,健身教练,美容督导，美容导师，美容店长，形象设计，跟妆师，减肥SPA'>
+<meta  name="description" content='{$description}发型师，技术总监，美容顾问，中医保健，按摩师，足疗师，针灸师，扦脚师'>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>找美容，美甲，美发，化妆，人才，招聘美容师，导师，顾问，讲师，美甲师，美发师 - {$utype}-中华美容网-21mmm.com</title>
+<link href="{URL_PUBLIC}/style/unit/common.css" rel="stylesheet" type="text/css" />
+<link href="{URL_PUBLIC}/style/list.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div id="allnet">
+		<div id="school">
+			<div id="star">
+				{include:head.html}
+				<div class="left">
+					
+					<div class="login">
+						<h1><span class="zb">推荐人才</span></h1>
+						<div class="clear"></div>
+						{for var=$person_up index=$key}
+						<div class='swck'>
+							<h2><span class='dx'><a href='/resume/{$person_up[$key]['pid']}/show.html' target='_blank'>{$person_up[$key]['realname']}</a></span>&nbsp;{$person_up[$key]['gender']}</h2>
+							<p>{$person_up[$key]['cate']}</p>
+							<p>{$person_up[$key]['ctime']}</p>
+						</div>
+						{/for}
+					</div>
+			  </div>
+				<div class="zhigou">
+					<div class="men" >
+						<div class="jt">
+							<div class="men_left"><img src="{URL_PUBLIC}images/unit_web/bj_20.jpg" /></div>
+							<div class="men_ce">
+								<ul class="huiyi">
+									<li><a href="#" target="_blank" style="background-image:url({URL_PUBLIC}images/unit_web/bj_23.jpg); color:#23548a;">{$utype}</a></li>
+								</ul>
+							</div>
+							<div class="men_left"><img src="{URL_PUBLIC}images/unit_web/bj_21.jpg" /></div>
+						</div>
+						<div class="buyZonePrice" style="width:691px; margin-left:0;">
+							<table  width="100%" border="0"  cellpadding="5" cellspacing="1" id="inv">
+								<tr class="bg_fa">
+									<td colspan="8" style="font-weight:normal;">
+										<span style="float:right; text-align:left;">
+									  <input name="" type="button" value=" 邀请面试 " onclick="inv()" /> <input name="" type="button" value="放入收藏夹" onclick='fav()' /> 每页显示：<select name=""><option>20条</option></select> <select name=""><option>按时间发布顺序排列</option></select></span>									</td>
+								</tr>
+								<tr class="bg_e7">
+									<th align="left">　</th>
+									<th>姓名</th>
+									<th>性别</th>
+									<th>学历</th>
+									<th>意向职位</th>
+                                    <th>期望工作地</th>
+									<th>期望月薪</th>
+								    <th>更新时间</th>
+								    <th>查看</th>
+								</tr>
+								{for var=$list index=$key}
+								<tr class='bg_fa'>
+									<td width='22' align='left'><input type='checkbox' name='pid[{$list[$key]['pid']}]' value='{$list[$key]['pid']}' /></td>
+									<td width='47'><a href='/resume/{$list[$key]['pid']}/show.html' target='_blank' style='color:#cc0000;'>{$list[$key]['realname']}</a></td>
+									<td width='36'>{$list[$key]['sex']}</td>
+									<td width='47'>{$list[$key]['study']}</td>
+									<td width='242'>{$list[$key]['cate']}</td>
+                                    <td width='242'>{$list[$key]['local']}</td>
+									<td width='73'>{$list[$key]['money']}</td>
+								    <td width='70'>{func:date('Y-m-d', {$list[$key]['ctime']})}</td>
+								    <td width='65'><a href='/resume/{$list[$key]['pid']}/show.html' target='_blank' title='查看'><img src='{URL_PUBLIC}images/unit_web/ck.jpg' /></a></td>
+								</tr>
+								{/for}
+								{if {$list_c}==0}
+								<tr>
+									<td colspan="7" style="text-align:left;">提示：你是否搜索方法不对，尝试用逗号隔开，如：美，容</td>
+								</tr>
+								{/if}
+								<tr class="bg_fa">
+									<td colspan="8" style="font-weight:normal;">
+										<span style="float:right; text-align:left;">
+									  <input name="" type="button" value=" 邀请面试 " onclick="inv()" /> <input name="" type="button" value="放入收藏夹" onclick='fav()' /> 每页显示：<select name=""><option>20条</option></select> <select name=""><option>按时间发布顺序排列</option></select></span>									</td>
+								</tr>   
+							</table>
+						</div>
+						<div class="yema">
+						<p>{$pagelist}</p>
+					</div> 
+					</div>
+				</div>
+				{include:foot.html}
+		</div>
+	</div>
+<script>
+function inv() {
+	var ids = g();
+	if(ids.length > 0) {
+		window.open('/inv.php?pid=' + ids.join(','), '_blank');
+	}
+}
+
+function fav() {
+	var ids = g();
+	if(ids.length > 0) window.open('/fav.php?ut=person&pid=' + ids.join(','), '_blank');
+}
+
+function g() {
+	var is = document.getElementById('inv').getElementsByTagName('input');
+	var ids = new Array();
+	var j = 0;
+	for(var i = 0; i < is.length; ++i) {
+		if(is[i].type == 'checkbox' && is[i].checked) {
+			ids[j++] = is[i].value;
+		}
+	}
+	return ids;
+}
+</script>
+</body>
+</html>

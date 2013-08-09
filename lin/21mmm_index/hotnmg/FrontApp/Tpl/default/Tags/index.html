@@ -1,0 +1,24 @@
+<include file="Public:header" />
+<!--单页-->
+<div id="page" class="clear">
+<div id="category">
+<ul>
+<include file="Public:about_left" />
+</ul>
+</div>
+<div id="main">
+<h3 class="title">标签<em> Tags</em></h3>
+<div class="con">
+
+<volist name="dataContentList" id="row">
+<span style="padding:5px"><a href="{:U("Tags/getList",array("module"=>$row['module'],"name"=>urlencode($row['tag_name'])))}" target="_blank">{$row.tag_name}</a>({$row.total_count})</span>　
+</volist>
+
+<div class="pages"><div class="plist">{$pageContentBar}</div></div>
+
+</div>
+
+</div>
+</div>
+<!--底部-->
+<include file="Public:footer" />

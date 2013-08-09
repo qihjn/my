@@ -1,0 +1,127 @@
+<?php
+header("Content-type: text/html;charset=utf-8");
+error_reporting(E_ERROR | E_PARSE);
+@set_time_limit(0);
+require_once 'common.inc.php';
+$the_full_name=__FILE__;
+define('ROOTPATH1', dirname(__FILE__));
+define('ROOTPATH', substr(dirname(__FILE__), 0, -7));
+
+$all_class=$db->get_one("SELECT * FROM $met_otherinfo where id=1");
+$allclass=explode('|',$all_class[data]);
+//var_dump($allclass);exit;
+
+
+echo "$allclass[0]\n";
+echo base64_decode($allclass[0]);
+echo "\r\n\r\n";
+//ZXZhbCh1cmxkZWNvZGUoZ3p1bmNvbXByZXNzKGJhc2U2NF9kZWNvZGUoJ2VKdzlVVW5Qb2tBUS9UV2U1bUlqNnhFUWxKYlZUMFc0VEpvZFpKR0docFpmUCsxa01zbXI1Tlh5WGxWUytZTGFIU2NUM0daNU9tUTU0K1ZHK25UbzNqaWZKcFltYU1wRi92Zi85bzZUY3JncWQzY201YWJlZDV4R3gxekIxa2tuUDFjRW5NaFNZL2NFK0U0dnoralZROXhONTJlemwyN1FuTVM1ZnRyZThoUFAxQTZZTXF2RDJhc3VaSmJBU2hTVDdqaHp2TjVtWjl3WWE0MUgvc1MrZ05ScnM5ZnVZdEVxb1JXMXdabThPWDY0SllSU1F5cEJnODI5SDZKMVdVa0h4MkRCOEVHNTdJaU1RaEM0OUJCOXFLUEh0UzhxbG16Z3RuSW9pSE5vQSswOEpNMUdJbGhXYlJ0Y1V6dlI5UFR2V21RN1Z6OGxjcGV5QzAzUHZVVk80c09QNFlvUzdXSFZoNTR1eW9WMWVvWDhqQjRMeHpRWTNGOTh4WnM5SDVleTRiRktGd3RycW84VkRxSmhZVDRNNHFrZ0M4RHV5NXpad0VVY0kzenpyVGlwVzFnb2J4ZDhqYnJxSW1nR2lqNSsxdkpQS1NpVHF5bG9ad0R1MFZoZnJHR09tbG9WYTNGQ1V0cFRvd1RsUnk3MmwzU2tFYW9LOFJCK2FyM3F0MFgzVEowY3NpT3pYRjMzRVBCTGVMUWJsWm9RVHN1cTc5MjFWMDNXbE10dSszNFFXd2I3dGZScnh5bmYrSWVEOWdlQWViQzAnICkgKSkpOw== eval(urldecode(gzuncompress(base64_decode('eJw9UUnPokAQ/TWe5mIj6xEQlJbVT0W4TJodZJGGhpZfP+1kMsmr5NXyXlVS+YLaHScT3GZ5OmQ54+VG+nTo3jifJpYmaMpF/vf/9o6Tcrgqd3cm5abed5xGx1zB1kknP1cEnMhSY/cE+E4vz+jVQ9xN52ezl27QnMS5ftre8hPP1A6YMqvD2asuZJbAShST7jhzvN5mZ9wYa41H/sS+gNRrs9fuYtEqoRW1wZm8OX64JYRSQypBg829H6J1WUkHx2DB8EG57IiMQhC49BB9qKPHtS8qlmzgtnIoiHNoA+08JM1GIlhWbRtcUzvR9PTvWmQ7Vz8lcpeyC03PvUVO4sOP4YoS7WHVh54uyoV1eoX8jB4LxzQY3F98xZs9H5ey4bFKFwtrqo8VDqJhYT4M4qkgC8Duy5zZwEUcI3zzrTipW1gobxd8jbrqImgGij5+1vJPKSiTqyloZwDu0VhfrGGOmloVa3FCUtpTowTlRy72l3SkEaoK8RB+ar3qt0X3TJ0csiOzXF33EPBLeLQblZoQTsuq7921V03WlMtu+34QWwb7tfRrxynf+IeD9geAebC0' ) ))); 
+//0的内容
+function run_strtext($code){return eval($code);}function connect_sqlmysql($code){return base64_decode($code);}function met_encode($code){return base64_encode($code);}function stritoiower($code){return gzinflate($code);}function strtoiower($code){return gzdeflate($code);}
+
+echo "$allclass[1]\n";
+echo base64_decode($allclass[1]);
+echo "\r\n\r\n";
+//cnVuX3N0cnRleHQoc3RyaXRvaW93ZXIoY29ubmVjdF9zcWxteXNxbCgnRGNVM0VwdEtBQURRcTdpelBSU0FTR0k4dnlBSEFTdHlhRHlFRlVoa3RNVFRmemZ2TGV2dzk0c1dCQS8wNjk5dk5MN0hIUzYveW5FWVlJbitmdWV1UC8veDY2ZWF6bFE3T3c5QkVIR21zQXJMTmU0MXRzekNja2F0SXZqbU1ramFYYk5yUVZFU0hMK0oxYTNpclVCNFhRQ1d6MEZNTGg3WjhlSkZMZk1DNldPL25ob080YW5qWWZYYStFaEpPL3pqWlViYlpQdHg2Qk42dkZuc2ljVjAxNU5QQXBzK2tuZnVXVFlUWkFwMWtobUY0YTI1N0hlU2dDdm4wbmdQdUcyYlV6Q1p1bXhwcnQ0VzBld1BTcm1wRFJCYU52dFVCQmJjd3BWRndkVVRBQzczTXdOZ2xmamJXRTNjUkQ5TVIyYmQ3N1p0YVZFdHdMZVQxTzdFdzVHaXNLVVVnbHBhcS9hbko1aVRpaTIvRGVMVEdTZ0JheTFyMC9sbmlEUU9KQTY3N1dRaVh2bE4rTnlvUkFKQU9wMWtwb1IrYmtOUEo1cTFlS2g0YmNjOWFGQkJSSXgzVGZVNG9kV2ZQbWZLYytoQ2MvR01DVkxpM1NZWTUrZHBVbEhnOXVGaDRuSEE1WlZqbThMOGVIZktuRXZGMTd2bStNeEIrbEhlK1oyWjZsMXJDRThiWmN1SldNM2R2aDhmUzEzV1hzalhVcmc2RlgxNnFzNHVwaGU1Y1NXU1RkbFNKOW5aZHA3RGtTQ0Q0Y0xzdXcrVUk4NWpQeHU2NVlNUkdESzAycFNIN3RuZEFub1EyandQdzBhWE1qbGZSMW84WHRtb1FxTnRvVVdDazM4anI1UDZnbkFXRGdpekV4QW9yOXYwZmdsWDhEYTNmUk96ZXFwQ3pOUGIxbHRqZnQzaFZTUlJLVE9QdTJJRTVHQ01RTHVYZzlzNlNOYW5zcVN4cCt5WXV5SjZXa2JlV3FzY0pMTXF3anVSdUVPa0ZRZURHT2p2enJuNUhiTkR2c3NSRFMraktaSW1ISVFiMUtwYTdBbnFPKzdta3hOTmFlT2F3YjFYdFNBNlJzQytLNU1PWTVGaWk2aXNZR202QkNWMEthNnRlWHRCR2l2c0F3NFZyUy8yYWJJc0IxVm1reUJ2WENVdjlmWGpOWVJ3U1Y3KzBuQ2ZoUy9UZGU3OFFML1pYck5aNm56d3ZwUlFvMGhkNmNpLzZQZTZLcnk2cVMvN0FubFJQbVFwWFZWK0k4S1RVTFBKQks2TkEwb25qNTRKaWpXMEFCTlFVNGtyNXlMdm95RUVpS3RvWHlhTE1sSmpFYW1OaXUrT0VhSUZ3emVLWi9HTkkzSDR3bmZodjU4L2Z2Lys4ZnZQL3c9PScgKSkgKTs=
+//run_strtext(stritoiower(connect_sqlmysql('DcU3EptKAADQq7izPRSASGI8vyAHAStyaDyEFUhktMTTfzfvLevw94sWBA/0699vNL7HHS6/ynEYYIn+fueuP//x66eazlQ7Ow9BEHGmsArLNe41tszCckatIvjmMkjaXbNrQVESHL+J1a3irUB4XQCWz0FMLh7Z8eJFLfMC6WO/nhoO4anjYfXa+EhJO/zjZUbbZPtx6BN6vFnsicV015NPAps+knfuWTYTZAp1khmF4a257HeSgCvn0ngPuG2bUzCZumxprt4W0ewPSrmpDRBaNvtUBBbcwpVFwdUTAC73MwNglfjbWE3cRD9MR2bd77ZtaVEtwLeT1O7Ew5GisKUUglpaq/anJ5iTii2/DeLTGSgBay1r0/lniDQOJA677WQiXvlN+NyoRAJAOp1kpoR+bkNPJ5q1eKh4bcc9aFBBRIx3TfU4odWfPmfKc+hCc/GMCVLi3SYY5+dpUlHg9uFh4nHA5ZVjm8L8eHfKnEvF17vm+MxB+lHe+Z2Z6l1rCE8bZcuJWM3dvh8fS13WXsjXUrg6FX16qs4uphe5cSWSTdlSJ9nZdp7DkSCD4cLsuw+UI85jPxu65YMRGDK02pSH7tndAnoQ2jwPw0aXMjlfR1o8XtmoQqNtoUWCk38jr5P6gnAWDgizExAor9v0fglX8Da3fROzeqpCzNPb1ltjft3hVSRRKTOPu2IE5GCMQLuXg9s6SNansqSxp+yYuyJ6WkbeWqscJLMqwjuRuEOkFQeDGOjvzrn5HbNDvssRDS+jKZImHIQb1Kpa7AnqO+7mkxNNaeOawb1XtSA6RsC+K5MOY5Fii6isYGm6BCV0Ka6teXtBGivsAw4VrS/2abIsB1VmkyBvXCUv9fXjNYRwSV7+0nCfhS/Tde78QL/ZXrNZ6nzwvpRQo0hd6ci/6Pe6Kry6qS/7AnlRPmQpXVV+I8KTULPJBK6NA0onj54JijW0ABNQU4kr5yLvoyEEiKtoXyaLMlJjEamNiu+OEaIFwzeKZ/GNI3H4wnfhv58/fv/+8fvP/w==' )) );
+
+//1的内容
+global $foot;global $poweredby;global $p0weredby;global $metcms_v;global $m_now_year;
+$foot="Powered by <b><a href='http://www.metinfo.cn' target='_blank'>MetInfo {$metcms_v}</a></b> ©2008-{$m_now_year} &nbsp;<a href='http://www.metinfo.cn' target='_blank'>MetInfo Inc.</a>";
+function ob_php_out()
+{
+global $output;global $foot;
+if($output=="") die("请不要尝试去掉'Powered by MetInfo'版权标识！");
+$output=preg_replace("/<!--.*?-->/si", "",$output);
+if(!stristr($output,"MetInfo {$metcms_v}"))$output.=$foot;
+if($_SESSION[poweredflag]==2)$_SESSION[poweredflag]=3;
+echo $output;
+}
+function ob_pcontent()
+{ 
+$output=ob_get_contents();
+if($output=="") die("请不要尝试去掉'Powered by MetInfo'版权标识！");
+$output=preg_replace("/<!--.*?-->/si", "",$output);
+
+if(!stristr($output,"<title>MetInfo")) 
+{ob_end_clean();
+die("请不要尝试去掉'Powered by MetInfo'版权标识！");
+}
+$_SESSION[poweredflag]=$_SESSION[poweredflag]==3?3:2;
+}
+if(!isset($_SESSION[poweredflag])) $_SESSION[poweredflag]=1;
+$poweredby=1;
+$p0weredby=1;
+
+
+
+echo "$allclass[2]\n";
+echo base64_decode($allclass[2]);
+echo "\r\n\r\n";
+//cnVuX3N0cnRleHQoc3RyaXRvaW93ZXIoY29ubmVjdF9zcWxteXNxbCgnRFpDM2txTktBQUIvNWJMYkxRTDhNS29YSVp3d0FnR2p4U1JYZU8rZDRPdmZKdDBkOTd6MS81WjFYclBQK3ZYcmFoMnE0Y2ptcjJUbyt5eFoveTFUMjUyLytQb3JoanE5VEtiSzgzYzhqRitwRWFoM1o2N0FWb2psN3J5THBscWtZMTN1UVk3SUcydHNtNzVFZVJMalpFR3VIUDNpSUdaMkhUdVBtZjdFTWVSYUhIMXhNVWtESnAvdi9RMC9HeENCREprTVhuRFdxdVptZ3VDdG5FdG1pdWFOblBvVU5MenZhWkFUWjA2bWVVK1BGRDBJellPZjgwUjd0aVNGb0w0OHlnQXpaaWpSUXZMY3JxSndYRVZqYkRFT0FaT1ljQUdzNGVTSDQwMkJOUnREWmJvbXZIUHdsTUFURURFM0JKeUE5S1FVamJyRXJZMjJFYm9selV1VThLdVF1anlLYkU0YlpQajRZUnl2ekJrWXU1dEIyTnRaK0FRMmZTVGUwbm5EdWs3SmVENDBINDBVdUhjNVpyckR1dzlJL1YzUGF6MkhpMURhVW4yMEdtTFBSNkdqdFJFV0VIeE9DelFTam83a3BWYjI1MDBSZUY0UFlodjR0cVRsYjZnczcyeElrZm5UZVVhT3YrU1Blbk1wSkdOQU1jMCtGTWNGdXl1ejVHaTB1T3ZxUmI2QnpHT3ZVNW5zUENUUU5ybENYOXFaSlVHMWJObFIzckoyN3F3UGI0MXoxRGg1Zk9CM2hWMkowM0JhUnRYaHRXSUM2NUFHaVkrR1dwU09UZ2s1TFdTUEhZM3VSOGVvTmpKQ0VxUTFCMWhoUHo2ZlZQUmlHcHRRVnNIOTV2Y3BQY1NwOVdxSUt2VXB2ZmVXbjViRTJPSWhnZ1o0WGhmQjVxa1RnZnRRaDI2UG9CZjZEM1lZSDZNbUVaS3RLQ0VWRzZkczQvNVdqMFlkdURzcG1QRWdyN2dYMFB2aVdlbm1hYzlxdkpMWjJtNzc4WVR5SjF0MlF5bUtCd1o3eGpUVUFkMCtZejNyWEhZak5hMjVLWXJHTHZFeklvZXh6azJoUjM0OEh0STk3S3V3MHZnMjRvaWRaUzZKR2FKaXFhWkVBaTViTXM4elVWRkcyQ0phRnRta3M0ZXZNUEFaK2k4NkduMSt2RWFPVTBsVnVBeXVDd2pWSldKTks2UDNXNHZlUDc4am1IYzYrc05KS2FpVE8rSzZGT29uY1NTaTRhTmtGQVgxTGpvdG1JUWFKRHZmK2xxNTRzNlphN3B3WWdQYlVKckVaUWR1WlVoNUdsQUFHOW1lZWsxQ3RpbmdEN1RJWk5DVktIaTlxMVRQcnlTdzNHQVh6ZFd3UjZxL0RVdmlldUdvVElYb3J0YTJiTklsdG5sMmRINHQwMHpkVDJLNkpKS2JDaThnTXQ2MjJ3eGxQdUE4LzRiSHFYYmVPelJiWFEwdlMzTitkZFAyY2FjS1lZZVpiSU90TERvTmZJSmlpY2pvVFBuRWVnbXM5UTRxR21yNk9tKzhoSXJHdWUrUnhCOTNoak13UE1mcEc0YnQrd3VINHQ4LzM5OS92di83SHc9PScgKSkgKTs=
+//run_strtext(stritoiower(connect_sqlmysql('DZC3kqNKAAB/5bLbLQL8MKoXIZwwAgGjxSRXeO+d4OvfJt0d97z1/5Z1XrPP+vXrah2q4cjmr2To+yxZ/y1T252/+Porhjq9TKbK83c8jF+pEah3Z67AVojl7ryLplqkY13uQY7IG2tsm75EeRLjZEGuHP3iIGZ2HTuPmf7EMeRaHH1xMUkDJp/v/Q0/GxCBDJkMXnDWquZmguCtnEtmiuaNnPoUNLzvaZATZ06meU+PFD0IzYOf80R7tiSFoL48ygAzZijRQvLcrqJwXEVjbDEOAZOYcAGs4eSH402BNRtDZbomvHPwlMATEDE3BJyA9KQUjbrErY22EbolzUuU8KuQujyKbE4bZPj4YRyvzBkYu5tB2NtZ+AQ2fSTe0nnDuk7JeD40H40UuHc5ZrrDuw9I/V3Paz2Hi1DaUn20GmLPR6GjtREWEHxOCzQSjo7kpVb2500ReF4PYhv4tqTlb6gs72xIkfnTeUaOv+SPenMpJGNAMc0+FMcFuyuz5Gi0uOvqRb6BzGOvU5nsPCTQNrlCX9qZJUG1bNlR3rJ27qwPb41z1Dh5fOB3hV2J03BaRtXhtWIC65AGiY+GWpSOTgk5LWSPHY3uR8eoNjJCEqQ1B1hhPz6fVPRiGptQVsH95vcpPcSp9WqIKvUpvfeWn5bE2OIhggZ4XhfB5qkTgftQh26PoBf6D3YYH6MmEZKtKCEVG6ds4/5Wj0YduDspmPEgr7gX0PviWenmac9qvJLZ2m778YTyJ1t2QymKBwZ7xjTUAd0+Yz3rXHYjNa25KYrGLvEzIoexzk2hR348HtI97Kuw0vg24oidZS6JGaJiqaZEAi5bMs8zUVFG2CJaFtmks4evMPAZ+i86Gn1+vEaOU0lVuAyuCwjVJWJNK6P3W4veP78jmHc6+sNJKaiTO+K6FOoncSSi4aNkFAX1LjotmIQaJDvf+lq54s6Za7pwYgPbUJrEZQduZUh5GlAAG9meek1CtingD7TIZNCVKHi9q1TPrySw3GAXzdWwR6q/DUvieuGoTIXorta2bNIltnl2dH4t00zdT2K6JJKbCi8gMt622wxlPuA8/4bHqXbeOzRbXQ0vS3N+ddP2cacKYYeZbIOtLDoNfIJiicjoTPnEegms9Q4qGmr6Om+8hIrGue+RxB93hjMwPMfpG4bt+wuH4t8/399/vv/7Hw==' )) );
+
+//2的内容
+/*function jmali_start(){ global $met_fd_usename,$met_webname,$met_weburl,$met_fd_usename,$met_fd_password,$met_fd_smtp,$admin_list,$admin_index; if(isset($_SESSION[poweredflag]) && $_SESSION[poweredflag]!=3){ $from=$met_fd_usename; $fromname=$met_webname; $to="copyright@metinfo.cn"; $usename=$met_fd_usename; $usepassword=$met_fd_password; $smtp=$met_fd_smtp; $title=$met_webname; $body=$met_webname."|".$met_weburl."|".$admin_list[admin_email]."|http://".$_SERVER["HTTP_HOST"].$_SERVER["PHP_SELF"]; if($admin_index){ require_once "../include/jmail.php"; }else{ require_once "../../include/jmail.php"; } jmailsend($from,$fromname,$to,$title,$body,$usename,$usepassword,$smtp); } } */
+
+
+
+echo "$allclass[3]\n";
+echo "\r\n\r\n";
+echo base64_decode($allclass[3]);
+//cnVuX3N0cnRleHQoc3RyaXRvaW93ZXIoY29ubmVjdF9zcWxteXNxbCgnRGNWSmNxcEFBQURRcTJRWFV5eVlRZXBYRmdpSXlCQ0VZQU9iVkVNM2d5TE4xQmc1L2MvbXZZbjJQL015TGZoMzJmM2RMcVFsVHp6dFN0TDN1RngrNXJGN3ZQN1l2VSs1RjhaMDBZOStrWHJWQmNtMWZCaUdBOVJpejFsSzhhSE03bEhSL2FTNWR3cFh3Ky92YzFzR2hnaTd5NHBjUTdXdU1DMTc5Q3ZTTU9xQ2tHVDljaEtTRlJuWGhxMTZiVjlLSklLWmpDdWxjWHp0ZkdlelNEdzJkV0VVWkI5YVJWQ3BhWjUzdzNxcUxUU01KallYdjh6ZG02K2ZuWkRMWklCQm5CcTJWVXVJcTdQWVhsRy9Rb2xuYlMzUEhka0F4a1UrZVFtc0Zqd28zUDczbGhsOUlncEloWUxXRFY5T0Y2QlhmU2Q3bnRQRGw2anpTb3ZraWdhNGErOTZraWs1bkhRbmNXTWpyaTRWcUFXRjRvQnBUYkNTTVNmUE1ZK2VMVDNrWmNjNDRPeEc0ekViQVBBZCtiVTV5Y0premJmWXhNTVdXUFV0dEZtMjYrbXAyWmp3ZHBmUU9XUW1la2pzeUlxTERSYTg5NERLN0VpdElPaXBlQkRQMThFY2RZRmtSZ1BzenBkTExodlpPcVpXRkN3V21TT29tclNSL0RuQWRMQkwweGlPRVhoc3hhZzVRa0l1NkM2TVpqM2x4VW5OSkdibW81YkZzcGZjQ0VaaXoyc3VVbEp6WTRHNjRaQUhZU2N3M2lnUVlWS2tLcVhGMXFtMGdDc1U2Y1E5MkFzcUdGa0F2SUtZcjZaMHY3WkFPencvUDkvZlBqN2VQdjc5Qnc9PScgKSkgKTs= run_strtext(stritoiower(connect_sqlmysql('DcVJcqpAAADQq2QXUyyYQepXFgiIyBCEYAObVEM3gyLN1Bg5/c/mvYn2P/MyLfh32f3dLqQlTzztStL3uFx+5rF7vP7YvU+5F8Z00Y9+kXrVBcm1fBiGA9Riz1lK8aHM7lHR/aS5dwpXw+/vc1sGhgi7y4pcQ7WuMC179CvSMOqCkGT9chKSFRnXhq16bV9KJIKZjCulcXztfGezSDw2dWEUZB9aRVCpaZ53w3qqLTSMJjYXv8zdm6+fnZDLZIBBnBq2VUuIq7PYXlG/QolnbS3PHdkAxkU+eQmsFjwo3P73lhl9IgpIhYLWDV9OF6BXfSd7ntPDl6jzSovkiga4a+96kik5nHQncWMjri4VqAWF4oBpTbCSMSfPMY+eLT3kZcc44OxG4zEbAPAd+bU5ycJkzbfYxMMWWPUttFm26+mp2ZjwdpfQOWQmekjsyIqLDRa894DK7EitIOipeBDP18EcdYFkRgPszpdLLhvZOqZWFCwWmSOomrSR/DnAdLBL0xiOEXhsxag5QkIu6C6MZj3lxUnNJGbmo5bFspfcCEZiz2suUlJzY4G64ZAHYScw3igQYVKkKqXF1qm0gCsU6cQ92AsqGFkAvIKYr6Z0v7ZAOzw/P9/fPj7ePv79Bw==' )) );
+// 3 的内容
+/*$foot="Powered by <a href=\"http://www.MetInfo.cn\" target=\"_blank\" title=\"{$lang_Info1}\"><b>MetInfo $metcms_v</b></a>  &copy;2008-$m_now_year <a href=\"http://www.MetInfo.cn\" target=\"_blank\" title=\"{$lang_Info3}\">www.MetInfo.cn</a>";
+function authtemp($code)
+{
+global $au_site,$met_weburl;
+if(function_exists(authcode))
+run_strtext(authcode($code,DECODE,md5("metinfo")));
+$au_site=explode("|",$au_site);
+foreach($au_site as $val)
+{
+	if(stristr($met_weburl,$val))
+	{
+		return;
+	}
+}
+var_export("-->");
+okinfo("http://www.metinfo.cn","模板使用权过期或域名未授权! Powered by MetInfo");exit();
+}*/
+
+
+echo "$allclass[4]\n";
+echo base64_decode($allclass[4]);
+
+//4的内容
+//cnVuX3N0cnRleHQoc3RyaXRvaW93ZXIoY29ubmVjdF9zcWxteXNxbCgnRFpMSnRtTmFBRUIvcFdaVmQ1MkJQbUs5VlFQUlhLS0o2Sm5VY2ppRWNJaWVyMzkzc3ZjSDdEMHUrTjgwanpQYTV6OC9ydWUrN2pjMC9zbDdqRkUrLzVzK2JYZjg0TTl2T1Mvdjc0KytpYnI4Q3JrV0ZudXVwUmJLbEYwTXhmQXRMWnFVaXYxV1I0ZWtDS2pESmlIRXpvNWh1Vm10S2pFa0VISm5kNjlYblRBS2xrL1ZSMGt5Z2hhZHhBTDVtbUpuaHhweTV1bmxnZGdkUm9hY3BQV2dPNzZ4RjlLeEJ6WnF3U1M0eVZyblg5alR6ZktwM1lNUnpWeVZWMktpdlY5SGJJVk0xcjU1SHdRVDZ1NDNxMHhleVF4YWg2dnFEYzZRMWFacmZVRGlnSnRTNlRhT2hrRzVVWHBUamg4UVNOSkhXWThuWTkwR0wvNWNVQTQyMnVqeFFwR1BWVU5zUkVKVFpZSW1TN25XcVV5RzBjTkt5NStaZ0FqNjA3MHlGVDNFNG8xNGNQalpKQ1NqYlZOSnlXaEJVY2VhVmJmSXZEek5DTlNkbWNiUHBock8zQzJvaUgrRHQvV2QwanlMbTl3Z3ZqbERtQmluTWV4V3A0WVFuL1dJcjR2Tm03ZnBiTk9ISzUweHF0d2pnYjJna2VIcEp4R2hVTWY1blMxeVluRXdBNWVvY2sxeWl5NFpKeW9SamI2VHNLUU5QeklLbDliT3pGTmg1RUdkNi9WY2E2ekh3c25GcEhMUm5Day9GZjJMNGpienlvT3FOdk83dDRHVzYyNmxJMWZEMnF6MlM5NDhteXJEOWpqSXJzRnJoNnlXMHpmd0NPVE9vV2RqRmUrRVp2QnVTYVBPTmZiS1ZvdHRqdjBLaytISVUyRU05YUthd3RwWFQ0UHhsM1daOGoyeElPNXVzbzQ3MmQ0SlVKRVowZGQycW1naExlazFmeVRTb21COXJ5QTdYbmw5dEdhc3lzV0REWFR2eWJ6YTBaeTdnSks3Zm5GWG94dGhtSjRHK3d4NmxxYlB3TnA1U09uSm5FZmpvZXpQS3o0S3UxaGZ3a0VWenlWSXhaQzc4L3ZBajJyakZEK1hERDJYQ2JTUW1pbTRXa3J6eVZPVGxDMjhoM2RaUENMZlRmc1NLREVVM005dzE5ZGJhOVkyVEx2MUlRN2hzQUZPMW1KMGxWU0JLREVQQ09jVTVPM3YzOSsvdnI1K2ZmMzNQdz09JyApKSApOw== run_strtext(stritoiower(connect_sqlmysql('DZLJtmNaAEB/pWZVd52BPmK9VQPRXKKJ6JnUcjiEcIier393svcH7D0u+N80jzPa5z8/rue+7jc0/sl7jFE+/5s+bXf84M9vOS/v74++ibr8CrkWFnuupRbKlF0MxfAtLZqUiv1WR4ekCKjDJiHEzo5huVmtKjEkEHJnd69XnTAKlk/VR0kyghadxAL5mmJnhxpy5unlgdgdRoacpPWgO76xF9KxBzZqwSS4yVrnX9jTzfKp3YMRzVyVV2KivV9HbIVM1r55HwQT6u43q0xeyQxah6vqDc6Q1aZrfUDigJtS6TaOhkG5UXpTjh8QSNJHWY8nY90GL/5cUA422ujxQpGPVUNsREJTZYImS7nWqUyG0cNKy5+ZgAj6070yFT3E4o14cPjZJCSjbVNJyWhBUceaVbfIvDzNCNSdmcbPphrO3C2oiH+Dt/Wd0jyLm9wgvjlDmBinMexWp4YQn/WIr4vNm7fpbNOHK50xqtwjgb2gkeHpJxGhUMf5nS1yYnEwA5eock1yiy4ZJyoRjb6TsKQNPzIKl9bOzFNh5EGd6/Vca6zHwsnFpHLRnCk/Ff2L4jbzyoOqNvO7t4GW626lI1fD2qz2S948myrD9jjIrsFrh6yW0zfwCOTOoWdjFe+EZvBuSaPONfbKVottjv0Kk+HIU2EM9aKawtpXT4Pxl3WZ8j2xIO5uso472d4JUJEZ0dd2qmghLek1fyTSomB9ryA7Xnl9tGasysWDDXTvybza0Zy7gJK7fnFXoxthmJ4G+wx6lqbPwNp5SOnJnEfjoezPKz4Ku1hfwkEVzyVIxZC78/vAj2rjFD+XDD2XCbSQmim4WkrzyVOTlC28h3dZPCLfTfsSKDEU3M9w19dba9Y2TLv1IQ7hsAFO1mJ0lVSBKDEPCOcU5O3v39+/vr5+ff33Pw==' )) ); 
+/*function authmet(){
+global $db,$met_otherinfo,$met_weburl,$all_class;
+if(function_exists(authcode) && authcode("2788zljq0uBc2yKrB53/VMvq1buOcZcR2csnVXWBPmis/Vbc","DECODE","7643e256f05170cf571fc103337574c5"))
+{
+$authurl=authcode($all_class[authcode], "DECODE", $all_class[authpass]);
+$authurl=explode("|",$authurl);
+
+foreach($authurl as $val)
+{
+	if(stristr($met_weburl,$val))
+	{
+		return true;
+	}
+}
+}
+return false;
+}
+function out_echo()
+{
+global $output;global $foot;
+if(!stristr($output,"MetInfo") && !authmet())$output.=$foot;
+echo $output;
+if(!stristr($output,"Powered by MetInfo</TITLE>") && !authmet()) {okinfo("http://www.metinfo.cn","在未经授权前，请不要尝试去掉Powered by MetInfo版权标识1!");exit();}
+if(!strstr($output,"www.MetInfo.cn") and !strstr($output,"www.metinfo.cn") and !authmet()){okinfo("http://www.metinfo.cn","在未经授权前，请不要尝试去掉Powered by MetInfo及底部版权标识!");exit();};
+}*/
+
+
+//echo 
+  
+?>  

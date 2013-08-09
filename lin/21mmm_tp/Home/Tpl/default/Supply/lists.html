@@ -1,0 +1,61 @@
+<include file="header" />
+<link href="__PUBLIC__/Css/page.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+
+.sleft{ width:688px; margin-left:5px; float:left; border:1px solid #FCF; overflow:hidden;}
+.title{ height:30px; line-height:30px; font-size:14px; font-weight:bold; padding-left:20px; background-color:#FCF; margin-bottom:5px;}
+.ttext{ color:#F39; width:100px; display:inline-block;}
+.tmore{ margin-left:500px; display:inline-block; text-align:right; }
+.item{ margin-bottom:10px;}
+.limg{ float:left; width:98px;; margin-right:10px; border:1px solid #ccc;}
+.limg img{ width:98px; height:98px;}
+.rtext{ float:left; width:578px;}
+.bold{ font-weight:bold;}
+.ititle{ font-size:14px; color:#C39; font-weight:bold; height:30px; line-height:30px;}
+.idesc{ color:#999; line-height:20px; }
+.iinfo{ height:30px; line-height:30px;}
+
+
+.position{ margin:5px 5px 5px 10px; border-bottom:1px solid #FC0; font-size:14px; }
+.position a{ font-size:14px; color:#F00}
+</style>
+
+<include file="public:nav" />
+<div class="position">您现在的位置：<a href="{&ROOTURL}" target="_blank">{&SITE_TITLE}</a> > <a href="/supply" target="_blank">供求信息</a> > <a href="__URL__/lists/infotype/{.infotype}" target="_blank">{$infotype}</a> > <a href="__URL__/lists/firsttype/{.firsttype}" target="_blank">{$firsttype}</a> > <a href="/supply/lists/secondtype/{.secondtype}" target="_blank">{$secondtype}</a></div>
+<div class="sleft">
+	<div class="title"><span class="ttext">列表</span>  <span class="tmore"></span></div>
+    
+    <volist name="list" id="vo">
+
+    <div class="item">
+    	<div class="limg"><a href="/supply/show_{$vo.id}.html" target="_blank"><img src="{$vo.thumb|img}" alt="{$vo.title}" /></a></div>
+        <div class="rtext">
+        	<div class="ititle"><a href="/supply/show_{$vo.id}.html" title="{$vo.title}"  target="_blank">{$vo.title}</a></div>
+            <div class="idesc">{$vo.description|msubstr=0,92}</div>
+            <div class="iinfo"><span class="bold">点击率：</span>{$vo.viewcount}   &nbsp;&nbsp; <span class="bold">发布时间：</span><!--{$vo.ctime|date="Y-m-d",###}-->正常发布</div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+	</volist>
+    
+    
+    <div class="page">{$page}</div>
+</div>
+
+
+	<div class="content_r">
+        <include file="catelist" />
+        <div class="banner2">
+        <img src="__PUBLIC__/Skin/Supply/banner21.jpg" />
+        <img src="__PUBLIC__/Skin/Supply/banner22.jpg" />
+        </div>
+    </div>
+    
+   <!-- <div>按地区搜索</div>
+    <div>内容</div>-->
+
+<div class="clear"></div>
+
+
+<include file="footer" />

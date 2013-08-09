@@ -1,0 +1,95 @@
+<include file="Public:header" />
+<div style="margin:10px auto; width:95%;">
+	<form action="send.post.php" method="POST" id="send_mail" name="send_mail">
+		<table cellspacing="0" cellpadding="0" style="width:100%;">
+			<tr><td class="title"><input type="radio" name="option" value='1' />按注册时间：</td><td>&nbsp;&nbsp;&nbsp;&nbsp;从：<input type="text" id="time_begin" name="time_begin" value="" readonly onClick="javascript:calendar.showdatelist(this);" style='cursor:pointer;' />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;到：<input type="text" id="time_end" name="time_end" value="" readonly onClick="javascript:calendar.showdatelist(this);" style='cursor:pointer;' /></td></tr>
+			<tr><td class="title"><input type="radio" name="option" value='2' />按登录时间：</td><td>&nbsp;&nbsp;&nbsp;&nbsp;从：<input type="text" id="login_begin" name="login_begin" value="" readonly onClick="javascript:calendar.showdatelist(this);" style='cursor:pointer;' />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;到：<input type="text" id="login_end" name="login_end" value="" readonly onClick="javascript:calendar.showdatelist(this);" style='cursor:pointer;' /></td></tr>
+			<tr><td class="title"><input type="radio" name="option" value='3' />按积分级别：</td><td>&nbsp;&nbsp;&nbsp;&nbsp;从：{$point_begin}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;到：{$point_end}</td></tr>
+			<tr><td class="title"><input type="radio" name="option" value='4' />按指定用户：</td><td><!--用户名：<input type="text" name="username" id="username" value="" />&nbsp;-->电子邮件：<textarea name="email" id="email" style="width:600px; height:80px;"></textarea>多个邮件地址用英文","分隔</td></tr>
+			<tr><td class="title"><input type="radio" name="option" value='5' />按客户性质：</td><td>{$utype}</td></tr>
+			<tr>
+				<td class="title">标题:<br/>内容:</td>
+				<td>标题:<input type="text" name="title" id="title" value="" style="width:450px;" /><br/>
+				<textarea id="content" name="content" class="editor" style='display:none;'></textarea>
+				<script language='javascript' src='{URL_PUBLIC}js/jquery-1.2.6.pack.js'></script>
+				<script language='javascript' src='{URL_PUBLIC}js/jquery.fckeditor.js'></script>
+				<script>$('textarea[@name=content]').fck({path: 'http://admin.21mmm.com/fck/',height:360});</script>
+			</td></tr>
+			<tr><td colspan="2" style="text-align:center; border:none;"><input type="submit" value="提交发送"/> <input type="reset" value="重置" /></td></tr>
+		</table>
+	</form>
+</div>
+<script>
+	document.getElementById('send_mail').onsubmit = function() {
+		var options = document.send_mail['option'];
+		var o;
+		for(var i = 0; i < options.length; ++i) {
+			if(options[i].checked) {
+				o = options[i].value;
+				break;
+			}
+		}
+		if(o == undefined) {
+			alert('请选择一选项');
+			return false;
+		} else {
+			switch(o) {
+				case '1':
+					var b = d(g('time_begin').value);
+					var e = d(g('time_end').value);
+					if(b > e) {
+						alert('时间顺序不对');
+						return false;
+					}
+					alert(o);
+					break;
+				case '2':
+					if(d(g('login_begin').value) > d(g('login_end').value)) {
+						alert('时间顺序不对');
+						return false;
+					}
+					break;
+				case '3':
+					if(g('point_begin').value > g('point_end').value) {
+						alert('等级顺序不对');
+						return false;
+					}
+					break;
+				case '4':
+					if(!g('email').value.trim()) {
+						alert('请填写邮件地址');
+						return false;
+					}
+					break;
+				case '5':
+					if(!g('utype').value) {
+						alert('请选择用户类型');
+						return false;
+					}
+					break;
+				default:
+					
+					break;
+			}
+		}
+		if(!g('title').value) {
+			alert('请输入邮件标题');
+			return false;
+		}
+		return true;
+	}
+	function g(id) {
+		return document.getElementById(id);
+	}
+	function d(date) {
+		if(!date) return 0;
+		var ds = date.split('-');
+		var dd = new Date(ds[0], ds[1], ds[2]).getTime();
+		return dd;
+	}
+	String.prototype.trim = function() {
+		return this.replace(/^\s+|\s+$/g, '');
+	}
+</script>
+</body>
+<include file="footer" />

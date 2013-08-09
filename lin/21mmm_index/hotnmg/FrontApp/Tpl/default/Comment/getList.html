@@ -1,0 +1,35 @@
+<include file="Public:header" />
+<!--单页-->
+<div id="page" class="clear">
+<div id="category">
+<ul>
+<include file="Public:about_left" />
+</ul>
+</div>
+<div id="main" class="pl">
+<h3 class="title">以下是"{$titleDetail.title}"的相关评论<em> Comment</em></h3>
+<div class="con">
+<volist name="dataContentList" id="row">
+  <p><strong>{$row.username} <neq name="row['email']" value="">({$row.email})</neq></strong> 【发表于{$row.create_time|date="Y-m-d",###}】<br />
+    {$row.content|nl2br}
+</p>
+
+<neq name="row['reply_content']" value="">
+<div class="tags">
+管理回复: {$row.reply_content|nl2br}
+</div>
+</neq>
+    <hr style="color:#CCC; height:1px"/>
+ </volist>
+<div>{$pageContentBar}</div>
+</div>
+<br>
+<br>
+<input id="module" name="module" type="hidden" value="{$Think.get.module}" />
+<input id="title_id" name="title_id" type="hidden" value="{$titleDetail.id}" />
+<h3 class="title">发表评论</h3>
+<include file="Comment:post_content" />
+</div>
+</div>
+<!--底部-->
+<include file="Public:footer" />

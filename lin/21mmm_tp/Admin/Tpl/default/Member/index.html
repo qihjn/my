@@ -1,0 +1,125 @@
+<tagLib name="html" />
+<include file="../Public/header" />
+<!-- 菜单区域  -->
+
+<!-- 主页面开始 -->
+<div id="main" class="main" >
+
+<!-- 主体内容  -->
+<div class="content" >
+<div class="title">数据列表</div>
+<table width="100%" border="1" cellpadding="3" cellspacing="3" id="search-table"><form method="get" action="__URL__">
+		<tr>
+		  <th>用户类型</th><td><label for="u_type"></label>
+		      <select name="u_type" id="u_type">
+              	  <option value="">所有</option>
+		          <option value="unit">企业用户</option>
+		          <option value="person">个人用户</option>
+		          <option value="school">学校用户</option>
+		          </select></td>
+		  <th>用户ID</th>
+		  <td><input name="id" type="text" id="id" value="{$q.id}" /></td>
+		  <th>用户名</th>
+		  <td><input name="username" type="text" id="username" value="{$q.username}" /></td>
+		  </tr>
+		<tr>
+		    <th>Email</th><td>
+		       <!-- <select name="up" id="up">
+		            <option value="" selected="selected">未推荐</option>
+		            <option value="1">已推荐</option>
+		            </select>
+		        <select name="top" id="top">
+		            <option value="" selected="selected">未置顶</option>
+		            <option value="1">已置顶</option>
+		            </select>
+		        <select name="status" id="status">
+		            <option value="" selected="selected">显示中</option>
+		            <option value="1">隐藏中</option>
+		            </select>-->
+		       <input name="email" type="text" id="email" value="{$q.email}" /></td>
+		    <th>结果排序</th>
+		    <td><select name="_order" id="_order">
+		        <option value="" selected="selected">默认排序</option>
+		        <!--<option value="viewCount">点击数排序</option>-->
+		        </select>
+		        <select name="_sort" id="_sort">
+		            <option value="0" selected="selected">递减</option>
+		            <option value="asc">递增</option>
+		            </select>
+		        <select name="listRows" id="listRows">
+		            <option value="15">默认15个</option>
+		            <option value="20">每页显示20个</option>
+		            <option value="50">每页显示50个</option>
+		            <option value="100">每页显示100个</option>
+		            </select>
+		        
+		        <script type="text/javascript">
+/*
+	设定选择值
+*/
+
+setValue("u_type",'{.u_type}');
+setValue("id",'{.id}');
+setValue("username",'{.username}');
+setValue("email",'{.email}');
+setValue("_order",'{._order}');
+setValue("_sort",'{._sort}');
+setValue("listRows",'{.listRows}');
+/*selectByValue("province",'安徽省');
+showCity("city","安徽省");
+selectByValue("city",'巢湖市');*/
+	//$("#firstRequest").val('{$Think.get.firstRequest}');
+//	$("#categoryId").val('{$Think.get.categoryId}');
+//	$("#userId").val('{$Think.get.userId}');
+//	$("#createTime").val('{$Think.get.createTime}');
+//	$("#createTime1").val('{$Think.get.createTime1}');
+//	$("#recommend").val('{$Think.get.recommend}');
+//	$("#status").val('{$Think.get.status}');
+//	$("#istop").val('{$Think.get.istop}');
+//	$("#viewCount").val('{$Think.get.viewCount}');
+//	$("#viewCount1").val('{$Think.get.viewCount1}');
+//	$("#orderType").val('{$Think.get.orderType}');
+//	$("#orderBy").val('{$Think.get.orderBy}');
+//	$("#pageSize").val('{$Think.get.pageSize}');
+	
+	//document.getElementById("email").value="sb";
+//	alert(document.getElementById("email").value);
+	
+                </script></td>
+		    <th><input type="submit" name="submit" value="搜索" class="submit" id="submit" /> 
+		        <input type="reset" name="button" id="button" class="submit"  value="重置" /></th>
+		    <td> 要查询均为精确查找 <a href="__URL__" >默认 </a></td>
+		    </tr>
+		</form></table>
+<!--  功能操作区域  -->
+<div class="operate" >
+<html:imageBtn name="add" value="新增" click="add()" style="impBtn hMargin fLeft shadow" />
+<html:imageBtn name="edit" value="编辑" click="edit()" style="impBtn hMargin fLeft shadow" />
+<html:imageBtn name="delete" value="删除" click="foreverdel()" style="impBtn hMargin fLeft shadow" />
+<!-- 查询区域 -->
+<div class="fRig">
+<form method='post' action="__URL__">
+<div class="fLeft"><span id="key"><input type="text" name="name" title="组名" class="medium" ></span></div>
+<html:imageBtn type="submit" name="search" value="查询" style="impBtn hMargin fLeft shadow" />
+
+<!-- 高级查询区域 -->
+<div  id="searchM" class=" none search cBoth" >
+</div>
+</form>
+</div>
+</div>
+<!-- 功能操作区域结束 -->
+
+<!-- 列表显示区域  -->
+<div class="list" >
+<html:list id="checkList" name="user" style="list" checkbox="true" action="true" datasource="list" show="id:编号|8%,username:用户名:edit,nickname:昵称,email:邮箱,lastlogonip:最后登录IP,lastlogontime|toDate='Y-m-d':最后登录时间,status|getStatus:状态" actionlist="status|showStatus=$user['id'],edit:编辑:nid,jobAdd:添加职位:nid" pk="nid"/> 
+</div>
+<!--  分页显示区域 -->
+<div class="page">{$page}</div>
+<!-- 列表显示区域结束 -->
+</div>
+<!-- 主体内容结束 -->
+</div>
+<!-- 主页面结束 -->
+
+<include file="../Public/footer" />

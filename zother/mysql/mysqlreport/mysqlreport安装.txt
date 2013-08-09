@@ -1,0 +1,111 @@
+1.perl安装
+[root@oracle mysqlreport-3.4a]# perl -v
+
+This is perl, v5.8.5 built for i386-linux-thread-multi
+
+Copyright 1987-2004, Larry Wall
+
+Perl may be copied only under the terms of either the Artistic License or the
+GNU General Public License, which may be found in the Perl 5 source kit.
+Complete documentation for Perl, including FAQ lists, should be found on
+this system using `man perl' or `perldoc perl'. If you have access to the
+Internet, point your browser at http://www.perl.com/, the Perl Home Page.
+
+一般linux安装的时候默认安装了perl。
+
+2.mysql安装
+省略。网上有很多类型的介绍。
+
+3.DBI安装 
+到http://ftp.cuhk.edu.hk/pub/packa ... thors/id/T/TI/TIMB/下载相应的版本
+#tar zxf DBI-1.58.tar.gz
+#cd DBI-1.58
+#perl Makefile.pl 
+#make 
+#make test 
+#make 
+#make install 
+
+4.data-showtable包 
+到http://search.cpan.org/查找相应的包
+gzip -c -d Data-ShowTable-?.??.tar.gz | tar xvf - 
+cd Data-ShowTable-?.?? 
+perl Makefile.PL 
+make 
+不要试make test，测试套件损坏了! 
+make install 
+
+
+5.msql-mysql-modules http://search.cpan.org/
+gzip -c -d Msql-Mysql-modules-?.??.tar.gz | tar xvf - 
+将压缩文件接压缩到一个名为Msql-Mysql-modules-?.??的目录。 
+cd Msql-Mysql-modules-?.?? 
+perl Makefile.PL 
+在 "perl Makefile.PL" 期间，会向你提出一些问题。特别是你必须选择安装驱动器(MySQL, mSQL2 and/or mSQL1)。MySQL驱动程序叫
+
+DBD::mysql，单独的mSQL驱动程序叫DBD::mSQL。如果你想支持mSQL1和mSQL2，用DBD::mSQL1。 
+make 
+make test 
+make install 
+现在你可以使用DBI编程MySQL了！ 
+
+6.DBD-mysql
+安装DBD: DBD-mysql-4.005
+#perl Makefile.PL --mysql_config=/usr/local/mysql/bin/mysql_config
+#make 
+#make test 
+#make 
+#make install 
+
+如果出现以下错误，
+install_driver(mysql) failed: Can't load '/usr/lib/perl5/site_perl/5.8.5/i386-linux-thread-multi/auto/DBD/mysql/mysql.so' for 
+
+module DBD::mysql: libmysqlclient.so.12: cannot open shared object file: No such file or directory at 
+
+/usr/lib/perl5/5.8.5/i386-linux-thread-multi/DynaLoader.pm line 230.
+at (eval 6) line 3
+Compilation failed in require at (eval 6) line 3.
+Perhaps a required shared library or dll isn't installed where expected
+at /root/mysqlreport line 162
+
+就做操作
+#cp /usr/local/mysql/include/mysql* /usr/include/
+#cp /usr/local/mysql/lib/* /usr/lib/ (64位的是lib64)
+
+然后再重新安装DBD: DBD-mysql-4.005
+#perl Makefile.PL --mysql_config=/usr/local/mysql/bin/mysql_config
+#make 
+#make test 
+#make install 
+
+7.mysqlreport 安装
+
+cd /usr/local/sbin
+wget hackmysql.com/scripts/mysqlreport
+chmod 755 mysqlreport
+cd /
+
+[root@oracle mysqlreport-3.4a]# ./mysqlreport --help
+mysqlreport v3.4a Jan 23 2008
+mysqlreport makes an easy-to-read report of important MySQL status values.
+
+Command line options (abbreviations work):
+--user USER Connect to MySQL as USER
+--password PASS Use PASS or prompt for MySQL user's password
+--host ADDRESS Connect to MySQL at ADDRESS
+--port PORT Connect to MySQL at PORT
+--socket SOCKET Connect to MySQL at SOCKET
+--no-mycnf Don't read ~/.my.cnf
+--infile FILE Read status values from FILE instead of MySQL
+--outfile FILE Write report to FILE
+--email ADDRESS Email report to ADDRESS (doesn't work on Windows)
+--flush-status Issue FLUSH STATUS; after getting current values
+--relative X Generate relative reports. If X is an integer,
+reports are live from the MySQL server X seconds apart.
+If X is a list of infiles (file1 file2 etc.),
+reports are generated from the infiles in the order
+that they are given.
+--report-count N Collect N number of live relative reports (default 1)
+--detach Fork and detach from terminal (run in background)
+--help Prints this
+--debug Print debugging information 

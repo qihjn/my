@@ -1,0 +1,21 @@
+				<div class="zhigou_box" style="margin-left:5px;">
+                <div class="zhigou_bt"><span>
+                    <h1><a href="{$$titleurl}"  target="_blank">{$$title}</a></h1>
+                    </span></div>
+                <div class="zhigou_box_bk">
+                <table width="95%" border="0" cellspacing="0" cellpadding="0">
+                        <volist name="{$$listvar}" id="vo">
+                        <tr align='left'>
+                            <td width='39%' align='center'><a href="/resume/{$vo.pid}/show.html" target='_blank' class='manname'><empty name="vo['resumename']">{$vo.realname|msubstr=0,5}<else/>{$vo.resumename|msubstr=0,5}</empty></a></td>
+                            <td width='11%' align='center'>{$vo.gender|sex}</td>
+                            <td width="8%" align='center'>{$vo.local2}</td>
+                            <td width='42%' align='center' >{$vo.job_request|getEnumTitle|msubstr=0,12}</td>
+                        </tr>
+                        </volist>
+                        <tr>
+                            <td colspan="3" align="left"><a href="{$$puburl}" style="color:#23548A;">我要发布</a><span></span></td>
+                            <td width="42%" colspan="1" align="right"><a href="{$$titleurl}{$provice}" target="_blank" style="color:#FC4716;">更多>></a></td>
+                        </tr>
+                    </table>
+                    </div>
+            </div>

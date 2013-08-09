@@ -1,0 +1,52 @@
+<include file="Public:header" />
+<!--单页-->
+<div id="page" class="clear">
+<div id="category">
+<ul id="pt">
+<volist name="downloadCategory" id="row">
+<li class="{$Think.get.category|a2bc=$row['id'], 'current',''}">{$row.str_repeat}<img src="__ROOT__/Public/Front/icon_arrow04.gif" /><a href="{:U('Download/index', array('category' => $row['id']))}">{$row.title}</a></li>
+</volist>
+</ul>
+</div>
+<div id="main">
+<h3 class="title">{$contentDetail.categoryName}<em> Download</em></h3>
+<h2>{$contentDetail.title}</h2>
+<div class="titler"><strong>内容来源：</strong><if condition="$contentDetail['from_link'] eq ''">{$contentDetail.copy_from|default='本站'}<else/><a href="{$contentDetail.from_link}" target="_blank"> {$contentDetail.copy_from|default='本站'}</a></if>　　<strong>发布时间：</strong>[{$contentDetail.create_time|date="Y-m-d",###}]</div>
+<div class="con">
+
+<table width="100%" border="0" cellpadding="0" cellspacing="1" class="xtable">
+  <tr>
+    <td style="width:70px">运行平台</td>
+    <td >{$contentDetail.run_system}</td>
+  </tr>
+  <tr>
+    <td>文件大小</td>
+    <td>{$contentDetail.file_size} {$contentDetail.file_size_unit}</td>
+  </tr>
+  
+  <tr>
+    <td>详细描述</td>
+    <td>{$contentDetail.content}</td>
+  </tr>
+  <tr>
+    <td>下载地址</td>
+    <td>{$contentDetail.download_url|explodeUrl="__PUBLIC__/Front/download.gif"}</td>
+  </tr>
+  </table>
+<input id="module" name="module" type="hidden" value="Download" />
+<input id="title_id" name="title_id" type="hidden" value="{$contentDetail.id}" />
+<neq name="contentDetail['tags']" value="">
+<div class="tags">
+Tags: {$contentDetail.tags|tagsGet="Download"}
+</div>
+</neq>
+</div>
+<br />
+<br />
+<h3 class="title">发表评论<em><a href="{:U('Comment/getList',array('module'=>'Download','item'=>$contentDetail['id']))}" target="_blank"> 点击查看所有评论({$commentCount|default=0})</a></em></h3>
+<include file="Comment:post_content" />
+
+</div>
+</div>
+<!--底部-->
+<include file="Public:footer" />

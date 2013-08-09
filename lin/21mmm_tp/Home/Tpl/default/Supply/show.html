@@ -1,0 +1,126 @@
+<include file="header" />
+<link href="__PUBLIC__/Skin/Supply/show.css" rel="stylesheet" type="text/css" />
+<include file="public:nav" />
+<div class="position">您现在的位置：<a href="{&ROOTURL}" target="_blank">{&SITE_TITLE}</a> &gt; <a href="/supply" target="_blank">供求信息</a> &gt; <a href="__URL__/lists/infotype/{.infotype}" target="_blank">{$vo.infotype}</a> &gt; <a href="__URL__/lists/firsttype/{.firsttype}" target="_blank">{$vo.firsttype}</a> &gt; <a href="/supply/lists/secondtype/{.secondtype}" target="_blank">{$vo.secondtype}</a> &gt; {$vo.title}</div>
+<div class="sleft">
+	<div class="stitle"><span class="ttext">产品显示</span>  <span class="tmore">浏览次数：<script src="/supply/viewcount/id/{$vo.id}" language="javascript" type="text/javascript"></script></span></div>
+    <div class="show">
+        <div class="row"><span>产品名称：</span><span>{$vo.title}</span></div>
+        <div class="row"><span>信息类型：</span><span>{$vo.infotype}</span></div>
+        <div class="row"><span>大分类：</span><span>{$vo.firsttype}</span></div>
+        <div class="row"><span>小分类：</span><span>{$vo.secondtype}</span></div>
+        <div class="row"><span>产品属性：</span><span>{$vo.property}</span></div>
+        <div class="row"><span>发布日期：</span><span><!--{$vo.ctime|date='Y-m-d',###}-->正常发布</span></div>
+        <div class="row"><span>有效期：</span><span>{$vo.period}</span></div>
+        <div ><span>产品图片：</span><img id="pimg" src="{$vo.img|img}"  /></div>
+        <div class="content2" ><span>详细说明：</span><br />{$vo.content}</div>
+    </div>
+    <div id="contact">
+    	
+    </div>
+    
+    <div class="comment">
+    	<div class="tiwei">我要提问</div>
+        <div class="chang">
+            <div class="lan">懒得打字？“快速提问”帮您忙！</div>
+            <select size="8" multiple="multiple" id="question">
+                <option>我对贵公司的产品非常感兴趣,能否发一些详细资料给我参考？</option>
+                <option>请您发一份比较详细的产品规格及相关报价单，谢谢！</option>
+                <option>请问贵公司产品的代理条件是什么？</option>
+                <option>我公司有意购买此产品，可否提供此产品的报价单和最小起订量，希望能与贵司合作！</option>
+                <option>您好，我是小批量买家，请问贵公司此产品的最小起订量是多少？</option>
+            </select>
+        </div>
+        
+        
+        <div class="rong">
+        <form id="form1" name="form1" method="post" action="__APP__/comment/insert">
+                <textarea name="content" id="content" cols="45" rows="5"></textarea><br />
+                <br />
+				姓名： 
+				<input type="text" name="name" id="name" /><br /><br />
+                电话： 
+                <input type="text" name="tel" id="tel" /><br /><br />
+                邮箱： 
+                <input type="text" name="email" id="email" /><br /><br />
+                Q &nbsp;Q：&nbsp;
+                <input type="text" name="qq" id="qq" /><br /><br />
+                
+                <input type="hidden" name="type" id="type" value="Supply" />
+                <input type="hidden" name="categoryid" id="categoryid" value="" />
+                <input type="hidden" name="tid" id="tid" value="{$vo.id}" />
+                <input type="hidden" name="uid" id="uid" value="{#uid}" />
+                <input type="hidden" name="ip" id="ip" value="{:get_client_ip()}" />
+                
+                <input type="submit" name="button" id="button" value="提交" /><br />
+        </form>
+        </div>
+        
+        
+
+    </div>
+    
+    
+</div>
+
+
+	<div class="content_r">
+        <div class="boxt"><span class="boxtl">置顶</span>  <span class="boxtr"><a href="#" target="_blank">更多</a></span></div>
+        <div class="boxc">
+        <ul>
+            <volist name="top" id="vo">
+            <li><span><a href="supply/lists_{$vo.infotype}_{$vo.firsttype}" target="_blank">[{$vo.firsttype|cateTitle}]</a></span> <a href="supply/show_{$vo.id}.html" target="_blank">{$vo.title|msubstr=0,12}</a></li>
+            </volist>
+        </ul>
+        </div>
+        
+        <div class="boxt"><span class="boxtl">推荐</span>  <span class="boxtr"><a href="#" target="_blank">更多</a></span></div>
+        <div class="boxc">
+        <ul>
+            <volist name="up" id="vo">
+            <li> <span><a href="supply/lists_{$vo.infotype}_{$vo.firsttype}" target="_blank">[{$vo.firsttype|cateTitle}]</a></span> <a href="supply/show_{$vo.id}.html" target="_blank">{$vo.title|msubstr=0,12}</a></li>
+            </volist>
+        </ul>
+        </div>
+        
+        <div class="boxt"><span class="boxtl">热门</span>  <span class="boxtr"><a href="#" target="_blank">更多</a></span></div>
+        <div class="boxc">
+        <ul>
+            <volist name="hot" id="vo">
+            <li> <span><a href="supply/lists_{$vo.infotype}_{$vo.firsttype}" target="_blank">[{$vo.firsttype|cateTitle}]</a></span> <a href="supply/show_{$vo.id}.html" target="_blank">{$vo.title|msubstr=0,10}</a></li>
+            </volist>
+            
+        </ul>
+        </div>
+        
+        <div class="banner2">
+        <img src="__PUBLIC__/Skin/Supply/banner21.jpg" />
+        <img src="__PUBLIC__/Skin/Supply/banner22.jpg" />
+        </div>
+    </div>
+    
+   <!-- <div>按地区搜索</div>
+    <div>内容</div>-->
+
+<div class="clear"></div>
+
+
+<include file="footer" />
+<script language="javascript" type="text/javascript" src="__PUBLIC__/Js/jq.js"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/Js/publicVar.js"></script>
+<script language="javascript" type="text/javascript">
+
+$.get('/ajax/cuserInfo.php?uid={$infouid}&'+Math.random(),{},function(db){
+															document.getElementById("contact").innerHTML = db;
+														});
+
+if(document.getElementById("pimg").width > 550){
+	document.getElementById("pimg").width = 550;
+}
+
+//常用问题
+$("#question").change(function(){
+	$("#content").val($("#content").val()+$(this).val()+"\r\n");
+	
+});
+</script>

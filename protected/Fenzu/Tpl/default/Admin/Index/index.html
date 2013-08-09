@@ -1,0 +1,9 @@
+<include file="Public@header" />
+<br />
+测试页面 <br />
+测试公用函数处理 {$myval|myfun1}<br />
+测试项目组独有函数，正确使用了本项目组的函数:{$myval|myfun2}<br />
+不能使用其它项目组的独有函数，留意错误提示{$myval|myfun3}<br />
+<a href="../Public/images/abc.gif" title="测试Public解析">测试公用模板目录解析，留意指向地址</a>
+
+<include file="Public@footer" />

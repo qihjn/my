@@ -1,0 +1,3 @@
+config增加了线上线下判断自动配制
+model里增加了getListPage()
+model直接处理post,get等数据。

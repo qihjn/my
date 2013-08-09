@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<Meta http-equiv="Content-Language" Content="zh-CN">
+<title>个人会员后台管理</title>
+
+<style type="text/css">
+body{ width:100%; height:100%; margin:0;}
+
+.window_bg{ position:absolute; width:100%; height:100%; z-index:9; background-color:#464646; left:0; top:0; FILTER: alpha(opacity=50);}
+.window_bg iframe{ width:100%; height:100%; background-color=transparent;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50); }
+.window{ position:absolute; height:300px; width:500px; background-color:#ccc; z-index:99; display:none; padding:0 0px; font-size:13px; font-weight:bold; border:1px solid #935A69;}
+
+#wTitle{ height:30px; line-height:30px; color:#fff; background:url({URL_PUBLIC}images/index/bj_nav.jpg);} /*标题栏*/
+#wContent{text-align:left;} /*内容*/
+#wStatus{} /*状态栏*/
+#dSelect{ text-align:left; margin:5px; 5px;} /*显示选中*/
+.spSelected{ margin:0 20px; } /* 选中的项的span*/
+
+#detail{ display:none;}
+/*iframe{ width:100px; height:100px; background-color:#F00;}*/
+</style>
+</head>
+
+<body>
+
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp; </p>
+<script language="javascript" type="text/javascript">
+/*document.body.style.width = "100%";
+	document.body.style.height = "100%"*/;
+
+createWindow("标题",'内容','');
+var bg,w;
+function createWindow(title,content,stauts){
+	//alert(title);
+	document.body.style.width = "100%";
+	document.body.style.height = "100%";
+	bg = document.createElement('div');
+	bg.className = 'window_bg';
+	bg.style.width = document.documentElement.clientWidth;
+	bg.innerHTML = '<iframe allowtransparency="true" ></iframe>';
+	document.body.appendChild(bg);  //$('<div class="window_bg">test</div>').appendTo(document.body);
+	
+	
+	w = document.createElement("div");
+	w.className = "window";
+	//document.getElementById().setAttribute(
+	w.setAttribute('id','w1');
+	w.style.display = 'block';
+	html =  '<div id="wTitle">'+title+'</div>' +
+    		   '<div id="wContent">'+content+'</div>' +
+    		   '<div id="wStatus">'+stauts+'</div>';
+	w.innerHTML = html;
+	document.body.appendChild(w);
+	var bodyW = document.documentElement.clientWidth; //窗口可见区域的宽
+	var bodyH = document.documentElement.clientHeight; //窗口可见区域的高
+	
+	var winW = w.clientWidth ;
+	var winH = w.clientHeight;
+//alert(document.documentElement.clientHeight);
+	var winX = (bodyW - winW) / 2;
+	var winY = (bodyH - winH) / 2;
+
+	w.style.left = winX;
+	w.style.top = winY;
+}
+
+
+function closeWindow(name){
+	//if(name){
+		//document.getElementById(name).value = '已选择成功'; //'btnSelect'
+	//}
+	//document.getElementById('btnArea').value = '已选择成功';
+	
+	bg.style.display = 'none';
+	w.style.display = 'none';
+	document.body.removeChild(w);
+	
+	//bg = null;
+	//w = null;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<div class="con">
+<form  method="post">
+  <label>姓　　名：
+    <input type="text" name="username" id="username" />
+  </label>
+  *<br />
+  <label>
+   <label>邮　　箱：
+    <input type="text" name="email" id="email" />
+  </label>
+  <br />
+  <label>
+   <label>验 证 码：
+   <input name="verifyCode" type="text" class="t_input" id="verifyCode" style="margin-right:5px;width:55px;" value="" maxlength="4" /><img src="{:U('Index/verify')}" align="absmiddle" class="checkcode" title="如果您无法识别验证码，请点图片更换" id="verifyImage"/>
+  </label>*<br />
+  <label>
+    评论内容：
+      <br />
+      <textarea name="content" cols="50" rows="7" id="content"></textarea>
+  </label>
+  *<br />
+  
+  <input type="submit" name="button" id="commentSubmit" value="提交" />
+</form>
+<script type="text/javascript" >
+$(function(){   
+    $("#commentSubmit").click(function(){
+       $.ajax({   
+		  type:"POST",   
+			  url:"{:U('Comment/doInsert')}",
+			  data:{
+				  username: $('#username').val(), email: $('#email').val(), content: $('#content').val(), module: $('#module').val(), title_id: $('#title_id').val(),verifyCode: $('#verifyCode').val()
+				  },   
+			  beforeSend:function(){
+				  	$("#msg").html('<span style="color:#FF0000"><img src="__PUBLIC__/Admin/loading.gif" align="absmiddle">正在提交数据...</span>'); 
+				  },                
+			  success:function(data){
+				switch(data)
+				{
+					case 'errorVerifyCode':
+						//$("#verifyImage").attr('src', "{:U('Public/verify',0,0,0)}?"+ Math.random());
+						resetVerifyCode();
+						$("#msg").html('<span style="color:#FF0000">验证码错误</span>'); 
+						break
+					case 'emptyInfo':
+						$("#msg").html('<span style="color:#FF0000">用户名，验证码，评论内容必须填写</span>'); 
+						break
+					case 'success':
+						$("#msg").html('<span style="color:#FF0000">评论成功</span>');
+						$("#commentSubmit").hide();
+						return true;
+						break
+					default:
+						$("#msg").html('<span style="color:#FF0000">'+data+'</span>');
+						alert ('未知错误，请联系管理员');
+				}
+				return false;			
+			}               
+         });   
+		return false;
+    });  
+}); 
+</script>
+
+<div id="msg"></div>
+</div>

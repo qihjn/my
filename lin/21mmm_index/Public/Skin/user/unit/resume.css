@@ -1,0 +1,95 @@
+*{
+	font-size: 12px;
+	margin:0;
+	padding:0;
+}
+
+body{width:100%; background-image:url(../../images/unit/bg.jpg); background-repeat:repeat;}
+#allnet{ margin-left:auto; margin-right:auto; width:950px; padding-bottom:5px; background-color:#fff;}
+a img{border:none;} 
+li{list-style-type:none;}
+.clear{clear:both;}
+.ad{width:100%; float:left; margin-top:5px; display:inline; text-align:center;overflow:hidden;}
+.ad img{display:block;margin:0;padding:0;}
+/* µÇÂ½¿ò */
+.bj_live{width:100%; height:24px; text-align:center; float:left; display:inline;}
+.bj_live p{line-height:24px; text-align:left; padding-left:10px; font-size:13px; color:#333;}
+.bj_live a:link {color:#333; text-decoration:none;}
+.bj_live a:visited  {color:#333; text-decoration:none; }
+.bj_live a:hover {color:#333; text-decoration:underline;}
+.bj_live_left{ float:left; padding-left:5px; text-align:left; padding-top:3px;}
+.bj_live_right{float:right; text-align:left; width:370px; background-image:url(../../images/unit/xg.jpg); height:24px; padding:0;}
+.bj_live_right li{float:left; margin-left:9px; display:inline; text-align:left; color:#443f39; line-height:24px;}
+.bj_live_right a:link {color:#443f39; text-decoration:none;}
+.bj_live_right a:visited  {color:#443f39; text-decoration:none; }
+.bj_live_right a:hover {color:#443f39; text-decoration:underline;}
+/* logo */
+.logo{ width:100%; float:left; margin-top:5px; text-align:center; display:inline; clear:both;}
+.logo_vi{width:212px; float:left; text-align:center;}
+.logo_ad{ float:right; text-align:left; margin-top:2px; display:inline; height:30px; background-image:url(../../images/unit/bj_nav.jpg); background-repeat:repeat-x;}
+.logo_ad_left{width:5px; float:left; text-align:center; height:30px;}
+.logo_center{padding:0; padding-right:5px; float:left; text-align:left;}
+.logo_center li{float:left; margin-left:12px; padding-right:10px; text-align:left; line-height:30px; display:inline; background-image:url(../../images/unit/bj_cen.jpg); background-repeat:no-repeat; background-position:right center;}
+.logo_center li a:link {color:#fff; text-decoration:none;}
+.logo_center li a:visited  {color:#fff; text-decoration:none; }
+.logo_center li a:hover {color:#fff; text-decoration:underline;}
+
+/*menu*/
+.menu{ width:100%; float:left; margin-top:5px; display:inline; text-align:center; background-image:url(../../images/unit/menu.jpg); height:52px; clear:both;}
+.menu_name{float:left; width:166px; text-align:center; height:52px;}
+.menu_caidan{float:right; margin-left:10px; width:608px; display:inline;}
+.menu_caidan ul{width:608px; height:18px;padding:0;margin:0;clear:both;overflow:hidden;}
+.menu_caidan li{height:18px;line-height:18px; margin-left:5px; display:inline; text-align:center; float:left; color:#2b52a1;}
+.menu_caidan li a:link {color:#2b52a1; text-decoration:none;}
+.menu_caidan li a:visited {color:#2b52a1; text-decoration:none;}
+.menu_caidan li a:hover {color:#fff; text-decoration:none; background-color:#2b52a1;}
+.menu_search{ float:left; margin-left:20px; display:inline; margin-top:18px; color:#333;}
+
+
+
+.footlink{width:100%;margin-left:auto; margin-right:auto;margin-top:8px;padding-top:5px;clear:both;text-align:center;line-height:19px;border-top:1px solid #e0e0e0;background-color:#E8E8FF;}
+.foot{
+	width:100%;
+	line-height:20px;
+	clear:both;
+	color:#666; text-align:center;
+	
+}
+.foot .text{ border-top:3px solid #e0e0e0;  clear:both; color:#666; text-align:center; padding-top:5px;}
+.foot a:link {
+	color: #333;
+	text-decoration:none;
+}
+.foot a:visited {
+	color: #333;
+	text-decoration:none;
+}
+.foot a:hover {
+    color: #cc0000;
+	text-decoration: underline;
+}
+
+
+
+
+
+.left{ width:280px; float:left; margin-left:5px; margin-right:10px; display:inline;}
+.box{ border:1px solid #EC4261;  margin-bottom:10px;}
+.title{	height:30px;line-height:30px;background-color:#F69; color:#fff;padding-left:20px; font-weight:bold;}
+.content{ padding-left:5px; padding-top:5px; line-height:25px;}
+.resume{ width:650px; float:left; margin-right:5px;}
+.r_top{ background-image:url(../../images/resume/top.gif); width:650px; height:114px;}
+.r_name{ background-image:url(../../images/resume/name.gif); height:29px; line-height:29px; text-align:center; font-weight:bold; font-size:14px}
+
+.r_box{ margin-top:5px;}
+.r_title{ background:url(../../images/resume/title_bg.gif); height:30px; width:650px;}
+.r_content{ border:2px #EC4261 solid; border-top:0; padding-left:5px; padding-top:5px;  min-height:30px !important; *height:30px; line-height:20px;}
+.r_base{ background:url(../../images/resume/menu_bj_1.gif) no-repeat; height:28px; line-height:28px; width:95px; display:block; text-align:center; margin-left:7px; font-size:13px; font-weight:bold; color:#fff;}
+.r_base2{ background:url(../../images/resume/menu_bj_2.gif) no-repeat; height:28px; line-height:28px; width:138px; display:block; text-align:center; margin-left:7px; font-size:13px; font-weight:bold; color:#fff;}
+.red{ color:#f00;}
+.photoborder{ position:absolute; left:487px; background-image:url(../../images/resume/b.gif); width:143px; height:160px; z-index:10;} /*Ïà¿ò*/
+.contact{ margin-bottom:10px;}
+.contact li{ border-bottom:1px solid #F33; width:400px; padding-left:10px; margin-left:20px; height:25px; line-height:25px;}
+.contact li span{ font-weight:bold; color:#F60; font-size:14px; letter-spacing:2px; }
+.ba{ width:350px; height:29px; margin:0 auto; margin-top:10px;}
+.ba a{ display:block; float:left; background:url(../../images/resume/btn_bg.gif) no-repeat; width:106px; height:29px; line-height:29px; text-align:center; font-size:16px; text-decoration:none; color:#fff; font-family:"ºÚÌå";}

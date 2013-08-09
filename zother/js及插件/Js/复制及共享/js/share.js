@@ -1,0 +1,57 @@
+function share(Type,Title,Pic,Url){
+	Title = Title || document.title;
+	Pic = Pic || 'http://img.2144.cn/a/53/lnhvd4b1.jpg';
+	var en = encodeURIComponent,
+	sSource = Url || ['http://',self.location.host,self.location.pathname,].join(''),
+	sTitle = [Title,'2144小游戏 — www.2144.cn，2144小游戏就是好玩！'].join(''),
+		sContent = ['我在2144小游戏上玩了《',Title,'》，很有意思~~分享给大家！来试试吧！'].join(''),
+		sn = screen,
+		w = 600,
+		h = 500,
+		sUrl;
+	switch(Type){
+		case 'qzone':
+			sUrl=['http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=', en(sSource)].join('');
+			w=850;
+			h=650;
+			break;
+		case 'renren':
+			sUrl=['http://www.connect.renren.com/share/sharer?url=', en(sSource),'&title=',en(sTitle)].join('');
+			w=626;
+			h=436;
+			break;
+		case 'douban':
+			sUrl=['http://www.douban.com/recommend/?url=', en(sSource),'&title=',en(sTitle),'&sel=',en(sContent),'&v=1'].join('');
+			w=450;
+			h=330;
+			break;
+		case 'kaixin':
+			sUrl=['http://www.kaixin001.com/repaste/bshare.php?rtitle=', en(sTitle),'&rurl=',en(sSource),'&rcontent=',en(sContent)].join('');
+			w=545;
+			h=360;
+			break;
+		case 'xlwb':
+			sUrl=['http://v.t.sina.com.cn/share/share.php?c=&url=', en(sSource),'&title=',en(sContent),'&content=utf8&pic=',en(Pic)].join('');
+			w=610;
+			h=570;
+			break;
+		case 'txwb':
+			sUrl=['http://v.t.qq.com/share/share.php?site=', en('www.2144.cn'), '&url=',en(sSource),'&title=',en(sContent),'&pic=',en(Pic),'&appkey='].join('');
+			w=700;
+			h=680;
+			break;
+	}
+	var go = function(){
+		if(!window.open(sUrl, Type,['toolbar=0,resizable=1,status=0,width=',w,',height=',h,',left=',(sn.width-w)/2,',top=',(sn.height-h)/2].join('')))
+		{
+			location.href=sUrl;
+		}
+	};
+	if(/Firefox/.test(navigator.userAgent)){setTimeout(go,0)}else{go()}
+
+}
+$("#wrapfour").append('<div id="shareB"><a href="javascript:;" target="_self" id="s_renren">人人网</a><a target="_self" href="javascript:;" id="s_kaixin">开心网</a><a target="_self" href="javascript:;" id="s_xlwb">新浪微博</a><a target="_self" href="javascript:;" id="s_douban">豆瓣</a><a target="_self" href="javascript:;" id="s_qzone">QQ空间</a></div>');
+$("#shareB a").click(function(){
+	var stype=$(this).attr("id");
+	return share(stype.substr(2));
+});

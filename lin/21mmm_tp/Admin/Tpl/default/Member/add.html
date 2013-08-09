@@ -1,0 +1,241 @@
+
+<include file="../Public/header" />
+<link href="__PUBLIC__/Skin/admin/company/list.css" rel="stylesheet" type="text/css" />
+
+<div class="allnet">
+    <div style="float:none; width:720px; display:inline; margin-top:10px;">
+        <div style="text-align:left; font-size:15px; font-weight:bold; border-bottom:1px solid #CCC; color:#f90; margin-bottom:10px;">企业信息</div>
+        <form action="__URL__/insert" method="post" name="descform" id="descform" style="border:1px solid #eee;">
+            <div id="pictureinfuture">
+                <div>
+                    <div style='float:left;width:15%;font-weight:bold;margin:2px 0;'>机构名称:</div>
+                    <div style='float:left;margin-bottom:5px;'>
+                        <input type=text value='{$vo.title}' name=title exp="[\W\w]{1,30}|名称不为空" />
+                        <font color="red">(*必填)</font></div>
+                    <div style='clear:both;'></div>
+                </div>
+                <div style='background:#eee;'>
+                    <div style='float:left;width:15%;font-weight:bold;margin:2px 0;'>机构所在地:</div>
+                    <div style='float:left;margin-bottom:5px;'>
+                    	<script language="javascript" type="text/javascript" src="__PUBLIC__/Js/Job/city.js"></script>
+						<script language="javascript" type="text/javascript" src="__PUBLIC__/Js/Job/place.js" charset="utf-8"></script>
+                        <script>areao.load('location','{$vo.province}','{$vo.city}','',2);</script>
+                        <font color="red">(*必填)</font> </div>
+                    <div style='clear:both;'></div>
+                </div>
+                <div style='background:#fff;'>
+                    <div style='float:left;width:15%;font-weight:bold;margin:2px 0;'>行业分类:</div>
+                    <div style='float:left;margin-bottom:5px;'>
+                       {$vo.category_id}
+                    </div>
+                    <div style='clear:both;'></div>
+                </div>
+                <div style='background:#fff;'>
+                    <div style='float:left;width:15%;font-weight:bold;margin:2px 0;'>公司规模:</div>
+                    <div style='float:left;margin-bottom:5px;'>{$vo.scale}</div>
+                    <div style='clear:both;'></div>
+                </div>
+                <div style='background:#eee;'>
+                    <div style='float:left;width:15%;font-weight:bold;margin:2px 0;'>经营品牌:</div>
+                    <div style='float:left;margin-bottom:5px;'>
+                        <input type=text name=manage value='{$vo.manage}' id="manage" exp="[\W\w]+|品牌不为空" /><!--下拉列或弹出表形式，没有可自己填写-->
+                        <font color="red">(*必填)</font> <font color="red">品牌间用“，”号隔开,如:自然美,倩碧</font></div>
+                    <div style='clear:both;'></div>
+                </div>
+                <div style='background:#fff;'>
+                    <div style='float:left;width:15%;font-weight:bold;margin:2px 0;'>联系人:</div>
+                    <div style='float:left;margin-bottom:5px;'>
+                        <input type=text name=contacter value='{$vo.contacter}' id=contacter exp="[\W\w]+|联系人不为空" />
+                        <font color="red">(*必填)</font></div>
+                    <div style='clear:both;'></div>
+                </div>
+                <div style='background:#eee;'>
+                    <div style='float:left;width:15%;font-weight:bold;margin:2px 0;'>联系电话:</div>
+                    <div style='float:left;margin-bottom:5px;'>
+                        <input type=text name=phone value='{$vo.phone}' id="phone" />
+                        如：021-51089999</div>
+                    <div style='clear:both;'></div>
+                </div>
+                <div style='background:#fff;'>
+                    <div style='float:left;width:15%;font-weight:bold;margin:2px 0;'>联系地址:</div>
+                    <div style='float:left;margin-bottom:5px;'>
+                        <input type=text name=addr value='{$vo.addr}' id="addr" exp="[\W\w]{1,50}|地址不为空"/>
+                        <font color="red">(*必填)</font></div>
+                    <div style='clear:both;'></div>
+                </div>
+                <div style='background:#fff;'>
+                    <div style='float:left;width:15%;font-weight:bold;margin:2px 0;'>电子邮件:</div>
+                    <div style='float:left;margin-bottom:5px;'>
+                        <input type=text name=email value='{$vo.email}' id="email" exp="[\W\w]{1,100}|Email不为空" />
+                        <font color="red">(*必填，否则如果招聘人才将无法接收简历)</font></div>
+                    <div style='clear:both;'></div>
+                </div>
+                <div style='background:#eee;'>
+                    <div style='float:left;width:15%;font-weight:bold;margin:2px 0;'>传真:</div>
+                    <div style='float:left;margin-bottom:5px;'>
+                        <input type=text name=faq id="faq" value='{$vo.faq}' />
+                        如：021-51089999</div>
+                    <div style='clear:both;'></div>
+                </div>
+                <div style='background:#fff;'>
+                    <div style='float:left;width:15%;font-weight:bold;margin:2px 0;'>手机:</div>
+                    <div style='float:left;margin-bottom:5px;'>
+                        <input type=text name=mobile value='{$vo.mobile}' id="mobile"  />
+                    </div>
+                    <div style='clear:both;'></div>
+                </div>
+                <div style='background:#fff;'>
+                    <div style='float:left;width:15%;font-weight:bold;margin:2px 0;'>QQ:</div>
+                    <div style='float:left;margin-bottom:5px;'>
+                        <input type=text name=qq value='{$vo.qq}' id="qq" />
+                    </div>
+                    <div style='clear:both;'></div>
+                </div>
+                <div style='background:#fff;'>
+                    <div style='float:left;width:15%;font-weight:bold;margin:2px 0;'>MSN:</div>
+                    <div style='float:left;margin-bottom:5px;'>
+                        <input type=text name=msn value='{$vo.msn}' id="msn"  />
+                    </div>
+                    <div style='clear:both;'></div>
+                </div>
+                
+                <div style='background:#eee;'>
+                    <div style='float:left;width:15%;font-weight:bold;margin:2px 0;'>创建时间:</div>
+                    <div style='float:left;margin-bottom:5px;'>
+                        <input type=text name=pubtime id="pubtime" value="{$vo.pubtime}" onclick="calendar();" onfocus="calendar();" style="width:70px;" /><script language="javascript" src="__PUBLIC__/Js/Util/calendar.js" ></script>
+                        如: 2009-01-01</div>
+                    <div style='clear:both;'></div>
+                </div>
+                <div style='background:#fff;'>
+                    <div style='float:left;width:15%;font-weight:bold;margin:2px 0;'>企业性质:</div>
+                    <div style='float:left;margin-bottom:5px;'>{$vo.nature}</div>
+                    <div style='clear:both;'></div>
+                </div>
+                
+                <div style='background:#eee;'>
+                    <div style='float:left;width:15%;font-weight:bold;margin:2px 0;'>注册资金:</div>
+                    <div style='float:left;margin-bottom:5px;'>
+                        <input type=text name=capital id="capital" value='{$vo.capital}' />
+                        万人民币</div>
+                    <div style='clear:both;'></div>
+                </div>
+                <div style='background:#fff;'>
+                    <div style='float:left;width:15%;font-weight:bold;margin:2px 0;'>公司网址:</div>
+                    <div style='float:left;margin-bottom:5px;'>
+                        <input type=text name=domain id="domain" value='{$vo.domain}' />
+                    </div>
+                    <div style='clear:both;'></div>
+                </div>
+                <div style='background:#fff;'>
+                    <div style='float:left;width:15%;font-weight:bold;margin:2px 0;'>企业Logo:</div>
+                    <div style='float:left;margin-bottom:5px;'>{$vo.nature}</div>
+                    <div style='clear:both;'></div>
+                </div>
+                <div style='background:#eee;'>
+                    <div style='float:left;width:15%;font-weight:bold;margin:2px 0;'>企业介绍:</div>
+                    <div style='float:left;margin-bottom:5px;'>
+                        <textarea name="content" id="content" style="width:580px; height:160px;">{$vo.content}</textarea>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+                
+                <div style='background:#fff; height:210px;'>
+                   <div style='float:left;width:15%;font-weight:bold;margin:2px 0;'>企业形象:</div>
+                    <div style='float:left;margin-bottom:5px;'>
+                       
+                    </div>
+                    <div style="clear:both;"></div> 
+                </div>
+                
+                <div>
+                	<input type="hidden" name="id" id="id" value="{$vo.id}" />
+                    <input type="hidden" name="logo" id="thumb" value="{$vo.logo}" />
+                    <input type="hidden" name="nid" id="nid" value="{$vo.nid}" /><!--若不用旧程序时，此处可去-->
+                    <input type="hidden" name="uid" id="uid" value="{$vo.uid}" />
+                    <input type="hidden" name="tid" id="tid" value="{$vo.uid}" /> <!--图片表是用uid做标识的，并不是公司的id-->
+                    <input type="hidden" name="referurl" id="referurl" value="{$vo.referurl}" />
+                    <input type="submit" value='确认' class="btn" style='border:1px solid #aaa;background:none;padding:3px;width:120px;' />
+                </div>
+            </div>
+        </form>
+        
+        <div style="position:absolute; left: 642px; top: 27px; width: 283px; height: 93px; border: 1px none #000000;">
+
+    <form action="{&IMG_URL}upload/upload_one.php?tid={$vo.uid}" enctype="multipart/form-data" method="post" target="up" onsubmit="clearCut();" id="upFrom" >
+
+<input name="img" type="file" id="img" size="15" />
+<input type="submit" name="button" id="submit" value="上传企业logo" />
+<input type="hidden" name="model" id="model" value="CompanyLogo" />
+<input type="hidden" name="type" id="type" value="face" />
+<input type="hidden" name="utype" id="utype" value="" />
+<input type="hidden" name="thumb" id="thumb_999" value="{$vo.logo}" />
+<input name="k" value="999" type="hidden" /><!--thumb后缀，用于返回js无法区分多个相同的thumb-->
+<input type="hidden" name="tid" id="tid" value="{$vo.uid}" />
+
+<input type="hidden" name="upThumb" id="upThumb" /><!--可无,若不加返回的js会出现没有该对象的错误-->
+<input type="hidden" name="upTid" id="upTid" /><!--可无-->
+
+</form>
+<iframe name="up" style="display:none;"></iframe>
+<div id="preview"><img src="{$vo.logo|img}" /></div>
+<div id="p2"></div>
+</div>
+
+<div style="position:absolute; left: 245px; top: 721px; width: 250px; height: 25px; border: 0px solid #000000; z-index:2; width:621px; height:153px;">
+	<table><tr>
+			<volist name="p" id="img" key="k">
+            <td valign="bottom">
+            	<img id="img_{$k}" src="<empty name='img.thumb'>err/nohave.gif<else/>{$img.thumb|img}</empty>" width="100" />
+                <!--<a id="editPhoto">编辑</a>-->
+                
+               
+            <form id="form_{$k}" action="{&IMG_URL}upload/upload_one.php?tid={$vo.uid}" enctype="multipart/form-data" method="post" target="fr{$k}">
+            <input name="file1" type="file" id="file1" size="1" onchange="fileChange({$k},this);" />
+            <input name="k" value="{$k}" type="hidden" />
+            <notempty name="$img.thumb">
+            <a href="/file/del/id/{$img.id}" urn="">删除</a>
+            </notempty>
+            <input type="hidden" id="thumb_{$k}" name="thumb" value="{$img.thumb}" />
+            <input type="hidden" id="model" name="model" value="ComapnyFigure" />
+            <input type="hidden" id="type" name="type" value="figure" />
+            <input type="hidden" id="utype" name="utype" value="" />
+            <input type="hidden" id="tempid" name="tempid" value="{$vo.uid}" />
+            <input type="hidden" id="noUpdateParentThumb" name="noUpdateParentThumb" value="1" />
+            <input type="hidden" id="desPreview" name="desPreview" value="mult" />
+            
+            <iframe name="fr{$k}" style="display:none;"></iframe>
+            </form>
+            </td>
+            </volist>
+           <div style="display:none" id="mult"></div>
+            
+            
+         </tr></table>
+</div>
+        
+    </div>
+    </div>
+    
+    
+
+<include file="../Public/footer" />
+<script type="text/javascript">
+//alert(document.getElementsByName("thumb").item(1).value);
+document.domain = "21mmm.cn";
+	document.getElementById("descform").onsubmit=function(){
+		for(i=0;i<this.length;i++){
+			var ep=this[i].getAttribute("exp");
+			if(ep){
+				var ea=ep.split("|");
+				if(!this[i].value){
+					alert(ea[1]);
+					this[i].focus();
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+	
+	
+</script>

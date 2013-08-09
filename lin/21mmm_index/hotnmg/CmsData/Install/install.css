@@ -1,0 +1,17 @@
+@charset utf-8;
+body{background-color:#F7F7F7;font-family:Arial;font-size:12px;line-height:150%}
+a,a:link,a:active{text-decoration:none}
+.main{background-color:#FFF;font-size:12px;color:#666;width:70%;list-style:none;border:#DFDFDF 1px solid;margin:10px auto;padding:10px}
+#top-title{background:url(Public/Admin/logo.gif) no-repeat right;margin:20px 0 30px;padding:5px 0}
+.input{border:1px solid #CCC;font-family:Arial;font-size:18px;height:28px;background-color:#F7F7F7;color:#666;margin:5px 25px}
+.submit{background-color:#FFF;border:1px solid #999;border-left-color:#ccc;border-top-color:#ccc;color:#333;cursor:hand;padding:.25em}
+.title{font-size:24px;font-weight:700}
+.care{color:#06C}
+.title2{font-size:14px;color:#000;border-bottom:#CCC 1px solid;font-weight:700}
+.foot{text-align:center}
+#agreement{color:#666;height:300px;line-height:21px;overflow-y:scroll;padding:16px}
+#successTips{position:absolute;bottom:50px;left:50%;top:60%;height:350px;margin-left:-250px;color:#2FA500;background:#EBFEEF;border:1px solid #69BA26;padding:20px}
+#successTipsBody{overflow-y:auto;height:300px;font-size:14px;width:500px;margin-top:20px;scrollbar-face-color:#fff;scrollbar-highlight-color:#FFF;scrollbar-shadow-color:gray;scrollbar-3dlight-color:#69BA26;scrollbar-arrow-color:#FFF;scrollbar-track-color:#ddd;scrollbar-darkshadow-color:#fff;scrollbar-base-color:#69BA26}
+#successTipsTitle{height:30px;color:red}
+#successTipsTitle a:hover{background:green}
+#successTipsTitle a{text-decoration:none;color:red;border:1px solid #69BA26;display:block;float:left;margin:10px;padding:2px}

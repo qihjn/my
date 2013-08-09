@@ -1,0 +1,39 @@
+{// 引入标签库 }
+<tagLib name="html" />
+{// 加载头部公共文件 }
+<include file="../Public/header" />
+<!-- 菜单区域  -->
+
+<!-- 主页面开始 -->
+<div id="main" class="main" >
+
+<!-- 主体内容  -->
+<div class="content" >
+<div class="title">数据列表</div>
+<!--  功能操作区域  -->
+<div class="operate" >
+<html:imageBtn name="add" value="新增" click="add()" style="impBtn hMargin fLeft shadow" />
+<html:imageBtn name="edit" value="编辑" click="edit()" style="impBtn hMargin fLeft shadow" />
+<html:imageBtn name="delete" value="删除" click="foreverdel()" style="impBtn hMargin fLeft shadow" />
+</div>
+
+<div class="list_l">
+    <div class="pagelink">
+    {$page}
+    </div>				
+    <!--<h1>{$category}</h1>-->
+    
+    <ul class="listpic">
+    <volist name="list" id="vo">
+        <li><a href="__URL__/show/id/{$vo.id}" target="_blank"><img src="{$vo.thumb}" alt="{$vo.title}"/></a><p class="red">{$vo.title}</p><p><a href="__URL__/edit/id/{$vo.id}"  title="{$vo.title}">编辑</a> <a href="__URL__/delete/id/{$vo.id}" onclick="return confirm('确认删除？这将删除该记录及所有相关图片文件');" title="删除后将不可恢复">删除</a></p></li>
+    </volist>
+    </ul>
+    <div class="pagelink">
+    {$page}
+    </div>			
+</div>
+
+</div>
+</div>
+</body>
+</html>

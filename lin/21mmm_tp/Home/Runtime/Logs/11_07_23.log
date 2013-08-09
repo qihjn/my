@@ -1,0 +1,14 @@
+[ 2011-07-23T23:10:53+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: open(\xampp\tmp\sess_q4e9g7ljpdllb03gbgkm46ogj4, O_RDWR) failed: No such file or directory (2) ~runtime.php 第 2 行.
+[ 2011-07-23T23:10:54+08:00 ] SQL:  RunTime:0.266148s SQL = SHOW COLUMNS FROM mmm_index
+[ 2011-07-23T23:10:54+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-07-23T23:10:54+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at C:\lin\21mmm_tp\Home\Lib\Action\IndexAction.class.php:6) ~runtime.php 第 2 行.
+[ 2011-07-23T23:10:54+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at C:\lin\21mmm_tp\Home\Lib\Action\IndexAction.class.php:6) ~runtime.php 第 2 行.
+[ 2011-07-23T23:10:54+08:00 ] NOTIC: [8] Undefined variable: pageTitle b173fc9789c370d16208c0b80c4b1cba.php 第 5 行.
+[ 2011-07-23T23:10:54+08:00 ] NOTIC: [8] Undefined index: loginUserName b173fc9789c370d16208c0b80c4b1cba.php 第 24 行.
+[ 2011-07-23T23:16:51+08:00 ] NOTIC: [2] session_start() [<a href='function.session-start'>function.session-start</a>]: open(\xampp\tmp\sess_istpqhteg9ikgi9iloih1hbu36, O_RDWR) failed: No such file or directory (2) ~runtime.php 第 2 行.
+[ 2011-07-23T23:16:52+08:00 ] SQL:  RunTime:0.004067s SQL = SHOW COLUMNS FROM mmm_index
+[ 2011-07-23T23:16:52+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-07-23T23:16:52+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at C:\lin\21mmm_tp\Home\Lib\Action\IndexAction.class.php:6) ~runtime.php 第 2 行.
+[ 2011-07-23T23:16:52+08:00 ] NOTIC: [2] Cannot modify header information - headers already sent by (output started at C:\lin\21mmm_tp\Home\Lib\Action\IndexAction.class.php:6) ~runtime.php 第 2 行.
+[ 2011-07-23T23:16:52+08:00 ] NOTIC: [8] Undefined variable: pageTitle 5b8acece080d1fdf7ec231587d38474b.php 第 5 行.
+[ 2011-07-23T23:16:52+08:00 ] NOTIC: [8] Undefined index: loginUserName 5b8acece080d1fdf7ec231587d38474b.php 第 24 行.

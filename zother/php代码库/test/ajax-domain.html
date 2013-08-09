@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"   
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml">  
+<head>  
+  <title>孟宪会之AJAX跨域请求测试</title>  
+</head>  
+<body>  
+  <input type='button' value='开始测试' onclick='crossDomainRequest()' />  
+  <div id="content"></div>  
+  <script type="text/javascript"><!--   
+    var xhr = new XMLHttpRequest();   
+    var url = 'http://uc.cn/ajax-domain2.php';   
+    function crossDomainRequest() {   
+      document.getElementById("content").innerHTML = "开始……";   
+      if(xhr) {   
+        xhr.open('GET', url, true);   
+        xhr.onreadystatechange = handler;   
+        xhr.send();   
+      } else {   
+        document.getElementById("content").innerHTML = "不能创建 XMLHttpRequest";   
+      }   
+    }   
+    function handler(evtXHR) {   
+      if (xhr.readyState == 4) { 
+	  	alert(xhr.status);
+        if (xhr.status == 200) {   
+          var response = xhr.responseText;   
+          document.getElementById("content").innerHTML = "结果：" + response;   
+        } else {   
+          document.getElementById("content").innerHTML = "不允许跨域请求。";   
+        }   
+      }   
+      else {   
+        document.getElementById("content").innerHTML += "<br/>执行状态 readyState：" + xhr.readyState;   
+      }   
+    }   
+// --></script>  
+</body>  
+</html> 

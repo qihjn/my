@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!--<?exit;?>-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<Meta http-equiv="Content-Language" Content="zh-CN">
+<title>个人会员后台管理</title>
+<link href="css/link.css" type="text/css" rel="stylesheet"/>
+<link href="css/admin.css" type="text/css" rel="stylesheet"/>
+<style type="text/css">
+<!--
+.chargebtn,.chargebtn_dis,.getcardbtn,.getcardbtn_dis{border:none;display:block;width:94px;height:33px;background:url(http://static.paipaiimg.com/assets/miniportal/charge/mini_charge_index_bg.png) no-repeat;text-indent:-199em;}
+.chargebtn{background-position: left -481px;}
+.chargebtn_dis{background-position:-95px -481px;}
+.getcardbtn{background-position:-202px -625px;}
+.getcardbtn_dis{background-position:-202px -592px;}
+-->
+</style>
+</head>
+<body>
+<div id="top">
+  <div id="topl"><img src="images/top_left.jpg" /></div>
+  <div id="topr"><img src="images/top_right.jpg" /></div>
+  <div id="topm">
+  	<div id="logo"><img src="images/logo.gif" /></div>
+	<div id="topm_r">
+	  <div id="topm_r_u" style="color:#333;">美容行业求职招聘第一网</div>
+	  <div id="topm_r_d">
+  		<div id="topm_r_d_l"><img src="images/left_go.gif" /></div>
+		<div id="topm_r_d_r"><img src="images/right_go.gif" /></div>
+		<div id="topm_r_d_m">
+<a href="#">首页</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">招聘</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">求职</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">培训</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#" target="_blank" >供求</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">招商</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">转让</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">我的管理中心</a>
+		</div>
+	  </div>
+	</div>
+  </div>
+</div>
+<div id="title_line">
+  <div id="line_l"><img src="images/lll.jpg" /></div>
+  <div id="line_r"><img src="images/ll.jpg" /></div>
+  <div id="line_m">
+  	<div id="line_m_l" ><span>您当前的位置：<a href="#" class="link_white12">首页</a> > <b><a href="#" onclick="openFile('index')" class="link_white12">管理中心首页</a></b> > <b id="menu_hjh"></b></span></div>
+	<div id="line_m_r"><span><b>城市猎人</b> 欢迎您！这是您第2次登陆本系统，站内信<a href="#"><strong>20</strong></a>封，回复<a href="#"><strong>23</strong></a>条</span><a href="#" title="退出"><img src="images/tc.jpg" border="0" /></a></div>
+  </div>
+</div>
+<div id="main">
+  <div class="main_line">
+  	<div class="main_line_l"><img src="images/admin_r6_c3.gif" /></div>
+	<div class="main_line_r"><img src="images/admin_r6_c48.gif" /></div>
+	<div class="main_line_m"><img src="images/admin_r6_c5.gif" /></div>
+  </div>
+  <div id="main_m">
+  	<div id="main_m_l">
+		<div class="column">
+			<div class="column_u"><h2><a href="#" style="color:#FFFF00;">管理中心首页</a></h2></div>
+			
+		</div>
+		
+		<div class="column">
+			<div class="column_u"><h2 id="menu_tile_2">求职管理</h2></div>
+			<div class="column_d" id="menu_2" style="display:;">
+				<div class="column_d_u"><img src="images/admin_r13_c8.jpg" /></div>
+				<div class="column_d_m">
+					<ul>
+					<li><span><a href="#">求职意向</a></span></li>
+					<li><span><a href="#">发展方向</a></span></li>
+					<li><span><a href="#">工作经历</a></span></li>
+					<li><span><a href="#">教育培训</a></span></li>
+					<li><span><a href="#">技能专长</a></span></li>
+					<li><span><a href="#">上传照片</a></span></li>
+					</ul>
+				</div>
+				<div class="column_d_d"><img src="images/admin_r20_c8.jpg" /></div>
+			</div>
+		</div>
+		
+		
+		<div class="column">
+			<div class="column_u"><h2>实习求职</h2></div>
+		</div>
+	
+		<div class="column">
+			<div class="column_u"><h2>我的营销</h2></div>
+		</div>
+		
+		<div class="column">
+			<div class="column_u"><h2>求学路上</h2></div>
+		</div>
+		<div class="column">
+			<div class="column_u"><h2>系统设置</h2></div>
+		</div>
+		<div class="column">
+			<div class="column_u"><h2>金币积分</h2></div>
+		</div>
+	</div>
+	<div id="nauk">	
+	        <table  width="100%" border="0" align="center" cellpadding="3" cellspacing="1" bgcolor="#dec8cd">
+				 <tr align="center">
+						<td colspan="5" align="center" bgcolor="#F9EBEE"><span style="font-size:16px;font-weight:bold;color:#E37A0E;">充值中心</span></td>
+				 </tr>
+				 
+				 <tr>
+						<td width="13%" bgcolor="#FCF3F5" align="right">充值账号：</td>
+						<td width="87%" colspan="4" align="left" bgcolor="#ffffff"><input type="text" name="textfield22" style="width:157px;"/> </td>
+				 </tr>
+				 <tr>
+						<td width="13%" bgcolor="#FCF3F5" align="right">充值类型：</td>
+						<td width="87%" colspan="4" align="left" bgcolor="#ffffff"><input type="radio" id="mobileAutoC" name="mobileType" checked="checked" />
+                  <label class="now" for="mobileAutoC" id="mobileAutoL">自动充值</label>
+                  <input type="radio" id="mobileCardC" name="mobileType" />
+                  <label for="mobileCardC" id="mobileCardL">购买充值卡</label></td>
+				 </tr>
+				 
+		    </table>
+	        
+            <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" bgcolor="#dec8cd" id="mobileAuto">
+                <tr><td width="13%" bgcolor="#FCF3F5" align="right">手机号码：</td>
+                  <td width="87%" colspan="4" align="left" bgcolor="#ffffff"><input type="text" class="lenth_comp_1" id="mobileAutoNum" style="width:157px" value="请输入手机号码" maxlength="11" />
+                  <span id="mobileAutoListCtrl" style="display:none"><a href="#h"></a></span>
+                  <div style="display:none" id="mobileAutoList"></div></td>
+                </tr>
+                <tr><td width="13%" bgcolor="#FCF3F5" align="right">面　　值：</td>
+                  <td width="87%" colspan="4" align="left" bgcolor="#ffffff"><input name="mobileAutoPrix" type="radio" id="mobileAutoPrix" value="5000" checked="checked" />
+                  <label class="now" for="mobileAutoPrix">50元</label>
+                  <input type="radio" name="mobileAutoPrix" value="10000" />
+                  <label for="mobileAutoPrix">100元</label>
+                  <input type="radio" name="mobileAutoPrix" value="30000" />
+                  <label for="mobileAutoPrix">300元</label></td>
+				</tr>  
+                <tr align="center">
+                  <td colspan="5" align="center" bgcolor="#ffffff">1-10分钟内到帐，可用<a href="http://help.tenpay.com/cgi-bin/helpcenter/help_center.cgi?id=7&type=1" target="_blank">网银</a>或<a href="http://help.tenpay.com/cgi-bin/helpcenter/help_center.cgi?id=13&type=1" target="_blank">财付通</a>支付</td>
+				</tr>				
+                <tr align="center">
+				      <td colspan="5" align="center" bgcolor="#ffffff"><a class="chargebtn" href="?PTAG=30053.51.8#h" id="mobileAutoSubmit">点此充值</a></td>
+				</tr> 
+            </table>
+              <!--s 购买充值卡-->
+			<table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" bgcolor="#dec8cd" id="mobileCard" style="display:none"> 
+                <tr><td width="13%" bgcolor="#FCF3F5" align="right">运 营 商：</td>
+                  <td width="87%" colspan="4" align="left" bgcolor="#ffffff"><select id="mobileCardType">
+                    <option value="移动">移动</option>
+                    <option value="联通">联通</option>
+                    <option value="电信">电信</option>
+                  </select></td>
+                </tr> 
+                <tr><td width="13%" bgcolor="#FCF3F5" align="right">地　　区：</td>
+                  <td width="87%" colspan="4" align="left" bgcolor="#ffffff"><select id="mobileCardZone">
+                  </select></td>
+                </tr>
+                <tr><td width="13%" bgcolor="#FCF3F5" align="right">面　　值：</td>
+                  <td width="87%" colspan="4" align="left" bgcolor="#ffffff"><select id="mobileCardPrix">
+                    <option value="10">10元</option>
+                    <option value="20">20元</option>
+                    <option value="30">30元</option>
+                    <option value="50" selected="selected">50元</option>
+                    <option value="100">100元</option>
+                    <option value="200">200元</option>
+                    <option value="300">300元</option>
+                    <option value="500">500元</option>
+                  </select></td>
+                </tr>
+				<tr id="mobileCardPrixCtrl" style="display:none">
+				         <td width="13%" bgcolor="#FCF3F5" align="right">价　　格：</td>
+				         <td width="87%" colspan="4" align="left" bgcolor="#ffffff"><em id="mobileCardPrixShow"></em></span>元</td>
+				</tr>
+				<tr id="mobileCardNone" style="display:none">
+				         <td width="13%" bgcolor="#FCF3F5" align="right">暂　　缺：</td>
+				         <td width="87%" colspan="4" align="left" bgcolor="#ffffff"><a href='?PTAG=30053.51.9#h' target='_blank' id="mobileCardSearchLink">点此搜索</a></td>
+				</tr>
+                <tr id="mobileCardLoad" style="display:none">
+				         <td width="13%" bgcolor="#FCF3F5" align="right"><img src="http://pics.paipai.com/common/icon/loading.gif" align="absmiddle" />&nbsp;载入中… </td>
+				         <td width="87%" colspan="4" align="left" bgcolor="#ffffff"><a href="?PTAG=30053.51.5#h" id="mobileCardLoadLink">重试</a></td>
+				</tr>
+				<tr align="center">
+                  <td colspan="5" align="center" bgcolor="#ffffff">5秒钟获取充值卡密码，自助完成充值</td>
+				</tr>				
+                <tr align="center"  id="mobileCardCtrl">
+				      <td colspan="5" align="center" bgcolor="#ffffff"><a class="getcardbtn_dis" href="?PTAG=30053.51.6#h" id="mobileCardLink" target="_blank">点此提卡</a></td>
+				</tr>     
+            </table>
+	</div>
+	
+	
+		
+</div>
+
+<div id="bottom">
+	<div id="bottom_l"><img src="images/bottom_l.gif" /></div>
+	<div id="bottom_r"><img src="images/bottom_r.gif" /></div>
+	<div id="bottom_m">
+	<a href="#" class="link_white12"  target=_blank>关于我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#" class="link_white12"  target=_blank>网站地图</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#" class="link_white12" target=_blank>法律声明</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#" class="link_white12" target=_blank>客服中心</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#" class="link_white12" target=_blank>广告合作</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#" class="link_white12" target=_blank>招聘收费</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#" class="link_white12" target=_blank>付款方式</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#" class="link_white12" target=_blank>招生合作</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#" class="link_white12" target=_blank>友情链接</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#" class="link_white12" target="_blank">联系我们</a>
+	<br />
+<span>客服专线：021-51083696 传真：021-51069297 客服QQ:78746365 备案序号:沪ICP备06003754号<br />
+CopyRight &copy; www.21mmm.com all Rights Reserved. <script language="javascript" src="http://count31.51yes.com/click.aspx?id=315698941&logo=6"></script> <script src='http://s14.cnzz.com/stat.php?id=1027745&web_id=1027745&show=pic1' language='JavaScript' charset='gb2312'></script></span></div>
+</div>
+<div id="bottom_line">
+  <div id="bottom_line_l"><img src="images/yy_l.gif" /></div>
+  <div id="bottom_line_r"><img src="images/yy_r.gif" /></div>
+  <div id="bottom_line_m"></div>
+</div>
+</div>
+<script type="text/javascript" src="http://static.paipaiimg.com/js/charge.home.js?v=1.2.2"></script><!--[if !IE]>|xGv00|937cd1b08661bd6e5ce2186671c26e06<![endif]-->
+<script type="text/javascript">
+$charge.data.mobileCard={
+	type:{10:2,20:3,30:4,50:5,100:6,200:7,300:8,500:9,1000:10},
+	zone:{"北京":1,"天津":2,"内蒙古":3,"黑龙江":4,"吉林":5,"辽宁":6,"河北":7,"河南":8,"山东":9,"山西":10,"陕西":11,"青海":12,"甘肃":13,"新疆":14,"西藏":15,"宁夏":16,"重庆":17,"四川":18,"安徽":19,"上海":20,"浙江":21,"江苏":22,"江西":23,"湖北":24,"湖南":25,"云南":26,"贵州":27,"广东":28,"广西":29,"福建":30,"海南":31,"港/奥/台":32}
+}/*  |xGv00|6e3762de4e9955c56c7fc702e94892ec */
+charge.home.init({type:'mobile',mobileAuto:{from:51},mobileCard:{from:51}})</script>
+</body>
+</html>

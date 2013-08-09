@@ -1,0 +1,44 @@
+			<div class="pro_nav">
+					<div class="pro_nav_bt">
+						<h2>产品分类导航</h2>
+						<div class="title5"><a href="#" class="title5_selected" urn="g" onmouseover="show(this);" id="ag">供应信息</a><a href="#" style="margin-left:6px;" urn="q"  onmouseover="show(this);" id="aq">求购信息</a></div>
+					</div>
+					<div class="pro_nav_con" id="g">
+						<volist name="category" id="vo">
+                        <span><a href="/supply/lists_1_{$vo.self.id}" target="_blank" title="{$vo.title}">{$vo.self.title}</a></span>
+						<p><volist name="vo['child']" id="vc"><a href="/supply/lists_1_{$vo.self.id}_{$vc.id}" target="_blank" title="{$vc.title}">{$vc.title} </a> </volist></p>
+						</volist>
+					</div>
+                    
+                    <div class="pro_nav_con" id="q">
+						<volist name="category" id="vo">
+                        <span><a href="/supply/lists_2_{$vo.self.id}" target="_blank" title="{$vo.title}">{$vo.self.title}</a></span>
+						<p><volist name="vo['child']" id="vc"><a href="/supply/lists_2_{$vo.self.id}_{$vc.id}" target="_blank" title="{$vc.title}">{$vc.title} </a> </volist></p>
+						</volist>
+					</div>
+				</div>
+<script language="javascript" type="text/javascript">
+document.getElementById("q").style.display = "none";
+
+var currentObj = document.getElementById("g");
+var currentA = document.getElementById("ag");
+function show(o){
+	if(currentA != o){ //只有切换才操作
+		//设置a
+		o.className = "title4_selected";
+		currentA.className = "";
+		currentA = o;
+		
+		//设置内容
+		var o = document.getElementById(o.getAttribute("urn"));
+		o.style.display = 'block';
+		if(o.style.display = 'none'){
+			o.style.display = 'block';
+			if(currentObj){
+				currentObj.style.display = 'none';
+				currentObj = o;
+			}
+		}
+	}
+}
+</script>

@@ -1,0 +1,103 @@
+<html>
+<head>
+<title>JS Template</title>
+<style type="text/css">
+textarea{float:left;font:12px/1.5 verdana;width:45%;height:550px;}
+div{clear:both;}
+table{width:100%;background:#000;}
+table caption{text-align:left;font-weight:bold;}
+table caption,table th,table td{background:#fff;}
+.gray td{background:#ccc;}
+.bold{font-weight:bold;}
+</style>
+</head>
+<body>
+
+<textarea id="x" style="display:none;">
+<#macro userlist data>
+<table>
+  <caption>${data.caption}</caption>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Followers</th>
+    </tr>
+  </thead>
+  <tbody>
+    <#if (data.list.length > 15)>
+      <#list data.list as list>
+        <tr <#if (list_index % 2)>class="gray"</#if>>
+          <td>${list_index + 1}</td>
+          <td class="bold">${list.username}</td>
+          <td><a href="mailto:${list.email}">${list.email}</td>
+          <td>${list.phone}</td>
+          <td>
+            ${list.followers} Follower${list.followers!==1?'s':''}
+          </td>
+        </tr>
+      </#list>
+    <#elseif (data.list.length >= 5)>
+        <tr><td colspan="5">${data.list.length}</td></tr>
+    <#else>
+        <tr><td colspan="5">N/A</td></tr>
+    </#if>
+  </tbody>
+</table>
+</#macro>
+</textarea>
+<div><button>Render The Table</button> <a href="http://www.w3cgroup.com/article.asp?id=300" target="_blank">Detail for easyTemplate</a></div>
+<div id="z"></div>
+
+<textarea id="a">
+
+<#list data.list as list>
+${list.username}---${list.email} <br />
+<#list>
+</textarea>
+<script type="text/javascript" src="easyTemplate.js"></script>
+<script type="text/javascript">
+//make 1,000 results for test
+tmpList = ",{username:'Arlen',email:'arlen@x.com',phone:'13123456789',followers:0},{username:'Bala',email:'bala@y.hk',phone:'13212345678',followers:1},{username:'Charlie',email:'charlie@c.gov',phone:'133456789123',followers:2},{username:'Davie',email:'davie@d.cc',phone:'134456789',followers:4},{username:'Eric',email:'eric@e.com',phone:'135674589',followers:5}";
+
+sList = "[" + new Array(201).join(tmpList).substr(1) + "]";
+alert(sList);
+oList = eval(sList);
+
+//The data where used in the template
+data = {
+	caption:'Caption:User List',
+	list:oList
+};
+var $ = function(sid){return document.getElementById(sid);};
+var dy = $('y'),dz = $('z'),dbtn = document.getElementsByTagName('button')[0];
+dbtn.onclick = function(){
+	dz.innerHTML = 'Initialization Data ......';
+	//try{eval(dy.value);}catch(e){alert('Data Format Error!');}
+	var template = $('x').value;
+	var s = +new Date();
+	var oList = [{"username":"u1","email":"e1"},{"username":"u2","email":"e2"},{"username":"u3","email":"e3"}];
+data = {
+	caption:'Caption:User List',
+	list:oList
+};
+	var x = easyTemplate(template,data);
+	var t = +new Date() - s;
+	dz.innerHTML = '<h1>'+data.list.length+' Records, Timeused:'+t+'ms</h1>'+x;
+};
+
+var oList = [{"username":"u1","email":"e1"},{"username":"u2","email":"e2"},{"username":"u3","email":"e3"}];
+data = {
+	caption:'Caption:User List',
+	list:oList
+};
+var ta = $('a');
+var x2 = easyTemplate(ta,data);
+
+$('z').innerHTML = x2;
+</script>
+</body>
+</html>
+

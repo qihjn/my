@@ -1,0 +1,130 @@
+[ 2011-02-26T21:47:57+08:00 ] SQL:  RunTime:0.018430s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T21:47:57+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T21:47:57+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T21:48:24+08:00 ] SQL:  RunTime:0.024741s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T21:48:24+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T21:48:24+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T21:50:26+08:00 ] SQL:  RunTime:0.016908s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T21:50:26+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T21:50:26+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T21:50:27+08:00 ] SQL:  RunTime:0.005252s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T21:50:27+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T21:50:27+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T21:50:27+08:00 ] SQL:  RunTime:0.002797s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T21:50:27+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T21:50:27+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T21:50:28+08:00 ] SQL:  RunTime:0.002980s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T21:50:28+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T21:50:28+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T21:50:28+08:00 ] SQL:  RunTime:0.002875s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T21:50:28+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T21:50:28+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T21:50:28+08:00 ] SQL:  RunTime:0.002822s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T21:50:28+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T21:50:28+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T21:55:44+08:00 ] SQL:  RunTime:0.003196s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T21:55:44+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T21:55:44+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T21:55:46+08:00 ] SQL:  RunTime:0.002818s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T21:55:46+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T21:55:46+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T21:55:47+08:00 ] SQL:  RunTime:0.002743s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T21:55:47+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T21:55:47+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T21:55:47+08:00 ] SQL:  RunTime:0.003004s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T21:55:47+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T21:55:47+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T21:55:47+08:00 ] SQL:  RunTime:0.002933s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T21:55:47+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T21:55:47+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T21:57:07+08:00 ] SQL:  RunTime:0.002857s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T21:57:07+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T21:57:07+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T22:06:17+08:00 ] ERR: (ThinkException) 非法操作login.php
+[ 2011-02-26T22:06:21+08:00 ] SQL:  RunTime:0.003925s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T22:06:21+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T22:06:21+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T22:06:30+08:00 ] SQL:  RunTime:0.004104s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T22:06:30+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T22:06:30+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T22:06:39+08:00 ] SQL:  RunTime:0.003913s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T22:06:39+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T22:06:39+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T22:06:40+08:00 ] SQL:  RunTime:0.005342s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T22:06:40+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T22:06:40+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T22:06:40+08:00 ] SQL:  RunTime:0.003374s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T22:06:40+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T22:06:40+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T22:06:41+08:00 ] SQL:  RunTime:0.004846s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T22:06:41+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T22:06:41+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T22:06:41+08:00 ] SQL:  RunTime:0.007609s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T22:06:41+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T22:06:41+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T22:06:42+08:00 ] SQL:  RunTime:0.015549s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T22:06:42+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T22:06:42+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T22:06:42+08:00 ] SQL:  RunTime:0.003167s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T22:06:42+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T22:06:42+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T22:06:42+08:00 ] SQL:  RunTime:0.002995s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T22:06:42+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T22:06:42+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T22:06:42+08:00 ] SQL:  RunTime:0.002841s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T22:06:42+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T22:06:42+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T22:06:42+08:00 ] SQL:  RunTime:0.003130s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T22:06:42+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T22:06:42+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T22:06:42+08:00 ] SQL:  RunTime:0.002791s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T22:06:42+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T22:06:42+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T22:06:42+08:00 ] SQL:  RunTime:0.002949s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T22:06:42+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T22:06:42+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T22:06:42+08:00 ] SQL:  RunTime:0.003406s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T22:06:42+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T22:06:42+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T22:06:42+08:00 ] SQL:  RunTime:0.003101s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T22:06:42+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T22:06:42+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T22:06:42+08:00 ] SQL:  RunTime:0.002818s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T22:06:42+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T22:06:42+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T22:06:42+08:00 ] SQL:  RunTime:0.003462s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T22:06:42+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T22:06:42+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T22:06:42+08:00 ] SQL:  RunTime:0.002946s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T22:06:42+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T22:06:42+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T22:06:42+08:00 ] SQL:  RunTime:0.005654s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T22:06:42+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T22:06:43+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T22:06:43+08:00 ] SQL:  RunTime:0.003791s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T22:06:43+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T22:06:43+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T22:06:43+08:00 ] SQL:  RunTime:0.002798s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T22:06:43+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T22:06:43+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T22:06:43+08:00 ] SQL:  RunTime:0.003127s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T22:06:43+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T22:06:43+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T22:06:43+08:00 ] SQL:  RunTime:0.003064s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T22:06:43+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T22:06:43+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T22:06:43+08:00 ] SQL:  RunTime:0.003735s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T22:06:43+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T22:06:43+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T22:06:43+08:00 ] SQL:  RunTime:0.003639s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T22:06:43+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T22:06:43+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T22:54:00+08:00 ] SQL:  RunTime:0.015319s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T22:54:00+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T22:54:00+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T22:54:08+08:00 ] SQL:  RunTime:0.004766s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T22:54:08+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T22:54:08+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.
+[ 2011-02-26T23:30:43+08:00 ] SQL:  RunTime:0.179437s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-02-26T23:30:43+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-02-26T23:30:43+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.

@@ -1,0 +1,25 @@
+<include file="Public:header" />
+<!--单页-->
+<div id="page" class="clear">
+<div id="category">
+<ul id="pt">
+<volist name="downloadCategory" id="row">
+<li class="{$Think.get.category|a2bc=$row['id'], 'current',''}">{$row.str_repeat}<img src="__ROOT__/Public/Front/icon_arrow04.gif" /><a href="{:U('Download/index', array('category' => $row['id']))}">{$row.title}</a></li>
+</volist>
+</ul>
+</div>
+<div id="main">
+<h3 class="title"><neq name="Think.get.category" value="">{$Think.get.category|selectCategory}<else/>下载中心</neq> <em>Download</em></h3>
+<form action="{:U('Search/getList')}" method="get"><div class="search">内容搜索: <input name="keyword" type="text" id="keyword" size="15" /> <input name="submit" type="submit" value="提交搜索" id="submit" /><input name="module" type="hidden" value="Download" /></div></form>
+<ul class="list">
+ <volist name="dataContentList" id="row">
+ <li><if condition="$row['link_url'] neq ''"><a href="{$row.link_url}" target="_blank" style="{$row.title_style}">{$row.title}</a><else/><a href="{:U('Download/detail',array('item'=>$row['id']))}" target="_blank" style="{$row.title_style}">{$row.title}</a></if> <span class="time">[{$row.create_time|date="Y-m-d",###}]</span></li>
+ </volist>
+</ul>
+ <div class="pages">
+      <div class="plist">{$pageContentBar}</div>
+    </div>
+    </div>
+</div>
+<!--底部-->
+<include file="Public:footer" />

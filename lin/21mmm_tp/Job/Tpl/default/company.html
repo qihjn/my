@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{$title}-{$manage} 招聘--中华美容网-21mmm.com</title>
+<link href="{URL_PUBLIC}/style/unit/common.css" rel="stylesheet" type="text/css" />
+<script src="{URL_PUBLIC}js/province.js" language="javascript"></script>
+<script src="{URL_PUBLIC}js/city.js" language="javascript"></script>
+<script src="{URL_PUBLIC}js/area.js" language="javascript"></script>
+<script src="{URL_PUBLIC}js/place.js" language="javascript"></script>
+<script src="{URL_PUBLIC}js/jquery.js" type="text/javascript"></script>
+<script src="{URL_PUBLIC}js/cat.js" type="text/javascript"></script> 
+<style>
+#lvl a{text-decoration:none; line-height:1.8; float:left; width:160px; color:#454545; overflow:hidden;}
+#lvl a:hover{background-color:#f90; text-decoration:none;}
+</style>
+</head>
+<body>
+	<div id="allnet">
+		<div id="school">
+			<div id="star">
+			{include:head.html}
+				<div class="ad"><img src="{URL_PUBLIC}images/unit_web/ad_4.jpg" width="930" border="0"/></div>
+				<div class="left">
+					<div class="login">
+						<h1><span class="zb"><a href="javascript:;">所有招聘职位</a></span></h1>
+						<div class="clear"></div>
+						<ul class="xahn">
+							{for var=$aeml index=$key}
+							<li><a href='/job/show_{$aeml[$key]['id']}.html'  class='tdl'>{$aeml[$key]['title']}</a></li>
+							{/for}
+						</ul>
+					</div>
+					<div class="login">
+						<h1><span class="zb"><a href="#"></a></span></h1>
+						<div class="clear"></div>
+					  <div class="zhiyese"></div>
+					</div>
+				</div>
+				<div class="zhigou">
+					<div class="men" >
+						<div class="jt">
+							<div class="men_left"><img src="{URL_PUBLIC}images/unit_web/bj_20.jpg" /></div>
+							<div class="men_ce">
+								<ul class="huiyi">
+									<li><a href="javascript:void(0);" class=set>企业介绍</a></li>
+									<li><a href="/job/show_{$jid}.html" >招聘职位</a></li>
+								</ul>
+							</div>
+							<div class="men_left"><img src="{URL_PUBLIC}images/unit_web/bj_21.jpg" /></div>
+						</div>
+						<div class="balei">
+							<div class="qywyd">
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+									<tr><td height="25"><strong style="color:#e17704; font-size:13px;">{$title}</strong> &nbsp;&nbsp; [<a href="http://www.baidu.com/s?wd={$title}" style="color:#454545; text-decoration:none;" target="_blank">百度一下</a>]</td></tr>
+									<tr>
+										<td>
+											<table width="100%" border="0" cellspacing="0" cellpadding="0">
+												<tr>
+													<td width="322">
+														<table width="100%" border="0" cellspacing="1" cellpadding="0">
+															<tr bgcolor="#FFFFFF"> 
+																<td width="67" height="25" align="left">经营品牌：</td>
+																<td width="252" height="25">{$manage}</td>
+															</tr>
+															<tr bgcolor="#FFFFFF"> 
+																<td width="67" height="25" align="left">所在地区：</td>
+																<td width="252" height="25">{$location}</td>
+															</tr>
+															<tr bgcolor="#FFFFFF"> 
+																<td width="67" height="25" align="left">注册日期：</td>
+																<td width="252" height="25">{$pubtime}</td>
+															</tr>
+															<tr bgcolor="#FFFFFF"> 
+																<td width="67" height="25" align="left">企业性质：</td>
+																<td height="25">{$nature}</td>
+															</tr>
+															<tr bgcolor="#FFFFFF"> 
+																<td width="67" height="25" align="left">所属行业：</td>
+																<td height="25">{$category_id}</td>
+															</tr>
+															<tr bgcolor="#FFFFFF"> 
+																<td width="67" height="25" align="left">注册资金：</td>
+																<td height="25">{$capital} 万元人民币</td>
+															</tr>
+															<tr bgcolor="#FFFFFF"> 
+																<td width="67" height="25" align="left">员工人数：</td>
+																<td height="25">{$scale}</td>
+															</tr>
+															<tr bgcolor="#FFFFFF"> 
+																<td width="67" height="25" align="left">联系地址：</td>
+																<td height="25">{$addr}</td>
+															</tr>
+														</table>													</td>
+													<td align="center" valign="top"><img src="http://user.{$mainurl}/get_face.php?un={$uname}&ut=unit" width="160" height="128" /></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr><td height="10"></td></tr>
+								</table>
+							</div>
+							<div class="qywyd" style="margin-top:5px;">
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+									<tr><td style=" line-height:20px;">{func:nl2br('{$content}')}</td></tr>
+									<tr id="content2" style="display:none;"><td style="line-height:20px;">{func:nl2br('{$content2}')}</td></tr>
+									<tr><td height="10"></td></tr>
+								</table>
+							</div>
+							<div>
+								{for var=$figures index=$key}
+								<a href='{$figures[$key][img]}' title='企业形象' target='_blank'><img src='{$figures[$key][thumb]}' alt='企业形象' style='width:150px; height:120px; border:1px solid #ccc; margin:23px;' /></a>
+								{/for}
+							</div>
+							<div class="buyZonePrice">	
+								<table  width="100%" border="0"  cellpadding="5" cellspacing="1">
+									<tr>
+										<th width="36"></th>
+										<th width="200">职位</th>
+										<th width="101">工作地点</th>
+										<th width="99">发布日期</th>
+									    <th width="93">有效期</th>
+									    <th width="99">招聘人数</th>
+									</tr>
+									{for var=$aeml index=$key}
+									<tr {if $key%2==0}class='bg_fa'{/if}{if $key%2!=0}class='bg_e7'{/if}>
+										<td align='center'>{func:trim({$key}+1)}</td>
+										<td align='cneter'><a href='/job/show_{$aeml[$key][id]}.html'  style='text-decoration:underline; color:#333;'>{$aeml[$key]['title']}</a></td>
+										<td align='center'>{$aeml[$key]['workplace']}</td>
+										<td align='center'>{func:date('Y-m-d',{$aeml[$key]['ctime']})}</td>
+									    <td align='center'>{$aeml[$key]['worklife']}</td>
+									    <td align='center'>{$aeml[$key]['num']}</td>
+									</tr>  
+									{/for}         
+								</table>	
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+				{include:foot.html}
+		</div>
+	</div>
+	<script>
+	function m(o) {
+		document.getElementById('content2').style.display = 'inline';
+		o.style.display = 'none';
+	}
+	</script>
+</body>
+</html>

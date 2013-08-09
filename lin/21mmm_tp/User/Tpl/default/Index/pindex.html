@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<Meta http-equiv="Content-Language" Content="zh-CN">
+<title>个人会员后台管理-ppppppppppp</title>
+<link href="__PUBLIC__/Skin/user/person/link.css" type="text/css" rel="stylesheet"/>
+<link href="__PUBLIC__/Skin/user/person/admin.css" type="text/css" rel="stylesheet"/>
+<style>
+	.make_carzy h1{margin:0;}
+	.yueliang h1{margin:0;}
+	.jieshou{border:1px solid #DDD; padding:5px 10px; margin:5px 0; width:570px; float:left}
+	.jieshou p{text-indent:2em; line-height:1.6; margin:5px 0; text-align:left;}
+	.text a{ color:#fff;}
+.STYLE2 {color: #000000}
+
+/*个人*/
+#shortcut a{ display:block; float:left; width:107px; height:36px; line-height:36px; margin-left:10px; margin-bottom:10px;  font-size:14px; font-weight:bold; color:#00f; background:url(__PUBLIC__/Skin/user/person/btn_bg1.gif);}
+</style>
+</head>
+<body>
+{include:../Public/header.html}
+{include:../Public/title_line.html}
+<div id="main">
+  <div class="main_line">
+  	<div class="main_line_l"><img src="__PUBLIC__/Skin/user/person/admin_r6_c3.gif" /></div>
+	<div class="main_line_r"><img src="__PUBLIC__/Skin/user/person/admin_r6_c48.gif" /></div>
+	<div class="main_line_m"><img src="__PUBLIC__/Skin/user/person/admin_r6_c5.gif" /></div>
+  </div>
+  <div id="main_m">
+  	<div id="main_m_l">
+		<include file="Public:pmenu" />
+	</div>
+	<div id="nauk" style="padding-bottom:10px;">
+		<div class="nengyuan">
+			<div class="yueliang">
+				<h1><span class="taibei">您拥有的功能：<span style="color:#f00;">求职工作 学习培训</span> </span></h1>
+				<div class="zhangshou">
+					<div class="zhangshou_top">
+						<a href="#"><img src="/get_face.php?un={$u_username}&ut=person" width="100" height="120" /></a>
+						
+					</div>
+					<div class="zhangshou_new">
+						<h2>用 户 名：{$u_username}</h2>
+				
+						<!--<p>头像规格：(100 * 120px)</p>
+						<p>积分级别：<img src="__PUBLIC__/Skin/user/person/star_big_1.gif" width="18" /> <img src="__PUBLIC__/Skin/user/person/star_big_1.gif" width="18" /> <img src="__PUBLIC__/Skin/user/person/star_big_1.gif" width="18" /> <img src="__PUBLIC__/Skin/user/person/star_big_2.gif" width="18" /> <img src="__PUBLIC__/Skin/user/person/star_big_3.gif" width="18" /></p>-->
+						<p style="padding-top:2px;"><a href="http://user.21mmm.com/person/face.php" target="_parent" style="color:#6b021a; text-decoration:underline;">上传照片</a></p>
+						<p style="padding-top:2px;"><span class="STYLE2"><a href="http://job.21mmm.com/" target="_blank">人才首页</a> <a href="http://school.21mmm.com/" target="_blank">培训首页</a></span> <a href="http://public.21mmm.com/links/job/jlbz.gif" target="_blank"></a></p>
+						<p style="padding-top:2px;"><a href="http://public.21mmm.com/links/job/jlbz.gif" target="_blank">如果求职，为什么需要一份简历？<strong>查看图解 &gt;&gt;</strong></a></p>
+					</div>
+				</div>
+                <div id="shortcut">
+                	<a href="{URL_USER}person/resume_new.php">马上发布简历</a>
+                    <a href="{URL_USER}person/allresume1.php">管理您的简历</a>
+                    <a href="{URL_USER}person/thread_post.php">我要咨询学习</a>
+                </div>
+				<div class="zhangshou">
+					<span class="xiexieni">个人信息</span>
+				<span class="ainibixu">让公司看到您，就业多三倍 <a href="http://user.21mmm.com/person/resume_new.php" target="_self">发布简历</a></span> <a href="http://public.21mmm.com/links/job/jlbz.gif" target="_blank"></a></div>
+				<div class="zhangshou">
+					<span class="xiexieni">学校信息</span>
+					<span class="ainibixu">你如果需要学习上的咨询与帮助，请<a href="http://user.21mmm.com/person/thread_post.php" target="_self"><strong>发布求学帮助</strong></a></span>				</div>
+				<div class="zhangshou" style="border:none;">
+					<span class="xiexieni">招聘信息</span>
+					<span class="ainibixu">您可以马上去找你想要的工作<a href="http://job.21mmm.com/#" target="_blank">马上查找</a></span>				</div>
+			</div>
+			<div class="ad_q">
+				<div class="ad_f" style="margin-left:0;"><span class="ad_f" style="margin-left:0;"><a href="person/allresume1.php"  title=""><img src="__PUBLIC__/Skin/user/person/ad_1.gif" width="190" height="60" /></a></span></div>
+				<div class="ad_f"><a href="person/resume_new.php"  title=""><img src="__PUBLIC__/Skin/user/person/ad_2.gif" width="190" height="60" /></a></div>
+				<div class="ad_f"><a href="http://www.21mmm.com/help/most/69.html"  title="" target="_blank"><img src="__PUBLIC__/Skin/user/person/ad_3.gif" width="190" height="60" border="0" /></a></div>
+			</div>
+			<div class="yueliang" style="margin-top:5px; display:inline;">
+				<h1><span class="taibei">简历提醒</span></h1>
+				<div class="qishini">
+					<p><a href="#" target="_blank" title="简历预览" style="vertical-align:middle;"><img src="__PUBLIC__/Skin/user/person/jlyl.jpg" /></a> <span style="color:#333;">简历等级：</span></p>
+					<P>*简历浏览量：{$jlll}次</P>
+					<P>*面试通知：<a href="#">{$mstz}条</a> 未读<a href="#">{$mstz_wd}条</a></P>
+					<p>*已申请职位：<a href="#">{$job_apps}个</a></p>
+					<p>*职位收藏夹：<a href="#">{$job_fav}个</a></p>
+					<P><a href="http://www.21mmm.com/help/most/69.html" target="_blank" style="color:#660033; text-decoration:underline;">现在刷新简历，马上排到第一位？？</a> <a href="http://www.21mmm.com/help/most/69.html" target="_blank" style="color:#660033; text-decoration:underline;">加强推广，让更好企业看到我？</a></P>
+					<p><img src="__PUBLIC__/Skin/user/person/zwpp.jpg" /></p>
+				</div>
+				<div class="qishini">
+					<table width="100%" border="0" cellpadding="2" cellspacing="1" bgcolor="#8ad3fe" align="center">
+						<tr>
+							<th width="50" align="center" bgcolor="#E4F1FC">序号</th>
+							<th width="256" align="center" bgcolor="#E4F1FC">以下职位符合你</th>
+							<th width="240" align="center" bgcolor="#E4F1FC">公司名称</th>
+						</tr>
+                        {matchjob}
+						<tr>
+							<td width="50" align="center" bgcolor="#ffffff">{jid}</td>
+							<td width="256" align="center" bgcolor="#ffffff"><a href="{URL_JOB}job/show_{jid}.html" title="{jtitle}" target="_blank">{jtitle}</a></td>
+							<td width="240" align="center" bgcolor="#ffffff"><a href="{URL_JOB}company/show_{cid}.html" title="{ctitle}" target="_blank">{ctitle}</a></td>
+						</tr>
+                        {/matchjob}
+</table>
+				</div>
+			</div>
+			<div class="yueliang" style="margin-top:5px; display:inline;">
+				<h1><span class="taibei">培训信息</span></h1>
+				<div class="qishini">
+					<P>*您发布有求学贴{$tie_qx}条，<a href="/person/thread_mgr.php" class="jt">查看</a> <a href="http://user.21mmm.com/person/bao.php" target="_parent"></a><a href="http://user.21mmm.com/person/thread_post.php" target="_parent">发布求学帮助&gt;&gt;&gt;</a></P>
+					<P>*学贴管理有{$tie_gl}条邀请<a href="/person/thread_mgr.php" class="jt">查看</a></P>
+					<P>*报名管理有{$bmyq}条邀请，<a href="/person/bao_mgr.php" class="jt">查看</a> <a href="http://user.21mmm.com/person/bao.php" target="_parent">查看有哪些课程？</a></P>
+					<P>*咨询管理有{$zxgl}条回复<a href="/person/bao_mgr.php" class="jt">查看</a> <a href="http://user.21mmm.com/person/ask.php" target="_parent">热门课程咨询？</a></P>
+					<P>*其它有{$other_ask}条邀请，<a href="#" class="jt">查看</a></P>
+				</div>
+			</div>
+			<div class="yueliang" style="margin-top:5px; display:inline;">
+				<h1><span class="taibei">服务项目</span></h1>
+				<div class="qishini">
+					<P>*您收到折扣消费信息0条，未读0条 搜店去</P>
+					<p><img src="__PUBLIC__/Skin/user/person/zx.jpg" /></p>
+				</div>
+				<div class="qishini">
+					<table width="100%" border="0" cellpadding="2" cellspacing="1" bgcolor="#8ad3fe" align="center">
+						<tr>
+							<th width="162" align="center" bgcolor="#E4F1FC">公司名称</th>
+							<th width="96" align="center" bgcolor="#E4F1FC">服务类型</th>
+							<th width="294" align="center" bgcolor="#E4F1FC">服务项目</th>
+						</tr>
+						<tr>
+							<td width="162" align="center" bgcolor="#ffffff"><div align="justify">上海克丽缇娜美容连锁</div></td>
+							<td width="96" align="center" bgcolor="#ffffff">美容美甲</td>
+							<td width="294" align="center" bgcolor="#ffffff">精油香薰、美容丰胸、美体、整形...</td>
+						</tr>
+</table>
+				</div>
+			</div>
+			<div class="yueliang" style="margin-top:5px; display:inline;">
+				<h1><span class="taibei">贸易往来</span></h1>
+				<div class="qishini">
+					<P>*您共有0条留言，未读0条 点击查看</P>
+				</div>
+			</div>
+		</div>
+		<div class="maoxian_right">
+			<div class="make_carzy">
+				<h1><span class="tainan"><a href="{URL_UNIT}promo/unit/faish_job/">最新职位</a></span></h1>
+				<div class="keliugandan">
+					<table  width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+						<tr>
+							<td width="50%" height="24" class="zy"><strong>职位名称</strong></td>
+							<td width="50%" class="zy"><strong>公司</strong></td>
+							
+						</tr>
+						{for var=$newjob index=$key}
+						<tr>
+							<td height='24' align='left'><span class='font_02'><a href='{URL_UNIT}job/show_{$newjob[$key][id]}.html' title='{$newjob[$key]['title']}' target='_blank'>{func:html2str('{$newjob[$key]['title']}',12)}</a></span></td>
+							<td align='left'><span class='font_01'><a href='{URL_UNIT}company/show_{$newjob[$key]['uid']}.html' title='{$newjob[$key]['company']}' target='_blank'>{func:html2str('{$newjob[$key]['company']}',14)}</a></span></td>
+							
+						</tr>
+						{/for}
+					</table>
+				</div>
+			</div>
+		 
+			<div class="make_carzy" style="margin-top:5px; display:inline;">
+				<h1><span class="tainan"><a href="{URL_SCHOOL}list/wellknow/">学校排行</a></span></h1>
+				<ul>
+					{for var=$wellknow index=$key}
+							<li>·<a href='http://school.21mmm.com/school/{func:urlencode('{$wellknow[$key]['uname']}')}/main/index.html' target='_blank' title='{$wellknow[$key]['title']}'>{func:html2str('{$wellknow[$key]['title']}',26)}</a></li>
+							{/for}
+				</ul>
+			</div>
+			<div class="make_carzy" style="margin-top:5px; display:inline;">
+				<h1><span class="tainan"><a href="#">经典课程</a></span></h1>
+				<ul>{for var=$class index=$key}
+							<li>·<a href='{URL_SCHOOL}school/{func:urlencode('{$class[$key]['uname']}')}/class/show_{$class[$key]['id']}.html' target='_blank' title='{$class[$key]['title']}'>{func:html2str('{$class[$key]['title']}',24)}</a></li>
+							{/for}
+				</ul>
+			</div>
+		</div>
+		<div style="clear:both;"></div>
+		<div class="jieshou">
+			<p>中华美容网(www.21mmm.com)是目前国内专业性强的美容行业门户网站，是提供企业信息交互和商业交易(B2B,B2C)的综合性平台。网站信息覆盖全行业产业链上所有环节，为行业提供人才.培训.营销等资讯平台,致立于细化服务.是美容行业利好的第一平台台。.目前，中华美业的用户数量正以每月30%的速度快速增长，网站总访问量排名和日均访问量排名稳居全行业第一位。</p>
+		</div>
+	</div>
+</div>
+
+{include:foot.html}
+</div>
+
+</body>
+</html>

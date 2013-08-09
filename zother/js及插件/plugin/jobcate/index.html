@@ -1,0 +1,1209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<Meta http-equiv="Content-Language" Content="zh-CN">
+<title>个人会员后台管理</title>
+
+<style type="text/css">
+
+
+#pPanel{ border:solid 0px #0f0; text-align:left;}
+#splitBorder{ border:3px solid #f00; margin:10px 0;}
+#panel{ border:solid 0px #f00; text-align:left;}
+.spFirst { cursor:hand; color:#F63; font-size:12px; font-weight:bold; margin:0 10px;}
+.spSelect{ color:#F63; font-size:12px; font-weight:bold; margin:0 10px; background-color:#fff;}
+</style>
+<style type="text/css" >
+
+.window_bg{ position:absolute; width:1500px; height:1000px; z-index:9; background-color:#464646; left:0; top:0; FILTER: alpha(opacity=50);}
+.window{ position:absolute; height:300px; width:500px; background-color:#ccc; z-index:99; display:none; padding:0 0px; font-size:13px; font-weight:bold; border:1px solid #935A69;}
+
+#wTitle{ height:30px; line-height:30px; color:#fff; background:url(http://public.21mmm.cn/images/index/bj_nav.jpg);} /*标题栏*/
+#wContent{text-align:left;} /*内容*/
+#wStatus{} /*状态栏*/
+#dSelect{ text-align:left; margin:5px; 5px;} /*显示选中*/
+.spSelected{ margin:0 20px; } /* 选中的项的span*/
+
+#detail{ display:none;}
+</style>
+</head>
+
+<body>
+
+<div id="nauk" style="padding-bottom:10px;">
+			<form action="resume_new.post.php" method=post enctype="multipart/form-data" name="resumeform" id="resumeform" >
+            	<div class="banmin" style="margin-top:10px;">
+					<table  width="100%" border="0" align="center" cellpadding="3" cellspacing="1" bgcolor="#dadada">
+						 <tr align="center">
+							<td colspan="2" align="center" bgcolor="#eff6ff"><a name="em"></a><span style="font-size:13px; font-weight:bold">基本信息</span></td>
+						 </tr>
+						 <tr>
+							<td width="15%" class="bg_e7" align="right" valign="top">岗位要求：</td>
+						   <td align="left" bgcolor="#ffffff" >
+						   		<span style="width:120px; text-align:left; float:left;">
+                                	<input id="btnSelect" type="button" onclick="selectJobClick();" value="请点此选择工作岗位" />
+                                    <input type="hidden" value="" id="job_request" name="job_request" exp=".+|岗位必须选择" />
+									
+							    </span></td>
+					     </tr>
+                         
+                         <tr>
+							<td width="15%" class="bg_e7" align="right" valign="top">工作地点：</td>
+						   <td align="left" bgcolor="#ffffff" >
+						   		<span style="width:120px; text-align:left; float:left;">
+                                	<input id="btnArea" type="button" onclick="selectAreaClick();" value="选择点此选择城市" />
+                                   <!-- <span style="font-size:13px; font-weight:bold">如果没有您要的地区，<a href="http://www.21mmm.com/help/most/27.html" target="_blank">请告诉我们</a></span>-->
+                                    <input type="hidden" value="" id="local" name="local"  exp=".+|城市必须选择" />
+									
+							   </span></td>
+					     </tr>
+                         
+			        </table>
+				</div>
+            	
+			
+				
+				<div class="banmin" style="margin-top:10px;">
+					<table  width="100%" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#ffffff">
+						 <tr align="center">
+						   <td  align="center">
+								<input type="hidden" value='' name="job_request_hide" id="job_request_hide" />
+								<input type="hidden" value='' name="local_hide" id="local_hide" />
+                                <input type="hidden" value="13260" name="uid" />
+								<input type="submit" name="Submit22" value="提交" style="width:100px; height:30px;" />
+							 &nbsp;</td>
+						 </tr>
+			      </table>
+				</div>
+			</form>
+		</div>
+
+<div id="first"></div>
+<hr />
+<div id="second"></div>
+<hr />
+<div id="selected"></div>
+
+<div id="province"></div>
+<div id="citye"></div>
+<div id="selectedCity"></div>
+<!--<div id="dSelect"></div>
+<div id="pPanel"></div>
+<div id="panel"></div>-->
+
+
+<script language="javascript" type="text/javascript">
+
+
+
+
+
+
+
+//alert(str[0]["title"]);
+//var d1 = (new Date()).getTime();
+/*var l = new level(str);
+var first = "firsttype";      //一级select名字
+var second = "secondtype";    //二级checkbox名字
+var panelName = "panel";      //存放二级checkbox的div的id
+
+var dPanel = document.getElementById(panelName); //存放二级的容器
+l.createSelect("0",first,document.getElementById("pPanel")); //一级
+//l.createCheckbox("17",second,dPanel);
+//document.getElementById().getElementsByTagName(
+var chkFirst = document.getElementById("pPanel").getElementsByTagName("input");
+alert(chkFirst);
+for(var i = 0; i < chkFirst.length; i++){
+	chkFirst[i].onclick = function(){
+		if(dPanel){
+			dPanel.innerHTML = "";
+		}
+		l.createCheckbox(this.value,second,dPanel); 
+	}
+}*/
+/*document.getElementById(first).onchange = function(){
+		if(dPanel){
+			dPanel.innerHTML = "";
+		}
+		l.createCheckbox(this.value,second,dPanel); 
+}*/
+
+
+
+
+
+
+//绑定一级列表span的click事件
+function spanClick(){
+	elements = document.getElementById('pPanel').getElementsByTagName('span');
+	for(var i = 0; i< elements.length; i++){
+		elements[i].onclick = function(){
+			currentSpan ? currentSpan.className = 'spFirst' : '';
+			currentSpan = this;
+			currentSpan.className = "spSelect";
+			secondList('panel',this.getAttribute('urn'));
+			bindSecondClick();
+		}
+	}
+}
+
+//全选,反选
+function selectAll(name,v){
+	var elements = document.getElementById(name).getElementsByTagName("input");
+	for(var i = 0; i < elements.length; i++){
+		elements[i].checked = v;
+	}
+}
+
+function bindEvent(eventName,method){
+	if(window.attachEvent){
+		window.attachEvent('on'+ eventName,method);
+	}else{
+		window.addEventListener(eventName,method);
+	}
+}
+
+
+
+
+
+
+
+
+/*省市*/
+function createProvince(){
+	var html = '';
+	var i = 0;
+	for(var k in province_node){
+		//html += '<input type="checkbox" name="province'+k+'" id="province'+k+'" value="'+k+'" /> <span class="spFirst" urn="'+k+'">'+province_node[k]+'</span>';
+		html += '<span class="spFirst" urn="'+k+'">'+province_node[k]+'</span>';
+		i++;
+		if(i % 7 == 0){
+			html += '</br>';
+		}
+	}
+	return html;
+}
+
+function createCity(p){
+	var html = '';
+	for(var k in city_node){
+		if(p == city_node[k].parent){
+			html += '<input type="checkbox" name="province'+k+'" id="province'+k+'" value="'+city_node[k].title+'" /> <span class="province">'+city_node[k].title+'</span>';
+		}
+	}
+	return html;
+}
+
+function bindProvinceClick(){
+	var elements = document.getElementById('pPanel').getElementsByTagName('input');
+	for(var i = 0; i < elements.length; i++){
+		if('checkbox' == elements[i].getAttribute('type')){
+			elements[i].onclick = function(){
+				document.getElementById('panel').innerHTML = createCity(this.value);
+				bindCityClick();
+				addToArea(this.value,this.checked);
+				selectAll('panel',this.checked);
+				showArea();
+			}
+		}
+	}
+}
+var currentProvince = '';
+function bindSpanProvinceClick(){
+	var elements = document.getElementById('pPanel').getElementsByTagName('span');
+	for(var i = 0; i < elements.length; i++){
+		elements[i].onclick = function(){
+			if(currentProvince){
+				currentProvince.className = 'spFirst';
+			}
+			currentProvince = this;
+			currentProvince.className = 'spSelect';
+			document.getElementById('panel').innerHTML = createCity(this.getAttribute('urn'));
+			bindCityClick();
+		}
+	}
+}
+
+function bindCityClick(){
+	var elements = document.getElementById('panel').getElementsByTagName('input');
+	//alert(elements);
+	for(var i = 0; i < elements.length; i++){
+		if('checkbox' == elements[i].getAttribute('type')){
+		//alert(k);
+			elements[i].onclick = function(){
+				if(currentProvince.innerHTML != '上海市' && currentProvince.innerHTML != '北京市' && currentProvince.innerHTML != '天津市' ){
+					addToArea(currentProvince.innerHTML + '/' + this.value, this.checked);
+					//alert(currentProvince.innerHTML);
+				} else{
+					addToArea(this.value, this.checked);
+				}
+				//alert(this.value);
+				//selectAll('panel',this.checked);
+				showArea();
+			}
+		}
+	}
+}
+
+var selectedArea=[];
+function getOneArea(v){
+	for(var k in province_node){
+		if(v == k){
+			return province_node[k];
+		}
+	}
+	for(var k in city_node){
+		if(v == k){
+			return city_node[k];
+		}
+	}
+}
+function addToArea(v, type){
+	//alert(v);
+	//v = getOneArea(v);
+	if(type){
+		selectedArea.push(v);
+	} else {
+		removeArea(v);
+	}
+}
+function removeArea(e){
+	for(var i = 0; i < selectedArea.length; i++){
+		if(e == selectedArea[i]){
+			selectedArea[i] = -1;
+		}
+	}
+}
+function clearRepeateArea(){
+	for(var i = 0; i < selectedArea.length; i++){
+		for(var j = 0; j < selectedArea.length; j++){
+			if(selectedArea[i] == selectedArea[j].parent){
+				selectedArea[j] = -1;
+			}
+		}
+	}
+	
+}
+function showArea(){
+	var html = value = btnText = '';
+	for(var k in selectedArea){
+		
+		text =  selectedArea[k];
+		
+		if(text != -1){
+			html += '<span class="spSelected">' + text + '</span>';
+			value += text + ',';
+			btnText += text + ' ';
+		}
+		
+	}
+	if(btnText.length > 20){
+		btnText = btnText.substring(0,20) + '...';
+	}
+	document.getElementById('btnArea').value = btnText;
+	document.getElementById('local').value = value;
+	document.getElementById('dSelect').innerHTML = '您选择的城市有：' + html;
+}
+
+function selectAreaClick(){
+	createWindow('请选择城市','<div id="dSelect"></div><div id="pPanel">'+createProvince()+'</div><div id="splitBorder"></div><div id="panel"></div>','<input type="button" value="确定" onclick="closeWindow(\'btnArea\');" />&nbsp;&nbsp;<input type="button" value="清除所选" onclick="clearAll();" />&nbsp;&nbsp;<input type="button" value="取消" onclick="cancelClick();"  />','');
+	bindProvinceClick();
+	bindSpanProvinceClick();
+}
+
+function initJob(v){
+	var arr = [];
+	v = v.split(',');
+	for(var i = 0; i < v.length-1; i++){
+		selected.push(getOne(v[i]));
+		//alert(getOne(v[i]).title);
+	}
+	//selected = v;
+	selectJobClick();
+	showSelect();
+}
+
+function initArea(v){
+	v = v.split(',');
+	for(var i =0; i < v.length-1; i++ ){
+		selectedArea.push(v[i]); alert(v[i]);
+	}
+	selectAreaClick();
+	showArea();
+	
+}
+
+//window.onload = function(){
+	//initJob('6,244,');
+	//initArea('上海市,北京市,')
+	//document.getElementById('local').value = '上海市,';
+//}
+
+
+function detail(type){
+	var dDetail = document.getElementById('detail');
+	if(dDetail.style.display == 'block'){
+		dDetail.style.display = 'none';
+	} else {
+		dDetail.style.display = 'block';
+	}
+}
+
+function chk(){
+	if(!document.getElementById("job_request").value){
+		alert('岗位要求必须选择');
+		return false;
+	}
+	if(!document.getElementById("local").value){
+		alert('求职地必须选择');
+		return false;
+	}
+	return true;
+}
+</script>
+
+
+
+<script language="javascript">
+var popdata = function(data,pram){
+	this.data = data;
+	this.selectedValue = [];
+	
+};
+popdata.prototype={
+	getTitle:function(k){
+		//alert(k);
+		//alert(this.data[0].title);
+		var str;
+		for(var i = 0; i < this.data.length; i++){ //数组从0开始
+			//alert(v);
+			if(this.data[i]["id"] == k){
+				return this.data[i]["title"];
+			}
+			//str += this.data[i]['title'];
+		}
+		//return str;
+	},
+	showSelectedValue:function(){
+		//alert(this.selectedValue);
+		var html = "";
+		var j = 0;
+		for(var i = 1; i <= this.selectedValue.length; i++){ //由于以id为数组下标，故无索引为0的元素，从1开始
+			if(this.selectedValue[i]){
+				html += '<input type="checkbox" value="'+i+'" name ="" checked="checked" onclick="selectedCheckboxClick(this);"  /> '+this.getTitle(i); 
+				if(j % 5 == 4){
+					html += '<br />';
+				}
+				j++;
+				//html += '<span>'+ this.getTitle(i) +'</span>';
+				//alert(i);
+			}
+		}
+		return html;
+	},
+	
+	changValue:function(v,type){
+		if(type){
+			
+		}else{
+			
+		}
+	},
+	showFirst:function(parent){
+		var listFirstHTML = '';
+		var i=0;
+		for(var k in this.data){
+			if(this.data[k].parentid == parent){
+				//listFirstHTML += '<input type="checkbox" value="'+data[k].id+'" name =""  /> '+'<span class="spFirst" urn="' + data[k].id + '">' + data[k].title + '</span>'; 
+				listFirstHTML += '<span class="spFirst" urn="' + this.data[k].id + '">' + this.data[k].title + '</span>'; 
+				if(i % 5 == 4){
+					listFirstHTML += '<br />';
+				}
+				i++;
+			}
+		}
+		
+		return listFirstHTML;
+	},
+	showSecond:function(parent){
+		var listFirstHTML = '';
+		var i=0;
+		for(var k in this.data){
+			if(this.data[k].parentid == parent){
+				listFirstHTML += '<input type="checkbox" value="'+this.data[k].id+'" name =""  /> '+this.data[k].title; 
+				if(i % 5 == 4){
+					listFirstHTML += '<br />';
+				}
+				i++;
+			}
+		}
+	
+		return listFirstHTML;
+	},
+	clear:function(v){},
+	clearAll:function(){}
+	
+	
+};
+
+
+/*
+显示窗体，关闭窗体，选择项目，第二次打开显示前一次所选的值，
+现在做的，第二次弹出窗口并没有显示已选中的值。
+最好解决冲突办法就是写个类。
+*/
+var data = [{"id":"1","code":"z_meirong","title":"美容类","keywords":"美，容，","description":"","label":"美容类","type":"unit","ftype":"employ","parentid":"0","style":"","sort":"1"},{"id":"2","code":"z_meifa","title":"美发类","keywords":"","description":"","label":"美发类","type":"unit","ftype":"employ","parentid":"0","style":"","sort":"2"},{"id":"4","code":"z_huazhuang","title":"化妆造型类","keywords":"","description":"","label":"化妆造型类","type":"unit","ftype":"employ","parentid":"0","style":"","sort":"3"},{"id":"3","code":"z_meijia","title":"美甲类","keywords":"","description":"","label":"美甲类","type":"unit","ftype":"employ","parentid":"0","style":"","sort":"4"},{"id":"5","code":"z_wenxiu","title":"纹绣类","keywords":"","description":"","label":"纹绣类","type":"unit","ftype":"employ","parentid":"0","style":"","sort":"5"},{"id":"6","code":"z_baojian","title":"中医保健类","keywords":"","description":"","label":"中医保健类","type":"unit","ftype":"employ","parentid":"0","style":"","sort":"6"},{"id":"7","code":"z_zhenggxing","title":"医疗整型类","keywords":"","description":"","label":"医疗整型类","type":"unit","ftype":"employ","parentid":"0","style":"","sort":"7"},{"id":"9","code":"z_xuexiao","title":"美容学校类","keywords":"","description":"","label":"美容学校类","type":"unit","ftype":"employ","parentid":"0","style":"","sort":"8"},{"id":"8","code":"z_rihua","title":"日化商场类","keywords":"","description":"","label":"日化商场类","type":"unit","ftype":"employ","parentid":"0","style":"","sort":"9"},{"id":"10","code":"z_xiaoshou","title":"销售市场类","keywords":"销售市场类","description":"","label":"销售市场类","type":"unit","ftype":"employ","parentid":"0","style":"","sort":"10"},{"id":"244","code":"z_yingxiao","title":"市场营销类","keywords":"市场营销类","description":"","label":"市场营销类","type":"unit","ftype":"employ","parentid":"0","style":"","sort":"11"},{"id":"17","code":"z_huiwu","title":"会务营销类","keywords":"","description":"","label":"会务营销类","type":"unit","ftype":"employ","parentid":"0","style":"","sort":"12"},{"id":"15","code":"z_fuwu","title":"客户服务类","keywords":"","description":"","label":"客户服务类","type":"unit","ftype":"employ","parentid":"0","style":"","sort":"13"},{"id":"16","code":"z_xingzheng","title":"人事行政类","keywords":"","description":"","label":"人事行政类","type":"unit","ftype":"employ","parentid":"0","style":"","sort":"14"},{"id":"12","code":"z_jingying","title":"经营管理类","keywords":"","description":"","label":"经营管理类","type":"unit","ftype":"employ","parentid":"0","style":"","sort":"15"},{"id":"13","code":"z_shengchan","title":"生产管理类","keywords":"","description":"","label":"生产管理类","type":"unit","ftype":"employ","parentid":"0","style":"","sort":"16"},{"id":"14","code":"z_houqin","title":"后勤储备类","keywords":"","description":"","label":"后勤储备类","type":"unit","ftype":"employ","parentid":"0","style":"","sort":"17"},{"id":"18","code":"z_caiwu","title":"财务类","keywords":"","description":"","label":"财务类","type":"unit","ftype":"employ","parentid":"0","style":"","sort":"18"},{"id":"11","code":"z_jianshen","title":"健身瑜伽类","keywords":"","description":"","label":"健身瑜伽类","type":"unit","ftype":"employ","parentid":"0","style":"","sort":"19"},{"id":"20","code":"z_mote","title":"模特类","keywords":"","description":"","label":"模特类","type":"unit","ftype":"employ","parentid":"0","style":"","sort":"20"},{"id":"280","code":"z_meirong_buxian","title":"--","keywords":"美容类-不限","description":"","label":"","type":"unit","ftype":"employ","parentid":"1","style":"","sort":"0"},{"id":"22","code":"z_meirong_meirongshi","title":"美容师","keywords":"美容师","description":"","label":"美容师","type":"unit","ftype":"employ","parentid":"1","style":"","sort":"1"},{"id":"40","code":"z_meirong_meirongxueyuan","title":"美容学员","keywords":"美容学员","description":"","label":"美容学员","type":"unit","ftype":"employ","parentid":"1","style":"","sort":"1"},{"id":"41","code":"z_meirong_shiximeirongshi","title":"实习美容师","keywords":"实习美容师","description":"","label":"实习美容师","type":"unit","ftype":"employ","parentid":"1","style":"","sort":"1"},{"id":"23","code":"z_meirong_meitishi","title":"美体师","keywords":"美体师","description":"","label":"美体师","type":"unit","ftype":"employ","parentid":"1","style":"","sort":"2"},{"id":"24","code":"z_meirong_meiliaoshi","title":"美疗师","keywords":"美疗师","description":"","label":"美疗师","type":"unit","ftype":"employ","parentid":"1","style":"","sort":"3"},{"id":"38","code":"z_meirong_xiangxiongshi","title":"香薰师","keywords":"香薰师","description":"","label":"香薰师","type":"unit","ftype":"employ","parentid":"1","style":"","sort":"4"},{"id":"26","code":"z_meirong_meirongdianzhang","title":"美容店长","keywords":"美容店长","description":"","label":"美容店长","type":"unit","ftype":"employ","parentid":"1","style":"","sort":"5"},{"id":"27","code":"z_meirong_meirongjingli","title":"美容经理","keywords":"美容经理","description":"","label":"美容经理","type":"unit","ftype":"employ","parentid":"1","style":"","sort":"6"},{"id":"28","code":"z_meirong_meirongzhuguan","title":"美容主管","keywords":"美容主管","description":"","label":"美容主管","type":"unit","ftype":"employ","parentid":"1","style":"","sort":"7"},{"id":"29","code":"z_meirong_meirongdaoshi","title":"美容导师","keywords":"美容导师","description":"","label":"美容导师","type":"unit","ftype":"employ","parentid":"1","style":"","sort":"8"},{"id":"30","code":"z_meirong_meirongguwen","title":"美容顾问","keywords":"美容顾问","description":"","label":"美容顾问","type":"unit","ftype":"employ","parentid":"1","style":"","sort":"8"},{"id":"31","code":"z_meirong_meirongdudao","title":"美容督导","keywords":"美容督导","description":"","label":"美容督导","type":"unit","ftype":"employ","parentid":"1","style":"","sort":"9"},{"id":"32","code":"z_meirong_meirongjiangshi","title":"美容讲师","keywords":"美容讲师","description":"","label":"美容讲师","type":"unit","ftype":"employ","parentid":"1","style":"","sort":"10"},{"id":"33","code":"z_meirong_peixunjiangshi","title":"培训讲师","keywords":"培训讲师","description":"","label":"培训讲师","type":"unit","ftype":"employ","parentid":"1","style":"","sort":"11"},{"id":"34","code":"z_meirong_jiangshizhuli","title":"讲师助理","keywords":"讲师助理","description":"","label":"讲师助理","type":"unit","ftype":"employ","parentid":"1","style":"","sort":"12"},{"id":"35","code":"z_meirong_peixunzongjian","title":"培训总监","keywords":"培训总监","description":"","label":"培训总监","type":"unit","ftype":"employ","parentid":"1","style":"","sort":"13"},{"id":"36","code":"z_meirong_jishuzongjian","title":"技术总监","keywords":"技术总监","description":"","label":"技术总监","type":"unit","ftype":"employ","parentid":"1","style":"","sort":"14"},{"id":"37","code":"z_meirong_jingyingguanli","title":"经营管理","keywords":"经营管理","description":"","label":"经营管理","type":"unit","ftype":"employ","parentid":"1","style":"","sort":"15"},{"id":"42","code":"z_meirong_meirongxiangmuhezuo","title":"美容项目合作","keywords":"美容项目合作","description":"","label":"美容项目合作","type":"unit","ftype":"employ","parentid":"1","style":"","sort":"20"},{"id":"279","code":"z_meifa_buxian","title":"--","keywords":"美发类-不限","description":"","label":"","type":"unit","ftype":"employ","parentid":"2","style":"","sort":"0"},{"id":"43","code":"z_meifa_meifazhuli","title":"美发助理","keywords":"美发助理","description":"","label":"美发助理","type":"unit","ftype":"employ","parentid":"2","style":"","sort":"1"},{"id":"59","code":"z_meifa_meifaxiaogong","title":"美发小工","keywords":"美发小工","description":"","label":"美发小工","type":"unit","ftype":"employ","parentid":"2","style":"","sort":"1"},{"id":"60","code":"z_meifa_meifaxuetu","title":"美发学徒","keywords":"美发学徒","description":"","label":"美发学徒","type":"unit","ftype":"employ","parentid":"2","style":"","sort":"1"},{"id":"47","code":"z_meifa_rantangshi","title":"染烫师","keywords":"染烫师","description":"","label":"染烫师","type":"unit","ftype":"employ","parentid":"2","style":"","sort":"2"},{"id":"44","code":"z_meifa_meifajishi","title":"美发技师","keywords":"美发技师","description":"","label":"美发技师","type":"unit","ftype":"employ","parentid":"2","style":"","sort":"2"},{"id":"48","code":"z_meifa_panfashi","title":"盘发师","keywords":"盘发师","description":"","label":"盘发师","type":"unit","ftype":"employ","parentid":"2","style":"","sort":"3"},{"id":"45","code":"z_meifa_faxingshi","title":"发型师","keywords":"发型师","description":"","label":"发型师","type":"unit","ftype":"employ","parentid":"2","style":"","sort":"5"},{"id":"46","code":"z_meifa_gaojifaxingshi","title":"高级发型师","keywords":"高级发型师","description":"","label":"高级发型师","type":"unit","ftype":"employ","parentid":"2","style":"","sort":"6"},{"id":"49","code":"z_meifa_meifadianzhang","title":"美发店长","keywords":"美发店长","description":"","label":"美发店长","type":"unit","ftype":"employ","parentid":"2","style":"","sort":"7"},{"id":"57","code":"z_meifa_meifadagong","title":"美发大工","keywords":"美发大工","description":"","label":"美发大工","type":"unit","ftype":"employ","parentid":"2","style":"","sort":"7"},{"id":"50","code":"z_meifa_faxingzongjian","title":"发型总监","keywords":"发型总监","description":"","label":"发型总监","type":"unit","ftype":"employ","parentid":"2","style":"","sort":"8"},{"id":"51","code":"z_meifa_jishuzongjian","title":"技术总监","keywords":"技术总监","description":"","label":"技术总监","type":"unit","ftype":"employ","parentid":"2","style":"","sort":"9"},{"id":"52","code":"z_meifa_meifaguwen","title":"美发顾问","keywords":"美发顾问","description":"","label":"美发顾问","type":"unit","ftype":"employ","parentid":"2","style":"","sort":"10"},{"id":"53","code":"z_meifa_peixunjiangshi","title":"培训讲师","keywords":"培训讲师","description":"","label":"培训讲师","type":"unit","ftype":"employ","parentid":"2","style":"","sort":"11"},{"id":"55","code":"z_meifa_peixunzongjian","title":"培训总监","keywords":"培训总监","description":"","label":"培训总监","type":"unit","ftype":"employ","parentid":"2","style":"","sort":"13"},{"id":"56","code":"z_meifa_jingyingguanli","title":"经营管理","keywords":"经营管理","description":"","label":"经营管理","type":"unit","ftype":"employ","parentid":"2","style":"","sort":"14"},{"id":"62","code":"z_meifa_meifaxiangmu","title":"美发项目合作","keywords":"美发项目合作","description":"","label":"美发项目合作","type":"unit","ftype":"employ","parentid":"2","style":"","sort":"20"},{"id":"277","code":"z_meijia_buxian","title":"--","keywords":"美甲类-不限","description":"","label":"","type":"unit","ftype":"employ","parentid":"3","style":"","sort":"0"},{"id":"82","code":"z_meijia_meijiazhuli","title":"美甲助理","keywords":"美甲助理","description":"","label":"美甲助理","type":"unit","ftype":"employ","parentid":"3","style":"","sort":"1"},{"id":"90","code":"z_meijia_xueyuan","title":"美甲学员","keywords":"美甲学员","description":"","label":"美甲学员","type":"unit","ftype":"employ","parentid":"3","style":"","sort":"1"},{"id":"83","code":"z_meijia_meijiashi","title":"美甲师","keywords":"美甲师","description":"","label":"美甲师","type":"unit","ftype":"employ","parentid":"3","style":"","sort":"2"},{"id":"84","code":"z_meijia_meijiadianzhang","title":"美甲店长","keywords":"美甲店长","description":"","label":"美甲店长","type":"unit","ftype":"employ","parentid":"3","style":"","sort":"3"},{"id":"85","code":"z_meijia_meijiadaoshi","title":"美甲导师","keywords":"美甲导师","description":"","label":"美甲导师","type":"unit","ftype":"employ","parentid":"3","style":"","sort":"4"},{"id":"86","code":"z_meijia_jingyingguanli","title":"经营管理","keywords":"经营管理","description":"","label":"经营管理","type":"unit","ftype":"employ","parentid":"3","style":"","sort":"5"},{"id":"87","code":"z_meijia_peixunjiangshi","title":"培训讲师","keywords":"培训讲师","description":"","label":"培训讲师","type":"unit","ftype":"employ","parentid":"3","style":"","sort":"6"},{"id":"89","code":"z_meijia_xiangmu","title":"美甲项目合作","keywords":"美甲项目合作","description":"","label":"美甲项目合作","type":"unit","ftype":"employ","parentid":"3","style":"","sort":"8"},{"id":"278","code":"z_huazhuang_buxian","title":"--","keywords":"化妆造型类-不限","description":"","label":"","type":"unit","ftype":"employ","parentid":"4","style":"","sort":"0"},{"id":"65","code":"z_huazhuang_huazhuangzhuli","title":"化妆助理","keywords":"化妆助理","description":"","label":"化妆助理","type":"unit","ftype":"employ","parentid":"4","style":"","sort":"1"},{"id":"79","code":"z_huazhuang_xuetu","title":"化妆学徒","keywords":"化妆学徒","description":"","label":"化妆学徒","type":"unit","ftype":"employ","parentid":"4","style":"","sort":"1"},{"id":"66","code":"z_huazhuang_huazhuanshi","title":"化妆师","keywords":"化妆师","description":"","label":"化妆师","type":"unit","ftype":"employ","parentid":"4","style":"","sort":"2"},{"id":"68","code":"z_huazhuang_xingxiangshejishi","title":"形象设计师","keywords":"形象设计师","description":"","label":"形象设计师","type":"unit","ftype":"employ","parentid":"4","style":"","sort":"4"},{"id":"69","code":"z_huazhuang_xingxiangshejiguwen","title":"形象设计顾问","keywords":"形象设计顾问","description":"","label":"形象设计顾问","type":"unit","ftype":"employ","parentid":"4","style":"","sort":"5"},{"id":"70","code":"z_huazhuang_huazhuanzaoxingdianzhang","title":"化妆造型店长","keywords":"化妆造型店长","description":"","label":"化妆造型店长","type":"unit","ftype":"employ","parentid":"4","style":"","sort":"6"},{"id":"71","code":"z_huazhuang_secaiguwen","title":"色彩顾问","keywords":"色彩顾问","description":"","label":"色彩顾问","type":"unit","ftype":"employ","parentid":"4","style":"","sort":"7"},{"id":"73","code":"z_huazhuang_yishuzhidao","title":"艺术指导","keywords":"艺术指导","description":"","label":"艺术指导","type":"unit","ftype":"employ","parentid":"4","style":"","sort":"9"},{"id":"74","code":"z_huazhuang_yishuzongjian","title":"艺术总监","keywords":"艺术总监","description":"","label":"艺术总监","type":"unit","ftype":"employ","parentid":"4","style":"","sort":"10"},{"id":"75","code":"z_huazhuang_peixunjiangshi","title":"培训讲师","keywords":"培训讲师","description":"","label":"培训讲师","type":"unit","ftype":"employ","parentid":"4","style":"","sort":"11"},{"id":"77","code":"z_huazhuang_sheyingshi","title":"摄影师","keywords":"摄影师","description":"","label":"摄影师","type":"unit","ftype":"employ","parentid":"4","style":"","sort":"13"},{"id":"80","code":"z_huazhuang_hezuo","title":"化妆项目合作","keywords":"化妆项目合作","description":"","label":"化妆项目合作","type":"unit","ftype":"employ","parentid":"4","style":"","sort":"16"},{"id":"276","code":"z_wenxiu_buxian","title":"--","keywords":"纹绣类-不限","description":"","label":"","type":"unit","ftype":"employ","parentid":"5","style":"","sort":"0"},{"id":"99","code":"z_wenxiu_wenxiuxuetu","title":"纹绣学徒","keywords":"纹绣学徒","description":"","label":"纹绣学徒","type":"unit","ftype":"employ","parentid":"5","style":"","sort":"1"},{"id":"92","code":"z_wenxiu_wenshen","title":"纹身师","keywords":"纹身师","description":"","label":"纹身师","type":"unit","ftype":"employ","parentid":"5","style":"","sort":"1"},{"id":"93","code":"z_wenxiu_caihuishi","title":"彩绘师","keywords":"彩绘师","description":"","label":"彩绘师","type":"unit","ftype":"employ","parentid":"5","style":"","sort":"2"},{"id":"94","code":"z_wenxiu_xiumeishi","title":"绣眉师","keywords":"绣眉师","description":"","label":"绣眉师","type":"unit","ftype":"employ","parentid":"5","style":"","sort":"3"},{"id":"95","code":"z_wenxiu_meichunshi","title":"美唇师","keywords":"美唇师","description":"","label":"美唇师","type":"unit","ftype":"employ","parentid":"5","style":"","sort":"4"},{"id":"96","code":"z_wenxiu_wenxiudianzhang","title":"主管","keywords":"主管","description":"","label":"主管","type":"unit","ftype":"employ","parentid":"5","style":"","sort":"5"},{"id":"97","code":"z_wenxiu_peixunjiangshi","title":"培训讲师","keywords":"培训讲师","description":"","label":"培训讲师","type":"unit","ftype":"employ","parentid":"5","style":"","sort":"6"},{"id":"100","code":"z_wenxiu_hezuo","title":"纹绣项目合作","keywords":"纹绣项目合作","description":"","label":"纹绣项目合作","type":"unit","ftype":"employ","parentid":"5","style":"","sort":"9"},{"id":"275","code":"z_baojian_buxian","title":"--","keywords":"中医保健类-不限","description":"","label":"","type":"unit","ftype":"employ","parentid":"6","style":"","sort":"0"},{"id":"114","code":"z_baojian_xuetu","title":"保健学徒","keywords":"保健学徒","description":"","label":"保健学徒","type":"unit","ftype":"employ","parentid":"6","style":"","sort":"1"},{"id":"101","code":"z_baojian_meirongshi","title":"中医美容师","keywords":"中医美容师","description":"","label":"中医美容师","type":"unit","ftype":"employ","parentid":"6","style":"","sort":"1"},{"id":"102","code":"z_baojian_baojianshi","title":"保健师","keywords":"保健师","description":"","label":"保健师","type":"unit","ftype":"employ","parentid":"6","style":"","sort":"2"},{"id":"103","code":"z_baojian_yingyangshi","title":"营养师","keywords":"营养师","description":"","label":"营养师","type":"unit","ftype":"employ","parentid":"6","style":"","sort":"3"},{"id":"104","code":"z_baojian_zhenjiushi","title":"针灸师","keywords":"针灸师","description":"","label":"针灸师","type":"unit","ftype":"employ","parentid":"6","style":"","sort":"4"},{"id":"105","code":"z_baojian_anmoshi","title":"按摩师","keywords":"按摩师","description":"","label":"按摩师","type":"unit","ftype":"employ","parentid":"6","style":"","sort":"5"},{"id":"107","code":"z_baojian_zuliaoshi","title":"足疗师","keywords":"足疗师","description":"","label":"足疗师","type":"unit","ftype":"employ","parentid":"6","style":"","sort":"7"},{"id":"109","code":"z_baojian_baojiandianzhang","title":"保健主管","keywords":"保健主管","description":"","label":"保健主管","type":"unit","ftype":"employ","parentid":"6","style":"","sort":"9"},{"id":"110","code":"z_baojian_peixunjiangshi","title":"培训讲师","keywords":"培训讲师","description":"","label":"培训讲师","type":"unit","ftype":"employ","parentid":"6","style":"","sort":"10"},{"id":"112","code":"z_baojian_jingyingguanli","title":"经营管理","keywords":"经营管理","description":"","label":"经营管理","type":"unit","ftype":"employ","parentid":"6","style":"","sort":"12"},{"id":"113","code":"z_baojian_hezuo","title":"保健项目合作","keywords":"保健项目合作","description":"","label":"保健项目合作","type":"unit","ftype":"employ","parentid":"6","style":"","sort":"13"},{"id":"274","code":"z_zhenggxing_buxian","title":"--","keywords":"医疗整形类-不限","description":"","label":"","type":"unit","ftype":"employ","parentid":"7","style":"","sort":"0"},{"id":"116","code":"z_zhenggxing_meirongshi","title":"激光美容师","keywords":"激光美容师","description":"","label":"激光美容师","type":"unit","ftype":"employ","parentid":"7","style":"","sort":"1"},{"id":"117","code":"z_zhenggxing_suxingshi","title":"减肥塑形师","keywords":"减肥塑形师","description":"","label":"减肥塑形师","type":"unit","ftype":"employ","parentid":"7","style":"","sort":"2"},{"id":"119","code":"z_zhenggxing-zhenggxingyishi","title":"整形医师","keywords":"整形医师","description":"","label":"整形医师","type":"unit","ftype":"employ","parentid":"7","style":"","sort":"4"},{"id":"120","code":"z_zhenggxing_zhenggxingguwen","title":"整形顾问","keywords":"整形顾问","description":"","label":"整形顾问","type":"unit","ftype":"employ","parentid":"7","style":"","sort":"5"},{"id":"121","code":"z_zhenggxing_hushi","title":"护士","keywords":"护士","description":"","label":"护士","type":"unit","ftype":"employ","parentid":"7","style":"","sort":"6"},{"id":"272","code":"z_rihua_buxian","title":"--","keywords":"日化商场类-不限","description":"","label":"","type":"unit","ftype":"employ","parentid":"8","style":"","sort":"0"},{"id":"141","code":"z_rihua_zhuangui","title":"专柜营业员","keywords":"专柜","description":"","label":"专柜","type":"unit","ftype":"employ","parentid":"8","style":"","sort":"1"},{"id":"142","code":"z_rihua_daogou","title":"化妆品导购","keywords":"化妆品导购","description":"","label":"化妆品导购","type":"unit","ftype":"employ","parentid":"8","style":"","sort":"2"},{"id":"372","code":"z_rihua_shouyin","title":"收银员","keywords":"收银员","description":"","label":"收银员","type":"unit","ftype":"employ","parentid":"8","style":"","sort":"3"},{"id":"144","code":"z_rihua_zhuguan","title":"主管","keywords":"主管","description":"","label":"主管","type":"unit","ftype":"employ","parentid":"8","style":"","sort":"4"},{"id":"239","code":"z_rihua_cuxiaoyuan","title":"促销员","keywords":"促销员","description":"","label":"促销员","type":"unit","ftype":"employ","parentid":"8","style":"","sort":"6"},{"id":"273","code":"z_xuexiao_buxian","title":"--","keywords":"美容学校类-不限","description":"","label":"","type":"unit","ftype":"employ","parentid":"9","style":"","sort":"0"},{"id":"123","code":"z_xuexiao_xuexiaoxiaozhang","title":"学校校长","keywords":"学校校长","description":"","label":"学校校长","type":"unit","ftype":"employ","parentid":"9","style":"","sort":"1"},{"id":"124","code":"z_xuexiao_peixunzongjian","title":"教育培训总监","keywords":"教育培训总监","description":"","label":"教育培训总监","type":"unit","ftype":"employ","parentid":"9","style":"","sort":"2"},{"id":"125","code":"z_xuexiao_meironglaoshi","title":"美容老师","keywords":"美容老师","description":"","label":"美容老师","type":"unit","ftype":"employ","parentid":"9","style":"","sort":"3"},{"id":"126","code":"z_xuexiao_meitilaoshi","title":"美体老师","keywords":"美体老师","description":"","label":"美体老师","type":"unit","ftype":"employ","parentid":"9","style":"","sort":"4"},{"id":"127","code":"z_xuexiao_xiangxunlaoshi","title":"香薰老师","keywords":"香薰老师","description":"","label":"香薰老师","type":"unit","ftype":"employ","parentid":"9","style":"","sort":"5"},{"id":"128","code":"z_xuexiao_faxinglaoshi","title":"发型老师","keywords":"发型老师","description":"","label":"发型老师","type":"unit","ftype":"employ","parentid":"9","style":"","sort":"6"},{"id":"129","code":"z_xuexiao_huazhuanglaoshi","title":"化妆老师","keywords":"化妆老师","description":"","label":"化妆老师","type":"unit","ftype":"employ","parentid":"9","style":"","sort":"7"},{"id":"130","code":"z_xuexiao_meijialaoshi","title":"美甲老师","keywords":"美甲老师","description":"","label":"美甲老师","type":"unit","ftype":"employ","parentid":"9","style":"","sort":"8"},{"id":"131","code":"z_wenxiu_wenxiulaoshi","title":"纹绣老师","keywords":"纹绣老师","description":"","label":"纹绣老师","type":"unit","ftype":"employ","parentid":"9","style":"","sort":"9"},{"id":"132","code":"z_wenxiu_baojianlaoshi","title":"保健老师","keywords":"保健老师","description":"","label":"保健老师","type":"unit","ftype":"employ","parentid":"9","style":"","sort":"10"},{"id":"133","code":"z_xuexiao_yujialaoshi","title":"瑜伽老师","keywords":"瑜伽老师","description":"","label":"瑜伽老师","type":"unit","ftype":"employ","parentid":"9","style":"","sort":"11"},{"id":"134","code":"z_xuexiao_jianshenglaoshi","title":"健身老师","keywords":"健身老师","description":"","label":"健身老师","type":"unit","ftype":"employ","parentid":"9","style":"","sort":"12"},{"id":"135","code":"z_xuexiao_secailaoshi","title":"色彩老师","keywords":"色彩老师","description":"","label":"色彩老师","type":"unit","ftype":"employ","parentid":"9","style":"","sort":"13"},{"id":"137","code":"z_xuexiao_zhaoshenglaoshi","title":"招生代表","keywords":"招生代表","description":"","label":"招生代表","type":"unit","ftype":"employ","parentid":"9","style":"","sort":"15"},{"id":"138","code":"z_xuexiao_zhaoshengzhuguan","title":"招生主管","keywords":"招生主管","description":"","label":"招生主管","type":"unit","ftype":"employ","parentid":"9","style":"","sort":"16"},{"id":"139","code":"z_xuexiao_hezuo","title":"教学项目合作","keywords":"教学项目合作","description":"","label":"教学项目合作","type":"unit","ftype":"employ","parentid":"9","style":"","sort":"17"},{"id":"238","code":"z_xuexiao_zhuguan","title":"行政主管","keywords":"行政主管","description":"","label":"行政主管","type":"unit","ftype":"employ","parentid":"9","style":"","sort":"19"},{"id":"370","code":"z_wudaolaoshi","title":"舞蹈老师","keywords":"","description":"","label":"","type":"unit","ftype":"employ","parentid":"9","style":"","sort":"20"},{"id":"271","code":"z_xiaoshou_buxian","title":"---","keywords":"销售市场类-不限","description":"","label":"","type":"unit","ftype":"employ","parentid":"10","style":"","sort":"0"},{"id":"146","code":"z_xiaoshou_xiaoshoudaibiao","title":"销售代表","keywords":"销售代表","description":"","label":"销售代表","type":"unit","ftype":"employ","parentid":"10","style":"","sort":"1"},{"id":"148","code":"z_xiaoshou_xiaoshoujingli","title":"销售经理","keywords":"销售经理","description":"","label":"销售经理","type":"unit","ftype":"employ","parentid":"10","style":"","sort":"3"},{"id":"149","code":"z_xiaoshou_quyujingli","title":"区域经理","keywords":"区域经理","description":"","label":"区域经理","type":"unit","ftype":"employ","parentid":"10","style":"","sort":"4"},{"id":"150","code":"z_xiaoshou_qudaojingli","title":"渠道经理","keywords":"渠道经理","description":"","label":"渠道经理","type":"unit","ftype":"employ","parentid":"10","style":"","sort":"5"},{"id":"152","code":"z_xiaoshou_xiaoshouzongjian","title":"销售总监","keywords":"销售总监","description":"","label":"销售总监","type":"unit","ftype":"employ","parentid":"10","style":"","sort":"7"},{"id":"158","code":"z_xiaoshou_dianhua","title":"电话销售员","keywords":"电话销售员","description":"","label":"电话销售员","type":"unit","ftype":"employ","parentid":"10","style":"","sort":"13"},{"id":"159","code":"z_xiaoshou_tuiguan","title":"网络推广员","keywords":"网络推广员","description":"","label":"网络推广员","type":"unit","ftype":"employ","parentid":"10","style":"","sort":"14"},{"id":"262","code":"z_jianshen_buxian","title":"--","keywords":"健身/瑜伽类-不限","description":"","label":"","type":"unit","ftype":"employ","parentid":"11","style":"","sort":"0"},{"id":"225","code":"z_jianshen_jianshenjiaoliao","title":"健身教练","keywords":"健身教练","description":"","label":"健身教练","type":"unit","ftype":"employ","parentid":"11","style":"","sort":"1"},{"id":"224","code":"z_jianshen_jianshenzhuli","title":"健身助理","keywords":"健身助理","description":"","label":"健身助理","type":"unit","ftype":"employ","parentid":"11","style":"","sort":"2"},{"id":"226","code":"z_jianshen_yujiajiaoliao","title":"瑜伽教练","keywords":"瑜伽教练","description":"","label":"瑜伽教练","type":"unit","ftype":"employ","parentid":"11","style":"","sort":"3"},{"id":"227","code":"z_jianshen_yujiazhuli","title":"瑜伽助理","keywords":"瑜伽助理","description":"","label":"瑜伽助理","type":"unit","ftype":"employ","parentid":"11","style":"","sort":"4"},{"id":"228","code":"z_jianshen_wudaojiaoliao","title":"舞蹈教练","keywords":"舞蹈教练","description":"","label":"舞蹈教练","type":"unit","ftype":"employ","parentid":"11","style":"","sort":"5"},{"id":"229","code":"z_jianshen_wudaozhuli","title":"舞蹈助理","keywords":"舞蹈助理","description":"","label":"舞蹈助理","type":"unit","ftype":"employ","parentid":"11","style":"","sort":"6"},{"id":"230","code":"z_jianshen_zhuguan","title":"主管","keywords":"主管","description":"","label":"主管","type":"unit","ftype":"employ","parentid":"11","style":"","sort":"7"},{"id":"231","code":"z_jianshen_guwen","title":"顾问","keywords":"顾问","description":"","label":"顾问","type":"unit","ftype":"employ","parentid":"11","style":"","sort":"8"},{"id":"232","code":"z_jianshen_peixunjiangshi","title":"培训讲师","keywords":"培训讲师","description":"","label":"培训讲师","type":"unit","ftype":"employ","parentid":"11","style":"","sort":"9"},{"id":"234","code":"z_jianshen_jiangshenhezuo","title":"健身合作","keywords":"健身合作","description":"","label":"健身合作","type":"unit","ftype":"employ","parentid":"11","style":"","sort":"11"},{"id":"235","code":"z_jianshen_yujiahezuo","title":"瑜伽合作","keywords":"瑜伽合作","description":"","label":"瑜伽合作","type":"unit","ftype":"employ","parentid":"11","style":"","sort":"12"},{"id":"236","code":"z_jianshen_wudaohezuo","title":"舞蹈合作","keywords":"舞蹈合作","description":"","label":"舞蹈合作","type":"unit","ftype":"employ","parentid":"11","style":"","sort":"13"},{"id":"266","code":"z_jingying_buxian","title":"--","keywords":"经营管理类-不限","description":"","label":"","type":"unit","ftype":"employ","parentid":"12","style":"","sort":"0"},{"id":"187","code":"z_jingying_zongjingli","title":"总经理","keywords":"总经理","description":"","label":"总经理","type":"unit","ftype":"employ","parentid":"12","style":"","sort":"1"},{"id":"188","code":"z_jingying_fuzongjingli","title":"副总经理","keywords":"副总经理","description":"","label":"副总经理","type":"unit","ftype":"employ","parentid":"12","style":"","sort":"2"},{"id":"189","code":"z_jingying_yingyuzongjian","title":"营运总监","keywords":"营运总监","description":"","label":"营运总监","type":"unit","ftype":"employ","parentid":"12","style":"","sort":"3"},{"id":"190","code":"z_jingying_zhuli","title":"总经理助理","keywords":"总经理助理","description":"","label":"总经理助理","type":"unit","ftype":"employ","parentid":"12","style":"","sort":"4"},{"id":"192","code":"z_jingying_qita","title":"其它相关职位","keywords":"其它相关职位","description":"","label":"其它相关职位","type":"unit","ftype":"employ","parentid":"12","style":"","sort":"6"},{"id":"260","code":"z_jingying_fengongsi","title":"分公司/办事处/分支机构经理","keywords":"分公司/办事处/分支机构经理","description":"","label":"分公司/办事处/分支","type":"unit","ftype":"employ","parentid":"12","style":"","sort":"6"},{"id":"265","code":"z_shengchan_buxian","title":"--","keywords":"生产管理类-不限","description":"","label":"","type":"unit","ftype":"employ","parentid":"13","style":"","sort":"0"},{"id":"193","code":"z_shengchan_changzhang","title":"厂长","keywords":"厂长","description":"","label":"厂长","type":"unit","ftype":"employ","parentid":"13","style":"","sort":"1"},{"id":"194","code":"z_shengchan_fuchangzhang","title":"副厂长","keywords":"副厂长","description":"","label":"副厂长","type":"unit","ftype":"employ","parentid":"13","style":"","sort":"2"},{"id":"195","code":"z_shengchan_gongchengshi","title":"品质工程师","keywords":"品质工程师","description":"","label":"品质工程师","type":"unit","ftype":"employ","parentid":"13","style":"","sort":"3"},{"id":"196","code":"z_shengchan_yanfajingli","title":"研发经理","keywords":"研发经理","description":"","label":"研发经理","type":"unit","ftype":"employ","parentid":"13","style":"","sort":"4"},{"id":"197","code":"z_shengchan_chanpinjingli","title":"产品经理","keywords":"产品经理","description":"","label":"产品经理","type":"unit","ftype":"employ","parentid":"13","style":"","sort":"5"},{"id":"198","code":"z_shengchan_shengchanzhuguan","title":"生产主管","keywords":"生产主管","description":"","label":"生产主管","type":"unit","ftype":"employ","parentid":"13","style":"","sort":"6"},{"id":"199","code":"z_shengchan_zhiguanyuan","title":"质检员","keywords":"质检员","description":"","label":"质检员","type":"unit","ftype":"employ","parentid":"13","style":"","sort":"7"},{"id":"200","code":"z_shengchan_gongren","title":"技术工人","keywords":"技术工人","description":"","label":"技术工人","type":"unit","ftype":"employ","parentid":"13","style":"","sort":"8"},{"id":"201","code":"z_shengchan_qita","title":"其它相关职位","keywords":"其它相关职位","description":"","label":"其它相关职位","type":"unit","ftype":"employ","parentid":"13","style":"","sort":"9"},{"id":"264","code":"z_houqin_buxian","title":"--","keywords":"后勤储备类-不限","description":"","label":"","type":"unit","ftype":"employ","parentid":"14","style":"","sort":"0"},{"id":"202","code":"z_houqin_zhuguan","title":"后勤主管","keywords":"后勤主管","description":"","label":"后勤主管","type":"unit","ftype":"employ","parentid":"14","style":"","sort":"1"},{"id":"203","code":"z_houqin_chuyunjingli","title":"储运经理","keywords":"储运经理","description":"","label":"储运经理","type":"unit","ftype":"employ","parentid":"14","style":"","sort":"2"},{"id":"204","code":"z_houqin_siji","title":"司机","keywords":"司机","description":"","label":"司机","type":"unit","ftype":"employ","parentid":"14","style":"","sort":"3"},{"id":"205","code":"z_houqin_changuan","title":"仓库管理员","keywords":"仓库管理员","description":"","label":"仓库管理员","type":"unit","ftype":"employ","parentid":"14","style":"","sort":"4"},{"id":"268","code":"z_fuwu_buxian","title":"--","keywords":"客户服务类-不限","description":"","label":"","type":"unit","ftype":"employ","parentid":"15","style":"","sort":"0"},{"id":"177","code":"z_fuwu_kefuzongjian","title":"客服总监","keywords":"客服总监","description":"","label":"客服总监","type":"unit","ftype":"employ","parentid":"15","style":"","sort":"1"},{"id":"178","code":"z_fuwu_kefujingli","title":"客服经理","keywords":"客服经理","description":"","label":"客服经理","type":"unit","ftype":"employ","parentid":"15","style":"","sort":"2"},{"id":"179","code":"z_fuwu_kefuzhuguan","title":"客服主管","keywords":"客服主管","description":"","label":"客服主管","type":"unit","ftype":"employ","parentid":"15","style":"","sort":"3"},{"id":"180","code":"z_fuwu_kefuzhuanyuan","title":"客服专员","keywords":"客服专员","description":"","label":"客服专员","type":"unit","ftype":"employ","parentid":"15","style":"","sort":"4"},{"id":"256","code":"z_fuwu_rexian","title":" 客服咨询热线/呼叫中心人员 ","keywords":" 客服咨询热线/呼叫中心人员 ","description":"","label":" 客服咨询热线/呼叫","type":"unit","ftype":"employ","parentid":"15","style":"","sort":"6"},{"id":"267","code":"z_xingzheng_buxian","title":"--","keywords":"人事行政类-不限","description":"","label":"","type":"unit","ftype":"employ","parentid":"16","style":"","sort":"0"},{"id":"182","code":"z_xingzheng_zongjian","title":"人事行政总监","keywords":"人事行政总监","description":"","label":"人事行政总监","type":"unit","ftype":"employ","parentid":"16","style":"","sort":"1"},{"id":"183","code":"z_xingzheng_jingli","title":"人事行政经理","keywords":"人事行政经理","description":"","label":"人事行政经理","type":"unit","ftype":"employ","parentid":"16","style":"","sort":"2"},{"id":"184","code":"z_xingzheng_zhuguan","title":"人事行政主管","keywords":"人事行政主管","description":"","label":"人事行政主管","type":"unit","ftype":"employ","parentid":"16","style":"","sort":"3"},{"id":"185","code":"z_xingzheng_zhuanyuan","title":"行政专员","keywords":"行政专员","description":"","label":"行政专员","type":"unit","ftype":"employ","parentid":"16","style":"","sort":"4"},{"id":"243","code":"z_xingzheng_wenyuan","title":"前台/文员","keywords":"前台/文员","description":"","label":"前台/文员","type":"unit","ftype":"employ","parentid":"16","style":"","sort":"6"},{"id":"257","code":"z_xingzheng_renlizongjian","title":"人力资源总监","keywords":"人力资源总监","description":"","label":"人力资源总监","type":"unit","ftype":"employ","parentid":"16","style":"","sort":"7"},{"id":"258","code":"z_xingzheng_renlijingli","title":"人力资源经理/主管","keywords":"人力资源经理/主管","description":"","label":"人力资源经理/主管","type":"unit","ftype":"employ","parentid":"16","style":"","sort":"8"},{"id":"259","code":"z_xingzheng_renlizhuanyuna","title":"人力资源专员/助理","keywords":"人力资源专员/助理","description":"","label":"人力资源专员/助理","type":"unit","ftype":"employ","parentid":"16","style":"","sort":"9"},{"id":"269","code":"z_huiwu_buxian","title":"--","keywords":"会务营销类-不限","description":"","label":"","type":"unit","ftype":"employ","parentid":"17","style":"","sort":"0"},{"id":"171","code":"z_huiwu_huiwuzongjian","title":"会务总监","keywords":"会务总监","description":"","label":"会务总监","type":"unit","ftype":"employ","parentid":"17","style":"","sort":"1"},{"id":"172","code":"z_huiwu_huiwujingli","title":"会务经理","keywords":"会务经理","description":"","label":"会务经理","type":"unit","ftype":"employ","parentid":"17","style":"","sort":"2"},{"id":"173","code":"z_huiwu_huiwuzhuren","title":"会务主任","keywords":"会务主任","description":"","label":"会务主任","type":"unit","ftype":"employ","parentid":"17","style":"","sort":"3"},{"id":"174","code":"z_huiwu_dahuijiangshi","title":"大会讲师","keywords":"大会讲师","description":"","label":"大会讲师","type":"unit","ftype":"employ","parentid":"17","style":"","sort":"4"},{"id":"175","code":"z_huiwu_zhuchiren","title":"主持人","keywords":"主持人","description":"","label":"主持人","type":"unit","ftype":"employ","parentid":"17","style":"","sort":"5"},{"id":"373","code":"z_huiwu_liyi","title":"礼仪人员","keywords":"礼仪人员","description":"","label":"礼仪人员","type":"unit","ftype":"employ","parentid":"17","style":"","sort":"6"},{"id":"263","code":"z_caiwu_buxian","title":"财务类-不限","keywords":"财务类-不限","description":"","label":"","type":"unit","ftype":"employ","parentid":"18","style":"","sort":"0"},{"id":"206","code":"z_caiwu_zongjian","title":"财务总监","keywords":"财务总监","description":"","label":"财务总监","type":"unit","ftype":"employ","parentid":"18","style":"","sort":"1"},{"id":"207","code":"z_caiwu_jingli","title":"财务经理","keywords":"财务经理","description":"","label":"财务经理","type":"unit","ftype":"employ","parentid":"18","style":"","sort":"2"},{"id":"208","code":"z_caiwu_zhuguan","title":"财务主管","keywords":"财务主管","description":"","label":"财务主管","type":"unit","ftype":"employ","parentid":"18","style":"","sort":"3"},{"id":"209","code":"z_caiwu_kuaiji","title":"会计","keywords":"会计","description":"","label":"会计","type":"unit","ftype":"employ","parentid":"18","style":"","sort":"4"},{"id":"210","code":"z_caiwu_chuna","title":"出纳","keywords":"出纳","description":"","label":"出纳","type":"unit","ftype":"employ","parentid":"18","style":"","sort":"5"},{"id":"211","code":"z_caiwu_qita","title":"其它相关职位","keywords":"其它相关职位","description":"","label":"其它相关职位","type":"unit","ftype":"employ","parentid":"18","style":"","sort":"6"},{"id":"261","code":"z_mote_buxian","title":"模特类-不限","keywords":"模特类-不限","description":"","label":"","type":"unit","ftype":"employ","parentid":"20","style":"","sort":"0"},{"id":"212","code":"z_mote_zoutai","title":"走台模特","keywords":"走台模特","description":"","label":"走台模特","type":"unit","ftype":"employ","parentid":"20","style":"","sort":"1"},{"id":"213","code":"z_mote_shou","title":"手模特","keywords":"手模特","description":"","label":"手模特","type":"unit","ftype":"employ","parentid":"20","style":"","sort":"2"},{"id":"214","code":"z_mote_jiao","title":"脚模特","keywords":"脚模特","description":"","label":"脚模特","type":"unit","ftype":"employ","parentid":"20","style":"","sort":"3"},{"id":"215","code":"z_mote_xun","title":"胸模特","keywords":"胸模特","description":"","label":"胸模特","type":"unit","ftype":"employ","parentid":"20","style":"","sort":"4"},{"id":"216","code":"z_mote_tou","title":"头部模特","keywords":"头部模特","description":"","label":"头部模特","type":"unit","ftype":"employ","parentid":"20","style":"","sort":"5"},{"id":"217","code":"z_mote_renti","title":"人体模特","keywords":"人体模特","description":"","label":"人体模特","type":"unit","ftype":"employ","parentid":"20","style":"","sort":"6"},{"id":"218","code":"z_mote_nanzhuang","title":"男装模特","keywords":"男装模特","description":"","label":"男装模特","type":"unit","ftype":"employ","parentid":"20","style":"","sort":"7"},{"id":"219","code":"z_mote_nuzhuang","title":"女装模特","keywords":"女装模特","description":"","label":"女装模特","type":"unit","ftype":"employ","parentid":"20","style":"","sort":"8"},{"id":"223","code":"z_mote_qita","title":"其它相关职位","keywords":"其它相关职位","description":"","label":"其它相关职位","type":"unit","ftype":"employ","parentid":"20","style":"","sort":"12"},{"id":"270","code":"z_yingxiao_buxian","title":"--","keywords":"市场营销类-不限","description":"","label":"","type":"unit","ftype":"employ","parentid":"244","style":"","sort":"0"},{"id":"245","code":"z_yingxiao_zongjian","title":"市场总监/经理/主管","keywords":"市场总监/经理/主管","description":"","label":"市场总监/经理/主管","type":"unit","ftype":"employ","parentid":"244","style":"","sort":"1"},{"id":"246","code":"z_yingxiao_yingxiaojingli","title":"市场营销经理/主管","keywords":"市场营销经理/主管","description":"","label":"市场营销经理/主管","type":"unit","ftype":"employ","parentid":"244","style":"","sort":"2"},{"id":"247","code":"z_yingxiao_zhuanyuan","title":"市场营销专员/助理","keywords":"市场营销专员/助理","description":"","label":"市场营销专员/助理","type":"unit","ftype":"employ","parentid":"244","style":"","sort":"3"},{"id":"248","code":"z_yingxiao_cehua","title":"市场策划/企划","keywords":"市场策划/企划","description":"","label":"市场策划/企划","type":"unit","ftype":"employ","parentid":"244","style":"","sort":"4"},{"id":"249","code":"z_yingxiao_diaoyan","title":"市场调研与分析","keywords":"市场调研与分析","description":"","label":"市场调研与分析","type":"unit","ftype":"employ","parentid":"244","style":"","sort":"5"},{"id":"250","code":"z_yingxiao_zhuli","title":"市场专员/助理","keywords":"市场专员/助理","description":"","label":"市场专员/助理","type":"unit","ftype":"employ","parentid":"244","style":"","sort":"6"},{"id":"251","code":"z_yingxiao_tuozhan","title":"市场拓展","keywords":"市场拓展","description":"","label":"市场拓展","type":"unit","ftype":"employ","parentid":"244","style":"","sort":"7"},{"id":"252","code":"z_yingxiao_gongguanjingli","title":"公关经理/主管","keywords":"公关经理/主管","description":"","label":"公关经理/主管","type":"unit","ftype":"employ","parentid":"244","style":"","sort":"8"},{"id":"253","code":"z_yingxiao_gongguanzhuanyuan","title":"公关专员","keywords":"公关专员","description":"","label":"公关专员","type":"unit","ftype":"employ","parentid":"244","style":"","sort":"9"},{"id":"254","code":"z_yingxiao_pinpaijingli","title":"品牌经理/主管","keywords":"品牌经理/主管","description":"","label":"品牌经理/主管","type":"unit","ftype":"employ","parentid":"244","style":"","sort":"10"}];
+
+/**************************  新 **********************************/
+var bg,w;
+function createWindow(title,content,stauts){
+	//alert(title);
+	//document.body.style.width = "100%";
+	//document.body.style.height = "100%";
+	bg = document.createElement('div');
+	bg.className = 'window_bg';
+	bg.style.width = document.documentElement.clientWidth;
+	bg.innerHTML = '<iframe height="100%" width="100%"></iframe>';
+	document.body.appendChild(bg);  //$('<div class="window_bg">test</div>').appendTo(document.body);
+	
+	
+	w = document.createElement("div");
+	w.className = "window";
+	//document.getElementById().setAttribute(
+	w.setAttribute('id','w1');
+	w.style.display = 'block';
+	html =  '<div id="wTitle">'+title+'</div>' +
+    		   '<div id="wContent">'+content+'</div>' +
+    		   '<div id="wStatus">'+stauts+'</div>';
+	w.innerHTML = html;
+	document.body.appendChild(w);
+	var bodyW = document.documentElement.clientWidth; //窗口可见区域的宽
+	var bodyH = document.documentElement.clientHeight; //窗口可见区域的高
+	
+	var winW = w.clientWidth ;
+	var winH = w.clientHeight;
+//alert(document.documentElement.clientHeight);
+	var winX = (bodyW - winW) / 2;
+	var winY = (bodyH - winH) / 2;
+
+	w.style.left = winX;
+	w.style.top = winY;
+}
+
+
+function closeWindow(name){
+	//if(name){
+		//document.getElementById(name).value = '已选择成功'; //'btnSelect'
+	//}
+	//document.getElementById('btnArea').value = '已选择成功';
+	
+	bg.style.display = 'none';
+	w.style.display = 'none';
+	document.body.removeChild(w);
+	
+	//bg = null;
+	//w = null;
+}
+
+function cancelClick(){
+	clearAll(); //清除
+	closeWindow(''); //不显示
+}
+
+var divFirst = 'pPanel';
+var divSecond = 'panel';
+var divSelect = 'dSelect';
+var currentSpan;
+
+//绑定一级列表span的click事件
+function spanClick(){
+	elements = document.getElementById(divFirst).getElementsByTagName('span');
+	//alert(elements.length);
+	for(var i = 0; i< elements.length; i++){
+		elements[i].onclick = function(){
+			currentSpan ? currentSpan.className = 'spFirst' : '';
+			currentSpan = this;
+			currentSpan.className = "spSelect";
+			//alert(this.getAttribute('urn'));
+			document.getElementById(divSecond).innerHTML = p.showSecond(this.getAttribute('urn'));
+			bindSecondClick();
+		}
+	}
+}
+
+
+//绑定二级checkbox的click事件
+function bindSecondClick(){
+	var elements = document.getElementById('panel').getElementsByTagName('input');
+	//var selectedElements = document.getElementById("selected").getElementsByTagName("input");
+	//elements = elements.concat(selectedElements);
+	for(var i = 0; i < elements.length; i++){
+		if('checkbox' == elements[i].getAttribute('type')){
+			elements[i].onclick = function(){
+				secondCheckboxClick(this);
+			}
+		}
+	}
+}
+
+//二级checkbox的点击事件监听
+function secondCheckboxClick(v){
+	//alert(v.value);
+	p.selectedValue[v.value]= v.checked;
+	//alert(p.selectedValue.valueOf());
+	document.getElementById(divSelect).innerHTML = p.showSelectedValue();
+}
+
+function selectedCheckboxClick(v){
+	secondCheckboxClick(v);
+	clearSecond(v.value);
+}
+
+//选中项清除时，清除二级选中
+function clearSecond(v){
+	var e = document.getElementById(divSecond).getElementsByTagName("input");
+	for(var i = 0; i < e.length; i++){
+		if(e[i].value == v){
+			e[i].checked = false;
+		}
+	}
+}
+
+function clearAll(){
+	p.selectedValue = [];
+	document.getElementById(divSelect).innerHTML = p.showSelectedValue();
+	var e = document.getElementById(divSecond).getElementsByTagName("input");
+	for(var i = 0; i < e.length; i++){
+		e[i].checked = false;
+	}
+}
+
+function confirmJobSelected(){
+	var v = text = '';
+	for(var i = 1; i <= p.selectedValue.length; i++){
+		if(p.selectedValue[i]){
+		//text += p.getTitle(i)+",";
+		v += i+",";
+		
+		text += p.getTitle(i)+",";
+		//alert(v);
+		}
+	}
+	closeWindow();
+	document.getElementById("btnSelect").value = text;
+	document.getElementById("job_request").value = v;
+}
+
+function selectJobClick(){
+	createWindow('请选择 ','<div id="dSelect"></div><div id="pPanel"></div><div id="splitBorder"></div><div id="panel"></div>','<input type="button" value="确定" onclick="confirmJobSelected();" />&nbsp;&nbsp;<input type="button" value="清除所选" onclick="clearAll();" />&nbsp;&nbsp;<input type="button" value="取消" onclick="cancelClick();"  />');
+	
+	
+	document.getElementById("pPanel").innerHTML = p.showFirst(0);
+	document.getElementById("panel").innerHTML = p.showSecond(6);
+	spanClick();
+	//bindFirstClick();
+	bindSecondClick();
+
+}
+var p = new popdata(data);
+selectJobClick();
+
+var city_node=
+{100100:{'title':'全国不限','parent':'100000'},
+110000:{'title':'北京市','parent':'110000'},
+/*110000:{'title':'不限','parent':'110000'},
+110101:{'title':'东城区','parent':'110000'},
+110102:{'title':'西城区','parent':'110000'},
+110103:{'title':'崇文区','parent':'110000'},
+110104:{'title':'宣武区','parent':'110000'},
+110105:{'title':'朝阳区','parent':'110000'},
+110106:{'title':'丰台区','parent':'110000'},
+110107:{'title':'石景山区','parent':'110000'},
+110108:{'title':'海淀区','parent':'110000'},
+110109:{'title':'门头沟区','parent':'110000'},
+110111:{'title':'房山区','parent':'110000'},
+110112:{'title':'通州区','parent':'110000'},
+110113:{'title':'顺义区','parent':'110000'},
+110114:{'title':'昌平区','parent':'110000'},
+110115:{'title':'大兴区','parent':'110000'},
+110116:{'title':'怀柔区','parent':'110000'},
+110117:{'title':'平谷区','parent':'110000'},
+110228:{'title':'密云县','parent':'110000'},
+110229:{'title':'延庆县','parent':'110000'},*/
+130101:{'title':'不限','parent':'130000'},
+130100:{'title':'石家庄市','parent':'130000'},
+130200:{'title':'唐山市','parent':'130000'},
+130300:{'title':'秦皇岛市','parent':'130000'},
+130400:{'title':'邯郸市','parent':'130000'},
+130500:{'title':'邢台市','parent':'130000'},
+130600:{'title':'保定市','parent':'130000'},
+130700:{'title':'张家口市','parent':'130000'},
+130800:{'title':'承德市','parent':'130000'},
+130900:{'title':'沧州市','parent':'130000'},
+131000:{'title':'廊坊市','parent':'130000'},
+131100:{'title':'衡水市','parent':'130000'},
+140101:{'title':'不限','parent':'140000'},
+140100:{'title':'太原市','parent':'140000'},
+140200:{'title':'大同市','parent':'140000'},
+140300:{'title':'阳泉市','parent':'140000'},
+140400:{'title':'长治市','parent':'140000'},
+140500:{'title':'晋城市','parent':'140000'},
+140600:{'title':'朔州市','parent':'140000'},
+140700:{'title':'晋中市','parent':'140000'},
+140800:{'title':'运城市','parent':'140000'},
+140900:{'title':'忻州市','parent':'140000'},
+141000:{'title':'临汾市','parent':'140000'},
+141100:{'title':'吕梁市','parent':'140000'},
+150101:{'title':'不限','parent':'150000'},
+150100:{'title':'呼和浩特市','parent':'150000'},
+150200:{'title':'包头市','parent':'150000'},
+150300:{'title':'乌海市','parent':'150000'},
+150400:{'title':'赤峰市','parent':'150000'},
+150500:{'title':'通辽市','parent':'150000'},
+150600:{'title':'鄂尔多斯市','parent':'150000'},
+150700:{'title':'呼伦贝尔市','parent':'150000'},
+150800:{'title':'巴彦淖尔市','parent':'150000'},
+150900:{'title':'乌兰察布市','parent':'150000'},
+152200:{'title':'兴安盟','parent':'150000'},
+152500:{'title':'锡林郭勒盟','parent':'150000'},
+152900:{'title':'阿拉善盟','parent':'150000'},
+210101:{'title':'不限','parent':'210000'},
+210100:{'title':'沈阳市','parent':'210000'},
+210200:{'title':'大连市','parent':'210000'},
+210300:{'title':'鞍山市','parent':'210000'},
+210400:{'title':'抚顺市','parent':'210000'},
+210500:{'title':'本溪市','parent':'210000'},
+210600:{'title':'丹东市','parent':'210000'},
+210700:{'title':'锦州市','parent':'210000'},
+210800:{'title':'营口市','parent':'210000'},
+210900:{'title':'阜新市','parent':'210000'},
+211000:{'title':'辽阳市','parent':'210000'},
+211100:{'title':'盘锦市','parent':'210000'},
+211200:{'title':'铁岭市','parent':'210000'},
+211300:{'title':'朝阳市','parent':'210000'},
+211400:{'title':'葫芦岛市','parent':'210000'},
+220101:{'title':'不限','parent':'220000'},
+220100:{'title':'长春市','parent':'220000'},
+220200:{'title':'吉林市','parent':'220000'},
+220300:{'title':'四平市','parent':'220000'},
+220400:{'title':'辽源市','parent':'220000'},
+220500:{'title':'通化市','parent':'220000'},
+220600:{'title':'白山市','parent':'220000'},
+220700:{'title':'松原市','parent':'220000'},
+220800:{'title':'白城市','parent':'220000'},
+222400:{'title':'延边朝鲜族自治州','parent':'220000'},
+230101:{'title':'不限','parent':'230000'},
+230100:{'title':'哈尔滨市','parent':'230000'},
+230200:{'title':'齐齐哈尔市','parent':'230000'},
+230300:{'title':'鸡西市','parent':'230000'},
+230400:{'title':'鹤岗市','parent':'230000'},
+230500:{'title':'双鸭山市','parent':'230000'},
+230600:{'title':'大庆市','parent':'230000'},
+230700:{'title':'伊春市','parent':'230000'},
+230800:{'title':'佳木斯市','parent':'230000'},
+230900:{'title':'七台河市','parent':'230000'},
+231000:{'title':'牡丹江市','parent':'230000'},
+231100:{'title':'黑河市','parent':'230000'},
+231200:{'title':'绥化市','parent':'230000'},
+232700:{'title':'大兴安岭地区','parent':'230000'},
+311000:{'title':'上海市','parent':'310000'},
+/*311000:{'title':'不限','parent':'310000'},
+310101:{'title':'黄浦区','parent':'310000'},
+310103:{'title':'卢湾区','parent':'310000'},
+310104:{'title':'徐汇区','parent':'310000'},
+310105:{'title':'长宁区','parent':'310000'},
+310106:{'title':'静安区','parent':'310000'},
+310107:{'title':'普陀区','parent':'310000'},
+310108:{'title':'闸北区','parent':'310000'},
+310109:{'title':'虹口区','parent':'310000'},
+310110:{'title':'杨浦区','parent':'310000'},
+310112:{'title':'闵行区','parent':'310000'},
+310113:{'title':'宝山区','parent':'310000'},
+310114:{'title':'嘉定区','parent':'310000'},
+310115:{'title':'浦东新区','parent':'310000'},
+310116:{'title':'金山区','parent':'310000'},
+310117:{'title':'松江区','parent':'310000'},
+310118:{'title':'青浦区','parent':'310000'},
+310119:{'title':'南汇区','parent':'310000'},
+310120:{'title':'奉贤区','parent':'310000'},
+310121:{'title':'崇明县','parent':'310000'},*/
+320101:{'title':'不限','parent':'320000'},
+320100:{'title':'南京市','parent':'320000'},
+320200:{'title':'无锡市','parent':'320000'},
+320300:{'title':'徐州市','parent':'320000'},
+320400:{'title':'常州市','parent':'320000'},
+320500:{'title':'苏州市','parent':'320000'},
+320600:{'title':'南通市','parent':'320000'},
+320700:{'title':'连云港市','parent':'320000'},
+320800:{'title':'淮安市','parent':'320000'},
+320900:{'title':'盐城市','parent':'320000'},
+321000:{'title':'扬州市','parent':'320000'},
+321100:{'title':'镇江市','parent':'320000'},
+321200:{'title':'泰州市','parent':'320000'},
+321300:{'title':'宿迁市','parent':'320000'},
+330101:{'title':'不限','parent':'330000'},
+330100:{'title':'杭州市','parent':'330000'},
+330200:{'title':'宁波市','parent':'330000'},
+330300:{'title':'温州市','parent':'330000'},
+330400:{'title':'嘉兴市','parent':'330000'},
+330500:{'title':'湖州市','parent':'330000'},
+330600:{'title':'绍兴市','parent':'330000'},
+330700:{'title':'金华市','parent':'330000'},
+330800:{'title':'衢州市','parent':'330000'},
+330900:{'title':'舟山市','parent':'330000'},
+331000:{'title':'台州市','parent':'330000'},
+331100:{'title':'丽水市','parent':'330000'},
+340101:{'title':'不限','parent':'340000'},
+340100:{'title':'合肥市','parent':'340000'},
+340200:{'title':'芜湖市','parent':'340000'},
+340300:{'title':'蚌埠市','parent':'340000'},
+340400:{'title':'淮南市','parent':'340000'},
+340500:{'title':'马鞍山市','parent':'340000'},
+340600:{'title':'淮北市','parent':'340000'},
+340700:{'title':'铜陵市','parent':'340000'},
+340800:{'title':'安庆市','parent':'340000'},
+341000:{'title':'黄山市','parent':'340000'},
+341100:{'title':'滁州市','parent':'340000'},
+341200:{'title':'阜阳市','parent':'340000'},
+341300:{'title':'宿州市','parent':'340000'},
+341400:{'title':'巢湖市','parent':'340000'},
+341500:{'title':'六安市','parent':'340000'},
+341600:{'title':'亳州市','parent':'340000'},
+341700:{'title':'池州市','parent':'340000'},
+341800:{'title':'宣城市','parent':'340000'},
+350101:{'title':'不限','parent':'350000'},
+350100:{'title':'福州市','parent':'350000'},
+350200:{'title':'厦门市','parent':'350000'},
+350300:{'title':'莆田市','parent':'350000'},
+350400:{'title':'三明市','parent':'350000'},
+350500:{'title':'泉州市','parent':'350000'},
+350600:{'title':'漳州市','parent':'350000'},
+350700:{'title':'南平市','parent':'350000'},
+350800:{'title':'龙岩市','parent':'350000'},
+350900:{'title':'宁德市','parent':'350000'},
+360101:{'title':'不限','parent':'360000'},
+360100:{'title':'南昌市','parent':'360000'},
+360200:{'title':'景德镇市','parent':'360000'},
+360300:{'title':'萍乡市','parent':'360000'},
+360400:{'title':'九江市','parent':'360000'},
+360500:{'title':'新余市','parent':'360000'},
+360600:{'title':'鹰潭市','parent':'360000'},
+360700:{'title':'赣州市','parent':'360000'},
+360800:{'title':'吉安市','parent':'360000'},
+360900:{'title':'宜春市','parent':'360000'},
+361000:{'title':'抚州市','parent':'360000'},
+361100:{'title':'上饶市','parent':'360000'},
+370101:{'title':'不限','parent':'370000'},
+370100:{'title':'济南市','parent':'370000'},
+370200:{'title':'青岛市','parent':'370000'},
+370300:{'title':'淄博市','parent':'370000'},
+370400:{'title':'枣庄市','parent':'370000'},
+370500:{'title':'东营市','parent':'370000'},
+370600:{'title':'烟台市','parent':'370000'},
+370700:{'title':'潍坊市','parent':'370000'},
+370800:{'title':'济宁市','parent':'370000'},
+370900:{'title':'泰安市','parent':'370000'},
+371000:{'title':'威海市','parent':'370000'},
+371100:{'title':'日照市','parent':'370000'},
+371200:{'title':'莱芜市','parent':'370000'},
+371300:{'title':'临沂市','parent':'370000'},
+371400:{'title':'德州市','parent':'370000'},
+371500:{'title':'聊城市','parent':'370000'},
+371600:{'title':'滨州市','parent':'370000'},
+371700:{'title':'荷泽市','parent':'370000'},
+410100:{'title':'郑州市','parent':'410000'},
+410200:{'title':'开封市','parent':'410000'},
+410300:{'title':'洛阳市','parent':'410000'},
+410400:{'title':'平顶山市','parent':'410000'},
+410500:{'title':'安阳市','parent':'410000'},
+410600:{'title':'鹤壁市','parent':'410000'},
+410700:{'title':'新乡市','parent':'410000'},
+410800:{'title':'焦作市','parent':'410000'},
+410900:{'title':'濮阳市','parent':'410000'},
+411000:{'title':'许昌市','parent':'410000'},
+411100:{'title':'漯河市','parent':'410000'},
+411200:{'title':'三门峡市','parent':'410000'},
+411300:{'title':'南阳市','parent':'410000'},
+411400:{'title':'商丘市','parent':'410000'},
+411500:{'title':'信阳市','parent':'410000'},
+411600:{'title':'周口市','parent':'410000'},
+411700:{'title':'驻马店市','parent':'410000'},
+420101:{'title':'不限','parent':'420000'},
+420100:{'title':'武汉市','parent':'420000'},
+420200:{'title':'黄石市','parent':'420000'},
+420300:{'title':'十堰市','parent':'420000'},
+420500:{'title':'宜昌市','parent':'420000'},
+420600:{'title':'襄樊市','parent':'420000'},
+420700:{'title':'鄂州市','parent':'420000'},
+420800:{'title':'荆门市','parent':'420000'},
+420900:{'title':'孝感市','parent':'420000'},
+421000:{'title':'荆州市','parent':'420000'},
+421100:{'title':'黄冈市','parent':'420000'},
+421200:{'title':'咸宁市','parent':'420000'},
+421300:{'title':'随州市','parent':'420000'},
+422800:{'title':'恩施土家族苗族自治州','parent':'420000'},
+429000:{'title':'湖北省直辖行政单位','parent':'420000'},
+430101:{'title':'不限','parent':'430000'},
+430100:{'title':'长沙市','parent':'430000'},
+430200:{'title':'株洲市','parent':'430000'},
+430300:{'title':'湘潭市','parent':'430000'},
+430400:{'title':'衡阳市','parent':'430000'},
+430500:{'title':'邵阳市','parent':'430000'},
+430600:{'title':'岳阳市','parent':'430000'},
+430700:{'title':'常德市','parent':'430000'},
+430800:{'title':'张家界市','parent':'430000'},
+430900:{'title':'益阳市','parent':'430000'},
+431000:{'title':'郴州市','parent':'430000'},
+431100:{'title':'永州市','parent':'430000'},
+431200:{'title':'怀化市','parent':'430000'},
+431300:{'title':'娄底市','parent':'430000'},
+433100:{'title':'湘西土家族苗族自治州','parent':'430000'},
+440101:{'title':'不限','parent':'440000'},
+440100:{'title':'广州市','parent':'440000'},
+440200:{'title':'韶关市','parent':'440000'},
+440300:{'title':'深圳市','parent':'440000'},
+440400:{'title':'珠海市','parent':'440000'},
+440500:{'title':'汕头市','parent':'440000'},
+440600:{'title':'佛山市','parent':'440000'},
+440700:{'title':'江门市','parent':'440000'},
+440800:{'title':'湛江市','parent':'440000'},
+440900:{'title':'茂名市','parent':'440000'},
+441200:{'title':'肇庆市','parent':'440000'},
+441300:{'title':'惠州市','parent':'440000'},
+441400:{'title':'梅州市','parent':'440000'},
+441500:{'title':'汕尾市','parent':'440000'},
+441600:{'title':'河源市','parent':'440000'},
+441700:{'title':'阳江市','parent':'440000'},
+441800:{'title':'清远市','parent':'440000'},
+441900:{'title':'东莞市','parent':'440000'},
+442000:{'title':'中山市','parent':'440000'},
+445100:{'title':'潮州市','parent':'440000'},
+445200:{'title':'揭阳市','parent':'440000'},
+445300:{'title':'云浮市','parent':'440000'},
+450101:{'title':'不限','parent':'450000'},
+450100:{'title':'南宁市','parent':'450000'},
+450200:{'title':'柳州市','parent':'450000'},
+450300:{'title':'桂林市','parent':'450000'},
+450400:{'title':'梧州市','parent':'450000'},
+450500:{'title':'北海市','parent':'450000'},
+450600:{'title':'防城港市','parent':'450000'},
+450700:{'title':'钦州市','parent':'450000'},
+450800:{'title':'贵港市','parent':'450000'},
+450900:{'title':'玉林市','parent':'450000'},
+451000:{'title':'百色市','parent':'450000'},
+451100:{'title':'贺州市','parent':'450000'},
+451200:{'title':'河池市','parent':'450000'},
+451300:{'title':'来宾市','parent':'450000'},
+451400:{'title':'崇左市','parent':'450000'},
+460101:{'title':'不限','parent':'460000'},
+460100:{'title':'海口市','parent':'460000'},
+460200:{'title':'三亚市','parent':'460000'},
+469000:{'title':'广西省直辖县级','parent':'460000'},
+500199:{'title':'不限','parent':'500000'},
+500222:{'title':'綦江县','parent':'500000'},
+500223:{'title':'潼南县','parent':'500000'},
+500224:{'title':'铜梁县','parent':'500000'},
+500225:{'title':'大足县','parent':'500000'},
+500226:{'title':'荣昌县','parent':'500000'},
+500227:{'title':'璧山县','parent':'500000'},
+500228:{'title':'梁平县','parent':'500000'},
+500229:{'title':'城口县','parent':'500000'},
+500230:{'title':'丰都县','parent':'500000'},
+500231:{'title':'垫江县','parent':'500000'},
+500232:{'title':'武隆县','parent':'500000'},
+500233:{'title':'忠　县','parent':'500000'},
+500234:{'title':'开　县','parent':'500000'},
+500235:{'title':'云阳县','parent':'500000'},
+500236:{'title':'奉节县','parent':'500000'},
+500237:{'title':'巫山县','parent':'500000'},
+500238:{'title':'巫溪县','parent':'500000'},
+500240:{'title':'石柱土家族自治县','parent':'500000'},
+500241:{'title':'秀山土家族苗族自治县','parent':'500000'},
+500242:{'title':'酉阳土家族苗族自治县','parent':'500000'},
+500243:{'title':'彭水苗族土家族自治县','parent':'500000'},
+
+
+510101:{'title':'不限','parent':'510000'},
+510100:{'title':'成都市','parent':'510000'},
+510300:{'title':'自贡市','parent':'510000'},
+510400:{'title':'攀枝花市','parent':'510000'},
+510500:{'title':'泸州市','parent':'510000'},
+510600:{'title':'德阳市','parent':'510000'},
+510700:{'title':'绵阳市','parent':'510000'},
+510800:{'title':'广元市','parent':'510000'},
+510900:{'title':'遂宁市','parent':'510000'},
+511000:{'title':'内江市','parent':'510000'},
+511100:{'title':'乐山市','parent':'510000'},
+511300:{'title':'南充市','parent':'510000'},
+511400:{'title':'眉山市','parent':'510000'},
+511500:{'title':'宜宾市','parent':'510000'},
+511600:{'title':'广安市','parent':'510000'},
+511700:{'title':'达州市','parent':'510000'},
+511800:{'title':'雅安市','parent':'510000'},
+511900:{'title':'巴中市','parent':'510000'},
+512000:{'title':'资阳市','parent':'510000'},
+513200:{'title':'阿坝藏族羌族自治州','parent':'510000'},
+513300:{'title':'甘孜藏族自治州','parent':'510000'},
+513400:{'title':'凉山彝族自治州','parent':'510000'},
+520101:{'title':'不限','parent':'520000'},
+520100:{'title':'贵阳市','parent':'520000'},
+520200:{'title':'六盘水市','parent':'520000'},
+520300:{'title':'遵义市','parent':'520000'},
+520400:{'title':'安顺市','parent':'520000'},
+522200:{'title':'铜仁地区','parent':'520000'},
+522300:{'title':'黔西南布依族苗族自治州','parent':'520000'},
+522400:{'title':'毕节地区','parent':'520000'},
+522600:{'title':'黔东南苗族侗族自治州','parent':'520000'},
+522700:{'title':'黔南布依族苗族自治州','parent':'520000'},
+530101:{'title':'不限','parent':'530000'},
+530100:{'title':'昆明市','parent':'530000'},
+530300:{'title':'曲靖市','parent':'530000'},
+530400:{'title':'玉溪市','parent':'530000'},
+530500:{'title':'保山市','parent':'530000'},
+530600:{'title':'昭通市','parent':'530000'},
+530700:{'title':'丽江市','parent':'530000'},
+530800:{'title':'思茅市','parent':'530000'},
+530900:{'title':'临沧市','parent':'530000'},
+532300:{'title':'楚雄彝族自治州','parent':'530000'},
+532500:{'title':'红河哈尼族彝族自治州','parent':'530000'},
+532600:{'title':'文山壮族苗族自治州','parent':'530000'},
+532800:{'title':'西双版纳傣族自治州','parent':'530000'},
+532900:{'title':'大理白族自治州','parent':'530000'},
+533100:{'title':'德宏傣族景颇族自治州','parent':'530000'},
+533300:{'title':'怒江傈僳族自治州','parent':'530000'},
+533400:{'title':'迪庆藏族自治州','parent':'530000'},
+540101:{'title':'不限','parent':'540000'},
+540100:{'title':'拉萨市','parent':'540000'},
+542100:{'title':'昌都地区','parent':'540000'},
+542200:{'title':'山南地区','parent':'540000'},
+542300:{'title':'日喀则地区','parent':'540000'},
+542400:{'title':'那曲地区','parent':'540000'},
+542500:{'title':'阿里地区','parent':'540000'},
+542600:{'title':'林芝地区','parent':'540000'},
+610101:{'title':'不限','parent':'610000'},
+610100:{'title':'西安市','parent':'610000'},
+610200:{'title':'铜川市','parent':'610000'},
+610300:{'title':'宝鸡市','parent':'610000'},
+610400:{'title':'咸阳市','parent':'610000'},
+610500:{'title':'渭南市','parent':'610000'},
+610600:{'title':'延安市','parent':'610000'},
+610700:{'title':'汉中市','parent':'610000'},
+610800:{'title':'榆林市','parent':'610000'},
+610900:{'title':'安康市','parent':'610000'},
+611000:{'title':'商洛市','parent':'610000'},
+620101:{'title':'不限','parent':'620000'},
+620100:{'title':'兰州市','parent':'620000'},
+620200:{'title':'嘉峪关市','parent':'620000'},
+620300:{'title':'金昌市','parent':'620000'},
+620400:{'title':'白银市','parent':'620000'},
+620500:{'title':'天水市','parent':'620000'},
+620600:{'title':'武威市','parent':'620000'},
+620700:{'title':'张掖市','parent':'620000'},
+620800:{'title':'平凉市','parent':'620000'},
+620900:{'title':'酒泉市','parent':'620000'},
+621000:{'title':'庆阳市','parent':'620000'},
+621100:{'title':'定西市','parent':'620000'},
+621200:{'title':'陇南市','parent':'620000'},
+622900:{'title':'临夏回族自治州','parent':'620000'},
+623000:{'title':'甘南藏族自治州','parent':'620000'},
+630101:{'title':'不限','parent':'630000'},
+630100:{'title':'西宁市','parent':'630000'},
+632100:{'title':'海东地区','parent':'630000'},
+632200:{'title':'海北藏族自治州','parent':'630000'},
+632300:{'title':'黄南藏族自治州','parent':'630000'},
+632500:{'title':'海南藏族自治州','parent':'630000'},
+632600:{'title':'果洛藏族自治州','parent':'630000'},
+632700:{'title':'玉树藏族自治州','parent':'630000'},
+632800:{'title':'海西蒙古族藏族自治州','parent':'630000'},
+640101:{'title':'不限','parent':'640000'},
+640100:{'title':'银川市','parent':'640000'},
+640200:{'title':'石嘴山市','parent':'640000'},
+640300:{'title':'吴忠市','parent':'640000'},
+640400:{'title':'固原市','parent':'640000'},
+640500:{'title':'中卫市','parent':'640000'},
+650101:{'title':'不限','parent':'650000'},
+650100:{'title':'乌鲁木齐市','parent':'650000'},
+650200:{'title':'克拉玛依市','parent':'650000'},
+652100:{'title':'吐鲁番地区','parent':'650000'},
+652200:{'title':'哈密地区','parent':'650000'},
+652300:{'title':'昌吉回族自治州','parent':'650000'},
+652700:{'title':'博尔塔拉蒙古自治州','parent':'650000'},
+652800:{'title':'巴音郭楞蒙古自治州','parent':'650000'},
+652900:{'title':'阿克苏地区','parent':'650000'},
+653000:{'title':'克孜勒苏柯尔克孜自治州','parent':'650000'},
+653100:{'title':'喀什地区','parent':'650000'},
+653200:{'title':'和田地区','parent':'650000'},
+654000:{'title':'伊犁哈萨克自治州','parent':'650000'},
+654200:{'title':'塔城地区','parent':'650000'},
+654300:{'title':'阿勒泰地区','parent':'650000'},
+659000:{'title':'省直辖行政单位','parent':'650000'},
+120199:{'title':'天津市','parent':'120000'}
+/*120199:{'title':'不限','parent':'120000'},
+120101:{'title':'和平区','parent':'120000'},
+120102:{'title':'河东区','parent':'120000'},
+120103:{'title':'河西区','parent':'120000'},
+120104:{'title':'南开区','parent':'120000'},
+120105:{'title':'河北区','parent':'120000'},
+120106:{'title':'红桥区','parent':'120000'},
+120107:{'title':'塘沽区','parent':'120000'},
+120108:{'title':'汉沽区','parent':'120000'},
+120109:{'title':'大港区','parent':'120000'},
+120110:{'title':'东丽区','parent':'120000'},
+120111:{'title':'西青区','parent':'120000'},
+120112:{'title':'津南区','parent':'120000'},
+120113:{'title':'北辰区','parent':'120000'},
+120114:{'title':'武清区','parent':'120000'},
+120115:{'title':'宝坻区','parent':'120000'},
+120221:{'title':'宁河县','parent':'120000'},
+120223:{'title':'静海县','parent':'120000'},
+120225:{'title':'蓟　县','parent':'120000'}*/};
+
+var province_node={100000:'全国',310000:'上海市',320000:'江苏省',330000:'浙江省',110000:'北京市',440000:'广东省',350000:'福建省',420000:'湖北省',430000:'湖南省',370000:'山东省',510000:'四川省',500000:'重庆市',120000:'天津市',210000:'辽宁省',610000:'陕西省',130000:'河北省',410000:'河南省',460000:'海南省',230000:'黑龙江',220000:'吉林省',340000:'安徽省',360000:'江西省',450000:'广  西',520000:'贵州省',530000:'云南省',620000:'甘肃省',140000:'山西省',150000:'内蒙古',640000:'宁  夏',630000:'青海省',650000:'新  疆',540000:'西  藏',710000:'台湾省',810000:'香  港',820000:'澳  门'};
+
+
+
+/*省市*/
+function createProvince(){
+	var html = '';
+	var i = 0;
+	for(var k in province_node){
+		//html += '<input type="checkbox" name="province'+k+'" id="province'+k+'" value="'+k+'" /> <span class="spFirst" urn="'+k+'">'+province_node[k]+'</span>';
+		html += '<span class="spFirst" urn="'+k+'">'+province_node[k]+'</span>';
+		i++;
+		if(i % 7 == 0){
+			html += '</br>';
+		}
+	}
+	return html;
+}
+
+function createCity(p){
+	var html = '';
+	for(var k in city_node){
+		if(p == city_node[k].parent){
+			html += '<input type="checkbox" name="province'+k+'" id="province'+k+'" value="'+city_node[k].title+'" /> <span class="province">'+city_node[k].title+'</span>';
+		}
+	}
+	return html;
+}
+
+function bindProvinceClick(){
+	var elements = document.getElementById('pPanel').getElementsByTagName('input');
+	for(var i = 0; i < elements.length; i++){
+		if('checkbox' == elements[i].getAttribute('type')){
+			elements[i].onclick = function(){
+				document.getElementById('panel').innerHTML = createCity(this.value);
+				bindCityClick();
+				addToArea(this.value,this.checked);
+				selectAll('panel',this.checked);
+				showArea();
+			}
+		}
+	}
+}
+var currentProvince = '';
+function bindSpanProvinceClick(){
+	var elements = document.getElementById('pPanel').getElementsByTagName('span');
+	for(var i = 0; i < elements.length; i++){
+		elements[i].onclick = function(){
+			if(currentProvince){
+				currentProvince.className = 'spFirst';
+			}
+			currentProvince = this;
+			currentProvince.className = 'spSelect';
+			document.getElementById('panel').innerHTML = createCity(this.getAttribute('urn'));
+			bindCityClick();
+		}
+	}
+}
+
+function bindCityClick(){
+	var elements = document.getElementById('panel').getElementsByTagName('input');
+	//alert(elements);
+	for(var i = 0; i < elements.length; i++){
+		if('checkbox' == elements[i].getAttribute('type')){
+		//alert(k);
+			elements[i].onclick = function(){
+				if(currentProvince.innerHTML != '上海市' && currentProvince.innerHTML != '北京市' && currentProvince.innerHTML != '天津市' ){
+					addToArea(currentProvince.innerHTML + '/' + this.value, this.checked);
+					//alert(currentProvince.innerHTML);
+				} else{
+					addToArea(this.value, this.checked);
+				}
+				//alert(this.value);
+				//selectAll('panel',this.checked);
+				showArea();
+			}
+		}
+	}
+}
+
+var selectedArea=[];
+function getOneArea(v){
+	for(var k in province_node){
+		if(v == k){
+			return province_node[k];
+		}
+	}
+	for(var k in city_node){
+		if(v == k){
+			return city_node[k];
+		}
+	}
+}
+function addToArea(v, type){
+	//alert(v);
+	//v = getOneArea(v);
+	if(type){
+		selectedArea.push(v);
+	} else {
+		removeArea(v);
+	}
+}
+function removeArea(e){
+	for(var i = 0; i < selectedArea.length; i++){
+		if(e == selectedArea[i]){
+			selectedArea[i] = -1;
+		}
+	}
+}
+function clearRepeateArea(){
+	for(var i = 0; i < selectedArea.length; i++){
+		for(var j = 0; j < selectedArea.length; j++){
+			if(selectedArea[i] == selectedArea[j].parent){
+				selectedArea[j] = -1;
+			}
+		}
+	}
+	
+}
+function showArea(){
+	var html = value = btnText = '';
+	for(var k in selectedArea){
+		
+		text =  selectedArea[k];
+		
+		if(text != -1){
+			html += '<span class="spSelected">' + text + '</span>';
+			value += text + ',';
+			btnText += text + ' ';
+		}
+		
+	}
+	if(btnText.length > 20){
+		btnText = btnText.substring(0,20) + '...';
+	}
+	document.getElementById('btnArea').value = btnText;
+	document.getElementById('local').value = value;
+	document.getElementById('dSelect').innerHTML = '您选择的城市有：' + html;
+}
+
+
+
+document.getElementById("province").innerHTML = createProvince();
+
+</script>
+</body>
+</html>

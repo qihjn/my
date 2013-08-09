@@ -1,0 +1,23 @@
+<include file="Public:header" />
+<!--单页-->
+<div id="page" class="clear">
+<div id="category">
+<ul>
+<include file="Public:about_left" /></ul>
+</div>
+<div id="main">
+<h3 class="title"><neq name="Think.get.category" value="">{$Think.get.category|selectCategory}<else/>标签</neq> <em>Tags</em></h3>
+<ul class="list">
+
+<volist name="dataContentList" id="row">
+<li><a href="{:U("$module/detail",array("item"=>$row['title_id']))}" target="_blank" style="{$row.title_style}">{$row.title}</a> [{$row.ctime|date="Y-m-d",###}]</li>
+</volist>
+
+</ul>
+<div class="pages">
+      <div class="plist"> {$pageContentBar} </div>
+    </div>
+</div>
+</div>
+<!--底部-->
+<include file="Public:footer" />

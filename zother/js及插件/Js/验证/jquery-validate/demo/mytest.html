@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="../lib/jquery.js" type="text/javascript"></script>
+<script src="../jquery.validate.js" type="text/javascript"></script>
+</head>
+
+<body>
+<script type="text/javascript">
+$().ready(function() {
+	$("#signupForm").validate({
+		rules: {
+			username: {
+				required: true,
+				minlength: 2
+			},
+			password: {
+				required: true,
+				minlength: 5
+			},
+			confirm_password: {
+				required: true,
+				minlength: 5,
+				equalTo: "#password"
+			},
+			
+		},
+		messages: {
+			/*username: {
+				required: "Please enter a username",
+				minlength: "Your username must consist of at least 2 characters"
+			},
+			password: {
+				required: "Please provide a password",
+				minlength: "Your password must be at least 5 characters long"
+			},
+			confirm_password: {
+				required: "Please provide a password",
+				minlength: "Your password must be at least 5 characters long",
+				equalTo: "Please enter the same password as above"
+			},
+					
+			mobile: "手机号码不正确"*/
+		}
+	});
+	
+;
+});
+</script>
+<form id="signupForm" name="form1" method="post" action="">
+    <p>
+        <label for="">用户</label>
+        <input name="username" type="text" id="username" />
+    </p>
+    <p>密码
+        <input type="text" name="password" id="password" />
+    </p>
+    <p>确认
+        <input type="text" name="confirm_password" id="confirm_password" />
+    </p>
+    <label for="mobile"></label>
+    <p>手机
+        <label for="mobile"></label>
+        <input type="text" name="mobile" id="mobile" />
+    </p>
+    <p>
+        <input type="submit" name="button" id="button" value="提交" />
+    </p>
+</form>
+</body>
+</html>

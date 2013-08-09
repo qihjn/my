@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<div>ri</div>
+<div id="panel"></div>
+<div>bi</div>
+
+<script language="javascript" type="text/javascript">
+level = function(data){
+	this.data = data;
+	this.sltFirst = ""; //一级
+	this.sltChild = document.createElement("select"); //二级
+}
+
+/***********简单json          如 data = {"安徽":["合肥","安庆","巢湖","芜湖","铜陵"],"江苏":["南京","苏州","无锡","常州"]} */
+//创建一级select
+level.prototype.createFirst = function(){
+	slt = document.createElement("select");
+	slt.setAttribute("onchange","l.optionChange(this.value)"); //不合理
+	op = document.createElement("option");
+	for(var k in this.data){
+		slt.options.add(new Option(k,k));
+	}
+	document.body.appendChild(slt);
+}
+
+//二级连动处理
+level.prototype.optionChange = function(parent){
+	//this.removeOption(this.sltChild);
+	this.sltChild.options.length=0;
+	for(var i = 0; i<this.data[parent].length; i++){
+		this.sltChild.options.add(new Option(this.data[parent][i]));
+	}
+	document.body.appendChild(this.sltChild);
+}
+
+
+
+/*********************************复杂json 格式见后面**************************/
+//创建select
+level.prototype.createSelect = function(parent,name,panel){
+	//this.removeOption(this.sltChild);
+	slt = document.createElement("select");
+	slt.setAttribute("id",name);
+	slt.setAttribute("name",name);
+	slt.options.length=0;
+	for(var k in this.data){
+		if(this.data[k].parentid == parent){
+			slt.options.add(new Option(this.data[k].title,k));	
+		}
+	}
+	panel.appendChild(slt);
+}
+
+//创建二级checkbox组
+level.prototype.createCheckbox = function(parent,name,panel){
+	for(var k in this.data){
+		if(this.data[k].parentid == parent){
+			chk=document.createElement("input");
+			chk.type="checkbox";
+			chk.name= name + "[]";
+			chk.id= name + k;
+			chk.value = k;
+			
+			sp=document.createElement("span");
+			sp.innerHTML = this.data[k]['title'] + " ";
+			
+			panel.appendChild(chk);
+			panel.appendChild(sp);
+		}
+	}
+
+}
+
+//删除option
+level.prototype.removeOption = function(slt){
+	for(var i = 0; i < slt.options.length; i++){
+		slt.options.remove(i);
+	}
+}
+
+//选中select
+level.prototype.selectOption = function(name,v){
+	var slt = document.getElementById(name);
+	for(var i = 0; i<slt.options.length; i++){
+		if(slt.options[i].value == v){
+			slt.options[i].selected = true;
+		}
+	}
+}
+
+//选中checkbox
+level.prototype.selectCheckbox = function(panel,v){
+	var arr = v.split(',');
+	var checkboxs = panel.getElementsByTagName("input");
+	for(var i = 0; i < arr.length; i++){
+		for(var j = 0; j < checkboxs.length; j++){
+			if(checkboxs[j].value == arr[i]){
+				checkboxs[j].checked = true;
+				break;
+			}
+		}
+	}
+}
+
+
+
+
+
+data = {"安徽":["合肥","安庆","巢湖","芜湖","铜陵"],"江苏":["南京","苏州","无锡","常州"]}
+first = {
+	"001":{"title":"北京","parentid":"0"},
+	"002":{"title":"天津","parentid":"0"},
+	"003":{"title":"上海","parentid":"0"},
+	"004":{"title":"东城区","parentid":"001"},
+	"005":{"title":"西城区","parentid":"001"},
+	"006":{"title":"好区","parentid":"002"},
+	"007":{"title":"黄浦区","parentid":"003"},
+	"008":{"title":"静安区","parentid":"003"},
+}
+
+str = [{"id":"1","title":"\u56fe\u5427","parentid":"0","code":"tuba","sort":"0","keywords":"","description":"","type":""},{"id":"1","title":"\u56fe\u5427","parentid":"0","code":"tuba","sort":"0","keywords":"","description":"","type":""}];
+//alert(str[0]["title"]);
+//var d1 = (new Date()).getTime();
+var l = new level(str);
+var first = "firsttype";      //一级select名字
+var second = "secondtype";    //二级checkbox名字
+var panelName = "panel";      //存放二级checkbox的div的id
+
+var dPanel = document.getElementById(panelName); //存放二级的容器
+l.createSelect("0",first,document.body); //一级
+//l.createCheckbox("001",second,dPanel);
+document.getElementById(first).onchange = function(){
+		if(dPanel){
+			dPanel.innerHTML = "";
+		}
+		l.createCheckbox(this.value,second,dPanel); 
+}
+
+//选中,用于修改
+var firstValue = "003";
+var secondValue = "007,008";
+l.selectOption(first,firstValue);
+l.createCheckbox(firstValue,second,dPanel);
+l.selectCheckbox(dPanel,secondValue);
+//连动处理
+/*
+l.createSelect("001",second); //默认二级
+l.createSelect("001",second,document.body);
+document.getElementById("first").onchange = function(){
+		var s = document.getElementById("secondtype");
+		document.body.removeChild(s);
+		if(s){
+			//document.body.removeChild(s) //删除上一个生成的select
+			//dPanel.removeChild(s);
+			
+		}
+		l.createSelect(this.value,second,dPanel); 
+}*/
+//l.createSelect("001","second");//alert('');
+//var d2 = (new Date()).getTime();
+//alert(d2-d1);
+//l.optionChange("安徽"); //默认城市列表
+//alert(l.data['安徽'][0]);
+//document.getElementById("first").onchange = function(){alert(this.value);}
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

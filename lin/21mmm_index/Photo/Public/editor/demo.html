@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=GB18030"/>
+<title>KISSY Editor Demo</title>
+
+<!-- 1. 页头引入 editor css -->
+<link rel="stylesheet" href="themes/default/editor-min.css" type="text/css"/>
+
+<style type="text/css">
+    #demo-page {
+        padding: 50px 20px;
+        width: 1080px;
+        margin: 0 auto;
+        line-height: 18px;
+    }
+    #demo-page h1,
+    #demo-page h2,
+    #demo-page h3 {
+        margin: 1em 0 0.3em;
+    }
+    #demo-page .section ol {
+        margin: 5px 20px;
+    }
+    #demo-page .section ol li {
+        list-style: decimal inside;
+        margin: 5px 0;
+    }
+    #demo-page #submit-btn {
+        padding: 4px 20px;
+        margin: 10px 5px;
+    }
+</style>
+</head>
+<body>
+<div id="demo-page">
+    <h1>KISSY Editor: </h1>
+
+    <form id="demo-form" action="http://lifesinger.org/blog/wp-content/uploads/2009/09/editor-preview.php" method="POST">
+        <textarea name="code" id="demo" rows="50" cols="152" style="width: 900px; height: 295px">
+<p><img src="http://kissy.googlecode.com/svn/trunk/assets/kissy.png" alt="kissy.png" /></p>
+<p>欢迎使用 KISSY Editor!</p>
+        </textarea>
+        <p><button id="submit-btn" type="submit">Preview</button></p>
+    </form>
+
+    <div class="section">
+        <h2>Features:</h2>
+        <ol>
+            <li>编辑器基本功能</li>
+            <li>小巧灵活，精简实用，使用起来让人愉悦</li>
+            <li>支持所有 A 级浏览器</li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2>Feedback:</h2>
+        <ol>
+            <li>欢迎提交 bug： <a href="http://code.google.com/p/kissy/issues/list">http://code.google.com/p/kissy/issues/list</a></li>
+            <li>或发送 email：<a href="mailto:lifesinger@gmail.com">lifesinger (at) gmail.com</a></li>
+        </ol>
+    </div>
+</div>
+
+<!-- 2. 页尾引入 editor js and init code -->
+<script type="text/javascript" src="editor-aio.js"></script>
+<script type="text/javascript">KISSY.Editor("demo")</script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<include file="../Public/header" />
+<div id="main" class="main" >
+<div class="content">
+<div class="title">编辑数据 [ <a href="__URL__">返回列表</a> ]</div>
+<div id="result" class="result none"></div>
+<form method='post' id="form1" name="form1" action="__URL__/update">
+<table width="100%" cellpadding=3 cellspacing=3 >
+<tr>
+	<td class="tRight" width="10%">名称：</td>
+	<td class="tLeft" ><input name="title" type="text" class="huge bLeftRequire" value="{$vo.title}"></td>
+</tr>
+<tr> 
+	<td class="tRight tTop">短名称：</td>
+	<td class="tLeft"><input name="shorttitle" type="text" class="huge bLeftRequire" id="shorttitle" value="{$vo.shorttitle}" /></td>
+</tr>
+<tr>
+	<td class="tRight" width="10%">代码：</td>
+	<td class="tLeft" ><input name="code" type="text" class="huge bLeftRequire" id="code" value="{$vo.code}"></td>
+</tr>
+<tr> 
+	<td class="tRight tTop">类型：</td>
+	<td class="tLeft">{$type}
+	    <label>
+	        <select name="type" id="type">
+	            <option value="news">新闻</option>
+                 <option value="photo">图吧</option>
+                  <option value="video">视频</option>
+                   <option value="house">房产</option>
+                    <option value="trip">旅游</option>
+                    <option value="job">人才</option>
+	            </select>
+	        </label></td>
+</tr>
+<tr>
+	<td class="tRight" width="10%">父类：</td>
+	<td class="tLeft" >{$parentid} </td>
+</tr>
+
+<tr> 
+	<td class="tRight tTop">关键字：</td>
+	<td class="tLeft"><input name="keyword" type="text" class="huge bLeftRequire" id="keyword" value="{$vo.keyword}" /></td>
+</tr>
+<tr>
+	<td class="tRight" width="10%">排序：</td>
+	<td class="tLeft" ><input name="sort" type="text" class="huge bLeftRequire" id="sort" value="{$vo.sort}"></td>
+</tr>
+<tr> 
+	<td class="tRight tTop">描述：</td>
+	<td class="tLeft"><textarea name="description" rows="5" class="huge bLeftRequire" id="description">{$vo.description}</textarea></td>
+</tr>
+    
+<tr>
+	<td></td>
+	<td class="center"><div style="width:85%;margin:5px">
+	<input type="hidden" name="status" value="1">
+    <input type="hidden" name="user_id" value="<?php echo $_SESSION[C('USER_AUTH_KEY')] ?>">
+    <input type="hidden" name="id" id="id" value="{$vo.id}" />
+	<input type="submit" value="保 存"  class="button small"> <input type="reset" class="button small" onclick="resetEditor()" value="重 置" > 
+	</div></td>
+</tr>
+</table>
+</form>
+
+</div>
+</div>
+<include file="../Public/footer" />
+
+<script language="javascript" type="text/javascript">
+function selectValue(id){
+	var slt = document.getElementById("parentid");
+	for(var i = 0; i < slt.options.length; i++){
+		if(id == slt.options[i].value){
+			slt.options[i].selected = true;
+		}
+	}
+}
+
+selectValue({$id});
+</script>

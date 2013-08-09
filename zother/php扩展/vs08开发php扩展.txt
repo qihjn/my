@@ -1,0 +1,63 @@
+win7下用vs2008开发PHP扩展
+由于在win7下安装vc6比较麻烦，一直没有安装成功，只能改用vs2008.
+由于要编译PHP扩展，于是做了一个简单PHP扩展开发的DEMO
+
+环境：win7 + vs2008 + cygwin + php5.3.1 + xampp1.7.3
+生成过程如下：
+1、环境配置，安装cygwin,这个在生成PHP扩展的框架时有用到,我的安装目录为c:\cygwin
+2、安装xampp1.7.3，下载地址可以google下
+3、下载php5.3.1，下载地址：http://cn.php.net/get/php-5.3.1.tar.gz/from/cn2.php.net/mirror，解压到目录PHPHOME(我的是在D:\project\c\php-5.3.1)
+4、安装vs2008，这个时间会久一些
+5、如果以上的一切都安装好了，那么转第6步，我们开始开发扩展martin（这只是一个名称而已）
+
+6、在命令行中，cd进入PHPHOME/ext/目录，输入php.exe ext_skel_win32.php –extname=martin，此时在ext目录下会生成martin文件夹及在此文件夹下与扩展相关的文件，包括php_martin.h,martin.c文件等。
+如果php.exe所在目录没有加到PATH中，请在php.exe前面加程序的完整路径
+
+7、打开vs2008,新建基于已有文件的项目,选择VC++,选择文件所在目录，输入项目名称php_martin, 下一步，在Project type:中选择 DLL project,next直到完成。
+8、修改源码，
+打开php_martin.h文件，找到PHP_FUNCTION(confirm_martin_compiled);在其下面增加一个扩展函数声明：PHP_FUNCTION(martin_echo);
+打开martin.c文件，找到zend_function_entry martin_functions[],在其元素中添加 PHP_FE(martin_echo, NULL)
+在martin.c文件中添加如下代码
+
+
+    PHP_FUNCTION(martin_echo)
+{
+	char *arg = NULL;
+	int arg_len, len;
+	char *strg;
+ 
+	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "s", &arg, &arg_len) == FAILURE) {
+		return;
+	}
+ 
+	len = spprintf(&strg, 0, "This is %s's extension.the input string is %s.", "martin", arg);
+	RETURN_STRINGL(strg, len, 0);
+} 
+
+9、按F7 build此项目，此时会有文件找不到报错，此乃php部分源码没有包含的原因，右键项目属性，选择【Configuration Properties】-> 【C/C++】-> 【General】-> 【Additional Include Directories】，将源码根目录，main目录，TSRM目录，Zend目录添加到此处我的是（”D:\project\c\php-5.3.1″;”D:\project\c\php-5.3.1\main”;”D:\project\c\php-5.3.1\TSRM”;”D:\project\c\php-5.3.1\Zend”）
+10、继续build，此时可能会显示zend_config.h文件找不到，此时为部分宏没有定义,解决方案：选择项目属性，选择【Configuration Properties】-> 【C/C++】-> 【Preprocessor】-> 【Preprocessor Definitions】，在此处理添加 ZEND_DEBUG=0;COMPILE_DL_MARTIN;ZTS;ZEND_WIN32;PHP_WIN32;HAVE_MARTIN=1
+对于不同的扩展可以将COMPILE_DL_MARTIN和HAVE_MARTIN中的MARTIN替换成你的扩展名
+
+11、继续build,此时可能会显示../main/config.w32.h没有找到，google了半天，所说在php5.2.9的源码中有此文件存在（此文件应该是某个环节生成的，没搞清楚），于是下载5.2.9，将此文件放到main目录下
+
+12、继续build，此时可能会显示fatal error LNK1120，解决方案：打开项目属性，选择【Configuration Properties】-> 【Linker】->【Input】->【Additional Dependencies】，在此处添加php5ts.lib，另外需要在【Tools】->【Options】->【Projects and Solutions】->【VC++ Directories】，在【Show directories for:】下拉中，选择Librafy files，将php5ts.lib所在的路径添加进来，此文件存在于 二进制版本的dev/lib目录下。
+
+13、右键solution属性，将Configuration选择为Release
+14、build，在ext\martin\Release下会有生成你一个以你的项目名为名称的dll文件(我的为php_martin.dll)
+15、将php_martin.dll文件拷贝到机器中运行的php所在的ext目录，修改php.ini文件，添加一行：extension=php_martin.dll，重启apache，
+16，运行一个包含了 echo martin_echo(”phppan.com”);语句的php文件，可以看到有输出This is martin’s extension.the input string is phppan.com.
+
+如果你在启动apache中有报错为:
+PHP Warning: PHP Startup: martin: Unable to initialize module\nModule compiled with build ID=API20090626,TS\nPHP compiled with build ID=API20090626,TS,VC6\nThese options need to match\n in Unknown on line 0
+
+Warning: PHP Startup: martin: Unable to initialize module
+Module compiled with build ID=API20090626,TS
+PHP compiled with build ID=API20090626,TS,VC6
+These options need to match
+in Unknown on line 0
+你需要在main/config.w32.h中添加如下语句
+#define PHP_COMPILER_ID “VC6″
+此处来源于：PHP5.3系列设置编译器ID（build ID）
+
+–EOF–
+

@@ -1,0 +1,169 @@
+<taglib name="sgcms"/>
+<include file="Public:header" />
+<script type="text/javascript">
+    $(document).ready(function() {
+        // validate signup form on keyup and submit
+        $("#mainFrom").validate({
+            rules: {
+                title: "required",
+                content: "required"
+            },
+            messages: {
+                title: "标签标题必须填写",
+                content: "调用代码必须填写"
+            }
+        });
+    });
+</script>
+<div class="mainarea">
+<div class="maininner">
+	<div class="block style4">
+		
+		<table cellspacing="3" cellpadding="3">
+		<tr>
+		 <th style="width:50px; text-align:center"><a href="http://www.sgcms.cn/manual.php?app=shuguangCorp&module={$moduleName}" target="_blank"><img src="__PUBLIC__/Admin/help_1.gif" alt="" align="absmiddle" /><br />
+帮助</a></th>
+		  <td>html页面最顶部必须加上&lt;tagLib name=&quot;sgcms&quot; /&gt; 标签解析才能生效</td>
+		  </tr>
+		</table>
+	</div>
+	<form method="post" action="{:U("Label/doInsert")}" id="mainFrom" >
+	<div class="body_content">
+	
+	<div class="title">
+		<h3><a href="{:U('Label/index')}" class="text_bg">调用说明</a> | 	<a href="{:U('Label/lists')}" class="text_bg">查看调用</a></h3>
+	</div>
+<div class="title" id="register">
+		<a name="config" id="config"></a>	<h3>多条记录调用</h3>
+	</div>
+
+	<table id="" class="formtable">
+	<tr>
+	  <th>&lt;sgcms:getData model=&quot;&quot; name=&quot;&quot; id=&quot;&quot; limit=&quot;&quot; sql=&quot;&quot; order=&quot;&quot; where=&quot;&quot; offset=&quot;&quot; length=&quot;&quot; mod=&quot;&quot; key=&quot;&quot;&gt;<br />
+	    循环内容<br />
+	    &lt;/sgcms:getData&gt;</th>
+	  </tr>
+	<tr>
+	  <th style="color:#F00">&nbsp;</th>
+	  </tr>
+	<tr>
+	  <th style="color:#F00">红色部分为必须项，各参数顺序不分前后</th>
+	  </tr>
+	<tr>
+		<td><span style="font-weight:bold; color:#F00">model：</span>模块名称</td>
+		</tr>
+	<tr>
+	  <td><span style="font-weight:bold ;color:#F00">name：</span>属性表示模板赋值的变量名称,因此不可随意在模板文件中改变</td>
+	  </tr>
+	<tr>
+	  <td><span style="font-weight:bold ;color:#F00">id：</span>表示当前的循环变量，可以随意指定，但确保不要和name属性冲突</td>
+	  </tr>
+	<tr>
+	  <td><span style="font-weight:bold">limit：</span>表示取得条数，也可以是范围 limit=&quot;5,10&quot; 从第5条开始，取到第10条</td>
+	  </tr>
+	<tr>
+	  <td><span style="font-weight:bold">sql：</span>自行编写的SQL语句</td>
+	  </tr>
+	<tr>
+	  <td><span style="font-weight:bold">order：</span>排序。如： id DESC    或 id ASC 或id DESC,time ASC</td>
+	  </tr>
+	<tr>
+	  <td><span style="font-weight:bold">where：</span>搜索条件。如：categoryId=1</td>
+	  </tr>
+	<tr>
+	  <td><span style="font-weight:bold">offset<br />      	    length<br /></span>
+	    支持输出部分数据，例如输出其中的第<span lang="EN-US" xml:lang="EN-US">5</span>～<span lang="EN-US" xml:lang="EN-US">15</span>条记录<br />
+	    &lt;sgcms:getData model=&quot;News&quot; name=&quot;list&quot; id=&quot;vo&quot; offset=&quot;5&quot; length='10'&gt;<br />
+        循环内容<br />
+&lt;/sgcms:getData&gt;</td>
+	  </tr>
+	<tr>
+	  <td><span style="font-weight:bold">mod：输出偶数记录<br /></span>
+	    &lt;sgcms:getData model=&quot;News&quot; name=&quot;list&quot; id=&quot;vo&quot; mod=&quot;2&quot; &gt;<br />
+	    &lt;eq name=&quot;mod&quot; value=&quot;1&quot;&gt;{$vo.name}&lt;/eq&gt;<br />
+	    &lt;/sgcms:getData&gt;<br />
+	    Mod属性还用于控制一定记录的换行，例如：<br />
+	    &lt;sgcms:getData model=&quot;News&quot; name=&quot;list&quot; id=&quot;vo&quot; mod=&quot;5&quot; &gt;<br />
+	    &lt;eq name=&quot;mod&quot; value=&quot;4&quot;&gt;&lt;br/&gt;&lt;/eq&gt;<br />
+	    &lt;/sgcms:getData&gt;</td>
+	  </tr>
+	<tr>
+	  <td><span style="font-weight:bold">key：</span>输出循环变量</td>
+	  </tr>
+	<tr>
+	  <td>&nbsp;</td>
+	  </tr>
+	
+	</table>
+    
+<br />
+	<div class="title" id="register">
+		<a name="config" id="config"></a>	<h3>单条记录调用</h3>
+	</div>
+	<table id="table" class="formtable">
+	  <tr>
+	    <th>&lt;sgcms:getItem model=&quot;&quot; name=&quot;&quot; where=&quot;&quot; sql=&quot;&quot; <span style="color:#F00">/</span>&gt;</th>
+	    </tr>
+	  <tr>
+	    <th style="color:#F00">&nbsp;</th>
+	    </tr>
+	  <tr>
+	    <th style="color:#F00">红色部分为必须项</th>
+	    </tr>
+	  <tr>
+	    <td><span style="font-weight:bold; color:#F00">model：</span>模块名称</td>
+	    </tr>
+	  <tr>
+	    <td><span style="font-weight:bold ;color:#F00">name：</span>属性表示模板赋值的变量名称,因此不可随意在模板文件中改变</td>
+	    </tr>
+	  <tr>
+	    <td><span style="font-weight:bold">where：</span>搜索条件。如：id=1</td>
+	    </tr>
+	  <tr>
+	    <td><span style="font-weight:bold">sql：</span>自行编写的SQL语句</td>
+	    </tr>
+	  <tr>
+	    <td>最后必须以 /&gt;结尾</td>
+	    </tr>
+	  </table>
+	<br />
+	
+	<div class="title" id="uch">
+			<a name="seo" id="seo"></a>
+		  <h3>调用入库(简单记录代码，方便以后调用)</h3>
+
+	</div>
+	<table id="maintable" class="formtable">
+	
+	<tr>
+		<th style="width:12em;">名称</th>
+		<td><input name="title" type="text" id="title" size="50" ></td>
+	</tr>
+	<tr>
+	  <th style="width:12em;">调用代码</th>
+	  <td><textarea name="content" cols="50" rows="5" class="area"  id="content"></textarea></td>
+	  </tr>
+	<tr>
+	  <th style="width:12em;">简单备注</th>
+	  <td><textarea name="description" cols="50" rows="4" class="area"  id="description"></textarea></td>
+	  </tr>
+	
+	
+	</table>
+	</div>
+	
+	<div class="foot_action">
+			<input type="submit" name="submit" value="提交录入" class="submit" id="submit">
+        <input type="reset" name="button" id="button" value="还原重填" class="submit"/>
+        <input name="id" type="hidden" id="id" value="1" />
+	</div>
+	
+	</form>
+</div>
+</div>
+
+<div class="side">
+	<include file="Public:sider" />
+</div>
+
+<include file="Public:footer" />

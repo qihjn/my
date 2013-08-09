@@ -1,0 +1,101 @@
+                    <form action='/job/index/' method=get id="fso">
+                        <!--<tr>
+                            <td width="30%" height="25">关键字</td>
+                            <td align="left"><input type="text" name="txt" id="txt" /></td>
+
+                            <td height="25">选择日期</td>
+                            <td align="left">{$worklife_slt}</td>
+						!-->
+                        <div>
+                        	地区选择
+                                <select name="workplace" id="workplace">
+                                    <option value=''>请选择</option>
+                                    <option value=''>全国</option>
+                                    <option value='上海市'>上海市</option>
+                                    <option value='北京市'>北京市</option>
+                                    <option value='广东省'>广东省</option>
+                                    <option value='江苏省'>江苏省</option>
+                                    <option value='浙江省'>浙江省</option>
+                                    <option value='湖北省'>湖北省</option>
+                                    <option value='湖南省'>湖南省</option>
+                                    <option value='山东省'>山东省</option>
+                                    <option value='陕西省'>陕西省</option>
+                                    <option value='四川省'>四川省</option>
+                                    <option value='辽宁省'>辽宁省</option>
+                                    <option value='福建省'>福建省</option>
+                                    <option value='天津市'>天津市</option>
+                                    <option value='河南省'>河南省</option>
+                                    <option value='河北省'>河北省</option>
+                                    <option value='山西省'>山西省</option>
+                                    <option value='内蒙古'>内蒙古</option>
+                                    <option value='吉林省'>吉林省</option>
+                                    <option value='黑龙江'>黑龙江</option>
+                                    <option value='安徽省'>安徽省</option>
+                                    <option value='江西省'>江西省</option>
+                                    <option value='广西'>广西</option>
+                                    <option value='海南省'>海南省</option>
+                                    <option value='重庆市'>重庆市</option>
+                                    <option value='贵州省'>贵州省</option>
+                                    <option value='云南省'>云南省</option>
+                                    <option value='西藏'>西藏</option>
+                                    <option value='甘肃省'>甘肃省</option>
+                                    <option value='青海省'>青海省</option>
+                                    <option value='宁夏'>宁夏</option>
+                                    <option value='新疆'>新疆</option>
+                                    <option value='台湾省'>台湾省</option>
+                                    <option value='香港'>香港</option>
+                                    <option value='澳门'>澳门</option>
+                                </select>
+职位选项
+<select name="category_id" id="category_id" >
+<option value=''>请选择</option>
+                                <option value=''>所有</option>
+                                <option value='1'>美容类</option>
+                                <option value='2'>美发类</option>
+                                <option value='3'>美甲类</option>
+                                <option value='4'>化妆造型类</option>
+                                <option value='5'>纹绣类</option>
+                                <option value='6'>中医保健类</option>
+                                <option value='7'>医疗整型类</option>
+                                <option value='8'>日化商场类</option>
+                                <option value='9'>美容学校类</option>
+                                <option value='10'>销售市场类</option>
+                                <option value='11'>健身瑜伽类</option>
+                                <option value='12'>经营管理类</option>
+                                <option value='13'>生产管理类</option>
+                                <option value='14'>后勤储备类</option>
+                                <option value='15'>客户服务类</option>
+                                <option value='16'>人事行政类</option>
+                                <option value='17'>会务营销类</option>
+                                <option value='18'>财务类</option>
+                                <option value='20'>模特类</option>
+                                <option value='244'>市场营销类</option>
+                            </select>
+                            关键字：<input type="text" id="keyword" name="keyword" />
+                            <input name="sotype" type="radio" value="job" checked="checked" id="job"/>
+                            职位
+                            <input name="sotype" type="radio" value="resume" id="resume" />
+                            人才
+                            <input type=image src="__PUBLIC__/Skin/Job/icon-go.gif" style="vertical-align:inherit;" />
+                        </div>
+                        {__NOTOKEN__}
+                    </form>
+<script language="javascript" type="text/javascript">
+var radios = document.getElementsByName("sotype");
+for(var i = 0; i < radios.length; i++){
+	radios[i].onclick = function(){
+		document.getElementById("fSo").action = "/"+this.value+"/";
+	}
+}
+//var ex = /sotype\/[resume|job]/;
+//var reg = new RegExp(ex,"i");
+var ref = document.URL;//alert(document.URL);//(/sotype\/job/).exec(ref)
+if((/sotype\/job/).exec(ref)){
+	//alert("job");
+	document.getElementById("job").checked = true;
+}else if((/sotype\/resume/).exec(ref)){
+	document.getElementById("resume").checked = true;
+	//alert("resume");
+}
+
+</script>

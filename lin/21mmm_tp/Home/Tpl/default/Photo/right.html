@@ -1,0 +1,27 @@
+<div class="list_r">
+				<div class="newsphbt"><h1>最新排行</h1><img src="__PUBLIC__/Images/news_r.jpg" /></div>
+				<ul class="listr_ph">
+                <volist name="list_top" id="vo_top">
+					<li><a href="__URL__/show/id/{$vo_top.id}" target="_blank"  title="{$vo_top.title}">{$vo_top.title|mb_strcut=0,46,'utf-8'}</a></li>
+                </volist>
+				</ul>
+				<div class="listrbt"><h1>精彩推荐</h1></div>
+				<dl class="listr_tj">
+					<dt>
+                    <volist name="listupimg" id="upimg">
+                    <a href="__URL__/show/id/{$upimg.id}" target="_blank"  title="{$upimg.title}"><img src="{$upimg.thumb}" alt="{$upimg.title}"/></a>
+                    </volist>
+                    </dt>
+					<dd>
+						<volist name="listup" id="up">
+                        <p>·<a href="__URL__/show/id/{$up.id}" target="_blank"  title="{$up.title}">{$up.title|mb_strcut=0,46,'utf-8'}</a></p>
+                        </volist>
+					</dd>
+				</dl>
+				<div class="listrbt"><h1>热点专题</h1></div>
+				<ul class="listr_hot">
+                <volist name="hot" id="vohot">
+					<li><a href="__URL__/show/id/{$vohot.id}" target="_blank"  title="{$vohot.title}"><img src="{$vohot.thumb}" alt="{$vohot.title}"/></a><p><a href="__URL__/show/id/{$vohot.id}" target="_blank"  title="{$vohot.title}">{$vohot.title|mb_strcut=0,30,'utf-8'}</a></p></li>
+                </volist>
+				</ul>
+			</div>

@@ -1,0 +1,3 @@
+[ 2011-03-09T22:32:42+08:00 ] SQL:  RunTime:0.014382s SQL = SHOW COLUMNS FROM mmm_public
+[ 2011-03-09T22:32:42+08:00 ] NOTIC: [8] Undefined index: FSQ_uid common.php 第 380 行.
+[ 2011-03-09T22:32:42+08:00 ] NOTIC: [8] Undefined variable: referer 62c1deb10b410270ace722225b757c91.php 第 31 行.

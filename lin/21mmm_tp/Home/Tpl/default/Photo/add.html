@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<load href='__PUBLIC__/Css/common.css' />
+</head>
+
+<body>
+<div class="main">
+    <h2>图片上传</h2>
+    <form id="form1" method='post' action="__URL__/insert" enctype="multipart/form-data">
+        <div id="result" class="none result" style="font-family:微软雅黑,Tahoma;letter-spacing:2px"></div>
+        <dt>标题</dt>
+        <dd>
+            <input type="text" name="title" />
+        </dd>
+        <dt>简介</dt>
+        <dd>
+            <input type="text" name="intro"id="intro">
+        </dd>
+        <dt>内容</dt>
+        <dd>
+            <textarea name="content" cols="50" rows="5"  id="content" ></textarea>
+        </dd>
+        <dd>&nbsp;</dd>
+        <TABLE id='tbl' style="clear:both">
+        </TABLE>
+
+        <INPUT TYPE="button" value="增 加" onClick="fileChange();" >
+        <input name="提交" type="submit"  value="保 存">
+        <input type="reset" value="清 空">
+        
+        <input type="button" value="添加上传" onclick="createUp();" />
+    </form>
+</div>
+
+</body>
+</html>
+
+<load href="__PUBLIC__/Js/Base.js" />
+<load href="__PUBLIC__/Js/prototype.js" />
+<load href="__PUBLIC__/Js/mootools.js" />
+
+<script language="JavaScript">
+ <!--
+var curFileNum = 0;
+var rowsnum=0;  //记录行数
+var rindex="";       //列索引
+var tbl	=	document.getElementById('tbl');
+
+var num = 1;
+
+function createUp(){
+	var oUpform = document.getElementById("upform");
+	var oFile = document.getElementById("f1").cloneNode();
+	num++;
+	oFile.setAttribute("id","f" + num);
+	oFile.setAttribute("name","f" + num);
+	oUpform.appendChild(oFile);
+}
+
+function fileChange(){
+	showImg();
+	addRow();
+}
+
+//显示预览图片
+function showImg(){
+	//var img =escape(document.getElementById("file" + curFileNum).value);
+	var img = document.createElement("img");
+	img.style.width=100;
+	img.style.height=100;
+	img.src = document.getElementById("file" + curFileNum).value;
+	document.getElementById("preview" + curFileNum).appendChild(img);
+	
+}
+	function add(){
+		ThinkAjax.sendForm('form1','__URL__/insert',complete,'result');
+	}
+	function complete(data,status){
+		if (status==1)
+		{
+		 window.setTimeout(function (){window.location.href='__URL__',20000});
+		}
+	}
+	
+	function deleteRow(){
+		if(tbl.rows.length>0){
+			tbl.deleteRow(rindex); //删除当前行
+			rowsnum--;    
+		}else{
+			return;
+		}
+		rindex="";
+	}
+	
+	function addRow(){   
+		curFileNum++;
+		rowsnum++;
+		var row=tbl.insertRow(-1);
+		//var td = arow.insertCell();
+		var cell = document.createElement("td");
+		cell.innerHTML='<div id="preview'+curFileNum+'" class="fLeft hMargin"></div><div><INPUT TYPE="file" id="file'+curFileNum+'" name="file'+ curFileNum +'" onchange="fileChange();"> <textarea  id="text'+curFileNum+'" name="text'+ curFileNum +'" ></textarea></div><div class="fLeft hMargin"><IMG SRC="__PUBLIC__/Images/del.gif"  style="cursor:hand" onclick="getObject(this);deleteRow();" WIDTH="20" HEIGHT="20" BORDER="0" ALT="删除" align="absmiddle"></div> ';
+		cell.align="center"
+		row.appendChild(cell); 
+		//addFileForm.num.value=rowsnum;
+	}
+	
+	function getObject(obj){ 
+		 while(obj.tagName.toLowerCase()!="tr"){
+			obj=obj.parentNode;
+		  }
+		  rindex=obj.rowIndex;
+	}
+	
+	
+addRow();
+ //-->
+ </script>

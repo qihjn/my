@@ -1,0 +1,89 @@
+
+				<div class="clear"></div>
+                <div class="foot" style="text-align:center;">
+					<div class="text">
+					<a href="http://www.21mmm.com/help/most/28.html" target="_blank">关于我们</a> - <a href="http://www.21mmm.com/help/most/31.html" target="_blank">网站地图</a> - <a href="http://www.21mmm.com/help/most/29.html" target="_blank">法律声明</a> - <a href="http://www.21mmm.com/help/most/38.html" target="_blank">升级会员</a>- <a href="http://www.21mmm.com/help/most/37.html" target="_blank">付款方式</a> - <a href="http://www.21mmm.com/help/most/27.html" target="_blank">联系我们</a></div>
+					Copyright 2004-2010 21mmm.com. All Rights Reserve <a href="http://www.miibeian.gov.cn/" target="_blank">国家信息产业部备案-沪ICP备06003754</a><br />
+					<div><img src="http://public.21mmm.com/images/index/biaoshi.gif" /><img src="http://public.21mmm.com/images/index/sznet110anwang.gif" width="40" /> <img src="http://public.21mmm.com/images/index/gt.gif" width="50" /><br />
+			<script src="http://s3.cnzz.com/stat.php?id=1756359&web_id=1756359&show=pic1" language="JavaScript" charset="gb2312"></script>
+            </div>
+				</div>
+</div>
+</body>
+</html>
+
+<load href="__PUBLIC__/Js/Base.js" />
+
+<load href="__PUBLIC__/Js/Ajax/ThinkAjax.js" />
+<load href="__PUBLIC__/Js/Form/CheckForm.js" />
+<load href="__PUBLIC__/Js/common.js" />
+
+<load href="__PUBLIC__/Js/publicVar.js" />
+<script language="JavaScript">
+<!--
+//指定当前组模块URL地址 
+var URL = '__URL__';
+var APP	 =	 '__APP__';
+var PUBLIC = '__PUBLIC__';
+
+//-->
+</script>
+
+<script src='http://public.21mmm.com/js/common.js' type='text/javascript'></script>
+<script type="text/javascript">
+function clk(o) {
+	if(document.all) {
+		//o.click();
+	} else {
+		var e = document.createEvent("MouseEvents");
+		e.initEvent("click", true, true);
+		o.dispatchEvent(e);
+	}
+}
+
+function ss() {
+	var list = document.getElementById('list').getElementsByTagName('h1');
+	for(var i=0; i < list.length-1; ++i) {
+		var span = list[i].getElementsByTagName('span');
+		var a = span[0].getElementsByTagName('a');
+		a[0].onclick = function() {
+			hs(this);
+		};
+		clk(a[0]);
+	}
+}
+
+function hs(o) {
+	var n = o.parentNode.parentNode.nextSibling;
+	while(n && n.nodeType != 1) {
+		n = n.nextSibling;
+	}
+	if(n) {
+		if(n.style.display != 'none') {
+			n.style.display = 'none';
+		} else {
+			n.style.display = '';
+		}
+	}
+}
+
+/*找到有此链接的a元素*/
+function findLink(str){
+	var aList=document.getElementById("list").getElementsByTagName("a");
+	for(var i = 0; i < aList.length; i++)
+		if(aList[i].getAttribute("href").indexOf(str) != -1)
+			return aList[i];
+}
+
+window.onload=function(){
+	//ss();
+	
+	/*设置菜单展开*********** 注：供求，发布代理里将全布展开，由于它们有window.onload，解决办法用addEventListener,夜深了，睡先*/
+	/*var currentURL = window.location.href; //得到当前页链接
+	var filename = currentURL.substring(currentURL.lastIndexOf('/')+1,currentURL.length);
+	var a = findLink(filename);
+	if(a && a.parentNode.parentNode){
+		a.parentNode.parentNode.style.display = 'block'; //将此标记的父ul的display设置为block
+	}*/
+}
+</script>

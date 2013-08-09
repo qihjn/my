@@ -1,0 +1,161 @@
+<include file="Cuser:header" />
+<include file="Cuser:menu" />
+<div class="middle">
+<div class="title">添加数据 [ <a href="/supply/ulist">返回列表</a> ]</div>
+<div id="result" class="result none"></div>
+<form action="__URL__/{$vo.action}" method="post"  enctype="multipart/form-data" name="descform" id="descform"  onsubmit="return CheckForm(this);" >
+  <table border="1" class="add">
+    <tr>
+        <td class="td_title">产品名称</td>
+        <td>
+            <input type="text" value="{$vo.title}" name="title" id="title"  check="Require" warning="产品名称不能为空" /></td>
+    </tr>
+    <tr>
+        <td class="td_title">信息类型</td>
+        <td>
+           {$vo.infotype}
+        </td>
+    </tr>
+        <tr>
+        <td class="td_title">大分类</td>
+        <td><div id="pPanel"></div></td>
+    </tr>
+    <tr>
+		<td class="td_title">小分类</td>
+		<td ><div id="panel"></div></td>
+	</tr>
+
+    <tr>
+        <td class="td_title">产品属性</td>
+        <td><div id="dproperty">{$vo.property}</div></td>
+    </tr>
+    <tr>
+        <td class="td_title">有效期</td>
+        <td><div id="dperiod">{$vo.period}</div></td>
+    </tr>
+     <tr>
+        <td class="td_title">产品图片</td>
+        <td> 
+        	<div id="fsUploadProgress">	</div>
+			
+			<div>
+				<span id="spanButtonPlaceHolder"></span>
+				<input id="btnCancel" type="button" value="取消上传" onClick="swfu.cancelQueue();" disabled="disabled" style="margin-left: 2px; font-size: 8pt; height: 29px;" />
+			</div>
+			<div id="preview">{$vo.thumb|showImg}</div>
+       		<input type="hidden" id="thumb" name="thumb" value="{$vo.thumb}" />
+        </td>
+    </tr>
+<!--    <tr>
+        <td class="td_title">特性</td>
+        <td><input name="top" type="checkbox" id="top" value="1" {$vo.top|chkSelected} />
+            置顶 
+<input name="up" type="checkbox" id="up" value="1" {$vo.top|chkSelected}  />
+推荐 
+
+<input name="hot" type="checkbox" id="hot" value="1" {$vo.top|chkSelected}  />
+热门</td>
+    </tr>-->
+    
+    <tr>
+        <td class="td_title">详细说明</td>
+        <td><span style="background:#eee;">
+            <textarea name="content" id="content" class="textarea" >{$vo.content}</textarea>
+        </span></td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+											<input type="submit" value='确认' class="btn" style='border:1px solid #aaa;background:none;padding:3px;width:120px;' />
+                                            
+                                            </td>
+        </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+<input type='hidden' value='{$vo.id}' id="id" name='id' />
+<input type='hidden' value='{$vo.uid}' id="uid" name='uid' />
+
+<input type="hidden" name="model" id="model" value="{$vo.model}" />
+<input type="hidden" id="fhash" name="fhash" value="{$vo.fhash}" />
+<input type="hidden" id="tempid" name="tempid" value="" />
+
+</form>
+</div>
+<include file="Cuser:footer" />
+
+<script language="javascript" type="text/javascript" src="__PUBLIC__/js/publicVar.js"></script>						
+<script language="javascript" type="text/javascript" src="__PUBLIC__/js/supplycategory.js"></script>
+<script language="javascript" type="text/javascript">
+//document.domain = "21mmm.cn";
+var str = {$vo.data};
+//alert(str[0]["title"]);
+//var d1 = (new Date()).getTime();
+var l = new level(str);
+var first = "firsttype";      //一级select名字
+var second = "secondtype";    //二级checkbox名字
+var panelName = "panel";      //存放二级checkbox的div的id
+var dPanel = document.getElementById(panelName); //存放二级的容器
+
+//选中,用于修改
+var firstValue = {$vo.firsttype};
+var secondValue = '{$vo.secondtype}';
+l.createSelect("16",first,document.getElementById("pPanel")); //一级
+l.createCheckbox(firstValue,second,dPanel);
+document.getElementById(first).onchange = function(){
+		if(dPanel){
+			dPanel.innerHTML = "";
+		}
+		l.createCheckbox(this.value,second,dPanel); 
+}
+
+
+if(firstValue){
+	l.selectOption(first,firstValue);
+}
+	//alert(firstValue);
+if(secondValue){
+	l.selectCheckbox(dPanel,secondValue);
+}
+
+//显示图片
+/*var imgHTML =  '<img src="{$vo.thumb}" width="90" height="100"   />';
+var dPreview = document.getElementById("preview");
+dPreview.innerHTML = imgHTML;
+dPreview.getElementsByTagName("img")[0].onerror = function(){
+	this.src = "__PUBLIC__/Images/error.jpg";
+};*/
+
+</script>
+
+<!--flash上传-->
+<script type="text/javascript" src="__PUBLIC__/swfupload/swfupload.js"></script>
+<script type="text/javascript" src="__PUBLIC__/swfupload/simple/fileprogress.js"></script>
+<script type="text/javascript" src="__PUBLIC__/swfupload/simple/handlers.js"></script>
+<script type="text/javascript" src="__PUBLIC__/swfupload/simple/init.js"></script>
+<script type="text/javascript">
+if(window.attachEvent){
+	window.attachEvent("onload",swfuploadInit);
+	//alert(swfu);
+} else {
+	window.addEventListener("load",swfuploadInit);
+}
+</script>
+
+<!--编辑器传-->
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Js/editor/kindeditor.js"></script> 
+<script type="text/javascript"> 
+    /*KE.show({
+				id : 'content',
+				resizeMode : 1,
+				allowPreviewEmoticons : false,
+				allowUpload : false,
+				filterMode : true,
+
+				items : [
+				'fontname', 'fontsize', '|', 'textcolor', 'bgcolor', 'bold', 'italic', 'underline',
+				'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+				'insertunorderedlist', '|',  'link']
+			}); */
+</script> 

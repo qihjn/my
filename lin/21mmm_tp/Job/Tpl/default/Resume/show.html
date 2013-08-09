@@ -1,0 +1,244 @@
+<smallinc file="public:header" load="__PUBLIC__/plugin/lightbox/css/lightbox.css,__PUBLIC__/Skin/Job/resume.css" />
+<style type="text/css">
+.gray{ background-color:#999;}
+</style>
+<div class="ad"><img src="__PUBLIC__/Skin/Job/ad_4.jpg" width="940" border="0"/></div>
+    <div class="left">
+        
+        
+        
+        <div class="box">
+            <div class="title">快速搜索</div>
+            <div class="content" style="padding:0;">
+                <include file="public:sobox" />
+            </div>
+        </div>
+        
+        <div class="box">
+            <div class="title">招聘帮助</div>
+            <div class="content">
+                <h1>&nbsp;</h1>
+                <div class="clear"></div>
+                <ul class="zhaopinhui">
+                    <li><strong>提示1：</strong><a href="http://www.21mmm.com/help/unit/56.html" target="_blank" class="STYLE3"><span style="color:#f00;">VIP会员</span></a>点击简历下方<span style="color:#cc0000;">邀请面试</span>，对方即能收到您的邀请</li>
+                    <li><strong>提示2：</strong>如果求职者在外地，建议使用QQ远程视频，进行初步面试</li>
+                    <li><strong>提示3：</strong>该简历已通过基本审核，但因互联网不可控因素，本站无法完全保证简历的真实性。敬请单位注意规避招聘风险。</li>
+                    <li><strong>提示4:</strong> 如发现有非法信息或虚假简历,请通过页部底部的投诉与建议,将简历网址提交给我们,以便核实删除;良好的招聘环境需要我们共同的维护~!</li>
+                    <li><a href="http://www.21mmm.com/help/unit/72.html" target="_blank"><strong>提示5：</strong><span style="color:#f00;">怎么招聘最划算，不浪费？&ldquo;自助式招聘&rdquo;-想招就招，招满就停！</span></a></li>
+                </ul>
+                <p>&nbsp;</p>
+            </div>
+        </div>
+        
+        <div class="box">
+            <div class="title">以下人才适合您</div>
+            <div class="content">
+                <table  width="100%" border="0"  cellpadding="3" cellspacing="1">
+                    
+                    <volist name="match" id="m">
+                    <tr class="bg_fa">
+                        <td width="20%" height="20"><a href="{$m.pid|rurl}" target="_blank" class="red">{$m.realname}</a></td>
+                        <td width="10%">{$m.gender|sex}</td>
+                        <td>{$m.job_request|getEnumTitle|msubstr=0,17}</td>
+                    </tr>
+                    </volist>
+                </table>
+                <p>&nbsp;</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="title">您感兴趣的-地区人才</div>
+            <div class="content">
+                <volist name="area" id="a">
+                <li>·点击进入>>><a href="/{$key}" > {$a} </a></li>
+                </volist>
+            </div>
+        </div>
+        
+    </div>
+    
+    
+    <div class="resume">
+        <div class="r_top"></div>
+        <div class="r_name">{$vo.realname}  -- 个人简历</div>
+        <div class="r_box">
+            <div class="r_title"><span class="r_base">基本资料</span></div>
+            <div class="r_content" style="position:relative; padding-bottom:8px;">
+            <div class="photoborder"></div>
+            <table width="100%" align="center" cellpadding="0" cellspacing="0">
+							<tr>
+							  <td width="30%" height="24" align="left">名称：{$vo.realname}</td>
+							  <td width="40%" align="left">性别：{$vo.gender|sex}</td>
+							  <td width="30%" rowspan="7" align="center">
+							  	<table border="0" cellpadding="3" cellspacing="2" >
+									<tr>
+									  <td><img src="{$vo.thumb}"  height="150px" width="120px" border=0  /></td>
+									</tr>
+							  	</table>
+							  </td>
+					</tr>
+							<tr align="left">
+							  <td height="24">生日：{$vo.birthday|df}</td>
+							  <td width="43%">身高：{$vo.high}[厘米]</td>
+							</tr>
+							<tr align="left">
+							  <td height="24">体重：{$vo.weight}[公斤]</td>
+							  <td width="43%">学历程度：{$vo.study}</td>
+							</tr>
+
+							
+							<tr align="left">
+							  	<td height="24">户口所在地：{$vo.household}</td>
+								<td width="43%">婚姻情况：{$vo.marriage}</td>
+						    </tr>
+							<tr align="left">
+							  <td height="24">现居住地：{$vo.inplace}</td>
+							  <td width="43%">更新日期：{$vo.ctime|df}</td>
+							</tr>
+                            
+						
+			    </table>
+            </div>
+        </div>
+        <div class="r_box">
+            <div class="r_title"><span class="r_base2">详细信息·求职意向</span></div>
+            <div class="r_content">
+            			<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+							
+							<tr align="left">
+							  <td height="24" colspan="2" align="left">期望工作地区：{$vo.local}</td>
+							</tr>
+							<tr align="left">
+							  <td height="24" colspan="2" align="left">期望从事行业：{$vo.job_request|getEnumTitle}</td>
+							</tr>
+							<tr align="left">
+							  <td height="24" align="left">期望工作性质:{$vo.em_type}</td>
+							  <td align="left">证件号码：{$vo.card}</td>
+							</tr>
+							 <tr align="left">
+							  <td height="24"align="left">到岗时间：{$vo.topos|df}</td>
+                              <td align="left">期望薪水：{$vo.money}</td>
+							</tr>
+                            <tr align="left">
+						          <td height="24"align="left">住房要求：{$vo.housing}</td>
+						          <td align="left">证书名称：{$vo.certificate}</td>
+				            </tr>
+						      <tr align="left">
+						          <td height="24"align="left">外语：{$vo.foreign_language}</td>
+						          <td align="left">水平：{$vo.foreign_level}</td>
+					          </tr>
+						  </table>
+            </div>
+        </div>
+        
+        <notempty name="vo.work">
+        <smallinc file="box" listvar="{$vo.work}" titletext="工作经历" />
+        </notempty>
+        
+        <notempty name="vo.skill">
+        <smallinc file="box" listvar="{$vo.skill}" titletext="技能专长" />
+        </notempty>
+        
+        <notempty name="vo.edu">
+        <smallinc file="box" listvar="{$vo.edu}" titletext="教育经历" />
+        </notempty>
+        
+        <notempty name="vo.other">
+        <smallinc file="box" listvar="{$vo.other}" titletext="自我简介" />
+        </notempty>
+        
+        
+        
+        <notempty name="figure">
+        <div class="r_box">
+            <div class="r_title"><span class="r_base">个人风采</span></div>
+            <div class="r_content">
+            <smallinc file="public:lightbox" listvar="figure" />
+            </div>
+        </div>
+        </notempty>
+        
+        
+        <div class="r_box">
+            <div class="r_title"><span class="r_base">联系方法</span></div>
+            <div class="r_content" id="contact">
+                             	
+                    <div style="margin:10px 5px 5px 20px;">
+                                  <p>·您是VIP会员请[<a href="http://user.21mmm.com/login.php" target="_blank" class="STYLE1"><span style="color:#f00;">登录</span></a>]；您还没有<a href="http://user.21mmm.com/register.php?type=unit" target="_blank" class="STYLE1">注册</a>，请<a href="http://user.21mmm.com/register.php?type=unit" target="_blank" class="STYLE1"><span style="color:#f00;">注册</span></a>；如有问题<a href="http://www.21mmm.com/help/most/27.html" target="_blank"><span style="color:#f00;">联系我们</span></a></p>
+                                  <p>·只有<a href="http://www.21mmm.com/help/unit/56.html" target="_blank" class="STYLE1"><span style="color: #990066;">招聘VIP会员</span></a>才能查看人才联系信息，邀请人才面试,<a href="http://www.21mmm.com/help/unit/56.html" target="_blank"><span style="color:#f00;">如何升级成为招聘会员?</span></a></p>
+                                  
+                </div>
+			</div>
+        	
+        </div>
+         <div class="ba">
+            <a onclick="applyResume({$vo.pid})" >邀请面试</a>
+            <a onclick="favResume({$vo.pid})" >简历收藏</a>
+            <a href="#" style="color:#FFC;">在线咨询</a>
+         </div>
+        
+    </div>
+    <div class="clear"></div>
+<div id="sb"></div>
+
+
+
+<textarea id="tplContact" style="display:none;">
+<#macro contact data>  
+<ul  class="contact">
+    <li>手机：<span>${data.mobile}</span></li>
+    <li>Email：<span>${data.email}</span></li>
+    <li>Q  Q：<span>${data.qq}</span></li>
+    <li>电话：<span>${data.phone}</span></li>
+</ul>
+</#macro>
+</textarea>
+<textarea id="tplJob" style="display:none;">
+<#macro jobs data> 
+<table id="jobs">
+	<#if (data.list.length > 0)>
+        <caption>${data.caption}</caption>
+      <#list data.list as list>
+        <tr <#if (list_index % 2)>class="gray"</#if>>
+          
+          <td><input type="radio" id="id_${list_index + 1}" name="id[]" value="${list.id}" /></td>
+          <td>${list_index + 1}</td>
+          <td class="bold"><a href="${list.uid}">${list.title}</a></td>
+          <td></td>
+          
+        </tr>
+      </#list>
+    <#elseif (data.list.length > 0)>
+        <tr><td colspan="4">${data.list.length}</td></tr>
+    <#else>
+        <tr><td colspan="5">没有数据</td></tr>
+    </#if>
+</table>
+</#macro>
+</textarea>
+<include file="public:footer" />
+<script src="/resume/counter/id/{$vo.pid}"></script>
+<script type="text/javascript" src="__PUBLIC__/plugin/lightbox/js/jq.lightbox.js"></script>
+<load href="__PUBLIC__/Js/easyTemplate.js,__PUBLIC__/plugin/dialog/jq.dialog.js" />
+<load href="__PUBLIC__/plugin/dialog/screen.css,__PUBLIC__/plugin/dialog/example.css" />
+<script type="text/javascript">
+$(function() {
+	$('#gallery a').lightBox();
+});
+
+//联系方式
+var url = "/resume/contact/id/{$vo.pid}/workplace/{$vo.local}/category_id/{$vo.job_request}";
+$.get(url, function(data){
+	if(data){
+		data = eval("("+data+")");
+		if(typeof(data) != "object") return;
+		var template = G('tplContact').value;
+		var x = easyTemplate(template,data);
+		G('contact').innerHTML = x;
+	}
+});
+
+//var pid = '{$vo.pid}';
+
+
+</script>

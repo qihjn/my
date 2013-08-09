@@ -1,0 +1,29 @@
+delimiter //
+
+CREATE PROCEDURE load_part_tab()
+
+begin
+
+    declare v int default 0;
+
+    while v < 1000
+
+    do
+
+       insert into part_tab
+
+values (v,¡¯testing partitions¡¯,adddate(¡®1995-01-01¡ä,(rand(v)*36520) mod 3652));
+
+       set v = v + 1;
+
+    end while;
+
+end
+
+//
+
+È»ºóÖ´ÐÐ
+
+mysql> delimiter ;
+
+mysql> call load_part_tab();

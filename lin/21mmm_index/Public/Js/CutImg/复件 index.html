@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="css/imgareaselect-default.css" />
+</head>
+
+<body>
+<p style="text-align: center;">
+<img id="ladybug_ant" src="http://odyniec.net/projects/imgareaselect/ladybug_ant.jpg" alt="A ladybug being harassed by an ant." 
+ title="A ladybug being harassed by an ant." />
+</p>
+<div id="preview"></div> 
+<div><input type="button" id="save_pic" value="保存" onclick="clear();"></div> 
+<div>
+  <img src="http://odyniec.net/projects/imgareaselect/ladybug_ant.jpg" id="ferret" name="ferret" width="300px" height="300px"/>
+  </div>
+
+<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="jquery.imgareaselect.pack.js"></script>
+<script type="text/javascript">
+/**//**
+    图片裁剪过程中调用方法
+**/
+function preview(img, selection)
+{
+  var scaleX = 180 / (selection.width || 1);
+  var scaleY = 180 / (selection.height || 1);
+
+  $('#ferret + div > img').css({
+    width: Math.round(scaleX * 300) + 'px',
+    height: Math.round(scaleY * 300) + 'px',
+    marginLeft: '-' + Math.round(scaleX * selection.x1) + 'px',
+    marginTop: '-' + Math.round(scaleY * selection.y1) + 'px'
+  });
+}
+
+/**//**
+    图片裁剪完调用方法
+**/
+function getCss(img, selection){
+    
+    var str="{x1:"+selection.x1+","+
+        "x2:"+selection.x2+","+
+        "y1:"+selection.y1+","+
+        "y2:"+selection.y2+","+
+        "width:"+selection.width+","+
+        "height:"+selection.height+"}";
+        alert(str);
+
+}
+
+$(document).ready(function () {
+  $('<div><img src="bee.jpg" style="position: relative;" /></div>')
+    .css({
+      float: 'left',
+      position: 'relative',
+      overflow: 'hidden',
+      width: '180px',
+      height: '180px'
+    })
+    .insertAfter($('#ferret'));
+});
+
+
+$(window).load(function () {
+  $('#ferret').imgAreaSelect({ selectionOpacity: 0.1
+  , borderWidth: 1,aspectRatio:'1:1',
+    onSelectChange: preview ,onSelectEnd: getCss
+  });});
+
+</script>
+
+</body>
+</html>
