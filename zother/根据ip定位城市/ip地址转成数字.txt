@@ -1,0 +1,89 @@
+【转换原理】：假设IP为：w.x.y.z，则IP地址转为整型数字的计算公式为：intIP = 256*256*256*w + 256*256*x + 256*y + z
+
+【PHP的互转】：PHP的转换方式比较简单，它内置了两个函数
+int ip2long ( string $ip_address )和 string long2ip ( string $proper_address )
+可以直接调用使用~
+
+【Asp的互转】：自定义函数如下,
+'.-----------------------------------------------------------.
+'|  describtion: 将IP转换为int型数字                           |
+'|      Authors: abandonship(aspnet_play@126.com)            |
+'~-----------------------------------------------------------~
+Function IP2Num(ByVal strIP) 
+    Dim nIP
+    Dim nIndex 
+    Dim arrIP
+    arrIP = Split(strIP, ".", 4) 
+    For nIndex = 0 To 3 
+        If Not nIndex = 3 Then 
+            arrIP(nIndex) = arrIP(nIndex) * (256 ^ (3 - nIndex)) 
+        End If 
+        nIP = nIP + arrIP(nIndex) 
+    Next 
+    IP2Num = nIP
+End Function 
+'.-----------------------------------------------------------.
+'|  describtion: 将int型数字转换为IP                           |
+'|      Authors: abandonship(aspnet_play@126.com)            |
+'~-----------------------------------------------------------~
+Function Num2IP(ByVal nIP) 
+    Dim strIP 
+    Dim nTemp 
+    Dim nIndex 
+    For nIndex = 3 To 0 Step -1 
+    nTemp = Int(nIP / (256 ^ nIndex)) 
+    strIP = strIP & nTemp & "." 
+    nIP = nIP - (nTemp * (256 ^ nIndex)) 
+    Next 
+    strIP = Left(strIP, Len(strIP) - 1) 
+    Num2IP = strIP 
+End Function
+
+【MsSQL的互转】：自定义函数如下,
+/***************************************************************
+ *	将IP转换为int型数字	                       |
+ *	Code CreateBy abandonship(aspnet_play@126.com)	       | 
+ **************************************************************/
+CREATE FUNCTION [dbo].[ipToInt](   
+@strIp varchar(15)   
+)RETURNS bigint   
+AS   
+BEGIN   
+declare @nIp bigint   
+set @nIp = 0    
+select 
+@nIp = @nIp + LEFT( @strIp, charindex('.',@strIp+'.')-1)*Id  
+from(   
+select Id = cast(1*256*256*256 as bigint)   
+union all select 1*256*256   
+union all select 1*256   
+union all select 1
+) as T
+return (@nIp) 
+END  
+
+/***************************************************************
+ *	将int型数字转换为IP	                       |
+ *	Code CreateBy abandonship(aspnet_play@126.com)	       | 
+ **************************************************************/
+CREATE FUNCTION [dbo].[intToIP](
+@nIp bigint   
+)RETURNS varchar(15)   
+As   
+BEGIN   
+declare @strIp varchar(15)   
+set @strIp = ''   
+select 
+@strIp = @strIp +'.'+ cast(@nIp/ID as varchar), @nIp = @nIp%ID
+from(   
+select ID = cast(1*256*256*256 as bigint)   
+union all select 1*256*256   
+union all select 1*256   
+union all select 1 
+) as T   
+return(stuff(@strIp,1,1,''))   
+END  
+
+【MySQL的互转】：相对于MsSQL来说MySQL的转换方式比较简单，它和PHP一样也内置了两个函数
+IP转为整型: select INET_ATON (IP地址) 和 整型转为IP: select INET_NTOA ( IP的整型数值 )
+可以直接调用使用
