@@ -1,0 +1,11 @@
+cy-thinkphp
+https://cy-thinkphp.googlecode.com/svn/trunk/
+
+qihjn@163.com
+Yj2aY8FA2XM6
+
+
+svn checkout https://cy-thinkphp.googlecode.com/svn/trunk/ cy-thinkphp --username qihjn@163.com
+
+
+svn checkout http://cy-thinkphp.googlecode.com/svn/trunk/ cy-thinkphp-read-only 
